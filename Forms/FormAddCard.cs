@@ -117,7 +117,8 @@ namespace pressF
         private void SNILS_TextChanged(object sender, EventArgs e)
         {
             CueTextBox lol = sender as CueTextBox;
-            if (!SNILSValidate(lol.Text))
+            //if (!SNILSValidate(lol.Text))
+            if (false)
             {
                 lol.ForeColor = Color.Red;
                 if (lol.Tag != null)
@@ -154,7 +155,7 @@ namespace pressF
 
         private void FormAddWorker_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            return;
             if (DialogResult != DialogResult.OK) return;
             List<string> reasons = new List<string> { };
             foreach (Control control in this.Controls)
