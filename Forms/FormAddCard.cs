@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace pressF
@@ -16,7 +17,7 @@ namespace pressF
         }
         public void FormAddWorker_Load(object sender, EventArgs e)
         {
-            foreach (Control control in this.Controls)
+            foreach (Control control in Controls)
             {
                 if (control is CueTextBox textBox)
                 {
@@ -24,6 +25,7 @@ namespace pressF
 
                 }
             }
+            Docum.SelectedIndex = Sex.SelectedIndex = 0;
         }
 
 
@@ -36,7 +38,7 @@ namespace pressF
                 (sender as CueTextBox).Text = "";
                 Mass = f.GetData();
                 Mass.Reverse();
-                foreach (var s in Mass)
+                foreach (string s in Mass)
                 {
                     if (s.Length > 0)
                     {
@@ -155,40 +157,47 @@ namespace pressF
 
         private void FormAddWorker_FormClosing(object sender, FormClosingEventArgs e)
         {
-            return;
-            if (DialogResult != DialogResult.OK) return;
+
+            if (DialogResult != DialogResult.OK)
+            {
+                return;
+            }
+
             List<string> reasons = new List<string> { };
-            foreach (Control control in this.Controls)
+            ValidateChildren();
+            foreach (Control control in Controls)
             {
                 if (control is CueTextBox textBox)
                 {
-                    if (textBox.Required)
+                    
+                    if ((new Regex(@textBox.Tag.ToString()).IsMatch(textBox.Parent.FindForm().Tag.ToString())))
                     {
-                        if (!(new Regex(@textBox.Tag.ToString()).IsMatch(textBox.Parent.FindForm().Tag.ToString())))
-                        {
-                            e.Cancel = true;
-                            reasons.Add(textBox.Tag.ToString());
-                        }
+                        e.Cancel = true;
+                        reasons.Add(textBox.Tag.ToString());
                     }
+
                 }
             }
-            if (e.Cancel || Tag.ToString() != ":")
+            if (e.Cancel)
             {
-                e.Cancel = true;
-                MessageBox.Show("Требуется правильно заполнить" + Tag + string.Join(",", reasons.ToArray()));
-                
+                MessageBox.Show("Требуется правильно заполнить: " + string.Join(", ", reasons.ToArray()));
             }
             return;
 #pragma warning disable CS0162 // Обнаружен недостижимый код
-            if (DialogResult != DialogResult.OK) return;
+            if (DialogResult != DialogResult.OK)
+            {
+                return;
+            }
 #pragma warning restore CS0162 // Обнаружен недостижимый код
-            foreach (Control control in this.Controls)
+            foreach (Control control in Controls)
             {
                 if (control is CueTextBox textBox)
                 {
                     string ch = textBox._check(textBox, true);
                     if (!(Tag.ToString().IndexOf(ch) > -1))
+                    {
                         Tag += ch + ",";
+                    }
                 }
             }
             if (!(string.IsNullOrWhiteSpace(Tag.ToString())))
@@ -225,6 +234,37 @@ namespace pressF
         }
 
         private void Place_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Table_num_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Docum_Serial_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Sex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Home_Phone.Text, "testing");
+            File.WriteAllText(@"C:\t.txt", Home_Phone.Text);
+        }
+
+        private void Bank_Code_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Salary_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

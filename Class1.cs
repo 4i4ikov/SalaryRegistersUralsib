@@ -18,16 +18,9 @@ public class CueTextBox : MaskedTextBox
     /// </summary>
     public string RegEx
     {
-        get
-        {
-            return _regEx;
-        }
+        get => _regEx;
 
-        set
-        {
-            _regEx = value;
-
-        }
+        set => _regEx = value;
     }
     /// <summary>
     /// Required
@@ -39,16 +32,9 @@ public class CueTextBox : MaskedTextBox
     /// </summary>
     public bool Required
     {
-        get
-        {
-            return _required;
-        }
+        get => _required;
 
-        set
-        {
-            _required = value;
-
-        }
+        set => _required = value;
     }
     /// <summary>
     /// The cue banner text.
@@ -60,10 +46,7 @@ public class CueTextBox : MaskedTextBox
     /// </summary>
     public string CueText
     {
-        get
-        {
-            return _cueText;
-        }
+        get => _cueText;
 
         set
         {
@@ -86,7 +69,7 @@ public class CueTextBox : MaskedTextBox
         {
             if (!Focused && string.IsNullOrEmpty(Text) && !string.IsNullOrEmpty(CueText))
             {
-                using (var graphics = CreateGraphics())
+                using (Graphics graphics = CreateGraphics())
                 {
                     TextRenderer.DrawText(
                         dc: graphics,
@@ -109,14 +92,15 @@ public class CueTextBox : MaskedTextBox
         {
             lol.ForeColor = Color.Red;
             if (!(new Regex(@lol.Tag.ToString()).IsMatch(lol.Parent.FindForm().Tag.ToString())))
+            {
                 lol.Parent.FindForm().Tag += ch + ",";
-            
+            }
         }
         else
         {
             lol.ForeColor = Color.Black;
             lol.Parent.FindForm().Tag = Regex.Replace(lol.Parent.FindForm().Tag.ToString(), lol.Tag.ToString() + ",", string.Empty);
-            
+
         }
 
 
@@ -148,16 +132,30 @@ public class CueTextBox : MaskedTextBox
     public string _check(object sender, bool checkmode)
     {
         CueTextBox lol = sender as CueTextBox;
-        if (lol.Required && (string.IsNullOrWhiteSpace(lol.Text) || lol.Text == "__.__.____")) return lol.Tag.ToString();
-        if (checkmode) return string.Empty;
+        if (lol.Required && (string.IsNullOrWhiteSpace(lol.Text) || lol.Text == "__.__.____") || lol.Text == "+7 (   )    -  -")
+        {
+            return lol.Tag.ToString();
+        }
+
+        if (checkmode)
+        {
+            return string.Empty;
+        }
+
         if ((lol.RegEx != null && !((new Regex(@lol.RegEx.ToString())).IsMatch(lol.Text)) && !(string.IsNullOrWhiteSpace(lol.Text))))
         {
+            
+
             if (lol.Tag != null)
+            {
                 return lol.Tag.ToString();
+            }
             else
+            {
                 return lol.Name;
+            }
             /*lol.ForeColor = Color.Black;
-            lol.Parent.FindForm().Tag = Regex.Replace(lol.Parent.FindForm().Tag.ToString(), " " + @lol.Tag.ToString(), String.Empty);*/
+lol.Parent.FindForm().Tag = Regex.Replace(lol.Parent.FindForm().Tag.ToString(), " " + @lol.Tag.ToString(), String.Empty);*/
         }
         else
         {
@@ -169,6 +167,33 @@ public class CueTextBox : MaskedTextBox
                     lol.Parent.FindForm().Tag += lol.Tag.ToString() + ",";
                 }
             }*/
+            if (lol.Name == "SNILS" && !string.IsNullOrWhiteSpace(lol.Text))
+            {
+                string snils = lol.Text;
+                int sum = 0;
+                for (int i = 0; i < 9; i++)
+                {
+                    sum += int.Parse(snils[i].ToString()) * (9 - i);
+                }
+                int checkDigit = 0;
+                if (sum < 100)
+                {
+                    checkDigit = sum;
+                }
+                else if (sum > 101)
+                {
+                    checkDigit = sum % 101;
+                    if (checkDigit == 100)
+                    {
+                        checkDigit = 0;
+                    }
+                }
+
+                if (checkDigit != int.Parse(snils.Substring(9, 2))) //Если все ок с СНИЛС
+                {
+                    return lol.Tag.ToString();
+                }
+            }
 
             return string.Empty;
 
