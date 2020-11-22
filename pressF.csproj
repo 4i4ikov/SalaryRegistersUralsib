@@ -123,6 +123,12 @@
     <Compile Include="Forms\FormDelOrg.Designer.cs">
       <DependentUpon>FormDelOrg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormDOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDOS.Designer.cs">
+      <DependentUpon>FormDOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormEditOrg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDelOrg.resx">
       <DependentUpon>FormDelOrg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDOS.resx">
+      <DependentUpon>FormDOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEditOrg.resx">
       <DependentUpon>FormEditOrg.cs</DependentUpon>

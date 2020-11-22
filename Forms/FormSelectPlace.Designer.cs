@@ -156,6 +156,7 @@
             // 
             this.cueTextBox8.CueText = "450000";
             this.cueTextBox8.Location = new System.Drawing.Point(170, 155);
+            this.cueTextBox8.Mask = "5555555";
             this.cueTextBox8.Name = "cueTextBox8";
             this.cueTextBox8.RegEx = "^[\\d]+$";
             this.cueTextBox8.Required = false;
@@ -167,6 +168,7 @@
             // 
             this.cueTextBox7.CueText = "55";
             this.cueTextBox7.Location = new System.Drawing.Point(12, 155);
+            this.cueTextBox7.Mask = "55";
             this.cueTextBox7.Name = "cueTextBox7";
             this.cueTextBox7.RegEx = "^[\\d]+$";
             this.cueTextBox7.Required = false;
@@ -178,6 +180,7 @@
             // 
             this.cueTextBox6.CueText = "1А";
             this.cueTextBox6.Location = new System.Drawing.Point(170, 112);
+            this.cueTextBox6.Mask = "1А";
             this.cueTextBox6.Name = "cueTextBox6";
             this.cueTextBox6.RegEx = "^[\\d\\w]+$";
             this.cueTextBox6.Required = false;
@@ -189,6 +192,7 @@
             // 
             this.cueTextBox5.CueText = "42";
             this.cueTextBox5.Location = new System.Drawing.Point(12, 112);
+            this.cueTextBox5.Mask = "42";
             this.cueTextBox5.Name = "cueTextBox5";
             this.cueTextBox5.RegEx = "^[\\d]+$";
             this.cueTextBox5.Required = false;
@@ -200,6 +204,7 @@
             // 
             this.cueTextBox4.CueText = "Бирская";
             this.cueTextBox4.Location = new System.Drawing.Point(170, 73);
+            this.cueTextBox4.Mask = "Бирская";
             this.cueTextBox4.Name = "cueTextBox4";
             this.cueTextBox4.RegEx = "^[а-яА-Я \\-]+$";
             this.cueTextBox4.Required = false;
@@ -211,6 +216,7 @@
             // 
             this.cueTextBox3.CueText = "Бирский";
             this.cueTextBox3.Location = new System.Drawing.Point(12, 73);
+            this.cueTextBox3.Mask = "Бирский";
             this.cueTextBox3.Name = "cueTextBox3";
             this.cueTextBox3.RegEx = "^[а-яА-Я ]+$";
             this.cueTextBox3.Required = false;
@@ -228,6 +234,7 @@
             this.cueTextBox2.Size = new System.Drawing.Size(150, 20);
             this.cueTextBox2.TabIndex = 2;
             this.cueTextBox2.Tag = "Регион код";
+            this.cueTextBox2.Text = "02";
             // 
             // cueTextBox1
             // 
@@ -239,6 +246,7 @@
             this.cueTextBox1.Size = new System.Drawing.Size(150, 20);
             this.cueTextBox1.TabIndex = 1;
             this.cueTextBox1.Tag = "Населенный пункт";
+            this.cueTextBox1.Text = "Бирск";
             // 
             // FormSelectPlace
             // 

@@ -4,6 +4,9 @@
 
     partial class DbDataSet
     {
+        partial class CardDataTable
+        {
+        }
     }
 }
 

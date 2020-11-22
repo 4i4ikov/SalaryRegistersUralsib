@@ -45,7 +45,7 @@ namespace pressF
 
         private void debugToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Forms.FormDebug form1 = new Forms.FormDebug();
+            Forms.FormDOS form1 = new Forms.FormDOS();
            
             form1.Show();
         }

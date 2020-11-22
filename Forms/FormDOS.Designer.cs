@@ -1,6 +1,6 @@
-﻿namespace pressF
+﻿namespace pressF.Forms
 {
-    partial class Organizations
+    partial class FormDOS
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cardTableAdapter = new pressF.DbDataSetTableAdapters.CardTableAdapter();
+            this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new pressF.DbDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,122 +66,35 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orgkeyDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbDataSet = new pressF.DbDataSet();
-            this.ExportButton = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.AddCardButton = new System.Windows.Forms.Button();
             this.FireButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
-            this.cardDataGridView = new System.Windows.Forms.DataGridView();
-            this.wSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wMiddlenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tablenumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wBillnumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgkeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.wCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.workersTableAdapter = new pressF.DbDataSetTableAdapters.WorkersTableAdapter();
-            this.tableAdapterManager = new pressF.DbDataSetTableAdapters.TableAdapterManager();
-            this.cardTableAdapter = new pressF.DbDataSetTableAdapters.CardTableAdapter();
-            this.Button_DOS = new System.Windows.Forms.Button();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cardDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // cardTableAdapter
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(130, -1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "org";
+            this.cardTableAdapter.ClearBeforeFill = true;
             // 
-            // label2
+            // cardBindingSource
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1, -1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Текущая организация:";
+            this.cardBindingSource.DataMember = "Card";
+            this.cardBindingSource.DataSource = this.dbDataSet;
             // 
-            // tabPage7
+            // dbDataSet
             // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(790, 412);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Реестр-распоряжение";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(790, 412);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Увольнение";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(790, 412);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Зачисл. по карт.";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(790, 412);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Зачисление";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.Button_DOS);
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(790, 412);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Откр.карт";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.dbDataSet.DataSetName = "DbDataSet";
+            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -227,8 +136,9 @@
             this.orgkeyDataGridViewTextBoxColumn1,
             this.codeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cardBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 36);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 46);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -236,9 +146,9 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(784, 373);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 404);
             this.dataGridView1.StandardTab = true;
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.TabIndex = 10;
             this.dataGridView1.TabStop = false;
             // 
             // surnameDataGridViewTextBoxColumn
@@ -507,348 +417,95 @@
             this.codeDataGridViewTextBoxColumn.Visible = false;
             this.codeDataGridViewTextBoxColumn.Width = 57;
             // 
-            // cardBindingSource
-            // 
-            this.cardBindingSource.DataMember = "Card";
-            this.cardBindingSource.DataSource = this.dbDataSet;
-            // 
-            // dbDataSet
-            // 
-            this.dbDataSet.DataSetName = "DbDataSet";
-            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ExportButton
-            // 
-            this.ExportButton.AutoSize = true;
-            this.ExportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ExportButton.Location = new System.Drawing.Point(616, 12);
-            this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(183, 26);
-            this.ExportButton.TabIndex = 11;
-            this.ExportButton.Text = "Экспортировать в Excel...";
-            this.ExportButton.UseVisualStyleBackColor = true;
-            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.AddCardButton);
-            this.tabPage2.Controls.Add(this.FireButton);
-            this.tabPage2.Controls.Add(this.AddButton);
-            this.tabPage2.Controls.Add(this.cardDataGridView);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(790, 412);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Сотрудники";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // AddCardButton
-            // 
-            this.AddCardButton.AutoSize = true;
-            this.AddCardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddCardButton.Location = new System.Drawing.Point(343, 6);
-            this.AddCardButton.Name = "AddCardButton";
-            this.AddCardButton.Size = new System.Drawing.Size(328, 28);
-            this.AddCardButton.TabIndex = 13;
-            this.AddCardButton.Text = "Открытие зарплатной карты сотрудника..";
-            this.AddCardButton.UseVisualStyleBackColor = true;
-            this.AddCardButton.Click += new System.EventHandler(this.AddCardButton_Click);
-            // 
             // FireButton
             // 
             this.FireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FireButton.Location = new System.Drawing.Point(232, 6);
+            this.FireButton.Location = new System.Drawing.Point(233, 12);
             this.FireButton.Name = "FireButton";
             this.FireButton.Size = new System.Drawing.Size(105, 28);
-            this.FireButton.TabIndex = 6;
-            this.FireButton.Text = "Уволить!";
+            this.FireButton.TabIndex = 14;
+            this.FireButton.Text = "Удалить";
             this.FireButton.UseVisualStyleBackColor = true;
-            this.FireButton.Click += new System.EventHandler(this.FireButton_Click);
             // 
             // AddButton
             // 
             this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddButton.Location = new System.Drawing.Point(7, 6);
+            this.AddButton.Location = new System.Drawing.Point(8, 12);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(105, 28);
-            this.AddButton.TabIndex = 1;
+            this.AddButton.TabIndex = 11;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // cardDataGridView
-            // 
-            this.cardDataGridView.AllowUserToAddRows = false;
-            this.cardDataGridView.AllowUserToDeleteRows = false;
-            this.cardDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cardDataGridView.AutoGenerateColumns = false;
-            this.cardDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cardDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.cardDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.cardDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cardDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cardDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.wSurnameDataGridViewTextBoxColumn,
-            this.wNameDataGridViewTextBoxColumn,
-            this.wMiddlenameDataGridViewTextBoxColumn,
-            this.tablenumDataGridViewTextBoxColumn,
-            this.wBirthDataGridViewTextBoxColumn,
-            this.wBillnumDataGridViewTextBoxColumn,
-            this.orgkeyDataGridViewTextBoxColumn,
-            this.firedDataGridViewCheckBoxColumn,
-            this.wCodeDataGridViewTextBoxColumn});
-            this.cardDataGridView.DataSource = this.workersBindingSource;
-            this.cardDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.cardDataGridView.Location = new System.Drawing.Point(0, 40);
-            this.cardDataGridView.MultiSelect = false;
-            this.cardDataGridView.Name = "cardDataGridView";
-            this.cardDataGridView.ReadOnly = true;
-            this.cardDataGridView.RowHeadersVisible = false;
-            this.cardDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.cardDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cardDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cardDataGridView.ShowEditingIcon = false;
-            this.cardDataGridView.Size = new System.Drawing.Size(790, 376);
-            this.cardDataGridView.StandardTab = true;
-            this.cardDataGridView.TabIndex = 5;
-            this.cardDataGridView.TabStop = false;
-            // 
-            // wSurnameDataGridViewTextBoxColumn
-            // 
-            this.wSurnameDataGridViewTextBoxColumn.DataPropertyName = "WSurname";
-            this.wSurnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.wSurnameDataGridViewTextBoxColumn.Name = "wSurnameDataGridViewTextBoxColumn";
-            this.wSurnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wNameDataGridViewTextBoxColumn
-            // 
-            this.wNameDataGridViewTextBoxColumn.DataPropertyName = "WName";
-            this.wNameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.wNameDataGridViewTextBoxColumn.Name = "wNameDataGridViewTextBoxColumn";
-            this.wNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wMiddlenameDataGridViewTextBoxColumn
-            // 
-            this.wMiddlenameDataGridViewTextBoxColumn.DataPropertyName = "WMiddlename";
-            this.wMiddlenameDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.wMiddlenameDataGridViewTextBoxColumn.Name = "wMiddlenameDataGridViewTextBoxColumn";
-            this.wMiddlenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tablenumDataGridViewTextBoxColumn
-            // 
-            this.tablenumDataGridViewTextBoxColumn.DataPropertyName = "Table_num";
-            this.tablenumDataGridViewTextBoxColumn.HeaderText = "Табельный номер";
-            this.tablenumDataGridViewTextBoxColumn.Name = "tablenumDataGridViewTextBoxColumn";
-            this.tablenumDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wBirthDataGridViewTextBoxColumn
-            // 
-            this.wBirthDataGridViewTextBoxColumn.DataPropertyName = "WBirth";
-            this.wBirthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.wBirthDataGridViewTextBoxColumn.Name = "wBirthDataGridViewTextBoxColumn";
-            this.wBirthDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wBillnumDataGridViewTextBoxColumn
-            // 
-            this.wBillnumDataGridViewTextBoxColumn.DataPropertyName = "WBill_num";
-            this.wBillnumDataGridViewTextBoxColumn.HeaderText = "Номер счета";
-            this.wBillnumDataGridViewTextBoxColumn.Name = "wBillnumDataGridViewTextBoxColumn";
-            this.wBillnumDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // orgkeyDataGridViewTextBoxColumn
-            // 
-            this.orgkeyDataGridViewTextBoxColumn.DataPropertyName = "Org_key";
-            this.orgkeyDataGridViewTextBoxColumn.HeaderText = "Org_key";
-            this.orgkeyDataGridViewTextBoxColumn.Name = "orgkeyDataGridViewTextBoxColumn";
-            this.orgkeyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orgkeyDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // firedDataGridViewCheckBoxColumn
-            // 
-            this.firedDataGridViewCheckBoxColumn.DataPropertyName = "Fired";
-            this.firedDataGridViewCheckBoxColumn.HeaderText = "Уволен";
-            this.firedDataGridViewCheckBoxColumn.Name = "firedDataGridViewCheckBoxColumn";
-            this.firedDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // wCodeDataGridViewTextBoxColumn
-            // 
-            this.wCodeDataGridViewTextBoxColumn.DataPropertyName = "WCode";
-            this.wCodeDataGridViewTextBoxColumn.HeaderText = "WCode";
-            this.wCodeDataGridViewTextBoxColumn.Name = "wCodeDataGridViewTextBoxColumn";
-            this.wCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.wCodeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // workersBindingSource
-            // 
-            this.workersBindingSource.DataMember = "Workers";
-            this.workersBindingSource.DataSource = this.dbDataSet;
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(118, 6);
+            this.button2.Location = new System.Drawing.Point(119, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 28);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Импорт";
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Правка";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(677, 6);
+            this.button3.Location = new System.Drawing.Point(678, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(105, 28);
-            this.button3.TabIndex = 4;
+            this.button3.TabIndex = 13;
             this.button3.Text = "Обновить";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // tabControl1
+            // button1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(4, 15);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(798, 438);
-            this.tabControl1.TabIndex = 0;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(553, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 28);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Экспорт в DOS";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
+            // button4
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(790, 412);
-            this.tabPage1.TabIndex = 7;
-            this.tabPage1.Text = "Реквизиты";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(428, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(119, 28);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Импорт из DOS";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(650, -1);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Код организации:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(753, -1);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "org_key";
-            // 
-            // workersTableAdapter
-            // 
-            this.workersTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CardTableAdapter = null;
-            this.tableAdapterManager.OrganizationsTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = pressF.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.WorkersTableAdapter = this.workersTableAdapter;
-            // 
-            // cardTableAdapter
-            // 
-            this.cardTableAdapter.ClearBeforeFill = true;
-            // 
-            // Button_DOS
-            // 
-            this.Button_DOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Button_DOS.Location = new System.Drawing.Point(3, 3);
-            this.Button_DOS.Name = "Button_DOS";
-            this.Button_DOS.Size = new System.Drawing.Size(105, 28);
-            this.Button_DOS.TabIndex = 10;
-            this.Button_DOS.Text = "Добавить";
-            this.Button_DOS.UseVisualStyleBackColor = true;
-            this.Button_DOS.Click += new System.EventHandler(this.Button_DOS_Click);
-            // 
-            // Organizations
+            // FormDOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 453);
-            this.Controls.Add(this.ExportButton);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tabControl1);
-            this.MinimumSize = new System.Drawing.Size(400, 200);
-            this.Name = "Organizations";
-            this.Load += new System.EventHandler(this.FormZP_Load);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FireButton);
+            this.Controls.Add(this.AddButton);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "FormDOS";
+            this.Text = "Преобразование данных зарплатных карт";
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cardDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
-        public System.Windows.Forms.DataGridView cardDataGridView;
-        private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button FireButton;
-        private DbDataSet dbDataSet;
-        private DbDataSetTableAdapters.WorkersTableAdapter workersTableAdapter;
-        private DbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        internal System.Windows.Forms.BindingSource workersBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wSurnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wMiddlenameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tablenumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wBirthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wBillnumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgkeyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn firedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wCodeDataGridViewTextBoxColumn;
+
         private DbDataSetTableAdapters.CardTableAdapter cardTableAdapter;
-        public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button ExportButton;
         internal System.Windows.Forms.BindingSource cardBindingSource;
-        private System.Windows.Forms.Button AddCardButton;
+        private DbDataSet dbDataSet;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn middlenameDataGridViewTextBoxColumn;
@@ -882,7 +539,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orgkeyDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        internal System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Button Button_DOS;
+        private System.Windows.Forms.Button FireButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -16,8 +16,7 @@ namespace pressF
 
             foreach (Control control in Controls)
             {
-                CueTextBox textBox = control as CueTextBox;
-                if (textBox != null)
+                if (control is CueTextBox textBox)
                 {
                     mass.Add(textBox.Text);
                 }
@@ -29,8 +28,7 @@ namespace pressF
         {
             foreach (Control control in this.Controls)
             {
-                CueTextBox textBox = control as CueTextBox;
-                if (textBox != null)
+                if (control is CueTextBox textBox)
                 {
                     textBox.Validating += new System.ComponentModel.CancelEventHandler(textBox.CheckString);
 
@@ -44,8 +42,7 @@ namespace pressF
             if (DialogResult != DialogResult.OK) return;
             foreach (Control control in this.Controls)
             {
-                CueTextBox textBox = control as CueTextBox;
-                if (textBox != null)
+                if (control is CueTextBox textBox)
                 {
                     string ch = textBox._check(textBox, true);
                     if (!(Tag.ToString().IndexOf(ch) > -1))
