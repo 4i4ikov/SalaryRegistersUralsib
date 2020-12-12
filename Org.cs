@@ -14,6 +14,7 @@ namespace pressF
 
         private void FormZP_Load(object sender, EventArgs e)
         {
+            enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
             cardTableAdapter.Fill(dbDataSet.Card);
             workersTableAdapter.Fill(dbDataSet.Workers);
         }
@@ -53,10 +54,7 @@ namespace pressF
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            workersTableAdapter.Fill(dbDataSet.Workers);
-        }
+
 
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -70,19 +68,18 @@ namespace pressF
             }
         }
 
-        private void ContextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
 
         private void FireButton_Click(object sender, EventArgs e)
         {
-            Dictionary<string, string> c = cardDataGridView.GetCellsPls();
+            //Кнопка увольнения сотрудника, просто меняет "переключатель" в бд на противоположное значение
+            Dictionary<string, string> c = workersDataGridView.GetCellsPls();
             workersTableAdapter.UpdateFiredStatus(!Convert.ToBoolean(c["Fired"]), Convert.ToInt32(c["WCode"]));
             workersTableAdapter.Fill(dbDataSet.Workers);
         }
         private void FillTheWorkSheet(DataGridView dg, Excel.Worksheet wsh)
         {
+            //Заполняет лист экселя на базе DataGrid'а
+
             //Заголовки колонок
             for (int i = 1; i < dg.Columns.Count + 1; i++)
             {
@@ -125,8 +122,8 @@ namespace pressF
                 worksheet.Name = "Сотрудники";
                 worksheet2.Name = "Карты";
 
-                FillTheWorkSheet(cardDataGridView, worksheet);
-                FillTheWorkSheet(dataGridView1, worksheet2);
+                FillTheWorkSheet(workersDataGridView, worksheet);
+                FillTheWorkSheet(cardsGridView, worksheet2);
 
 
                 excelapp.AlertBeforeOverwriting = false;
@@ -139,7 +136,7 @@ namespace pressF
         {
 
             FormAddCard f = new FormAddCard();
-            Dictionary<string, string> c = cardDataGridView.GetCellsPls()
+            Dictionary<string, string> c = workersDataGridView.GetCellsPls()
             ;
             foreach (KeyValuePair<string, string> kvp in c)
             {
@@ -159,14 +156,75 @@ namespace pressF
                 //cardTableAdapter.Insert( f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Docum.Text, int.Parse(f.Docum_Serial.Text), int.Parse(f.Docum_Num.Text), Convert.ToDateTime(f.DateTime2.Text), f.Docum_Place.Text, f.Docum_Cod.Text, f.Mass[0], int.Parse(f.Mass[1]), f.Mass[2], f.Mass[3], f.Mass[4], f.Mass[5], f.Mass[6], int.Parse(f.Mass[7]), Convert.ToDateTime(f.WBirth.Text), f.PlaceOfBirth.Text, f.Sex.Text, f.SNILS.Text, f.Home_Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_Type.Text, Convert.ToDateTime(f.EmpDate.Text), f.Salary.Text, f.Email.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
                     
                 
-                cardTableAdapter.Fill(dbDataSet.Card);
+                //cardTableAdapter.Fill(dbDataSet.Card);
             }
         }
 
         private void Button_DOS_Click(object sender, EventArgs e)
         {
+
+            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+
             FormDOS f = new FormDOS(this);
             f.Show();
+
+            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            // Сохранение данных в бд простым способом
+            enrollmentsTableAdapter.Update(dbDataSet);
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            //сброс изменений простой перезагрузкой значений из бд в адаптер таблицы
+            enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
+        }
+
+
+
+        private void enrollmentsDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            //автоматическое заполнение колонки "Код организации", ибо она не меняется
+            enrollmentsDataGridView.CurrentRow.Cells[0].Value = label5.Text;
+        }
+
+        private void enrollmentsDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            // скрытие колонки "Код организации", она не меняется, заполняется автоматически
+            enrollmentsDataGridView.Columns[0].Visible = false;
+        }
+
+        private void enrollmentsDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // при ошибке ввода помечаем ячейку и сбрасываем изменения
+            DataGridView view = (DataGridView)sender;
+            view.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "ошибка ввода";
+            e.Cancel = false;
+            e.ThrowException = false;
+
+        }
+
+        private void enrollmentsDataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            // убираем метку ошибки при изменении ячейки
+            DataGridView view = (DataGridView)sender;
+            view.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = String.Empty;
+        }
+
+        private void Organizations_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // сохранение таблицы с зачислениями при закрытии
+            enrollmentsTableAdapter.Update(dbDataSet);
         }
     }
 }

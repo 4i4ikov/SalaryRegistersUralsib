@@ -95,6 +95,7 @@ namespace pressF
             //Фильтр таблицы сотрудников по текущей организации
             f.workersBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.cardBindingSource.Filter = "Org_key = '" + orgKey + "'";
+            f.enrollmentsBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.MdiParent = MdiParent;
             f.Show(); //Отображение FormZP
             Close(); //Закрытие текущей формы Form1
