@@ -36,7 +36,35 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Button_DOS = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new pressF.DbDataSet();
+            this.ExportButton = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.AddCardButton = new System.Windows.Forms.Button();
+            this.FireButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.cardDataGridView = new System.Windows.Forms.DataGridView();
+            this.wSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wMiddlenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tablenumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wBillnumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orgkeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.wCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.workersTableAdapter = new pressF.DbDataSetTableAdapters.WorkersTableAdapter();
+            this.tableAdapterManager = new pressF.DbDataSetTableAdapters.TableAdapterManager();
+            this.cardTableAdapter = new pressF.DbDataSetTableAdapters.CardTableAdapter();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middlenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,39 +93,25 @@
             this.codeWordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bankCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cardtypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Docum2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Docum2_serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Docum2_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Docum2_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Docum2_place = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Region_cod2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.District2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Street2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.House2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Block2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apartment2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Index2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orgkeyDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbDataSet = new pressF.DbDataSet();
-            this.ExportButton = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.AddCardButton = new System.Windows.Forms.Button();
-            this.FireButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.cardDataGridView = new System.Windows.Forms.DataGridView();
-            this.wSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wMiddlenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tablenumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wBillnumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgkeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.wCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.workersTableAdapter = new pressF.DbDataSetTableAdapters.WorkersTableAdapter();
-            this.tableAdapterManager = new pressF.DbDataSetTableAdapters.TableAdapterManager();
-            this.cardTableAdapter = new pressF.DbDataSetTableAdapters.CardTableAdapter();
-            this.Button_DOS = new System.Windows.Forms.Button();
+            this.Action_param = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).BeginInit();
@@ -179,6 +193,17 @@
             this.tabPage3.Text = "Откр.карт";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // Button_DOS
+            // 
+            this.Button_DOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Button_DOS.Location = new System.Drawing.Point(3, 3);
+            this.Button_DOS.Name = "Button_DOS";
+            this.Button_DOS.Size = new System.Drawing.Size(223, 28);
+            this.Button_DOS.TabIndex = 10;
+            this.Button_DOS.Text = "Преобразование DOS файла";
+            this.Button_DOS.UseVisualStyleBackColor = true;
+            this.Button_DOS.Click += new System.EventHandler(this.Button_DOS_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -221,11 +246,25 @@
             this.codeWordDataGridViewTextBoxColumn,
             this.bankCodeDataGridViewTextBoxColumn,
             this.cardtypeDataGridViewTextBoxColumn,
+            this.Docum2,
+            this.Docum2_serial,
+            this.Docum2_num,
+            this.Docum2_date,
+            this.Docum2_place,
+            this.City2,
+            this.Region_cod2,
+            this.District2,
+            this.Street2,
+            this.House2,
+            this.Block2,
+            this.Apartment2,
+            this.Index2,
             this.employmentDateDataGridViewTextBoxColumn,
             this.salaryDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.orgkeyDataGridViewTextBoxColumn1,
-            this.codeDataGridViewTextBoxColumn});
+            this.codeDataGridViewTextBoxColumn,
+            this.Action_param});
             this.dataGridView1.DataSource = this.cardBindingSource;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Location = new System.Drawing.Point(3, 36);
@@ -240,272 +279,6 @@
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.TabStop = false;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.surnameDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 54;
-            // 
-            // middlenameDataGridViewTextBoxColumn
-            // 
-            this.middlenameDataGridViewTextBoxColumn.DataPropertyName = "Middlename";
-            this.middlenameDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.middlenameDataGridViewTextBoxColumn.Name = "middlenameDataGridViewTextBoxColumn";
-            this.middlenameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.middlenameDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // tablenumDataGridViewTextBoxColumn1
-            // 
-            this.tablenumDataGridViewTextBoxColumn1.DataPropertyName = "Table_num";
-            this.tablenumDataGridViewTextBoxColumn1.HeaderText = "Табельный №";
-            this.tablenumDataGridViewTextBoxColumn1.Name = "tablenumDataGridViewTextBoxColumn1";
-            this.tablenumDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.tablenumDataGridViewTextBoxColumn1.Width = 95;
-            // 
-            // documDataGridViewTextBoxColumn
-            // 
-            this.documDataGridViewTextBoxColumn.DataPropertyName = "Docum";
-            this.documDataGridViewTextBoxColumn.HeaderText = "Документ";
-            this.documDataGridViewTextBoxColumn.Name = "documDataGridViewTextBoxColumn";
-            this.documDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // documserialDataGridViewTextBoxColumn
-            // 
-            this.documserialDataGridViewTextBoxColumn.DataPropertyName = "Docum_serial";
-            this.documserialDataGridViewTextBoxColumn.HeaderText = "Серия";
-            this.documserialDataGridViewTextBoxColumn.Name = "documserialDataGridViewTextBoxColumn";
-            this.documserialDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documserialDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // documnumDataGridViewTextBoxColumn
-            // 
-            this.documnumDataGridViewTextBoxColumn.DataPropertyName = "Docum_num";
-            this.documnumDataGridViewTextBoxColumn.HeaderText = "Номер";
-            this.documnumDataGridViewTextBoxColumn.Name = "documnumDataGridViewTextBoxColumn";
-            this.documnumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documnumDataGridViewTextBoxColumn.Width = 66;
-            // 
-            // documdateDataGridViewTextBoxColumn
-            // 
-            this.documdateDataGridViewTextBoxColumn.DataPropertyName = "Docum_date";
-            this.documdateDataGridViewTextBoxColumn.HeaderText = "Дата выдачи";
-            this.documdateDataGridViewTextBoxColumn.Name = "documdateDataGridViewTextBoxColumn";
-            this.documdateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documdateDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // documplaceDataGridViewTextBoxColumn
-            // 
-            this.documplaceDataGridViewTextBoxColumn.DataPropertyName = "Docum_place";
-            this.documplaceDataGridViewTextBoxColumn.HeaderText = "Место выдачи";
-            this.documplaceDataGridViewTextBoxColumn.Name = "documplaceDataGridViewTextBoxColumn";
-            this.documplaceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documplaceDataGridViewTextBoxColumn.Width = 96;
-            // 
-            // documcodDataGridViewTextBoxColumn
-            // 
-            this.documcodDataGridViewTextBoxColumn.DataPropertyName = "Docum_cod";
-            this.documcodDataGridViewTextBoxColumn.HeaderText = "Код подр.";
-            this.documcodDataGridViewTextBoxColumn.Name = "documcodDataGridViewTextBoxColumn";
-            this.documcodDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documcodDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "Город";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cityDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // regioncodDataGridViewTextBoxColumn
-            // 
-            this.regioncodDataGridViewTextBoxColumn.DataPropertyName = "Region_cod";
-            this.regioncodDataGridViewTextBoxColumn.HeaderText = "Код региона";
-            this.regioncodDataGridViewTextBoxColumn.Name = "regioncodDataGridViewTextBoxColumn";
-            this.regioncodDataGridViewTextBoxColumn.ReadOnly = true;
-            this.regioncodDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // districtDataGridViewTextBoxColumn
-            // 
-            this.districtDataGridViewTextBoxColumn.DataPropertyName = "District";
-            this.districtDataGridViewTextBoxColumn.HeaderText = "Район";
-            this.districtDataGridViewTextBoxColumn.Name = "districtDataGridViewTextBoxColumn";
-            this.districtDataGridViewTextBoxColumn.ReadOnly = true;
-            this.districtDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // streetDataGridViewTextBoxColumn
-            // 
-            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
-            this.streetDataGridViewTextBoxColumn.HeaderText = "Улица";
-            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
-            this.streetDataGridViewTextBoxColumn.ReadOnly = true;
-            this.streetDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // houseDataGridViewTextBoxColumn
-            // 
-            this.houseDataGridViewTextBoxColumn.DataPropertyName = "House";
-            this.houseDataGridViewTextBoxColumn.HeaderText = "Дом";
-            this.houseDataGridViewTextBoxColumn.Name = "houseDataGridViewTextBoxColumn";
-            this.houseDataGridViewTextBoxColumn.ReadOnly = true;
-            this.houseDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // blockDataGridViewTextBoxColumn
-            // 
-            this.blockDataGridViewTextBoxColumn.DataPropertyName = "Block";
-            this.blockDataGridViewTextBoxColumn.HeaderText = "Корпус";
-            this.blockDataGridViewTextBoxColumn.Name = "blockDataGridViewTextBoxColumn";
-            this.blockDataGridViewTextBoxColumn.ReadOnly = true;
-            this.blockDataGridViewTextBoxColumn.Width = 68;
-            // 
-            // apartmentDataGridViewTextBoxColumn
-            // 
-            this.apartmentDataGridViewTextBoxColumn.DataPropertyName = "Apartment";
-            this.apartmentDataGridViewTextBoxColumn.HeaderText = "Квартира";
-            this.apartmentDataGridViewTextBoxColumn.Name = "apartmentDataGridViewTextBoxColumn";
-            this.apartmentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.apartmentDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // indexDataGridViewTextBoxColumn
-            // 
-            this.indexDataGridViewTextBoxColumn.DataPropertyName = "Index";
-            this.indexDataGridViewTextBoxColumn.HeaderText = "Индекс";
-            this.indexDataGridViewTextBoxColumn.Name = "indexDataGridViewTextBoxColumn";
-            this.indexDataGridViewTextBoxColumn.ReadOnly = true;
-            this.indexDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // birthDataGridViewTextBoxColumn
-            // 
-            this.birthDataGridViewTextBoxColumn.DataPropertyName = "Birth";
-            this.birthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
-            this.birthDataGridViewTextBoxColumn.ReadOnly = true;
-            this.birthDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // placeOfBirthDataGridViewTextBoxColumn
-            // 
-            this.placeOfBirthDataGridViewTextBoxColumn.DataPropertyName = "Place_Of_Birth";
-            this.placeOfBirthDataGridViewTextBoxColumn.HeaderText = "Место рождения";
-            this.placeOfBirthDataGridViewTextBoxColumn.Name = "placeOfBirthDataGridViewTextBoxColumn";
-            this.placeOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
-            this.placeOfBirthDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // sexDataGridViewTextBoxColumn
-            // 
-            this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
-            this.sexDataGridViewTextBoxColumn.HeaderText = "Пол";
-            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
-            this.sexDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sexDataGridViewTextBoxColumn.Width = 52;
-            // 
-            // sNILSDataGridViewTextBoxColumn
-            // 
-            this.sNILSDataGridViewTextBoxColumn.DataPropertyName = "SNILS";
-            this.sNILSDataGridViewTextBoxColumn.HeaderText = "СНИЛС";
-            this.sNILSDataGridViewTextBoxColumn.Name = "sNILSDataGridViewTextBoxColumn";
-            this.sNILSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sNILSDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // homephoneDataGridViewTextBoxColumn
-            // 
-            this.homephoneDataGridViewTextBoxColumn.DataPropertyName = "Home_phone";
-            this.homephoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
-            this.homephoneDataGridViewTextBoxColumn.Name = "homephoneDataGridViewTextBoxColumn";
-            this.homephoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.homephoneDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // iNNworkerDataGridViewTextBoxColumn
-            // 
-            this.iNNworkerDataGridViewTextBoxColumn.DataPropertyName = "INN_worker";
-            this.iNNworkerDataGridViewTextBoxColumn.HeaderText = "ИНН";
-            this.iNNworkerDataGridViewTextBoxColumn.Name = "iNNworkerDataGridViewTextBoxColumn";
-            this.iNNworkerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iNNworkerDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // fullNameCardDataGridViewTextBoxColumn
-            // 
-            this.fullNameCardDataGridViewTextBoxColumn.DataPropertyName = "Full_Name_Card";
-            this.fullNameCardDataGridViewTextBoxColumn.HeaderText = "ФамилияИмя на карте";
-            this.fullNameCardDataGridViewTextBoxColumn.Name = "fullNameCardDataGridViewTextBoxColumn";
-            this.fullNameCardDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fullNameCardDataGridViewTextBoxColumn.Width = 111;
-            // 
-            // codeWordDataGridViewTextBoxColumn
-            // 
-            this.codeWordDataGridViewTextBoxColumn.DataPropertyName = "Code_Word";
-            this.codeWordDataGridViewTextBoxColumn.HeaderText = "Кодовое слово";
-            this.codeWordDataGridViewTextBoxColumn.Name = "codeWordDataGridViewTextBoxColumn";
-            this.codeWordDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codeWordDataGridViewTextBoxColumn.Width = 99;
-            // 
-            // bankCodeDataGridViewTextBoxColumn
-            // 
-            this.bankCodeDataGridViewTextBoxColumn.DataPropertyName = "Bank_Code";
-            this.bankCodeDataGridViewTextBoxColumn.HeaderText = "Код подр. банка";
-            this.bankCodeDataGridViewTextBoxColumn.Name = "bankCodeDataGridViewTextBoxColumn";
-            this.bankCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bankCodeDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // cardtypeDataGridViewTextBoxColumn
-            // 
-            this.cardtypeDataGridViewTextBoxColumn.DataPropertyName = "Card_type";
-            this.cardtypeDataGridViewTextBoxColumn.HeaderText = "Тип карты";
-            this.cardtypeDataGridViewTextBoxColumn.Name = "cardtypeDataGridViewTextBoxColumn";
-            this.cardtypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cardtypeDataGridViewTextBoxColumn.Width = 78;
-            // 
-            // employmentDateDataGridViewTextBoxColumn
-            // 
-            this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "Employment_Date";
-            this.employmentDateDataGridViewTextBoxColumn.HeaderText = "Дата зачисления";
-            this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
-            this.employmentDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.employmentDateDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // salaryDataGridViewTextBoxColumn
-            // 
-            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
-            this.salaryDataGridViewTextBoxColumn.HeaderText = "ЗП";
-            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
-            this.salaryDataGridViewTextBoxColumn.ReadOnly = true;
-            this.salaryDataGridViewTextBoxColumn.Width = 47;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // orgkeyDataGridViewTextBoxColumn1
-            // 
-            this.orgkeyDataGridViewTextBoxColumn1.DataPropertyName = "Org_key";
-            this.orgkeyDataGridViewTextBoxColumn1.HeaderText = "Org_key";
-            this.orgkeyDataGridViewTextBoxColumn1.Name = "orgkeyDataGridViewTextBoxColumn1";
-            this.orgkeyDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.orgkeyDataGridViewTextBoxColumn1.Visible = false;
-            this.orgkeyDataGridViewTextBoxColumn1.Width = 72;
-            // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codeDataGridViewTextBoxColumn.Visible = false;
-            this.codeDataGridViewTextBoxColumn.Width = 57;
             // 
             // cardBindingSource
             // 
@@ -775,16 +548,383 @@
             // 
             this.cardTableAdapter.ClearBeforeFill = true;
             // 
-            // Button_DOS
+            // surnameDataGridViewTextBoxColumn
             // 
-            this.Button_DOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Button_DOS.Location = new System.Drawing.Point(3, 3);
-            this.Button_DOS.Name = "Button_DOS";
-            this.Button_DOS.Size = new System.Drawing.Size(105, 28);
-            this.Button_DOS.TabIndex = 10;
-            this.Button_DOS.Text = "Добавить";
-            this.Button_DOS.UseVisualStyleBackColor = true;
-            this.Button_DOS.Click += new System.EventHandler(this.Button_DOS_Click);
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.surnameDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // middlenameDataGridViewTextBoxColumn
+            // 
+            this.middlenameDataGridViewTextBoxColumn.DataPropertyName = "Middlename";
+            this.middlenameDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.middlenameDataGridViewTextBoxColumn.Name = "middlenameDataGridViewTextBoxColumn";
+            this.middlenameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.middlenameDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // tablenumDataGridViewTextBoxColumn1
+            // 
+            this.tablenumDataGridViewTextBoxColumn1.DataPropertyName = "Table_num";
+            this.tablenumDataGridViewTextBoxColumn1.HeaderText = "Табельный №";
+            this.tablenumDataGridViewTextBoxColumn1.Name = "tablenumDataGridViewTextBoxColumn1";
+            this.tablenumDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tablenumDataGridViewTextBoxColumn1.Width = 95;
+            // 
+            // documDataGridViewTextBoxColumn
+            // 
+            this.documDataGridViewTextBoxColumn.DataPropertyName = "Docum";
+            this.documDataGridViewTextBoxColumn.HeaderText = "Документ";
+            this.documDataGridViewTextBoxColumn.Name = "documDataGridViewTextBoxColumn";
+            this.documDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // documserialDataGridViewTextBoxColumn
+            // 
+            this.documserialDataGridViewTextBoxColumn.DataPropertyName = "Docum_serial";
+            this.documserialDataGridViewTextBoxColumn.HeaderText = "Серия";
+            this.documserialDataGridViewTextBoxColumn.Name = "documserialDataGridViewTextBoxColumn";
+            this.documserialDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documserialDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // documnumDataGridViewTextBoxColumn
+            // 
+            this.documnumDataGridViewTextBoxColumn.DataPropertyName = "Docum_num";
+            this.documnumDataGridViewTextBoxColumn.HeaderText = "Номер";
+            this.documnumDataGridViewTextBoxColumn.Name = "documnumDataGridViewTextBoxColumn";
+            this.documnumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documnumDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // documdateDataGridViewTextBoxColumn
+            // 
+            this.documdateDataGridViewTextBoxColumn.DataPropertyName = "Docum_date";
+            this.documdateDataGridViewTextBoxColumn.HeaderText = "Дата выдачи";
+            this.documdateDataGridViewTextBoxColumn.Name = "documdateDataGridViewTextBoxColumn";
+            this.documdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documdateDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // documplaceDataGridViewTextBoxColumn
+            // 
+            this.documplaceDataGridViewTextBoxColumn.DataPropertyName = "Docum_place";
+            this.documplaceDataGridViewTextBoxColumn.HeaderText = "Место выдачи";
+            this.documplaceDataGridViewTextBoxColumn.Name = "documplaceDataGridViewTextBoxColumn";
+            this.documplaceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documplaceDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // documcodDataGridViewTextBoxColumn
+            // 
+            this.documcodDataGridViewTextBoxColumn.DataPropertyName = "Docum_cod";
+            this.documcodDataGridViewTextBoxColumn.HeaderText = "Код подр.";
+            this.documcodDataGridViewTextBoxColumn.Name = "documcodDataGridViewTextBoxColumn";
+            this.documcodDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documcodDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "Город";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cityDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // regioncodDataGridViewTextBoxColumn
+            // 
+            this.regioncodDataGridViewTextBoxColumn.DataPropertyName = "Region_cod";
+            this.regioncodDataGridViewTextBoxColumn.HeaderText = "Код региона";
+            this.regioncodDataGridViewTextBoxColumn.Name = "regioncodDataGridViewTextBoxColumn";
+            this.regioncodDataGridViewTextBoxColumn.ReadOnly = true;
+            this.regioncodDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // districtDataGridViewTextBoxColumn
+            // 
+            this.districtDataGridViewTextBoxColumn.DataPropertyName = "District";
+            this.districtDataGridViewTextBoxColumn.HeaderText = "Район";
+            this.districtDataGridViewTextBoxColumn.Name = "districtDataGridViewTextBoxColumn";
+            this.districtDataGridViewTextBoxColumn.ReadOnly = true;
+            this.districtDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // streetDataGridViewTextBoxColumn
+            // 
+            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
+            this.streetDataGridViewTextBoxColumn.HeaderText = "Улица";
+            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
+            this.streetDataGridViewTextBoxColumn.ReadOnly = true;
+            this.streetDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // houseDataGridViewTextBoxColumn
+            // 
+            this.houseDataGridViewTextBoxColumn.DataPropertyName = "House";
+            this.houseDataGridViewTextBoxColumn.HeaderText = "Дом";
+            this.houseDataGridViewTextBoxColumn.Name = "houseDataGridViewTextBoxColumn";
+            this.houseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.houseDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // blockDataGridViewTextBoxColumn
+            // 
+            this.blockDataGridViewTextBoxColumn.DataPropertyName = "Block";
+            this.blockDataGridViewTextBoxColumn.HeaderText = "Корпус";
+            this.blockDataGridViewTextBoxColumn.Name = "blockDataGridViewTextBoxColumn";
+            this.blockDataGridViewTextBoxColumn.ReadOnly = true;
+            this.blockDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // apartmentDataGridViewTextBoxColumn
+            // 
+            this.apartmentDataGridViewTextBoxColumn.DataPropertyName = "Apartment";
+            this.apartmentDataGridViewTextBoxColumn.HeaderText = "Квартира";
+            this.apartmentDataGridViewTextBoxColumn.Name = "apartmentDataGridViewTextBoxColumn";
+            this.apartmentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apartmentDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // indexDataGridViewTextBoxColumn
+            // 
+            this.indexDataGridViewTextBoxColumn.DataPropertyName = "Index";
+            this.indexDataGridViewTextBoxColumn.HeaderText = "Индекс";
+            this.indexDataGridViewTextBoxColumn.Name = "indexDataGridViewTextBoxColumn";
+            this.indexDataGridViewTextBoxColumn.ReadOnly = true;
+            this.indexDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // birthDataGridViewTextBoxColumn
+            // 
+            this.birthDataGridViewTextBoxColumn.DataPropertyName = "Birth";
+            this.birthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+            this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
+            this.birthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.birthDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // placeOfBirthDataGridViewTextBoxColumn
+            // 
+            this.placeOfBirthDataGridViewTextBoxColumn.DataPropertyName = "Place_Of_Birth";
+            this.placeOfBirthDataGridViewTextBoxColumn.HeaderText = "Место рождения";
+            this.placeOfBirthDataGridViewTextBoxColumn.Name = "placeOfBirthDataGridViewTextBoxColumn";
+            this.placeOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.placeOfBirthDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // sexDataGridViewTextBoxColumn
+            // 
+            this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
+            this.sexDataGridViewTextBoxColumn.HeaderText = "Пол";
+            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
+            this.sexDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sexDataGridViewTextBoxColumn.Width = 52;
+            // 
+            // sNILSDataGridViewTextBoxColumn
+            // 
+            this.sNILSDataGridViewTextBoxColumn.DataPropertyName = "SNILS";
+            this.sNILSDataGridViewTextBoxColumn.HeaderText = "СНИЛС";
+            this.sNILSDataGridViewTextBoxColumn.Name = "sNILSDataGridViewTextBoxColumn";
+            this.sNILSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sNILSDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // homephoneDataGridViewTextBoxColumn
+            // 
+            this.homephoneDataGridViewTextBoxColumn.DataPropertyName = "Home_phone";
+            this.homephoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.homephoneDataGridViewTextBoxColumn.Name = "homephoneDataGridViewTextBoxColumn";
+            this.homephoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.homephoneDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // iNNworkerDataGridViewTextBoxColumn
+            // 
+            this.iNNworkerDataGridViewTextBoxColumn.DataPropertyName = "INN_worker";
+            this.iNNworkerDataGridViewTextBoxColumn.HeaderText = "ИНН";
+            this.iNNworkerDataGridViewTextBoxColumn.Name = "iNNworkerDataGridViewTextBoxColumn";
+            this.iNNworkerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iNNworkerDataGridViewTextBoxColumn.Width = 56;
+            // 
+            // fullNameCardDataGridViewTextBoxColumn
+            // 
+            this.fullNameCardDataGridViewTextBoxColumn.DataPropertyName = "Full_Name_Card";
+            this.fullNameCardDataGridViewTextBoxColumn.HeaderText = "ФамилияИмя на карте";
+            this.fullNameCardDataGridViewTextBoxColumn.Name = "fullNameCardDataGridViewTextBoxColumn";
+            this.fullNameCardDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fullNameCardDataGridViewTextBoxColumn.Width = 111;
+            // 
+            // codeWordDataGridViewTextBoxColumn
+            // 
+            this.codeWordDataGridViewTextBoxColumn.DataPropertyName = "Code_Word";
+            this.codeWordDataGridViewTextBoxColumn.HeaderText = "Кодовое слово";
+            this.codeWordDataGridViewTextBoxColumn.Name = "codeWordDataGridViewTextBoxColumn";
+            this.codeWordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codeWordDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // bankCodeDataGridViewTextBoxColumn
+            // 
+            this.bankCodeDataGridViewTextBoxColumn.DataPropertyName = "Bank_Code";
+            this.bankCodeDataGridViewTextBoxColumn.HeaderText = "Код подр. банка";
+            this.bankCodeDataGridViewTextBoxColumn.Name = "bankCodeDataGridViewTextBoxColumn";
+            this.bankCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bankCodeDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // cardtypeDataGridViewTextBoxColumn
+            // 
+            this.cardtypeDataGridViewTextBoxColumn.DataPropertyName = "Card_type";
+            this.cardtypeDataGridViewTextBoxColumn.HeaderText = "Тип карты";
+            this.cardtypeDataGridViewTextBoxColumn.Name = "cardtypeDataGridViewTextBoxColumn";
+            this.cardtypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cardtypeDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // Docum2
+            // 
+            this.Docum2.DataPropertyName = "Docum2";
+            this.Docum2.HeaderText = "Документ2";
+            this.Docum2.Name = "Docum2";
+            this.Docum2.ReadOnly = true;
+            this.Docum2.Width = 89;
+            // 
+            // Docum2_serial
+            // 
+            this.Docum2_serial.DataPropertyName = "Docum2_serial";
+            this.Docum2_serial.HeaderText = "Серия2";
+            this.Docum2_serial.Name = "Docum2_serial";
+            this.Docum2_serial.ReadOnly = true;
+            this.Docum2_serial.Width = 69;
+            // 
+            // Docum2_num
+            // 
+            this.Docum2_num.DataPropertyName = "Docum2_num";
+            this.Docum2_num.HeaderText = "Номер2";
+            this.Docum2_num.Name = "Docum2_num";
+            this.Docum2_num.ReadOnly = true;
+            this.Docum2_num.Width = 72;
+            // 
+            // Docum2_date
+            // 
+            this.Docum2_date.DataPropertyName = "Docum2_date";
+            this.Docum2_date.HeaderText = "Дата выдачи2";
+            this.Docum2_date.Name = "Docum2_date";
+            this.Docum2_date.ReadOnly = true;
+            this.Docum2_date.Width = 96;
+            // 
+            // Docum2_place
+            // 
+            this.Docum2_place.DataPropertyName = "Docum2_place";
+            this.Docum2_place.HeaderText = "Место выдачи2";
+            this.Docum2_place.Name = "Docum2_place";
+            this.Docum2_place.ReadOnly = true;
+            this.Docum2_place.Width = 101;
+            // 
+            // City2
+            // 
+            this.City2.DataPropertyName = "City2";
+            this.City2.HeaderText = "Город2";
+            this.City2.Name = "City2";
+            this.City2.ReadOnly = true;
+            this.City2.Width = 68;
+            // 
+            // Region_cod2
+            // 
+            this.Region_cod2.DataPropertyName = "Region_cod2";
+            this.Region_cod2.HeaderText = "Код региона2";
+            this.Region_cod2.Name = "Region_cod2";
+            this.Region_cod2.ReadOnly = true;
+            this.Region_cod2.Width = 93;
+            // 
+            // District2
+            // 
+            this.District2.DataPropertyName = "District2";
+            this.District2.HeaderText = "Район2";
+            this.District2.Name = "District2";
+            this.District2.ReadOnly = true;
+            this.District2.Width = 69;
+            // 
+            // Street2
+            // 
+            this.Street2.DataPropertyName = "Street2";
+            this.Street2.HeaderText = "Улица2";
+            this.Street2.Name = "Street2";
+            this.Street2.ReadOnly = true;
+            this.Street2.Width = 70;
+            // 
+            // House2
+            // 
+            this.House2.DataPropertyName = "House2";
+            this.House2.HeaderText = "Дом2";
+            this.House2.Name = "House2";
+            this.House2.ReadOnly = true;
+            this.House2.Width = 61;
+            // 
+            // Block2
+            // 
+            this.Block2.DataPropertyName = "Block2";
+            this.Block2.HeaderText = "Корпус2";
+            this.Block2.Name = "Block2";
+            this.Block2.ReadOnly = true;
+            this.Block2.Width = 74;
+            // 
+            // Apartment2
+            // 
+            this.Apartment2.DataPropertyName = "Apartment2";
+            this.Apartment2.HeaderText = "Квартира2";
+            this.Apartment2.Name = "Apartment2";
+            this.Apartment2.ReadOnly = true;
+            this.Apartment2.Width = 86;
+            // 
+            // Index2
+            // 
+            this.Index2.DataPropertyName = "Index2";
+            this.Index2.HeaderText = "Индекс2";
+            this.Index2.Name = "Index2";
+            this.Index2.ReadOnly = true;
+            this.Index2.Width = 76;
+            // 
+            // employmentDateDataGridViewTextBoxColumn
+            // 
+            this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "Employment_Date";
+            this.employmentDateDataGridViewTextBoxColumn.HeaderText = "Дата зачисления";
+            this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
+            this.employmentDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.employmentDateDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // salaryDataGridViewTextBoxColumn
+            // 
+            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
+            this.salaryDataGridViewTextBoxColumn.HeaderText = "ЗП";
+            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
+            this.salaryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.salaryDataGridViewTextBoxColumn.Width = 47;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // orgkeyDataGridViewTextBoxColumn1
+            // 
+            this.orgkeyDataGridViewTextBoxColumn1.DataPropertyName = "Org_key";
+            this.orgkeyDataGridViewTextBoxColumn1.HeaderText = "Org_key";
+            this.orgkeyDataGridViewTextBoxColumn1.Name = "orgkeyDataGridViewTextBoxColumn1";
+            this.orgkeyDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.orgkeyDataGridViewTextBoxColumn1.Visible = false;
+            this.orgkeyDataGridViewTextBoxColumn1.Width = 72;
+            // 
+            // codeDataGridViewTextBoxColumn
+            // 
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codeDataGridViewTextBoxColumn.Visible = false;
+            this.codeDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // Action_param
+            // 
+            this.Action_param.DataPropertyName = "Action_param";
+            this.Action_param.HeaderText = "Доп.параметр";
+            this.Action_param.Name = "Action_param";
+            this.Action_param.ReadOnly = true;
+            this.Action_param.Width = 105;
             // 
             // Organizations
             // 
@@ -849,6 +989,8 @@
         private System.Windows.Forms.Button ExportButton;
         internal System.Windows.Forms.BindingSource cardBindingSource;
         private System.Windows.Forms.Button AddCardButton;
+        internal System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button Button_DOS;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn middlenameDataGridViewTextBoxColumn;
@@ -877,12 +1019,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codeWordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bankCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cardtypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Docum2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Docum2_serial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Docum2_num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Docum2_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Docum2_place;
+        private System.Windows.Forms.DataGridViewTextBoxColumn City2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Region_cod2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn District2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Street2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn House2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Block2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apartment2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Index2;
         private System.Windows.Forms.DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orgkeyDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        internal System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Button Button_DOS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action_param;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pressF.Forms;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -9,6 +10,7 @@ namespace pressF
     public partial class FormAddCard : Form
     {
         public List<string> Mass { get; set; }
+        public List<string> Mass2 { get; set; }
 
         public FormAddCard()
         {
@@ -25,7 +27,7 @@ namespace pressF
 
                 }
             }
-            Docum.SelectedIndex = Sex.SelectedIndex = 0;
+            //Docum.SelectedIndex = Sex.SelectedIndex = 0;
         }
 
 
@@ -33,18 +35,23 @@ namespace pressF
         private void Place_Enter(object sender, EventArgs e)
         {
             FormSelectPlace f = new FormSelectPlace();
-            if (f.ShowDialog() == DialogResult.OK) // отобразить форму
+            if (f.ShowDialog() == DialogResult.OK && sender is Button b) // отобразить форму
             {
-                (sender as CueTextBox).Text = "";
-                Mass = f.GetData();
-                Mass.Reverse();
-                foreach (string s in Mass)
+                
+               
+                if (Boolean.Parse(b.Tag.ToString())) {
+                    Mass = f.GetData();
+                    Mass.Reverse();
+                    MessageBox.Show(String.Join(", ", Mass.ToArray()));
+                } else
                 {
-                    if (s.Length > 0)
-                    {
-                        (sender as CueTextBox).Text += s.ToString() + " ";
-                    }
+                    Mass2 = f.GetData();
+                    Mass2.Reverse();
+                    MessageBox.Show(String.Join(", ", Mass2.ToArray()));
                 }
+
+                
+                
             }
         }
 
@@ -217,7 +224,7 @@ namespace pressF
                 {
                     if (radio.Checked)
                     {
-                        Docum.SelectedIndex = radio.TabIndex - 1;
+                        //Docum.SelectedIndex = radio.TabIndex - 1;
                     }
                 }
             }
@@ -255,8 +262,15 @@ namespace pressF
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Home_Phone.Text, "testing");
-            File.WriteAllText(@"C:\t.txt", Home_Phone.Text);
+            string st = "";
+            foreach (Control c in Controls)
+            {
+               if (c is Label)
+                {
+                    st += c.Text;
+                }
+            }
+            Action_param.Text = st;
         }
 
         private void Bank_Code_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -267,6 +281,20 @@ namespace pressF
         private void Salary_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void Place_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormDocumPick f = new FormDocumPick();
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 

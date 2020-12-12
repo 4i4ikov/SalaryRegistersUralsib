@@ -1072,6 +1072,8 @@ namespace pressF {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class CardDataTable : global::System.Data.TypedTableBase<CardRow> {
             
+            private global::System.Data.DataColumn columnCard_N;
+            
             private global::System.Data.DataColumn columnSurname;
             
             private global::System.Data.DataColumn columnName;
@@ -1114,7 +1116,11 @@ namespace pressF {
             
             private global::System.Data.DataColumn columnSex;
             
+            private global::System.Data.DataColumn columnSNILS;
+            
             private global::System.Data.DataColumn columnHome_phone;
+            
+            private global::System.Data.DataColumn columnMobile_phone;
             
             private global::System.Data.DataColumn columnINN_worker;
             
@@ -1126,6 +1132,34 @@ namespace pressF {
             
             private global::System.Data.DataColumn columnCard_type;
             
+            private global::System.Data.DataColumn columnDocum2;
+            
+            private global::System.Data.DataColumn columnDocum2_serial;
+            
+            private global::System.Data.DataColumn columnDocum2_num;
+            
+            private global::System.Data.DataColumn columnDocum2_date;
+            
+            private global::System.Data.DataColumn columnDocum2_place;
+            
+            private global::System.Data.DataColumn columnCity2;
+            
+            private global::System.Data.DataColumn columnRegion_cod2;
+            
+            private global::System.Data.DataColumn columnDistrict2;
+            
+            private global::System.Data.DataColumn columnStreet2;
+            
+            private global::System.Data.DataColumn columnHouse2;
+            
+            private global::System.Data.DataColumn columnBlock2;
+            
+            private global::System.Data.DataColumn columnApartment2;
+            
+            private global::System.Data.DataColumn columnIndex2;
+            
+            private global::System.Data.DataColumn columnAction_param;
+            
             private global::System.Data.DataColumn columnEmployment_Date;
             
             private global::System.Data.DataColumn columnSalary;
@@ -1135,10 +1169,6 @@ namespace pressF {
             private global::System.Data.DataColumn columnOrg_key;
             
             private global::System.Data.DataColumn columnCode;
-            
-            private global::System.Data.DataColumn columnSNILS;
-            
-            private global::System.Data.DataColumn columnCard_N;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1171,6 +1201,14 @@ namespace pressF {
             protected CardDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Card_NColumn {
+                get {
+                    return this.columnCard_N;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1343,9 +1381,25 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SNILSColumn {
+                get {
+                    return this.columnSNILS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn Home_phoneColumn {
                 get {
                     return this.columnHome_phone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Mobile_phoneColumn {
+                get {
+                    return this.columnMobile_phone;
                 }
             }
             
@@ -1391,6 +1445,118 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Docum2Column {
+                get {
+                    return this.columnDocum2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Docum2_serialColumn {
+                get {
+                    return this.columnDocum2_serial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Docum2_numColumn {
+                get {
+                    return this.columnDocum2_num;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Docum2_dateColumn {
+                get {
+                    return this.columnDocum2_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Docum2_placeColumn {
+                get {
+                    return this.columnDocum2_place;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn City2Column {
+                get {
+                    return this.columnCity2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Region_cod2Column {
+                get {
+                    return this.columnRegion_cod2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn District2Column {
+                get {
+                    return this.columnDistrict2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Street2Column {
+                get {
+                    return this.columnStreet2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn House2Column {
+                get {
+                    return this.columnHouse2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Block2Column {
+                get {
+                    return this.columnBlock2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Apartment2Column {
+                get {
+                    return this.columnApartment2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Index2Column {
+                get {
+                    return this.columnIndex2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Action_paramColumn {
+                get {
+                    return this.columnAction_param;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn Employment_DateColumn {
                 get {
                     return this.columnEmployment_Date;
@@ -1426,22 +1592,6 @@ namespace pressF {
             public global::System.Data.DataColumn CodeColumn {
                 get {
                     return this.columnCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SNILSColumn {
-                get {
-                    return this.columnSNILS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Card_NColumn {
-                get {
-                    return this.columnCard_N;
                 }
             }
             
@@ -1488,35 +1638,52 @@ namespace pressF {
                         string Middlename, 
                         string Table_num, 
                         string Docum, 
-                        int Docum_serial, 
-                        int Docum_num, 
+                        string Docum_serial, 
+                        string Docum_num, 
                         System.DateTime Docum_date, 
                         string Docum_place, 
                         string Docum_cod, 
                         string City, 
-                        int Region_cod, 
+                        string Region_cod, 
                         string District, 
                         string Street, 
                         string House, 
                         string Block, 
                         string Apartment, 
-                        int Index, 
+                        string Index, 
                         System.DateTime Birth, 
                         string Place_Of_Birth, 
                         string Sex, 
+                        string SNILS, 
                         string Home_phone, 
+                        string Mobile_phone, 
                         string INN_worker, 
                         string Full_Name_Card, 
                         string Code_Word, 
                         string Bank_Code, 
                         string Card_type, 
+                        string Docum2, 
+                        string Docum2_serial, 
+                        string Docum2_num, 
+                        string Docum2_date, 
+                        string Docum2_place, 
+                        string City2, 
+                        string Region_cod2, 
+                        string District2, 
+                        string Street2, 
+                        string House2, 
+                        string Block2, 
+                        string Apartment2, 
+                        string Index2, 
+                        string Action_param, 
                         System.DateTime Employment_Date, 
                         string Salary, 
                         string Email, 
                         string Org_key, 
-                        string SNILS) {
+                        int Code) {
                 CardRow rowCardRow = ((CardRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
                         Surname,
                         Name,
                         Middlename,
@@ -1538,29 +1705,36 @@ namespace pressF {
                         Birth,
                         Place_Of_Birth,
                         Sex,
+                        SNILS,
                         Home_phone,
+                        Mobile_phone,
                         INN_worker,
                         Full_Name_Card,
                         Code_Word,
                         Bank_Code,
                         Card_type,
+                        Docum2,
+                        Docum2_serial,
+                        Docum2_num,
+                        Docum2_date,
+                        Docum2_place,
+                        City2,
+                        Region_cod2,
+                        District2,
+                        Street2,
+                        House2,
+                        Block2,
+                        Apartment2,
+                        Index2,
+                        Action_param,
                         Employment_Date,
                         Salary,
                         Email,
                         Org_key,
-                        null,
-                        SNILS,
-                        null};
+                        Code};
                 rowCardRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCardRow);
                 return rowCardRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CardRow FindByCard_N(int Card_N) {
-                return ((CardRow)(this.Rows.Find(new object[] {
-                            Card_N})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1580,6 +1754,7 @@ namespace pressF {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
+                this.columnCard_N = base.Columns["Card_N"];
                 this.columnSurname = base.Columns["Surname"];
                 this.columnName = base.Columns["Name"];
                 this.columnMiddlename = base.Columns["Middlename"];
@@ -1601,24 +1776,40 @@ namespace pressF {
                 this.columnBirth = base.Columns["Birth"];
                 this.columnPlace_Of_Birth = base.Columns["Place_Of_Birth"];
                 this.columnSex = base.Columns["Sex"];
+                this.columnSNILS = base.Columns["SNILS"];
                 this.columnHome_phone = base.Columns["Home_phone"];
+                this.columnMobile_phone = base.Columns["Mobile_phone"];
                 this.columnINN_worker = base.Columns["INN_worker"];
                 this.columnFull_Name_Card = base.Columns["Full_Name_Card"];
                 this.columnCode_Word = base.Columns["Code_Word"];
                 this.columnBank_Code = base.Columns["Bank_Code"];
                 this.columnCard_type = base.Columns["Card_type"];
+                this.columnDocum2 = base.Columns["Docum2"];
+                this.columnDocum2_serial = base.Columns["Docum2_serial"];
+                this.columnDocum2_num = base.Columns["Docum2_num"];
+                this.columnDocum2_date = base.Columns["Docum2_date"];
+                this.columnDocum2_place = base.Columns["Docum2_place"];
+                this.columnCity2 = base.Columns["City2"];
+                this.columnRegion_cod2 = base.Columns["Region_cod2"];
+                this.columnDistrict2 = base.Columns["District2"];
+                this.columnStreet2 = base.Columns["Street2"];
+                this.columnHouse2 = base.Columns["House2"];
+                this.columnBlock2 = base.Columns["Block2"];
+                this.columnApartment2 = base.Columns["Apartment2"];
+                this.columnIndex2 = base.Columns["Index2"];
+                this.columnAction_param = base.Columns["Action_param"];
                 this.columnEmployment_Date = base.Columns["Employment_Date"];
                 this.columnSalary = base.Columns["Salary"];
                 this.columnEmail = base.Columns["Email"];
                 this.columnOrg_key = base.Columns["Org_key"];
                 this.columnCode = base.Columns["Code"];
-                this.columnSNILS = base.Columns["SNILS"];
-                this.columnCard_N = base.Columns["Card_N"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
+                this.columnCard_N = new global::System.Data.DataColumn("Card_N", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCard_N);
                 this.columnSurname = new global::System.Data.DataColumn("Surname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSurname);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1629,9 +1820,9 @@ namespace pressF {
                 base.Columns.Add(this.columnTable_num);
                 this.columnDocum = new global::System.Data.DataColumn("Docum", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocum);
-                this.columnDocum_serial = new global::System.Data.DataColumn("Docum_serial", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnDocum_serial = new global::System.Data.DataColumn("Docum_serial", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocum_serial);
-                this.columnDocum_num = new global::System.Data.DataColumn("Docum_num", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnDocum_num = new global::System.Data.DataColumn("Docum_num", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocum_num);
                 this.columnDocum_date = new global::System.Data.DataColumn("Docum_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocum_date);
@@ -1641,7 +1832,7 @@ namespace pressF {
                 base.Columns.Add(this.columnDocum_cod);
                 this.columnCity = new global::System.Data.DataColumn("City", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCity);
-                this.columnRegion_cod = new global::System.Data.DataColumn("Region_cod", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnRegion_cod = new global::System.Data.DataColumn("Region_cod", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRegion_cod);
                 this.columnDistrict = new global::System.Data.DataColumn("District", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDistrict);
@@ -1653,7 +1844,7 @@ namespace pressF {
                 base.Columns.Add(this.columnBlock);
                 this.columnApartment = new global::System.Data.DataColumn("Apartment", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApartment);
-                this.columnIndex = new global::System.Data.DataColumn("Index", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnIndex = new global::System.Data.DataColumn("Index", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIndex);
                 this.columnBirth = new global::System.Data.DataColumn("Birth", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBirth);
@@ -1661,8 +1852,12 @@ namespace pressF {
                 base.Columns.Add(this.columnPlace_Of_Birth);
                 this.columnSex = new global::System.Data.DataColumn("Sex", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSex);
+                this.columnSNILS = new global::System.Data.DataColumn("SNILS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSNILS);
                 this.columnHome_phone = new global::System.Data.DataColumn("Home_phone", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHome_phone);
+                this.columnMobile_phone = new global::System.Data.DataColumn("Mobile_phone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMobile_phone);
                 this.columnINN_worker = new global::System.Data.DataColumn("INN_worker", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINN_worker);
                 this.columnFull_Name_Card = new global::System.Data.DataColumn("Full_Name_Card", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1673,6 +1868,34 @@ namespace pressF {
                 base.Columns.Add(this.columnBank_Code);
                 this.columnCard_type = new global::System.Data.DataColumn("Card_type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCard_type);
+                this.columnDocum2 = new global::System.Data.DataColumn("Docum2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocum2);
+                this.columnDocum2_serial = new global::System.Data.DataColumn("Docum2_serial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocum2_serial);
+                this.columnDocum2_num = new global::System.Data.DataColumn("Docum2_num", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocum2_num);
+                this.columnDocum2_date = new global::System.Data.DataColumn("Docum2_date", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocum2_date);
+                this.columnDocum2_place = new global::System.Data.DataColumn("Docum2_place", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocum2_place);
+                this.columnCity2 = new global::System.Data.DataColumn("City2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCity2);
+                this.columnRegion_cod2 = new global::System.Data.DataColumn("Region_cod2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRegion_cod2);
+                this.columnDistrict2 = new global::System.Data.DataColumn("District2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistrict2);
+                this.columnStreet2 = new global::System.Data.DataColumn("Street2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStreet2);
+                this.columnHouse2 = new global::System.Data.DataColumn("House2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHouse2);
+                this.columnBlock2 = new global::System.Data.DataColumn("Block2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBlock2);
+                this.columnApartment2 = new global::System.Data.DataColumn("Apartment2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApartment2);
+                this.columnIndex2 = new global::System.Data.DataColumn("Index2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIndex2);
+                this.columnAction_param = new global::System.Data.DataColumn("Action_param", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAction_param);
                 this.columnEmployment_Date = new global::System.Data.DataColumn("Employment_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmployment_Date);
                 this.columnSalary = new global::System.Data.DataColumn("Salary", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1683,45 +1906,56 @@ namespace pressF {
                 base.Columns.Add(this.columnOrg_key);
                 this.columnCode = new global::System.Data.DataColumn("Code", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCode);
-                this.columnSNILS = new global::System.Data.DataColumn("SNILS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSNILS);
-                this.columnCard_N = new global::System.Data.DataColumn("Card_N", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCard_N);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
-                                this.columnCard_N}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnINN_worker}, false));
+                this.columnCard_N.AutoIncrement = true;
+                this.columnCard_N.AutoIncrementSeed = -1;
+                this.columnCard_N.AutoIncrementStep = -1;
                 this.columnSurname.MaxLength = 255;
                 this.columnName.MaxLength = 255;
                 this.columnMiddlename.MaxLength = 255;
                 this.columnTable_num.MaxLength = 255;
+                this.columnDocum.MaxLength = 255;
+                this.columnDocum_serial.MaxLength = 255;
+                this.columnDocum_num.MaxLength = 255;
                 this.columnDocum_place.MaxLength = 255;
                 this.columnDocum_cod.MaxLength = 255;
                 this.columnCity.MaxLength = 255;
+                this.columnRegion_cod.MaxLength = 255;
                 this.columnDistrict.MaxLength = 255;
                 this.columnStreet.MaxLength = 255;
                 this.columnHouse.MaxLength = 255;
                 this.columnBlock.MaxLength = 255;
                 this.columnApartment.MaxLength = 255;
+                this.columnIndex.MaxLength = 255;
                 this.columnPlace_Of_Birth.MaxLength = 255;
-                this.columnSex.MaxLength = 255;
+                this.columnSex.MaxLength = 1;
+                this.columnSNILS.MaxLength = 255;
                 this.columnHome_phone.MaxLength = 255;
+                this.columnMobile_phone.MaxLength = 255;
+                this.columnINN_worker.Unique = true;
                 this.columnINN_worker.MaxLength = 255;
                 this.columnFull_Name_Card.MaxLength = 255;
                 this.columnCode_Word.MaxLength = 255;
                 this.columnBank_Code.MaxLength = 255;
                 this.columnCard_type.MaxLength = 255;
+                this.columnDocum2.MaxLength = 255;
+                this.columnDocum2_serial.MaxLength = 255;
+                this.columnDocum2_num.MaxLength = 255;
+                this.columnDocum2_date.MaxLength = 255;
+                this.columnDocum2_place.MaxLength = 255;
+                this.columnCity2.MaxLength = 255;
+                this.columnRegion_cod2.MaxLength = 255;
+                this.columnDistrict2.MaxLength = 255;
+                this.columnStreet2.MaxLength = 255;
+                this.columnHouse2.MaxLength = 255;
+                this.columnBlock2.MaxLength = 255;
+                this.columnApartment2.MaxLength = 255;
+                this.columnIndex2.MaxLength = 255;
+                this.columnAction_param.MaxLength = 255;
                 this.columnSalary.MaxLength = 255;
                 this.columnEmail.MaxLength = 255;
-                this.columnOrg_key.MaxLength = 255;
-                this.columnCode.AutoIncrement = true;
-                this.columnCode.AutoIncrementSeed = -1;
-                this.columnCode.AutoIncrementStep = -1;
-                this.columnSNILS.MaxLength = 255;
-                this.columnCard_N.AutoIncrement = true;
-                this.columnCard_N.AutoIncrementSeed = -1;
-                this.columnCard_N.AutoIncrementStep = -1;
-                this.columnCard_N.AllowDBNull = false;
-                this.columnCard_N.ReadOnly = true;
-                this.columnCard_N.Unique = true;
+                this.columnOrg_key.MaxLength = 4;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2302,6 +2536,22 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Card_N {
+                get {
+                    try {
+                        return ((int)(this[this.tableCard.Card_NColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Card_N\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Card_NColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Surname {
                 get {
                     try {
@@ -2382,10 +2632,10 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Docum_serial {
+            public string Docum_serial {
                 get {
                     try {
-                        return ((int)(this[this.tableCard.Docum_serialColumn]));
+                        return ((string)(this[this.tableCard.Docum_serialColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Docum_serial\' в таблице \'Card\' равно DBNull.", e);
@@ -2398,10 +2648,10 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Docum_num {
+            public string Docum_num {
                 get {
                     try {
-                        return ((int)(this[this.tableCard.Docum_numColumn]));
+                        return ((string)(this[this.tableCard.Docum_numColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Docum_num\' в таблице \'Card\' равно DBNull.", e);
@@ -2478,10 +2728,10 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Region_cod {
+            public string Region_cod {
                 get {
                     try {
-                        return ((int)(this[this.tableCard.Region_codColumn]));
+                        return ((string)(this[this.tableCard.Region_codColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Region_cod\' в таблице \'Card\' равно DBNull.", e);
@@ -2574,10 +2824,10 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Index {
+            public string Index {
                 get {
                     try {
-                        return ((int)(this[this.tableCard.IndexColumn]));
+                        return ((string)(this[this.tableCard.IndexColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Index\' в таблице \'Card\' равно DBNull.", e);
@@ -2638,6 +2888,22 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SNILS {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.SNILSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'SNILS\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.SNILSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Home_phone {
                 get {
                     try {
@@ -2654,13 +2920,29 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Mobile_phone {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Mobile_phoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Mobile_phone\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Mobile_phoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string INN_worker {
                 get {
-                    if (this.IsINN_workerNull()) {
-                        return string.Empty;
-                    }
-                    else {
+                    try {
                         return ((string)(this[this.tableCard.INN_workerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'INN_worker\' в таблице \'Card\' равно DBNull.", e);
                     }
                 }
                 set {
@@ -2729,6 +3011,230 @@ namespace pressF {
                 }
                 set {
                     this[this.tableCard.Card_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Docum2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Docum2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Docum2\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Docum2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Docum2_serial {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Docum2_serialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Docum2_serial\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Docum2_serialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Docum2_num {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Docum2_numColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Docum2_num\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Docum2_numColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Docum2_date {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Docum2_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Docum2_date\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Docum2_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Docum2_place {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Docum2_placeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Docum2_place\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Docum2_placeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string City2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.City2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'City2\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.City2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Region_cod2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Region_cod2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Region_cod2\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Region_cod2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string District2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.District2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'District2\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.District2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Street2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Street2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Street2\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Street2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string House2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.House2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'House2\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.House2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Block2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Block2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Block2\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Block2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Apartment2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Apartment2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Apartment2\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Apartment2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Index2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Index2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Index2\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Index2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Action_param {
+                get {
+                    try {
+                        return ((string)(this[this.tableCard.Action_paramColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Action_param\' в таблице \'Card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCard.Action_paramColumn] = value;
                 }
             }
             
@@ -2814,29 +3320,14 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string SNILS {
-                get {
-                    try {
-                        return ((string)(this[this.tableCard.SNILSColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'SNILS\' в таблице \'Card\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCard.SNILSColumn] = value;
-                }
+            public bool IsCard_NNull() {
+                return this.IsNull(this.tableCard.Card_NColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Card_N {
-                get {
-                    return ((int)(this[this.tableCard.Card_NColumn]));
-                }
-                set {
-                    this[this.tableCard.Card_NColumn] = value;
-                }
+            public void SetCard_NNull() {
+                this[this.tableCard.Card_NColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3093,6 +3584,18 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSNILSNull() {
+                return this.IsNull(this.tableCard.SNILSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSNILSNull() {
+                this[this.tableCard.SNILSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsHome_phoneNull() {
                 return this.IsNull(this.tableCard.Home_phoneColumn);
             }
@@ -3101,6 +3604,18 @@ namespace pressF {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetHome_phoneNull() {
                 this[this.tableCard.Home_phoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMobile_phoneNull() {
+                return this.IsNull(this.tableCard.Mobile_phoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMobile_phoneNull() {
+                this[this.tableCard.Mobile_phoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3165,6 +3680,174 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocum2Null() {
+                return this.IsNull(this.tableCard.Docum2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocum2Null() {
+                this[this.tableCard.Docum2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocum2_serialNull() {
+                return this.IsNull(this.tableCard.Docum2_serialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocum2_serialNull() {
+                this[this.tableCard.Docum2_serialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocum2_numNull() {
+                return this.IsNull(this.tableCard.Docum2_numColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocum2_numNull() {
+                this[this.tableCard.Docum2_numColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocum2_dateNull() {
+                return this.IsNull(this.tableCard.Docum2_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocum2_dateNull() {
+                this[this.tableCard.Docum2_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocum2_placeNull() {
+                return this.IsNull(this.tableCard.Docum2_placeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocum2_placeNull() {
+                this[this.tableCard.Docum2_placeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCity2Null() {
+                return this.IsNull(this.tableCard.City2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCity2Null() {
+                this[this.tableCard.City2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRegion_cod2Null() {
+                return this.IsNull(this.tableCard.Region_cod2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRegion_cod2Null() {
+                this[this.tableCard.Region_cod2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDistrict2Null() {
+                return this.IsNull(this.tableCard.District2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDistrict2Null() {
+                this[this.tableCard.District2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStreet2Null() {
+                return this.IsNull(this.tableCard.Street2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStreet2Null() {
+                this[this.tableCard.Street2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsHouse2Null() {
+                return this.IsNull(this.tableCard.House2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetHouse2Null() {
+                this[this.tableCard.House2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBlock2Null() {
+                return this.IsNull(this.tableCard.Block2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBlock2Null() {
+                this[this.tableCard.Block2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsApartment2Null() {
+                return this.IsNull(this.tableCard.Apartment2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetApartment2Null() {
+                this[this.tableCard.Apartment2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIndex2Null() {
+                return this.IsNull(this.tableCard.Index2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIndex2Null() {
+                this[this.tableCard.Index2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAction_paramNull() {
+                return this.IsNull(this.tableCard.Action_paramColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAction_paramNull() {
+                this[this.tableCard.Action_paramColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsEmployment_DateNull() {
                 return this.IsNull(this.tableCard.Employment_DateColumn);
             }
@@ -3221,18 +3904,6 @@ namespace pressF {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCodeNull() {
                 this[this.tableCard.CodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSNILSNull() {
-                return this.IsNull(this.tableCard.SNILSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSNILSNull() {
-                this[this.tableCard.SNILSColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4476,6 +5147,7 @@ namespace pressF.DbDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Card";
+            tableMapping.ColumnMappings.Add("Card_N", "Card_N");
             tableMapping.ColumnMappings.Add("Surname", "Surname");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Middlename", "Middlename");
@@ -4497,59 +5169,85 @@ namespace pressF.DbDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Birth", "Birth");
             tableMapping.ColumnMappings.Add("Place_Of_Birth", "Place_Of_Birth");
             tableMapping.ColumnMappings.Add("Sex", "Sex");
+            tableMapping.ColumnMappings.Add("SNILS", "SNILS");
             tableMapping.ColumnMappings.Add("Home_phone", "Home_phone");
+            tableMapping.ColumnMappings.Add("Mobile_phone", "Mobile_phone");
             tableMapping.ColumnMappings.Add("INN_worker", "INN_worker");
             tableMapping.ColumnMappings.Add("Full_Name_Card", "Full_Name_Card");
             tableMapping.ColumnMappings.Add("Code_Word", "Code_Word");
             tableMapping.ColumnMappings.Add("Bank_Code", "Bank_Code");
             tableMapping.ColumnMappings.Add("Card_type", "Card_type");
+            tableMapping.ColumnMappings.Add("Docum2", "Docum2");
+            tableMapping.ColumnMappings.Add("Docum2_serial", "Docum2_serial");
+            tableMapping.ColumnMappings.Add("Docum2_num", "Docum2_num");
+            tableMapping.ColumnMappings.Add("Docum2_date", "Docum2_date");
+            tableMapping.ColumnMappings.Add("Docum2_place", "Docum2_place");
+            tableMapping.ColumnMappings.Add("City2", "City2");
+            tableMapping.ColumnMappings.Add("Region_cod2", "Region_cod2");
+            tableMapping.ColumnMappings.Add("District2", "District2");
+            tableMapping.ColumnMappings.Add("Street2", "Street2");
+            tableMapping.ColumnMappings.Add("House2", "House2");
+            tableMapping.ColumnMappings.Add("Block2", "Block2");
+            tableMapping.ColumnMappings.Add("Apartment2", "Apartment2");
+            tableMapping.ColumnMappings.Add("Index2", "Index2");
+            tableMapping.ColumnMappings.Add("Action_param", "Action_param");
             tableMapping.ColumnMappings.Add("Employment_Date", "Employment_Date");
             tableMapping.ColumnMappings.Add("Salary", "Salary");
             tableMapping.ColumnMappings.Add("Email", "Email");
             tableMapping.ColumnMappings.Add("Org_key", "Org_key");
             tableMapping.ColumnMappings.Add("Code", "Code");
-            tableMapping.ColumnMappings.Add("SNILS", "SNILS");
-            tableMapping.ColumnMappings.Add("Card_N", "Card_N");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO Card
-                         (Surname, Name, Middlename, Table_num, Docum, Docum_serial, Docum_num, Docum_date, Docum_place, Docum_cod, City, Region_cod, District, Street, House, Block, Apartment, [Index], Birth, Place_Of_Birth, Sex, SNILS, 
-                         Home_phone, INN_worker, Full_Name_Card, Code_Word, Bank_Code, Card_type, Employment_Date, Salary, Email, Org_key, Code)
-VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `Card` (`Surname`, `Name`, `Middlename`, `Table_num`, `Docum`, `Docum_serial`, `Docum_num`, `Docum_date`, `Docum_place`, `Docum_cod`, `City`, `Region_cod`, `District`, `Street`, `House`, `Block`, `Apartment`, `Index`, `Birth`, `Place_Of_Birth`, `Sex`, `SNILS`, `Home_phone`, `Mobile_phone`, `INN_worker`, `Full_Name_Card`, `Code_Word`, `Bank_Code`, `Card_type`, `Docum2`, `Docum2_serial`, `Docum2_num`, `Docum2_date`, `Docum2_place`, `City2`, `Region_cod2`, `District2`, `Street2`, `House2`, `Block2`, `Apartment2`, `Index2`, `Action_param`, `Employment_Date`, `Salary`, `Email`, `Org_key`, `Code`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Surname", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Surname", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Name", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Middlename", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Middlename", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Table_num", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Table_num", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum_serial", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum_serial", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum_num", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum_num", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Surname", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Surname", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Name", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Middlename", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Middlename", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Table_num", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Table_num", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum_serial", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum_serial", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum_num", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum_num", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum_date", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum_date", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum_place", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum_place", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum_cod", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum_cod", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("City", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "City", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Region_cod", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Region_cod", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("District", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "District", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Street", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Street", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("House", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "House", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Block", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Block", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Apartment", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Apartment", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Index", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Index", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum_place", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum_place", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum_cod", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum_cod", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("City", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "City", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Region_cod", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Region_cod", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("District", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "District", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Street", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Street", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("House", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "House", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Block", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Block", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Apartment", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Apartment", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Index", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Index", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Birth", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Birth", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Place_Of_Birth", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Place_Of_Birth", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Sex", global::System.Data.OleDb.OleDbType.WChar, 1, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sex", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SNILS", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SNILS", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Home_phone", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Home_phone", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("INN_worker", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INN_worker", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Full_Name_Card", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Full_Name_Card", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Code_Word", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code_Word", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Bank_Code", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Bank_Code", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Card_type", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_type", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Place_Of_Birth", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Place_Of_Birth", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Sex", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sex", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SNILS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SNILS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Home_phone", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Home_phone", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Mobile_phone", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Mobile_phone", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("INN_worker", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INN_worker", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Full_Name_Card", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Full_Name_Card", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Code_Word", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code_Word", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Bank_Code", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Bank_Code", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Card_type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_type", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum2_serial", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum2_serial", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum2_num", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum2_num", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum2_date", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum2_date", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Docum2_place", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Docum2_place", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("City2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "City2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Region_cod2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Region_cod2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("District2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "District2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Street2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Street2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("House2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "House2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Block2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Block2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Apartment2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Apartment2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Index2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Index2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Action_param", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Action_param", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Employment_Date", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Employment_Date", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Salary", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Salary", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Org_key", global::System.Data.OleDb.OleDbType.WChar, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Salary", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Salary", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Org_key", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code", global::System.Data.DataRowVersion.Current, false, null));
         }
         
@@ -4581,6 +5279,17 @@ VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DbDataSet.CardDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DbDataSet.CardDataTable dataTable = new DbDataSet.CardDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4622,29 +5331,44 @@ VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
                     string Middlename, 
                     string Table_num, 
                     string Docum, 
-                    global::System.Nullable<int> Docum_serial, 
-                    global::System.Nullable<int> Docum_num, 
+                    string Docum_serial, 
+                    string Docum_num, 
                     global::System.Nullable<global::System.DateTime> Docum_date, 
                     string Docum_place, 
                     string Docum_cod, 
                     string City, 
-                    global::System.Nullable<int> Region_cod, 
+                    string Region_cod, 
                     string District, 
                     string Street, 
                     string House, 
                     string Block, 
                     string Apartment, 
-                    global::System.Nullable<int> Index, 
+                    string Index, 
                     global::System.Nullable<global::System.DateTime> Birth, 
                     string Place_Of_Birth, 
                     string Sex, 
                     string SNILS, 
                     string Home_phone, 
+                    string Mobile_phone, 
                     string INN_worker, 
                     string Full_Name_Card, 
                     string Code_Word, 
                     string Bank_Code, 
                     string Card_type, 
+                    string Docum2, 
+                    string Docum2_serial, 
+                    string Docum2_num, 
+                    string Docum2_date, 
+                    string Docum2_place, 
+                    string City2, 
+                    string Region_cod2, 
+                    string District2, 
+                    string Street2, 
+                    string House2, 
+                    string Block2, 
+                    string Apartment2, 
+                    string Index2, 
+                    string Action_param, 
                     global::System.Nullable<global::System.DateTime> Employment_Date, 
                     string Salary, 
                     string Email, 
@@ -4680,17 +5404,17 @@ VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Docum));
             }
-            if ((Docum_serial.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Docum_serial.Value));
-            }
-            else {
+            if ((Docum_serial == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Docum_num.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Docum_num.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Docum_serial));
+            }
+            if ((Docum_num == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Docum_num));
             }
             if ((Docum_date.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Docum_date.Value));
@@ -4716,11 +5440,11 @@ VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = ((string)(City));
             }
-            if ((Region_cod.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(Region_cod.Value));
+            if ((Region_cod == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Region_cod));
             }
             if ((District == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
@@ -4752,11 +5476,11 @@ VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Apartment));
             }
-            if ((Index.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((int)(Index.Value));
+            if ((Index == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Index));
             }
             if ((Birth.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[18].Value = ((System.DateTime)(Birth.Value));
@@ -4788,65 +5512,155 @@ VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
             else {
                 this.Adapter.InsertCommand.Parameters[22].Value = ((string)(Home_phone));
             }
-            if ((INN_worker == null)) {
+            if ((Mobile_phone == null)) {
                 this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(INN_worker));
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(Mobile_phone));
             }
-            if ((Full_Name_Card == null)) {
+            if ((INN_worker == null)) {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(Full_Name_Card));
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(INN_worker));
             }
-            if ((Code_Word == null)) {
+            if ((Full_Name_Card == null)) {
                 this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(Code_Word));
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(Full_Name_Card));
             }
-            if ((Bank_Code == null)) {
+            if ((Code_Word == null)) {
                 this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(Bank_Code));
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(Code_Word));
             }
-            if ((Card_type == null)) {
+            if ((Bank_Code == null)) {
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(Card_type));
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(Bank_Code));
             }
-            if ((Employment_Date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((System.DateTime)(Employment_Date.Value));
-            }
-            else {
+            if ((Card_type == null)) {
                 this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            if ((Salary == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(Card_type));
+            }
+            if ((Docum2 == null)) {
                 this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(Salary));
+                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(Docum2));
             }
-            if ((Email == null)) {
+            if ((Docum2_serial == null)) {
                 this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(Email));
+                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(Docum2_serial));
             }
-            if ((Org_key == null)) {
+            if ((Docum2_num == null)) {
                 this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(Org_key));
+                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(Docum2_num));
             }
-            if ((Code.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[32].Value = ((int)(Code.Value));
+            if ((Docum2_date == null)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[32].Value = ((string)(Docum2_date));
+            }
+            if ((Docum2_place == null)) {
+                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(Docum2_place));
+            }
+            if ((City2 == null)) {
+                this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(City2));
+            }
+            if ((Region_cod2 == null)) {
+                this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[35].Value = ((string)(Region_cod2));
+            }
+            if ((District2 == null)) {
+                this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[36].Value = ((string)(District2));
+            }
+            if ((Street2 == null)) {
+                this.Adapter.InsertCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[37].Value = ((string)(Street2));
+            }
+            if ((House2 == null)) {
+                this.Adapter.InsertCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[38].Value = ((string)(House2));
+            }
+            if ((Block2 == null)) {
+                this.Adapter.InsertCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[39].Value = ((string)(Block2));
+            }
+            if ((Apartment2 == null)) {
+                this.Adapter.InsertCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[40].Value = ((string)(Apartment2));
+            }
+            if ((Index2 == null)) {
+                this.Adapter.InsertCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[41].Value = ((string)(Index2));
+            }
+            if ((Action_param == null)) {
+                this.Adapter.InsertCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[42].Value = ((string)(Action_param));
+            }
+            if ((Employment_Date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[43].Value = ((System.DateTime)(Employment_Date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            if ((Salary == null)) {
+                this.Adapter.InsertCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[44].Value = ((string)(Salary));
+            }
+            if ((Email == null)) {
+                this.Adapter.InsertCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[45].Value = ((string)(Email));
+            }
+            if ((Org_key == null)) {
+                this.Adapter.InsertCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[46].Value = ((string)(Org_key));
+            }
+            if ((Code.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[47].Value = ((int)(Code.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

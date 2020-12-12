@@ -246,7 +246,6 @@
             this.cueTextBox1.Size = new System.Drawing.Size(150, 20);
             this.cueTextBox1.TabIndex = 1;
             this.cueTextBox1.Tag = "Населенный пункт";
-            this.cueTextBox1.Text = "Бирск";
             // 
             // FormSelectPlace
             // 
