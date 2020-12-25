@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace pressF
@@ -37,25 +36,27 @@ namespace pressF
             FormSelectPlace f = new FormSelectPlace();
             if (f.ShowDialog() == DialogResult.OK && sender is Button b) // отобразить форму
             {
-                
-               
-                if (Boolean.Parse(b.Tag.ToString())) {
+
+
+                if (Boolean.Parse(b.Tag.ToString()))
+                {
                     Mass = f.GetData();
                     Mass.Reverse();
                     MessageBox.Show(String.Join(", ", Mass.ToArray()));
-                } else
+                }
+                else
                 {
                     Mass2 = f.GetData();
                     Mass2.Reverse();
                     MessageBox.Show(String.Join(", ", Mass2.ToArray()));
                 }
 
-                
-                
+
+
             }
         }
 
-        //ПРОВЕРКА СНИЛС
+        /*//ПРОВЕРКА СНИЛС
         public bool SNILSValidate(string snils)
         {
             string workSnils = OnlyDigits(snils);
@@ -159,7 +160,7 @@ namespace pressF
             }
 
             return result;
-        }
+        }*/
 
 
         private void FormAddWorker_FormClosing(object sender, FormClosingEventArgs e)
@@ -176,10 +177,10 @@ namespace pressF
             {
                 if (control is CueTextBox textBox)
                 {
-                    
+
                     if ((new Regex(@textBox.Tag.ToString()).IsMatch(textBox.Parent.FindForm().Tag.ToString())))
                     {
-                        e.Cancel = true;
+                        //e.Cancel = true;
                         reasons.Add(textBox.Tag.ToString());
                     }
 
@@ -189,46 +190,31 @@ namespace pressF
             {
                 MessageBox.Show("Требуется правильно заполнить: " + string.Join(", ", reasons.ToArray()));
             }
-            return;
-#pragma warning disable CS0162 // Обнаружен недостижимый код
-            if (DialogResult != DialogResult.OK)
-            {
-                return;
-            }
-#pragma warning restore CS0162 // Обнаружен недостижимый код
-            foreach (Control control in Controls)
-            {
-                if (control is CueTextBox textBox)
-                {
-                    string ch = textBox._check(textBox, true);
-                    if (!(Tag.ToString().IndexOf(ch) > -1))
-                    {
-                        Tag += ch + ",";
-                    }
-                }
-            }
-            if (!(string.IsNullOrWhiteSpace(Tag.ToString())))
-            {
-                e.Cancel = true;
-                MessageBox.Show("Не верно заполненные значения \n" + Tag.ToString());
-            }
+            //return;
+            //if (DialogResult != DialogResult.OK)
+            //{
+            //    return;
+            //}
+            //foreach (Control control in Controls)
+            //{
+            //    if (control is CueTextBox textBox)
+            //    {
+            //        string ch = textBox._check(textBox, true);
+            //        if (!(Tag.ToString().IndexOf(ch) > -1))
+            //        {
+            //            Tag += ch + ",";
+            //        }
+            //    }
+            //}
+            //if (!(string.IsNullOrWhiteSpace(Tag.ToString())))
+            //{
+            //    //e.Cancel = true;
+            //    MessageBox.Show("Не верно заполненные значения \n" + Tag.ToString());
+            //}
 
         }
 
-        private void Docum_DropDown(object sender, EventArgs e)
-        {
-            FormSelectDocument f = new FormSelectDocument();
-            if (f.ShowDialog() == DialogResult.OK) // отобразить форму
-            {
-                foreach (RadioButton radio in f.groupBox1.Controls)
-                {
-                    if (radio.Checked)
-                    {
-                        //Docum.SelectedIndex = radio.TabIndex - 1;
-                    }
-                }
-            }
-        }
+       
 
         private void Card_Type_Enter(object sender, EventArgs e)
         {
@@ -237,56 +223,17 @@ namespace pressF
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("ведется доработка, значения не будут добавлены в БД");
         }
 
-        private void Place_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
 
-        }
-
-        private void Table_num_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void Docum_Serial_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
 
         private void Sex_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string st = "";
-            foreach (Control c in Controls)
-            {
-               if (c is Label)
-                {
-                    st += c.Text;
-                }
-            }
-            Action_param.Text = st;
-        }
 
-        private void Bank_Code_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void Salary_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void Place_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {

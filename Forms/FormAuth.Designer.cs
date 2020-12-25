@@ -123,11 +123,11 @@
             // 
             this.secret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.secret.AutoSize = true;
-            this.secret.Location = new System.Drawing.Point(301, 79);
+            this.secret.Location = new System.Drawing.Point(259, 79);
             this.secret.Name = "secret";
-            this.secret.Size = new System.Drawing.Size(46, 23);
+            this.secret.Size = new System.Drawing.Size(88, 23);
             this.secret.TabIndex = 10;
-            this.secret.Text = "secret";
+            this.secret.Text = "смена пароля";
             this.secret.UseVisualStyleBackColor = true;
             this.secret.Click += new System.EventHandler(this.TestingButton_Click);
             // 

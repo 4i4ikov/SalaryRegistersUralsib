@@ -386,7 +386,6 @@
             this.EmpDate.Size = new System.Drawing.Size(150, 20);
             this.EmpDate.TabIndex = 20;
             this.EmpDate.Tag = "Дата приема на работу";
-            this.EmpDate.Text = "01012020";
             this.EmpDate.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.EmpDate.ValidatingType = typeof(System.DateTime);
             // 
@@ -401,7 +400,6 @@
             this.Home_Phone.Size = new System.Drawing.Size(150, 20);
             this.Home_Phone.TabIndex = 14;
             this.Home_Phone.Tag = "Домашний номер";
-            this.Home_Phone.Text = "9872463816";
             // 
             // SNILS
             // 
@@ -414,8 +412,6 @@
             this.SNILS.Size = new System.Drawing.Size(150, 20);
             this.SNILS.TabIndex = 13;
             this.SNILS.Tag = "СНИЛС";
-            this.SNILS.Text = "12602903624";
-            this.SNILS.TextChanged += new System.EventHandler(this.SNILS_TextChanged);
             // 
             // Email
             // 
@@ -431,7 +427,7 @@
             this.Email.Size = new System.Drawing.Size(150, 20);
             this.Email.TabIndex = 23;
             this.Email.Tag = "Номер карты";
-            this.Email.Text = "kozlov@mail.ru";
+            this.Email.Text = " ";
             // 
             // Card_N
             // 
@@ -447,7 +443,7 @@
             this.Card_N.Size = new System.Drawing.Size(150, 20);
             this.Card_N.TabIndex = 22;
             this.Card_N.Tag = "Номер карты";
-            this.Card_N.Text = "123123123";
+            this.Card_N.Text = " ";
             // 
             // Bank_Code
             // 
@@ -463,8 +459,7 @@
             this.Bank_Code.Size = new System.Drawing.Size(150, 20);
             this.Bank_Code.TabIndex = 18;
             this.Bank_Code.Tag = "Код подразделения банка";
-            this.Bank_Code.Text = "а";
-            this.Bank_Code.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Bank_Code_MaskInputRejected);
+            this.Bank_Code.Text = " ";
             // 
             // Code_Word
             // 
@@ -480,7 +475,7 @@
             this.Code_Word.Size = new System.Drawing.Size(150, 20);
             this.Code_Word.TabIndex = 17;
             this.Code_Word.Tag = "Кодовое слово";
-            this.Code_Word.Text = "кожа";
+            this.Code_Word.Text = " ";
             // 
             // PlaceOfBirth
             // 
@@ -498,7 +493,7 @@
             this.PlaceOfBirth.Size = new System.Drawing.Size(150, 20);
             this.PlaceOfBirth.TabIndex = 3;
             this.PlaceOfBirth.Tag = "Место рождения";
-            this.PlaceOfBirth.Text = "Бирск";
+            this.PlaceOfBirth.Text = " ";
             // 
             // Salary
             // 
@@ -514,8 +509,7 @@
             this.Salary.Size = new System.Drawing.Size(150, 20);
             this.Salary.TabIndex = 21;
             this.Salary.Tag = "Номер документа";
-            this.Salary.Text = "10000";
-            this.Salary.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Salary_MaskInputRejected);
+            this.Salary.Text = " ";
             // 
             // Table_num
             // 
@@ -531,7 +525,6 @@
             this.Table_num.Size = new System.Drawing.Size(150, 20);
             this.Table_num.TabIndex = 4;
             this.Table_num.Tag = "Табельный номер";
-            this.Table_num.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Table_num_MaskInputRejected);
             // 
             // INN_worker
             // 
@@ -549,7 +542,6 @@
             this.INN_worker.Size = new System.Drawing.Size(150, 20);
             this.INN_worker.TabIndex = 15;
             this.INN_worker.Tag = "ИНН";
-            this.INN_worker.Text = "12345678901234567890";
             this.INN_worker.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // WBill_Num
@@ -568,7 +560,6 @@
             this.WBill_Num.Size = new System.Drawing.Size(150, 20);
             this.WBill_Num.TabIndex = 5;
             this.WBill_Num.Tag = "Номер счёта";
-            this.WBill_Num.Text = "11111111111111111111";
             this.WBill_Num.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // WMiddlename
@@ -638,7 +629,7 @@
             this.Full_Name_Card.Size = new System.Drawing.Size(150, 20);
             this.Full_Name_Card.TabIndex = 16;
             this.Full_Name_Card.Tag = "Имя и фамилия на карте";
-            this.Full_Name_Card.Text = "Ruslan Kozlov";
+            this.Full_Name_Card.Text = " ";
             // 
             // WSurname
             // 
@@ -675,7 +666,7 @@
             this.Card_Type.Size = new System.Drawing.Size(150, 20);
             this.Card_Type.TabIndex = 19;
             this.Card_Type.Tag = "Тип карты";
-            this.Card_Type.Text = "а";
+            this.Card_Type.Text = " ";
             this.Card_Type.Enter += new System.EventHandler(this.Card_Type_Enter);
             // 
             // button4

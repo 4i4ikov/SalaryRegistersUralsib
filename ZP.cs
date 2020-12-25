@@ -96,9 +96,10 @@ namespace pressF
             f.workersBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.cardBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.enrollmentsBindingSource.Filter = "Org_key = '" + orgKey + "'";
-            f.MdiParent = MdiParent;
-            f.Show(); //Отображение FormZP
-            Close(); //Закрытие текущей формы Form1
+            Program.Context.MainForm = f;
+            Close();
+            Program.Context.MainForm.Show();
+            
         }
 
 
