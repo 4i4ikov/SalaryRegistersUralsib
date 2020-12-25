@@ -20,14 +20,14 @@ namespace pressF
         {
             if ((EncodeS(LoginInput.Text) == Properties.Settings.Default.Login) && (EncodeS(PasswordInput.Text) == Properties.Settings.Default.Password))
             {
-                Program.Context.MainForm = new MainForm();
+                Program.Context.MainForm = new ZP();
                 Close();
                 Program.Context.MainForm.Show();
 
             }
             else
             {
-                MessageBox.Show(string.Format("Введенные данные не верны!\nЛогин в MD5: {0}\nПароль в MD5:{1} ", Properties.Settings.Default.Login, Properties.Settings.Default.Password));
+                MessageBox.Show("Введенные данные не верны!\nПроверьте их, пожалуйста!");
             }
 
         }
@@ -36,8 +36,7 @@ namespace pressF
             Properties.Settings.Default.Login = EncodeS(LoginInput.Text);
             Properties.Settings.Default.Password = EncodeS(PasswordInput.Text);
             Properties.Settings.Default.Save();
-            MessageBox.Show(Properties.Settings.Default.Login + " " + Properties.Settings.Default.Password, "Фигня какая0то");
-        }
+            }
         private string EncodeS(string PasswordInput)
         {
             byte[] Bytes = System.Text.Encoding.UTF8.GetBytes(PasswordInput); //Из строки в массив байтов

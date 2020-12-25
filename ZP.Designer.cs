@@ -72,6 +72,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(801, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // fileToolStripMenuItem
             // 
@@ -302,6 +303,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CardTableAdapter = null;
+            this.tableAdapterManager.EnrollmentsTableAdapter = null;
             this.tableAdapterManager.OrganizationsTableAdapter = this.organizationsTableAdapter1;
             this.tableAdapterManager.UpdateOrder = pressF.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.WorkersTableAdapter = null;

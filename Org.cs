@@ -112,19 +112,26 @@ namespace pressF
             {
                 Excel.Application excelapp = new Excel.Application
                 {
-                    SheetsInNewWorkbook = 2
+                    SheetsInNewWorkbook = 4
                 };
                 Excel.Workbook workbook = excelapp.Workbooks.Add();
                 //Excel.Workbook workbook2 = excelapp.Workbooks.Add(); // Новый файл для экспорта, мб понадобится при разростании проекта в нечто огромное
 
                 Excel.Worksheet worksheet = workbook.Sheets[1];
                 Excel.Worksheet worksheet2 = workbook.Sheets[2];
+                Excel.Worksheet worksheet3 = workbook.Sheets[3];
+                Excel.Worksheet worksheet4 = workbook.Sheets[4];
+
+
                 worksheet.Name = "Сотрудники";
                 worksheet2.Name = "Карты";
+                worksheet3.Name = "Зачисления";
+                worksheet4.Name = "Зачисления по картам";
 
                 FillTheWorkSheet(workersDataGridView, worksheet);
                 FillTheWorkSheet(cardsGridView, worksheet2);
-
+                FillTheWorkSheet(enrollmentsDataGridView, worksheet3);
+                FillTheWorkSheet(dataGridView2, worksheet4);
 
                 excelapp.AlertBeforeOverwriting = false;
                 workbook.SaveAs(sfd.FileName);
@@ -151,11 +158,8 @@ namespace pressF
             }
             if (f.ShowDialog() == DialogResult.OK)
             {
-                //TODO добавить функцию в форму, которая возвращает список не правильно заполненных полей, если такие есть, то спросить оставить все как есть или откатить изменения (отрыть заного диалог с формой ShowDialog)
-                //
-                //cardTableAdapter.Insert( f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Docum.Text, int.Parse(f.Docum_Serial.Text), int.Parse(f.Docum_Num.Text), Convert.ToDateTime(f.DateTime2.Text), f.Docum_Place.Text, f.Docum_Cod.Text, f.Mass[0], int.Parse(f.Mass[1]), f.Mass[2], f.Mass[3], f.Mass[4], f.Mass[5], f.Mass[6], int.Parse(f.Mass[7]), Convert.ToDateTime(f.WBirth.Text), f.PlaceOfBirth.Text, f.Sex.Text, f.SNILS.Text, f.Home_Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_Type.Text, Convert.ToDateTime(f.EmpDate.Text), f.Salary.Text, f.Email.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
-                    
                 
+                //cardTableAdapter.Insert( f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Docum.Text, int.Parse(f.Docum_Serial.Text), int.Parse(f.Docum_Num.Text), Convert.ToDateTime(f.DateTime2.Text), f.Docum_Place.Text, f.Docum_Cod.Text, f.Mass[0], int.Parse(f.Mass[1]), f.Mass[2], f.Mass[3], f.Mass[4], f.Mass[5], f.Mass[6], int.Parse(f.Mass[7]), Convert.ToDateTime(f.WBirth.Text), f.PlaceOfBirth.Text, f.Sex.Text, f.SNILS.Text, f.Home_Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_Type.Text, Convert.ToDateTime(f.EmpDate.Text), f.Salary.Text, f.Email.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
                 //cardTableAdapter.Fill(dbDataSet.Card);
             }
         }
@@ -164,17 +168,11 @@ namespace pressF
         {
 
             //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
-            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
-            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
-            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+
 
             FormDOS f = new FormDOS(this);
             f.Show();
 
-            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
-            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
-            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
-            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
 
         }
 
