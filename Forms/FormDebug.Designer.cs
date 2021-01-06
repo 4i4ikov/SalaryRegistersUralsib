@@ -81,6 +81,7 @@
             this.cueTextBox7 = new CueTextBox();
             this.cueTextBox2 = new CueTextBox();
             this.cueTextBox1 = new CueTextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -642,11 +643,22 @@
             this.cueTextBox1.TabIndex = 2;
             this.cueTextBox1.Tag = "20";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(468, 362);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "clear";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // FormDebug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 394);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.cueTextBox41);
             this.Controls.Add(this.cueTextBox46);
             this.Controls.Add(this.cueTextBox45);
@@ -759,5 +771,6 @@
         private CueTextBox cueTextBox46;
         private CueTextBox cueTextBox43;
         private System.Windows.Forms.TextBox DTB;
+        private System.Windows.Forms.Button button4;
     }
 }

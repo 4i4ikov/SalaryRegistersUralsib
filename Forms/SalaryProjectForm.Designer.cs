@@ -1,6 +1,6 @@
 ﻿namespace pressF
 {
-    partial class ZP
+    partial class SalaryProjectForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.

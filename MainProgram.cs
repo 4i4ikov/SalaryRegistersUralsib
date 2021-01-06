@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace pressF
 {
-    static class Program
+    static class MainProgram
     {
         public static ApplicationContext Context { get; set; }
         /// <summary>

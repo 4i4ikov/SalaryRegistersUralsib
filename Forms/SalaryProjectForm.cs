@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace pressF
 {
-    public partial class ZP : Form
+    public partial class SalaryProjectForm : Form
     {
-        public ZP()
+        public SalaryProjectForm()
         {
             InitializeComponent();
         }
@@ -18,9 +18,9 @@ namespace pressF
             //  {
             button3.Enabled = true;
             // }
-           /*         try
-                     {
-                       */
+            /*         try
+                      {
+                        */
 
             organizationsTableAdapter1.Fill(dbDataSet.Organizations);
             /*
@@ -47,7 +47,7 @@ namespace pressF
 
             FormAddOrganization f = new FormAddOrganization(); // создать форму
 
-            if (f.ShowDialog() == DialogResult.OK) // отобразить форму
+            if ( f.ShowDialog() == DialogResult.OK ) // отобразить форму
             {
                 // если OK, то добавить
 
@@ -57,7 +57,7 @@ namespace pressF
                 Mngr = f.textBox4.Text;
                 Mngr_d = f.textBox5.Text;
                 Booker = f.textBox6.Text;
-                if (f.checkBox1.Checked) // дескриптор
+                if ( f.checkBox1.Checked ) // дескриптор
                 {
                     Desc = "+";
                 }
@@ -71,7 +71,7 @@ namespace pressF
                     organizationsTableAdapter1.Insert(Org, Org_key, Desc, Mngr, Mngr_d, Booker); // добавление
                     organizationsTableAdapter1.Fill(dbDataSet.Organizations); // отображение
                 }
-                catch (Exception exc)
+                catch ( Exception exc )
                 {
                     MessageBox.Show("Ошибка при обновлении базы данных" + exc);
                 }
@@ -96,17 +96,17 @@ namespace pressF
             f.workersBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.cardBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.enrollmentsBindingSource.Filter = "Org_key = '" + orgKey + "'";
-            Program.Context.MainForm = f;
+            MainProgram.Context.MainForm = f;
             Close();
-            Program.Context.MainForm.Show();
-            
+            MainProgram.Context.MainForm.Show();
+
         }
 
 
 
         private void DataGridView1_KeyPress(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if ( e.KeyCode == Keys.Enter )
             {
                 e.Handled = true;
                 Button1_Click(sender, e);
@@ -126,15 +126,15 @@ namespace pressF
             Dictionary<string, string> OrgMas = dataGridView1.GetCellsPls();
 
             // ввести текущие значения в текстбоксы
-            f.textBox1.Text = OrgMas["Organization"];
+            f.textBox1.Text = OrgMas [ "Organization" ];
             //* Код организации больше не меняется, значение не редактируемое
-            f.textBox2.Text = OrgMas["Org_key"];
-            f.checkBox1.Checked = (OrgMas["Descriptor"] == "+");
-            f.textBox4.Text = OrgMas["Manager"];
-            f.textBox5.Text = OrgMas["Manager_d"];
-            f.textBox6.Text = OrgMas["Booker"];
+            f.textBox2.Text = OrgMas [ "Org_key" ];
+            f.checkBox1.Checked = ( OrgMas [ "Descriptor" ] == "+" );
+            f.textBox4.Text = OrgMas [ "Manager" ];
+            f.textBox5.Text = OrgMas [ "Manager_d" ];
+            f.textBox6.Text = OrgMas [ "Booker" ];
 
-            if (f.ShowDialog() == DialogResult.OK) // отобразить форму
+            if ( f.ShowDialog() == DialogResult.OK ) // отобразить форму
             {
                 // если OK, то редактировать
 
@@ -145,7 +145,7 @@ namespace pressF
                 Mngr = f.textBox4.Text;
                 Mngr_d = f.textBox5.Text;
                 Booker = f.textBox6.Text;
-                if (f.checkBox1.Checked) // дескриптор
+                if ( f.checkBox1.Checked ) // дескриптор
                 {
                     Desc = "+";
                 }
@@ -156,7 +156,7 @@ namespace pressF
 
                 /*this.organizationsTableAdapter1.Update(Org, OrgMas["Org_key"], Desc, Mngr, Mngr_d, Booker); // добавление */
                 /*                this.organizationsTableAdapter1.Update(Org, Org_key, Desc, Mngr, Mngr_d, Booker);*/
-                organizationsTableAdapter1.Update(Org, Desc, Mngr, Mngr_d, Booker, OrgMas["Organization"], OrgMas["Org_key"], OrgMas["Descriptor"], OrgMas["Manager"], OrgMas["Manager_d"], OrgMas["Booker"]);
+                organizationsTableAdapter1.Update(Org, Desc, Mngr, Mngr_d, Booker, OrgMas [ "Organization" ], OrgMas [ "Org_key" ], OrgMas [ "Descriptor" ], OrgMas [ "Manager" ], OrgMas [ "Manager_d" ], OrgMas [ "Booker" ]);
                 organizationsTableAdapter1.Fill(dbDataSet.Organizations); // отображение
             }
             /*MessageBox.Show(Org+OrgKey+Mngr+Mngr_d+Booker+Desc);*/
@@ -166,7 +166,7 @@ namespace pressF
         private void УдалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormDelOrg f = new FormDelOrg();
-            if (dataGridView1.RowCount <= 1)
+            if ( dataGridView1.RowCount <= 1 )
             {
                 return;
             }
@@ -176,12 +176,12 @@ namespace pressF
 
             Dictionary<string, string> OrgMas = dataGridView1.GetCellsPls();
             f.label2.Text = "Наименование удаляемой организации: " + "\n" +
-                            OrgMas["Organization"] + "\n" +
+                            OrgMas [ "Organization" ] + "\n" +
                             "Вы действительно хотите удалить её?"
                             ;
-            if (f.ShowDialog() == DialogResult.OK)
+            if ( f.ShowDialog() == DialogResult.OK )
             {
-                organizationsTableAdapter1.Delete(OrgMas["Org_key"]);
+                organizationsTableAdapter1.Delete(OrgMas [ "Org_key" ]);
                 organizationsTableAdapter1.Fill(dbDataSet.Organizations); // отображениечя
             }
         }

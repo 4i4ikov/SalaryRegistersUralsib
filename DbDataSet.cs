@@ -10,9 +10,11 @@
     }
 }
 
-namespace pressF.DbDataSetTableAdapters {
-    
-    
-    public partial class WorkersTableAdapter {
+namespace pressF.DbDataSetTableAdapters
+{
+
+
+    public partial class WorkersTableAdapter
+    {
     }
 }

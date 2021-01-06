@@ -14,7 +14,7 @@ namespace pressF.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if ( openFileDialog1.ShowDialog() == DialogResult.OK )
             {
                 //Get the path of specified file
                 string filePath = openFileDialog1.FileName;
@@ -27,15 +27,15 @@ namespace pressF.Forms
         {
             int point = 0;
             var n = 1;
-            foreach (int item in arr)
-            { 
+            foreach ( int item in arr )
+            {
                 string str = "";
-                for (int i = 0; i < item; i++)
+                for ( int i = 0; i < item; i++ )
                 {
-                    str += textBox1.Text[point];
+                    str += textBox1.Text [ point ];
                     point++;
                 }
-                Controls["cueTextBox" + Convert.ToString(n)].Text = str.Trim();
+                Controls [ "cueTextBox" + Convert.ToString(n) ].Text = str.Trim();
                 n++;
             }
         }
@@ -49,10 +49,21 @@ namespace pressF.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             var n = 1;
-            foreach (int item in arr)
+            foreach ( int item in arr )
             {
-                DTB.Text += Controls["cueTextBox" + Convert.ToString(n)].Text.PadRight(item);
+                DTB.Text += Controls [ "cueTextBox" + Convert.ToString(n) ].Text.PadRight(item);
                 n++;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var n = 1;
+            foreach ( int item in arr )
+            {
+                DTB.Text = Controls [ "cueTextBox" + Convert.ToString(n) ].Text = String.Empty;
+                n++;
+
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿using pressF.Forms;
+
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace pressF
@@ -18,9 +18,9 @@ namespace pressF
         }
         public void FormAddWorker_Load(object sender, EventArgs e)
         {
-            foreach (Control control in Controls)
+            foreach ( Control control in Controls )
             {
-                if (control is CueTextBox textBox)
+                if ( control is CueTextBox textBox )
                 {
                     textBox.Validating += new System.ComponentModel.CancelEventHandler(textBox.CheckString);
 
@@ -34,11 +34,11 @@ namespace pressF
         private void Place_Enter(object sender, EventArgs e)
         {
             FormSelectPlace f = new FormSelectPlace();
-            if (f.ShowDialog() == DialogResult.OK && sender is Button b) // отобразить форму
+            if ( f.ShowDialog() == DialogResult.OK && sender is Button b ) // отобразить форму
             {
 
 
-                if (Boolean.Parse(b.Tag.ToString()))
+                if ( Boolean.Parse(b.Tag.ToString()) )
                 {
                     Mass = f.GetData();
                     Mass.Reverse();
@@ -166,19 +166,19 @@ namespace pressF
         private void FormAddWorker_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            if (DialogResult != DialogResult.OK)
+            if ( DialogResult != DialogResult.OK )
             {
                 return;
             }
 
             List<string> reasons = new List<string> { };
             ValidateChildren();
-            foreach (Control control in Controls)
+            foreach ( Control control in Controls )
             {
-                if (control is CueTextBox textBox)
+                if ( control is CueTextBox textBox )
                 {
 
-                    if ((new Regex(@textBox.Tag.ToString()).IsMatch(textBox.Parent.FindForm().Tag.ToString())))
+                    if ( ( new Regex(@textBox.Tag.ToString()).IsMatch(textBox.Parent.FindForm().Tag.ToString()) ) )
                     {
                         //e.Cancel = true;
                         reasons.Add(textBox.Tag.ToString());
@@ -186,7 +186,7 @@ namespace pressF
 
                 }
             }
-            if (e.Cancel)
+            if ( e.Cancel )
             {
                 MessageBox.Show("Требуется правильно заполнить: " + string.Join(", ", reasons.ToArray()));
             }
@@ -214,7 +214,7 @@ namespace pressF
 
         }
 
-       
+
 
         private void Card_Type_Enter(object sender, EventArgs e)
         {
@@ -238,7 +238,7 @@ namespace pressF
         private void button6_Click(object sender, EventArgs e)
         {
             FormDocumPick f = new FormDocumPick();
-            if (f.ShowDialog() == DialogResult.OK)
+            if ( f.ShowDialog() == DialogResult.OK )
             {
 
             }

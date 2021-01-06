@@ -87,14 +87,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CueTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\FormAuth.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormAuth.Designer.cs">
       <DependentUpon>FormAuth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Class1.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataGridViewExt.cs" />
     <Compile Include="DbDataSet.cs">
@@ -153,11 +153,11 @@
     <Compile Include="Forms\FormSelectPlace.Designer.cs">
       <DependentUpon>FormSelectPlace.cs</DependentUpon>
     </Compile>
-    <Compile Include="ZP.cs">
+    <Compile Include="Forms\SalaryProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ZP.Designer.cs">
-      <DependentUpon>ZP.cs</DependentUpon>
+    <Compile Include="Forms\SalaryProjectForm.Designer.cs">
+      <DependentUpon>SalaryProjectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormAddCard.cs">
       <SubType>Form</SubType>
@@ -165,16 +165,16 @@
     <Compile Include="Forms\FormAddCard.Designer.cs">
       <DependentUpon>FormAddCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Org.cs">
+    <Compile Include="Forms\OrganizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Org.Designer.cs">
-      <DependentUpon>Org.cs</DependentUpon>
+    <Compile Include="Forms\OrganizationForm.Designer.cs">
+      <DependentUpon>OrganizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormAddOrganization.cs">
@@ -183,7 +183,7 @@
     <Compile Include="Forms\FormAddOrganization.Designer.cs">
       <DependentUpon>FormAddOrganization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="MainProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormAuth.resx">
       <DependentUpon>FormAuth.cs</DependentUpon>
@@ -212,16 +212,16 @@
     <EmbeddedResource Include="Forms\FormSelectPlace.resx">
       <DependentUpon>FormSelectPlace.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ZP.resx">
-      <DependentUpon>ZP.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SalaryProjectForm.resx">
+      <DependentUpon>SalaryProjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddCard.resx">
       <DependentUpon>FormAddCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Org.resx">
-      <DependentUpon>Org.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OrganizationForm.resx">
+      <DependentUpon>OrganizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddOrganization.resx">

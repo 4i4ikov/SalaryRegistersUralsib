@@ -8,7 +8,7 @@ namespace pressF
         public FormAddOrganization()
         {
             InitializeComponent();
-            
+
         }
 
         private void ToolTip1_Popup(object sender, PopupEventArgs e)
@@ -23,10 +23,10 @@ namespace pressF
 
         private void FormAddOrganization_Load(object sender, EventArgs e)
         {
-            foreach (Control control in Controls)
+            foreach ( Control control in Controls )
             {
                 CueTextBox textBox = control as CueTextBox;
-                if (textBox != null)
+                if ( textBox != null )
                 {
                     textBox.Validating += new System.ComponentModel.CancelEventHandler(textBox.CheckString);
 
@@ -36,7 +36,7 @@ namespace pressF
 
         private void FormAddOrganization_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (ValidateChildren())
+            if ( ValidateChildren() )
             {
 
             }
