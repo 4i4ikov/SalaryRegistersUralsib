@@ -169,6 +169,8 @@
             this.tableAdapterManager = new pressF.DbDataSetTableAdapters.TableAdapterManager();
             this.cardTableAdapter = new pressF.DbDataSetTableAdapters.CardTableAdapter();
             this.enrollmentsTableAdapter = new pressF.DbDataSetTableAdapters.EnrollmentsTableAdapter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabRequisites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabReestr.SuspendLayout();
@@ -187,6 +189,7 @@
             this.tabEnrollments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentsDataGridView)).BeginInit();
             this.tabFire.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -267,10 +270,10 @@
             this.textBox2.Location = new System.Drawing.Point(3, 4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(281, 184);
+            this.textBox2.Size = new System.Drawing.Size(281, 259);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "Сделать простые поля ввода, хранить данные с реквизитами в таблице с организациям" +
-    "и, ибо реквизиты не могут совпадать.";
+            this.textBox2.Text = "TODO:\r\n\r\nСделать простые поля ввода, \r\n\r\nхранить данные с реквизитами в таблице с" +
+    " организациями, ибо реквизиты не могут совпадать (ГОТОВО).";
             // 
             // tabReestr
             // 
@@ -1475,6 +1478,8 @@
             // tabFire
             // 
             this.tabFire.AutoScroll = true;
+            this.tabFire.Controls.Add(this.pictureBox1);
+            this.tabFire.Controls.Add(this.textBox1);
             this.tabFire.Controls.Add(this.button20);
             this.tabFire.Controls.Add(this.button22);
             this.tabFire.Location = new System.Drawing.Point(4, 22);
@@ -1526,6 +1531,27 @@
             // 
             this.enrollmentsTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(6, 40);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(268, 259);
+            this.textBox1.TabIndex = 11;
+            this.textBox1.Text = "Реализовать таблицу с увольнением в БД\r\nАналогично соседней вкладке реализовать п" +
+    "редставление таблицы в программе\r\n";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(280, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(507, 369);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // Organizations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1561,6 +1587,8 @@
             this.tabEnrollments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentsDataGridView)).EndInit();
             this.tabFire.ResumeLayout(false);
+            this.tabFire.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1706,5 +1734,7 @@
         private System.Windows.Forms.TabPage tabFire;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

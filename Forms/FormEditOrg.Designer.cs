@@ -31,16 +31,16 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox6 = new CueTextBox();
-            this.textBox5 = new CueTextBox();
-            this.textBox4 = new CueTextBox();
-            this.textBox1 = new CueTextBox();
+            this.textBox6 = new pressF.CueTextBox();
+            this.textBox5 = new pressF.CueTextBox();
+            this.textBox4 = new pressF.CueTextBox();
+            this.textBox1 = new pressF.CueTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new CueTextBox();
+            this.textBox2 = new pressF.CueTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -173,6 +173,7 @@
             this.textBox2.CueText = "";
             this.textBox2.Location = new System.Drawing.Point(334, 43);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.RegEx = null;
             this.textBox2.Required = false;
             this.textBox2.Size = new System.Drawing.Size(270, 20);

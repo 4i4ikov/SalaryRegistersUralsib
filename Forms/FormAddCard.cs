@@ -26,7 +26,7 @@ namespace pressF
 
                 }
             }
-            //Docum.SelectedIndex = Sex.SelectedIndex = 0;
+            
         }
 
 
@@ -55,6 +55,8 @@ namespace pressF
 
             }
         }
+
+        //TODO удостовериться что проверку снилс можно удалить из кода формы
 
         /*//ПРОВЕРКА СНИЛС
         public bool SNILSValidate(string snils)
@@ -171,6 +173,7 @@ namespace pressF
                 return;
             }
 
+            //Проверка всех TextBox на соответствие требованиям(валидация)
             List<string> reasons = new List<string> { };
             ValidateChildren();
             foreach ( Control control in Controls )
@@ -190,7 +193,7 @@ namespace pressF
             {
                 MessageBox.Show("Требуется правильно заполнить: " + string.Join(", ", reasons.ToArray()));
             }
-            //return;
+            //TODO проверить можно ли удалить старую валидацию формы добавления карт
             //if (DialogResult != DialogResult.OK)
             //{
             //    return;
@@ -240,7 +243,7 @@ namespace pressF
             FormDocumPick f = new FormDocumPick();
             if ( f.ShowDialog() == DialogResult.OK )
             {
-
+                MessageBox.Show("ведется доработка.");
             }
         }
     }

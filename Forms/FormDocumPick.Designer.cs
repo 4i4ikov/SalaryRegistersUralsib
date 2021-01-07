@@ -37,11 +37,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.DateTime2 = new CueTextBox();
-            this.Docum_Cod = new CueTextBox();
-            this.Docum_Place = new CueTextBox();
-            this.Docum_Num = new CueTextBox();
-            this.Docum_Serial = new CueTextBox();
+            this.DateTime2 = new pressF.CueTextBox();
+            this.Docum_Cod = new pressF.CueTextBox();
+            this.Docum_Place = new pressF.CueTextBox();
+            this.Docum_Num = new pressF.CueTextBox();
+            this.Docum_Serial = new pressF.CueTextBox();
             this.SuspendLayout();
             // 
             // Docum
@@ -180,7 +180,6 @@
             this.DateTime2.Size = new System.Drawing.Size(150, 20);
             this.DateTime2.TabIndex = 98;
             this.DateTime2.Tag = "Дата выдачи документа";
-            this.DateTime2.Text = "01012020";
             this.DateTime2.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.DateTime2.ValidatingType = typeof(System.DateTime);
             // 
@@ -202,7 +201,6 @@
             this.Docum_Cod.Size = new System.Drawing.Size(150, 20);
             this.Docum_Cod.TabIndex = 100;
             this.Docum_Cod.Tag = "Код подразделения";
-            this.Docum_Cod.Text = "123456";
             this.Docum_Cod.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // Docum_Place
@@ -221,7 +219,7 @@
             this.Docum_Place.Size = new System.Drawing.Size(150, 20);
             this.Docum_Place.TabIndex = 99;
             this.Docum_Place.Tag = "Кем выдан документ";
-            this.Docum_Place.Text = "мной";
+            this.Docum_Place.Text = " ";
             // 
             // Docum_Num
             // 
@@ -240,7 +238,6 @@
             this.Docum_Num.Size = new System.Drawing.Size(150, 20);
             this.Docum_Num.TabIndex = 97;
             this.Docum_Num.Tag = "Номер документа";
-            this.Docum_Num.Text = "111111";
             // 
             // Docum_Serial
             // 
@@ -259,7 +256,6 @@
             this.Docum_Serial.Size = new System.Drawing.Size(150, 20);
             this.Docum_Serial.TabIndex = 96;
             this.Docum_Serial.Tag = "Серия документа";
-            this.Docum_Serial.Text = "1111";
             // 
             // FormDocumPick
             // 
