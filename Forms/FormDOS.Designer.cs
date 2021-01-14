@@ -1,4 +1,4 @@
-﻿namespace pressF.Forms
+﻿namespace SalaryRegistersUralsib.Forms
 {
     partial class FormDOS
     {
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.cardTableAdapter = new pressF.DbDataSetTableAdapters.CardTableAdapter();
+            this.cardTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.CardTableAdapter();
             this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbDataSet = new pressF.DbDataSet();
+            this.dbDataSet = new SalaryRegistersUralsib.DbDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();

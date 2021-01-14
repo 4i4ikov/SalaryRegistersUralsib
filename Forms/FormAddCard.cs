@@ -1,10 +1,10 @@
-﻿using pressF.Forms;
+﻿using SalaryRegistersUralsib.Forms;
 
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-namespace pressF
+namespace SalaryRegistersUralsib
 {
     public partial class FormAddCard : Form
     {

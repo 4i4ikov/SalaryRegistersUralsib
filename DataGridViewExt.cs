@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace pressF
+namespace SalaryRegistersUralsib
 {
     public static class DataGridViewExt
     {

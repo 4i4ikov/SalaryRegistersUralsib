@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace pressF.Forms
+namespace SalaryRegistersUralsib.Forms
 {
     public partial class FormDOS : Form
     {

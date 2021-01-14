@@ -1,17 +1,19 @@
-﻿using pressF.Forms;
+﻿using SalaryRegistersUralsib.Forms;
 
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 using Excel = Microsoft.Office.Interop.Excel;
-namespace pressF
+namespace SalaryRegistersUralsib
 {
     public partial class Organizations : Form
     {
         public Organizations()
         {
+            
             InitializeComponent();
+            this.Icon = Properties.Resources.Icon1;
         }
         /*
          * сделать:
@@ -175,18 +177,15 @@ namespace pressF
         private void enrollmentsDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //автоматическое заполнение колонки "Код организации", ибо она не меняется
-            enrollmentsDataGridView.CurrentRow.Cells [ 0 ].Value = label5.Text;
-        }
-
-        private void enrollmentsDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            // скрытие колонки "Код организации", она не меняется, заполняется автоматически
-            enrollmentsDataGridView.Columns [ 0 ].Visible = false;
+            DataGridView dg = (DataGridView)sender;
+            dg.CurrentRow.Cells [ 1 ].Value = label5.Text;
+            dg.CurrentRow.Cells [ 2 ].Value = dg.Tag.ToString();
         }
 
         private void enrollmentsDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             // при ошибке ввода помечаем ячейку и сбрасываем изменения
+            return;
             DataGridView view = (DataGridView)sender;
             view.Rows [ e.RowIndex ].Cells [ e.ColumnIndex ].ErrorText = "ошибка ввода";
             e.Cancel = false;
@@ -204,6 +203,7 @@ namespace pressF
         private void Organizations_FormClosed(object sender, FormClosedEventArgs e)
         {
             // сохранение таблицы с зачислениями при закрытии
+            
             enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
             tableAdapterManager.UpdateAll(dbDataSet);
             dbDataSet.AcceptChanges();

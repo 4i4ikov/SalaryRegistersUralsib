@@ -1,4 +1,4 @@
-﻿namespace pressF
+﻿namespace SalaryRegistersUralsib
 {
     partial class Organizations
     {
@@ -45,8 +45,9 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Enrollment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,8 +56,8 @@
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbDataSet = new pressF.DbDataSet();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new SalaryRegistersUralsib.DbDataSet();
             this.tabCardEnrollments = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -64,9 +65,9 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Org_key = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +75,8 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabCardOpen = new System.Windows.Forms.TabPage();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -152,33 +155,36 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.enrollmentsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabFire = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button20 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.workersTableAdapter = new pressF.DbDataSetTableAdapters.WorkersTableAdapter();
-            this.tableAdapterManager = new pressF.DbDataSetTableAdapters.TableAdapterManager();
-            this.cardTableAdapter = new pressF.DbDataSetTableAdapters.CardTableAdapter();
-            this.enrollmentsTableAdapter = new pressF.DbDataSetTableAdapters.EnrollmentsTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.workersTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.WorkersTableAdapter();
+            this.tableAdapterManager = new SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager();
+            this.cardTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.CardTableAdapter();
+            this.enrollmentsTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.EnrollmentsTableAdapter();
             this.tabRequisites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabReestr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             this.tabCardEnrollments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.tabCardOpen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cardsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).BeginInit();
@@ -188,6 +194,7 @@
             this.tabControl1.SuspendLayout();
             this.tabEnrollments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentsBindingSource)).BeginInit();
             this.tabFire.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -354,8 +361,9 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn18,
+            this.Enrollment_type,
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22,
@@ -364,12 +372,22 @@
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26,
             this.dataGridViewTextBoxColumn27});
-            this.dataGridView1.DataSource = this.enrollmentsBindingSource;
+            this.dataGridView1.DataSource = this.bindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(0, 37);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(782, 372);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.Tag = "reestr";
+            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "№";
+            this.dataGridViewTextBoxColumn19.HeaderText = "№";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -379,11 +397,12 @@
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
             this.dataGridViewTextBoxColumn18.Visible = false;
             // 
-            // dataGridViewTextBoxColumn19
+            // Enrollment_type
             // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "№";
-            this.dataGridViewTextBoxColumn19.HeaderText = "№";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.Enrollment_type.DataPropertyName = "Enrollment_type";
+            this.Enrollment_type.HeaderText = "Enrollment_type";
+            this.Enrollment_type.Name = "Enrollment_type";
+            this.Enrollment_type.Visible = false;
             // 
             // dataGridViewTextBoxColumn20
             // 
@@ -433,10 +452,11 @@
             this.dataGridViewTextBoxColumn27.HeaderText = "Код Вида Дохода";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
             // 
-            // enrollmentsBindingSource
+            // bindingSource2
             // 
-            this.enrollmentsBindingSource.DataMember = "Enrollments";
-            this.enrollmentsBindingSource.DataSource = this.dbDataSet;
+            this.bindingSource2.DataMember = "Enrollments";
+            this.bindingSource2.DataSource = this.dbDataSet;
+            this.bindingSource2.Filter = "(Enrollment_type=\'reestr\')";
             // 
             // dbDataSet
             // 
@@ -522,84 +542,101 @@
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn10,
+            this.Org_key,
+            this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17});
-            this.dataGridView2.DataSource = this.enrollmentsBindingSource;
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn28});
+            this.dataGridView2.DataSource = this.bindingSource1;
             this.dataGridView2.Location = new System.Drawing.Point(0, 37);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(782, 372);
             this.dataGridView2.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Org_key";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Org_key";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "№";
-            this.dataGridViewTextBoxColumn5.HeaderText = "№";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridView2.Tag = "cardzach";
+            this.dataGridView2.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
+            this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
+            this.dataGridView2.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn10
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Table_num";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Номер счета";
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "№";
+            this.dataGridViewTextBoxColumn10.HeaderText = "№";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // Org_key
+            // 
+            this.Org_key.DataPropertyName = "Org_key";
+            this.Org_key.HeaderText = "Org_key";
+            this.Org_key.Name = "Org_key";
+            this.Org_key.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Enrollment_type";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Enrollment_type";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn11
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Surname";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Table_num";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Номер счета";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
             // dataGridViewTextBoxColumn12
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "NName";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Surname";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Фамилия";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
             // dataGridViewTextBoxColumn13
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Middlename";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "NName";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Имя";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
             // dataGridViewTextBoxColumn14
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Sum";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Сумма";
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Middlename";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Отчество";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
             // dataGridViewTextBoxColumn15
             // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Payment_type_code";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Код Вида Выплаты";
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Sum";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Сумма";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
             // dataGridViewTextBoxColumn16
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "Total_retention_amount";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Общая Сумма Удерж";
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Payment_type_code";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Код Вида Выплаты";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             // 
             // dataGridViewTextBoxColumn17
             // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Income_Type_Code";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Код Вида Дохода";
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Total_retention_amount";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Общая Сумма Удерж";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Income_Type_Code";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Код Вида Дохода";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Enrollments";
+            this.bindingSource1.DataSource = this.dbDataSet;
+            this.bindingSource1.Filter = "(Enrollment_type=\'cardzach\')";
             // 
             // tabCardOpen
             // 
@@ -1392,46 +1429,53 @@
             this.enrollmentsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.enrollmentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.enrollmentsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn6,
             this.Surname,
             this.NName,
             this.Middlename,
-            this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn29});
             this.enrollmentsDataGridView.DataSource = this.enrollmentsBindingSource;
             this.enrollmentsDataGridView.Location = new System.Drawing.Point(0, 37);
             this.enrollmentsDataGridView.Name = "enrollmentsDataGridView";
             this.enrollmentsDataGridView.RowHeadersVisible = false;
             this.enrollmentsDataGridView.Size = new System.Drawing.Size(782, 372);
             this.enrollmentsDataGridView.TabIndex = 0;
+            this.enrollmentsDataGridView.Tag = "zach";
             this.enrollmentsDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
             this.enrollmentsDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
-            this.enrollmentsDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.enrollmentsDataGridView_DataBindingComplete);
             this.enrollmentsDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "№";
+            this.dataGridViewTextBoxColumn4.HeaderText = "№";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Org_key";
             this.dataGridViewTextBoxColumn2.HeaderText = "Org_key";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "№";
-            this.dataGridViewTextBoxColumn3.HeaderText = "№";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Enrollment_type";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Enrollment_type";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
             // 
-            // dataGridViewTextBoxColumn4
+            // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Table_num";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Табельный №";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Table_num";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Табельный №";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // Surname
             // 
@@ -1451,29 +1495,35 @@
             this.Middlename.HeaderText = "Отчество";
             this.Middlename.Name = "Middlename";
             // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Sum";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Сумма";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Payment_type_code";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Код Вида Выплаты";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Sum";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Сумма";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Total_retention_amount";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Общая Сумма Удерж";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Payment_type_code";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Код Вида Выплаты";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewTextBoxColumn9
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Income_Type_Code";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Код Вида Дохода";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Total_retention_amount";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Общая Сумма Удерж";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Income_Type_Code";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Код Вида Дохода";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // enrollmentsBindingSource
+            // 
+            this.enrollmentsBindingSource.DataMember = "Enrollments";
+            this.enrollmentsBindingSource.DataSource = this.dbDataSet;
+            this.enrollmentsBindingSource.Filter = "(Enrollment_type=\'zach\')";
             // 
             // tabFire
             // 
@@ -1489,6 +1539,27 @@
             this.tabFire.TabIndex = 9;
             this.tabFire.Text = "Увольнение";
             this.tabFire.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(280, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(507, 369);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(6, 40);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(268, 259);
+            this.textBox1.TabIndex = 11;
+            this.textBox1.Text = "Реализовать таблицу с увольнением в БД\r\nАналогично соседней вкладке реализовать п" +
+    "редставление таблицы в программе\r\n";
             // 
             // button20
             // 
@@ -1520,7 +1591,7 @@
             this.tableAdapterManager.CardTableAdapter = null;
             this.tableAdapterManager.EnrollmentsTableAdapter = null;
             this.tableAdapterManager.OrganizationsTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = pressF.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.WorkersTableAdapter = this.workersTableAdapter;
             // 
             // cardTableAdapter
@@ -1530,27 +1601,6 @@
             // enrollmentsTableAdapter
             // 
             this.enrollmentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(6, 40);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 259);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Text = "Реализовать таблицу с увольнением в БД\r\nАналогично соседней вкладке реализовать п" +
-    "редставление таблицы в программе\r\n";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(280, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(507, 369);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // Organizations
             // 
@@ -1572,10 +1622,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabReestr.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             this.tabCardEnrollments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.tabCardOpen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cardsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).EndInit();
@@ -1586,6 +1637,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabEnrollments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentsBindingSource)).EndInit();
             this.tabFire.ResumeLayout(false);
             this.tabFire.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1690,26 +1742,6 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         public System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Middlename;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
@@ -1721,8 +1753,16 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.TabPage tabFire;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.BindingSource bindingSource1;
+        public System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Enrollment_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
@@ -1731,10 +1771,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.TabPage tabFire;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Org_key;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Middlename;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
     }
 }

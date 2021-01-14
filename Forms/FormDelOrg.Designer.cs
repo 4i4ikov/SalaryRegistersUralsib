@@ -1,4 +1,4 @@
-﻿namespace pressF
+﻿namespace SalaryRegistersUralsib
 {
     partial class FormDelOrg
     {

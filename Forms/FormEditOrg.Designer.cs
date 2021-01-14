@@ -1,4 +1,4 @@
-﻿namespace pressF
+﻿namespace SalaryRegistersUralsib
 {
     partial class FormEditOrg
     {
@@ -31,16 +31,16 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox6 = new pressF.CueTextBox();
-            this.textBox5 = new pressF.CueTextBox();
-            this.textBox4 = new pressF.CueTextBox();
-            this.textBox1 = new pressF.CueTextBox();
+            this.textBox6 = new SalaryRegistersUralsib.CueTextBox();
+            this.textBox5 = new SalaryRegistersUralsib.CueTextBox();
+            this.textBox4 = new SalaryRegistersUralsib.CueTextBox();
+            this.textBox1 = new SalaryRegistersUralsib.CueTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new pressF.CueTextBox();
+            this.textBox2 = new SalaryRegistersUralsib.CueTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 

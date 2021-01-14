@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace pressF
+namespace SalaryRegistersUralsib
 {
     public partial class SalaryProjectForm : Form
     {
         public SalaryProjectForm()
         {
             InitializeComponent();
+            this.Icon = Properties.Resources.Icon1;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -96,7 +97,10 @@ namespace pressF
             //Фильтр таблицы сотрудников по текущей организации
             f.workersBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.cardBindingSource.Filter = "Org_key = '" + orgKey + "'";
-            f.enrollmentsBindingSource.Filter = "Org_key = '" + orgKey + "'";
+            f.enrollmentsBindingSource.Filter += " AND (Org_key = '" + orgKey + "')";
+            f.bindingSource1.Filter += " AND (Org_key = '" + orgKey + "')";
+            f.bindingSource2.Filter += " AND (Org_key = '" + orgKey + "')";
+
             MainProgram.Context.MainForm = f;
             Close();
             MainProgram.Context.MainForm.Show();

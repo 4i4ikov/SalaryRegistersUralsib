@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace pressF {
+namespace SalaryRegistersUralsib {
     
     
     /// <summary>
@@ -2404,7 +2404,7 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EnrollmentsRow AddEnrollmentsRow(string Org_key, string __, string Table_num, string Surname, string NName, string Middlename, float Sum, int Payment_type_code, float Total_retention_amount, int Income_Type_Code, int Enrollment_type) {
+            public EnrollmentsRow AddEnrollmentsRow(string Org_key, string __, string Table_num, string Surname, string NName, string Middlename, float Sum, int Payment_type_code, float Total_retention_amount, int Income_Type_Code, string Enrollment_type) {
                 EnrollmentsRow rowEnrollmentsRow = ((EnrollmentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2489,7 +2489,7 @@ namespace pressF {
                 base.Columns.Add(this.columnTotal_retention_amount);
                 this.columnIncome_Type_Code = new global::System.Data.DataColumn("Income_Type_Code", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIncome_Type_Code);
-                this.columnEnrollment_type = new global::System.Data.DataColumn("Enrollment_type", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnEnrollment_type = new global::System.Data.DataColumn("Enrollment_type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEnrollment_type);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNum}, true));
@@ -2504,6 +2504,7 @@ namespace pressF {
                 this.columnSurname.MaxLength = 255;
                 this.columnNName.MaxLength = 255;
                 this.columnMiddlename.MaxLength = 255;
+                this.columnEnrollment_type.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4811,10 +4812,10 @@ namespace pressF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Enrollment_type {
+            public string Enrollment_type {
                 get {
                     try {
-                        return ((int)(this[this.tableEnrollments.Enrollment_typeColumn]));
+                        return ((string)(this[this.tableEnrollments.Enrollment_typeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Enrollment_type\' в таблице \'Enrollments\' равно DBNull.", e);
@@ -5095,7 +5096,7 @@ namespace pressF {
         }
     }
 }
-namespace pressF.DbDataSetTableAdapters {
+namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
     
     
     /// <summary>
@@ -5234,7 +5235,7 @@ namespace pressF.DbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM Organizations\r\nWHERE        (Org_key = ?)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM Organizations\nWHERE        (Org_key = ?)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Org_key", global::System.Data.OleDb.OleDbType.WChar, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
@@ -5257,9 +5258,9 @@ namespace pressF.DbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BIK", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BIK", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       Organizations\r\nSET                Organization = ?, Org_key = ?, [De" +
-                "scriptor] = ?, Manager = ?, Manager_d = ?, Booker = ?, Org_INN = ?, OGRN = ?, Di" +
-                "sporsalBill = ?, Bank = ?, BankUnit = ?, BIK = ?\r\nWHERE        (Org_key = ?)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       Organizations\nSET                Organization = ?, Org_key = ?, [Des" +
+                "criptor] = ?, Manager = ?, Manager_d = ?, Booker = ?, Org_INN = ?, OGRN = ?, Dis" +
+                "porsalBill = ?, Bank = ?, BankUnit = ?, BIK = ?\nWHERE        (Org_key = ?)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Organization", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Organization", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Org_key", global::System.Data.OleDb.OleDbType.WChar, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Current, false, null));
@@ -5280,7 +5281,7 @@ namespace pressF.DbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::pressF.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::SalaryRegistersUralsib.Properties.Settings.Default.Database1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5289,7 +5290,7 @@ namespace pressF.DbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Organizations.*\r\nFROM            Organizations";
+            this._commandCollection[0].CommandText = "SELECT        Organizations.*\nFROM            Organizations";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5774,7 +5775,7 @@ namespace pressF.DbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::pressF.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::SalaryRegistersUralsib.Properties.Settings.Default.Database1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5788,7 +5789,7 @@ namespace pressF.DbDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE       Workers\r\nSET                Fired = ?\r\nWHERE        (WCode = ?)";
+            this._commandCollection[1].CommandText = "UPDATE       Workers\nSET                Fired = ?\nWHERE        (WCode = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Fired", global::System.Data.OleDb.OleDbType.Boolean, 2, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Fired", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_WCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WCode", global::System.Data.DataRowVersion.Original, false, null));
@@ -6383,7 +6384,7 @@ namespace pressF.DbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::pressF.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::SalaryRegistersUralsib.Properties.Settings.Default.Database1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6392,7 +6393,7 @@ namespace pressF.DbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Card.*\r\nFROM            Card";
+            this._commandCollection[0].CommandText = "SELECT        Card.*\nFROM            Card";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6967,7 +6968,7 @@ namespace pressF.DbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Income_Type_Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Income_Type_Code", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Income_Type_Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Income_Type_Code", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Enrollment_type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Enrollment_type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Enrollment_type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Enrollments` (`Org_key`, `№`, `Table_num`, `Surname`, `NName`, `Midd" +
@@ -6984,7 +6985,7 @@ namespace pressF.DbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Payment_type_code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Payment_type_code", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Total_retention_amount", global::System.Data.OleDb.OleDbType.Single, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Total_retention_amount", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Income_Type_Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Income_Type_Code", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Enrollment_type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Enrollment_type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE `Enrollments` SET `Org_key` = ?, `№` = ?, `Table_num` = ?, `Surname` = ?, `NName` = ?, `Middlename` = ?, `Sum` = ?, `Payment_type_code` = ?, `Total_retention_amount` = ?, `Income_Type_Code` = ?, `Enrollment_type` = ? WHERE ((`Num` = ?) AND ((? = 1 AND `Org_key` IS NULL) OR (`Org_key` = ?)) AND ((? = 1 AND `№` IS NULL) OR (`№` = ?)) AND ((? = 1 AND `Table_num` IS NULL) OR (`Table_num` = ?)) AND ((? = 1 AND `Surname` IS NULL) OR (`Surname` = ?)) AND ((? = 1 AND `NName` IS NULL) OR (`NName` = ?)) AND ((? = 1 AND `Middlename` IS NULL) OR (`Middlename` = ?)) AND ((? = 1 AND `Sum` IS NULL) OR (`Sum` = ?)) AND ((? = 1 AND `Payment_type_code` IS NULL) OR (`Payment_type_code` = ?)) AND ((? = 1 AND `Total_retention_amount` IS NULL) OR (`Total_retention_amount` = ?)) AND ((? = 1 AND `Income_Type_Code` IS NULL) OR (`Income_Type_Code` = ?)) AND ((? = 1 AND `Enrollment_type` IS NULL) OR (`Enrollment_type` = ?)))";
@@ -6999,7 +7000,7 @@ namespace pressF.DbDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Payment_type_code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Payment_type_code", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Total_retention_amount", global::System.Data.OleDb.OleDbType.Single, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Total_retention_amount", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Income_Type_Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Income_Type_Code", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Enrollment_type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Enrollment_type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Num", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Num", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Org_key", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Org_key", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Original, false, null));
@@ -7022,14 +7023,14 @@ namespace pressF.DbDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Income_Type_Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Income_Type_Code", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Income_Type_Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Income_Type_Code", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Enrollment_type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Enrollment_type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Enrollment_type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Enrollment_type", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::pressF.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::SalaryRegistersUralsib.Properties.Settings.Default.Database1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7038,7 +7039,9 @@ namespace pressF.DbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Enrollments.*\r\nFROM            Enrollments";
+            this._commandCollection[0].CommandText = "SELECT Num, Org_key, [№], Table_num, Surname, NName, Middlename, [Sum], Payment_t" +
+                "ype_code, Total_retention_amount, Income_Type_Code, Enrollment_type FROM Enrollm" +
+                "ents";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7099,7 +7102,7 @@ namespace pressF.DbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Num, string Original_Org_key, string _Original__, string Original_Table_num, string Original_Surname, string Original_NName, string Original_Middlename, global::System.Nullable<float> Original_Sum, global::System.Nullable<int> Original_Payment_type_code, global::System.Nullable<float> Original_Total_retention_amount, global::System.Nullable<int> Original_Income_Type_Code, global::System.Nullable<int> Original_Enrollment_type) {
+        public virtual int Delete(int Original_Num, string Original_Org_key, string _Original__, string Original_Table_num, string Original_Surname, string Original_NName, string Original_Middlename, global::System.Nullable<float> Original_Sum, global::System.Nullable<int> Original_Payment_type_code, global::System.Nullable<float> Original_Total_retention_amount, global::System.Nullable<int> Original_Income_Type_Code, string Original_Enrollment_type) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Num));
             if ((Original_Org_key == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -7181,13 +7184,13 @@ namespace pressF.DbDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((Original_Enrollment_type.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_Enrollment_type.Value));
-            }
-            else {
+            if ((Original_Enrollment_type == null)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_Enrollment_type));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7209,7 +7212,7 @@ namespace pressF.DbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Org_key, string __, string Table_num, string Surname, string NName, string Middlename, global::System.Nullable<float> Sum, global::System.Nullable<int> Payment_type_code, global::System.Nullable<float> Total_retention_amount, global::System.Nullable<int> Income_Type_Code, global::System.Nullable<int> Enrollment_type) {
+        public virtual int Insert(string Org_key, string __, string Table_num, string Surname, string NName, string Middlename, global::System.Nullable<float> Sum, global::System.Nullable<int> Payment_type_code, global::System.Nullable<float> Total_retention_amount, global::System.Nullable<int> Income_Type_Code, string Enrollment_type) {
             if ((Org_key == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -7270,11 +7273,11 @@ namespace pressF.DbDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Enrollment_type.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(Enrollment_type.Value));
+            if ((Enrollment_type == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Enrollment_type));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7307,7 +7310,7 @@ namespace pressF.DbDataSetTableAdapters {
                     global::System.Nullable<int> Payment_type_code, 
                     global::System.Nullable<float> Total_retention_amount, 
                     global::System.Nullable<int> Income_Type_Code, 
-                    global::System.Nullable<int> Enrollment_type, 
+                    string Enrollment_type, 
                     int Original_Num, 
                     string Original_Org_key, 
                     string _Original__, 
@@ -7319,7 +7322,7 @@ namespace pressF.DbDataSetTableAdapters {
                     global::System.Nullable<int> Original_Payment_type_code, 
                     global::System.Nullable<float> Original_Total_retention_amount, 
                     global::System.Nullable<int> Original_Income_Type_Code, 
-                    global::System.Nullable<int> Original_Enrollment_type) {
+                    string Original_Enrollment_type) {
             if ((Org_key == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -7380,11 +7383,11 @@ namespace pressF.DbDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Enrollment_type.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Enrollment_type.Value));
+            if ((Enrollment_type == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Enrollment_type));
             }
             this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Num));
             if ((Original_Org_key == null)) {
@@ -7467,13 +7470,13 @@ namespace pressF.DbDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            if ((Original_Enrollment_type.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_Enrollment_type.Value));
-            }
-            else {
+            if ((Original_Enrollment_type == null)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Enrollment_type));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace pressF
+namespace SalaryRegistersUralsib
 {
     public partial class MainForm : Form
     {
@@ -10,7 +10,7 @@ namespace pressF
         {
 
             InitializeComponent();
-
+            this.Icon = Properties.Resources.Icon1;
         }
 
 

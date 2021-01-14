@@ -1,4 +1,4 @@
-﻿namespace pressF
+﻿namespace SalaryRegistersUralsib
 {
     partial class SalaryProjectForm
     {
@@ -47,14 +47,14 @@
             this.managerdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.organizationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbDataSet = new pressF.DbDataSet();
+            this.dbDataSet = new SalaryRegistersUralsib.DbDataSet();
             this.button3 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.прочееToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.organizationsTableAdapter1 = new pressF.DbDataSetTableAdapters.OrganizationsTableAdapter();
-            this.tableAdapterManager = new pressF.DbDataSetTableAdapters.TableAdapterManager();
+            this.organizationsTableAdapter1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.OrganizationsTableAdapter();
+            this.tableAdapterManager = new SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.organizationsBindingSource)).BeginInit();
@@ -305,7 +305,7 @@
             this.tableAdapterManager.CardTableAdapter = null;
             this.tableAdapterManager.EnrollmentsTableAdapter = null;
             this.tableAdapterManager.OrganizationsTableAdapter = this.organizationsTableAdapter1;
-            this.tableAdapterManager.UpdateOrder = pressF.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.WorkersTableAdapter = null;
             // 
             // ZP
