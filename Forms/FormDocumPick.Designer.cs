@@ -1,4 +1,4 @@
-﻿namespace pressF.Forms
+﻿namespace SalaryRegistersUralsib.Forms
 {
     partial class FormDocumPick
     {
@@ -37,11 +37,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.DateTime2 = new pressF.CueTextBox();
-            this.Docum_Cod = new pressF.CueTextBox();
-            this.Docum_Place = new pressF.CueTextBox();
-            this.Docum_Num = new pressF.CueTextBox();
-            this.Docum_Serial = new pressF.CueTextBox();
+            this.DateTime2 = new SalaryRegistersUralsib.CueTextBox();
+            this.Docum_Cod = new SalaryRegistersUralsib.CueTextBox();
+            this.Docum_Place = new SalaryRegistersUralsib.CueTextBox();
+            this.Docum_Num = new SalaryRegistersUralsib.CueTextBox();
+            this.Docum_Serial = new SalaryRegistersUralsib.CueTextBox();
             this.SuspendLayout();
             // 
             // Docum

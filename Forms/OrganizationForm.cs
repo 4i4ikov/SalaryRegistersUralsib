@@ -1,17 +1,20 @@
-﻿using pressF.Forms;
+﻿using SalaryRegistersUralsib.Forms;
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 using Excel = Microsoft.Office.Interop.Excel;
-namespace pressF
+namespace SalaryRegistersUralsib
 {
     public partial class Organizations : Form
     {
         public Organizations()
         {
+            
             InitializeComponent();
+            this.Icon = Properties.Resources.Icon1;
         }
         /*
          * сделать:
@@ -32,9 +35,12 @@ namespace pressF
 
         private void FormZP_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.Workers". При необходимости она может быть перемещена или удалена.
+            this.workersTableAdapter.Fill(this.dbDataSet.Workers);
             enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
             cardTableAdapter.Fill(dbDataSet.Card);
             workersTableAdapter.Fill(dbDataSet.Workers);
+            
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -111,7 +117,7 @@ namespace pressF
 
                 FillTheWorkSheet(workersDataGridView, wsh);
                 FillTheWorkSheet(cardsGridView, wsh2);
-                FillTheWorkSheet(enrollmentsDataGridView, wsh3);
+                FillTheWorkSheet(dataGridView3, wsh3);
                 FillTheWorkSheet(dataGridView2, wsh4);
 
                 excelapp.AlertBeforeOverwriting = false;
@@ -139,7 +145,9 @@ namespace pressF
             }
             if ( f.ShowDialog() == DialogResult.OK )
             {
-
+                //cardTableAdapter.Insert(f.WSurname, f.WName, f.WMiddlename, f.Table_num.Text, Docum, Docum_serial, Docum_num, Docum_date, Docum_place, Docum_cod, City, Region_cod, District, Street, House, Block, Apartment, [ Index ], Birth, Place_Of_Birth, Sex, SNILS,
+                 //        Home_phone, Mobile_phone, INN_worker, Full_Name_Card, Code_Word, Bank_Code, Card_type, Docum2, Docum2_serial, Docum2_num, Docum2_date, Docum2_place, City2, Region_cod2, District2, Street2, House2, Block2,
+                 //        Apartment2, Index2, Action_param, Employment_Date, Salary, Email, Org_key, Code);
                 //cardTableAdapter.Insert( f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Docum.Text, int.Parse(f.Docum_Serial.Text), int.Parse(f.Docum_Num.Text), Convert.ToDateTime(f.DateTime2.Text), f.Docum_Place.Text, f.Docum_Cod.Text, f.Mass[0], int.Parse(f.Mass[1]), f.Mass[2], f.Mass[3], f.Mass[4], f.Mass[5], f.Mass[6], int.Parse(f.Mass[7]), Convert.ToDateTime(f.WBirth.Text), f.PlaceOfBirth.Text, f.Sex.Text, f.SNILS.Text, f.Home_Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_Type.Text, Convert.ToDateTime(f.EmpDate.Text), f.Salary.Text, f.Email.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
                 //cardTableAdapter.Fill(dbDataSet.Card);
             }
@@ -175,18 +183,15 @@ namespace pressF
         private void enrollmentsDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //автоматическое заполнение колонки "Код организации", ибо она не меняется
-            enrollmentsDataGridView.CurrentRow.Cells [ 0 ].Value = label5.Text;
-        }
-
-        private void enrollmentsDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            // скрытие колонки "Код организации", она не меняется, заполняется автоматически
-            enrollmentsDataGridView.Columns [ 0 ].Visible = false;
+            DataGridView dg = (DataGridView)sender;
+            dg.CurrentRow.Cells [ 1 ].Value = label5.Text;
+            dg.CurrentRow.Cells [ 2 ].Value = dg.Tag.ToString();
         }
 
         private void enrollmentsDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             // при ошибке ввода помечаем ячейку и сбрасываем изменения
+            return;
             DataGridView view = (DataGridView)sender;
             view.Rows [ e.RowIndex ].Cells [ e.ColumnIndex ].ErrorText = "ошибка ввода";
             e.Cancel = false;
@@ -204,9 +209,34 @@ namespace pressF
         private void Organizations_FormClosed(object sender, FormClosedEventArgs e)
         {
             // сохранение таблицы с зачислениями при закрытии
+            
             enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
             tableAdapterManager.UpdateAll(dbDataSet);
             dbDataSet.AcceptChanges();
+        }
+
+        private void enrollmentsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dg = (DataGridView)sender;
+            Debug.WriteLine(dg.Columns [ e.ColumnIndex ].HeaderCell.Value);
+            if ( !dg.CurrentRow.IsNewRow && dg.Columns[e.ColumnIndex].HeaderText == "Удалить" ) //make sure button index here
+            {
+                dg.Rows.Remove(dg.Rows [ e.RowIndex ]);
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
+            
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+
+            MainProgram.Context.MainForm = new SalaryProjectForm();
+            Close();
+            MainProgram.Context.MainForm.Show();
         }
     }
 }

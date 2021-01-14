@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace pressF.Forms
+namespace SalaryRegistersUralsib.Forms
 {
 
     public partial class FormDebug : Form

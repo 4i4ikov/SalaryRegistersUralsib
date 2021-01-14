@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-namespace pressF
+namespace SalaryRegistersUralsib
 {
     public partial class FormAddWorker : Form
     {

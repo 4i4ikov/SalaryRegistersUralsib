@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace pressF
+namespace SalaryRegistersUralsib
 {
     public partial class FormAddOrganization : Form
     {
