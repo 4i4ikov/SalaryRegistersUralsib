@@ -5192,7 +5192,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM Organizations\nWHERE        (Org_key = ?)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM Organizations\r\nWHERE        (Org_key = ?)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Org_key", global::System.Data.OleDb.OleDbType.WChar, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
@@ -5215,9 +5215,9 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BIK", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BIK", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       Organizations\nSET                Organization = ?, Org_key = ?, [Des" +
-                "criptor] = ?, Manager = ?, Manager_d = ?, Booker = ?, Org_INN = ?, OGRN = ?, Dis" +
-                "porsalBill = ?, Bank = ?, BankUnit = ?, BIK = ?\nWHERE        (Org_key = ?)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       Organizations\r\nSET                Organization = ?, Org_key = ?, [De" +
+                "scriptor] = ?, Manager = ?, Manager_d = ?, Booker = ?, Org_INN = ?, OGRN = ?, Di" +
+                "sporsalBill = ?, Bank = ?, BankUnit = ?, BIK = ?\r\nWHERE        (Org_key = ?)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Organization", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Organization", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Org_key", global::System.Data.OleDb.OleDbType.WChar, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Current, false, null));
@@ -5247,7 +5247,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Organizations.*\nFROM            Organizations";
+            this._commandCollection[0].CommandText = "SELECT        Organizations.*\r\nFROM            Organizations";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5746,7 +5746,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE       Workers\nSET                Fired = ?\nWHERE        (WCode = ?)";
+            this._commandCollection[1].CommandText = "UPDATE       Workers\r\nSET                Fired = ?\r\nWHERE        (WCode = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Fired", global::System.Data.OleDb.OleDbType.Boolean, 2, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Fired", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_WCode", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WCode", global::System.Data.DataRowVersion.Original, false, null));
@@ -6350,7 +6350,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Card.*\nFROM            Card";
+            this._commandCollection[0].CommandText = "SELECT        Card.*\r\nFROM            Card";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
