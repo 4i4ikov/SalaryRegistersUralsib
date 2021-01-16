@@ -81,9 +81,17 @@ namespace SalaryRegistersUralsib
                 }
             }
             //наводим красоту в таблице при помощи стандартных методов экселя
-            wsh.Range [ "A1", wsh.Rows [ dg.RowCount + 1 ].Columns [ dg.ColumnCount ] ].AutoFormat(Format:
+            try
+            {
+                wsh.Range [ "A1", wsh.Rows [ dg.RowCount + 1 ].Columns [ dg.ColumnCount ] ].AutoFormat(Format:
    Excel.XlRangeAutoFormat.xlRangeAutoFormatClassic2);
-            wsh.Columns.AutoFit();
+                wsh.Columns.AutoFit();
+            }
+            catch ( Exception )
+            {
+                Debug.WriteLine("Ошибка из-за версии экселя меньше 2016");
+            }
+            
         }
         private void ExportButton_Click(object sender, EventArgs e)
         {
