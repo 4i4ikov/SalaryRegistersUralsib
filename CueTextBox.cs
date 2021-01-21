@@ -88,88 +88,38 @@ namespace SalaryRegistersUralsib
         }
         public void CheckString(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
-            CueTextBox lol = sender as CueTextBox;
-            string ch = _check(sender, false);
-            if ( !( string.IsNullOrEmpty(ch) ) )
-            {
-                lol.ForeColor = Color.Red;
-                if ( !( new Regex(@lol.Tag.ToString()).IsMatch(lol.Parent.FindForm().Tag.ToString()) ) )
-                {
-                    lol.Parent.FindForm().Tag += ch + ",";
-                }
-            }
-            else
-            {
-                lol.ForeColor = Color.Black;
-                lol.Parent.FindForm().Tag = Regex.Replace(lol.Parent.FindForm().Tag.ToString(), lol.Tag.ToString() + ",", string.Empty);
-
-            }
-
-
-
-
-
-            /*if (lol.RegEx != null && lol.Tag != null)
-            {
-                if ((new Regex(@lol.RegEx.ToString())).IsMatch(lol.Text))
-                {
-                    lol.ForeColor = Color.Black;
-                    lol.Parent.FindForm().Tag = Regex.Replace(lol.Parent.FindForm().Tag.ToString(), " "+@lol.Tag.ToString(), String.Empty);
-                }
-                else
-                {
-                    lol.ForeColor = Color.Red;
-                    if (lol.Tag != null)
-                    {
-                        if (!(new Regex(@lol.Tag.ToString()).IsMatch(lol.Parent.FindForm().Tag.ToString())) || (lol.Required && String.IsNullOrWhiteSpace(lol.Text)))
-                        {
-                            lol.Parent.FindForm().Tag += lol.Tag.ToString() + ",";
-                        }
-                    }
-
-                }
-            }*/
-
+            Check(sender, false);
         }
-        public string _check(object sender, bool checkmode)
+        internal string Check(object sender, bool checkmode)
         {
             CueTextBox lol = sender as CueTextBox;
             if ( lol.Required && ( string.IsNullOrWhiteSpace(lol.Text) || lol.Text == "__.__.____" ) || lol.Text == "+7 (   )    -  -" )
             {
+                lol.ForeColor = Color.Red;
                 return lol.Tag.ToString();
             }
 
             if ( checkmode )
             {
+                lol.ForeColor = Color.Black;
                 return string.Empty;
             }
 
             if ( ( lol.RegEx != null && !( ( new Regex(@lol.RegEx.ToString()) ).IsMatch(lol.Text) ) && !( string.IsNullOrWhiteSpace(lol.Text) ) ) )
             {
-
-
                 if ( lol.Tag != null )
                 {
+                    lol.ForeColor = Color.Red;
                     return lol.Tag.ToString();
                 }
                 else
                 {
+                    lol.ForeColor = Color.Black;
                     return lol.Name;
                 }
-                /*lol.ForeColor = Color.Black;
-    lol.Parent.FindForm().Tag = Regex.Replace(lol.Parent.FindForm().Tag.ToString(), " " + @lol.Tag.ToString(), String.Empty);*/
             }
             else
             {
-                /*lol.ForeColor = Color.Red;
-                if (lol.Tag != null)
-                {
-                    if (!(new Regex(@lol.Tag.ToString()).IsMatch(lol.Parent.FindForm().Tag.ToString())) || (lol.Required && String.IsNullOrWhiteSpace(lol.Text)))
-                    {
-                        lol.Parent.FindForm().Tag += lol.Tag.ToString() + ",";
-                    }
-                }*/
                 if ( lol.Name == "SNILS" && !string.IsNullOrWhiteSpace(lol.Text) )
                 {
                     string snils = lol.Text;
@@ -194,10 +144,11 @@ namespace SalaryRegistersUralsib
 
                     if ( checkDigit != int.Parse(snils.Substring(9, 2)) ) //Если все ок с СНИЛС
                     {
+                        lol.ForeColor = Color.Red;
                         return lol.Tag.ToString();
                     }
                 }
-
+                lol.ForeColor = Color.Black;
                 return string.Empty;
 
 

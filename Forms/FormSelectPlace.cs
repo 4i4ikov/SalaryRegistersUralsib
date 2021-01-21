@@ -10,6 +10,7 @@ namespace SalaryRegistersUralsib
         {
             InitializeComponent();
         }
+
         List<string> mass = new List<string>();
         public List<string> GetData()
         {
@@ -44,7 +45,7 @@ namespace SalaryRegistersUralsib
             {
                 if ( control is CueTextBox textBox )
                 {
-                    string ch = textBox._check(textBox, true);
+                    string ch = textBox.Check(textBox, true);
                     if ( !( Tag.ToString().IndexOf(ch) > -1 ) )
                         Tag += ch + ",";
                 }

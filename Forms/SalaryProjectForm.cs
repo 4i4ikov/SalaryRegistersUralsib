@@ -97,13 +97,13 @@ namespace SalaryRegistersUralsib
             //Фильтр таблицы сотрудников по текущей организации
             f.workersBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.cardBindingSource.Filter = "Org_key = '" + orgKey + "'";
-            f.OrgBindingSource.Filter = "Org_key = '" + orgKey + "'";
+            f.OrgBindingSource.Filter = "org_key = '" + orgKey + "'";
 
             f.enrollmentsBindingSource.Filter += " AND (Org_key = '" + orgKey + "')";
             f.CardEnrollmentsBindingSource.Filter += " AND (Org_key = '" + orgKey + "')";
             f.ReestrBindingSource.Filter += " AND (Org_key = '" + orgKey + "')";
             f.UvalBindingSource.Filter += " AND (Org_key = '" + orgKey + "')";
-
+            
 
 
             MainProgram.Context.MainForm = f;

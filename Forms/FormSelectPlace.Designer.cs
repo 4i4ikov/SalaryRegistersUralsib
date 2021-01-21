@@ -38,14 +38,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.cueTextBox8 = new CueTextBox();
-            this.cueTextBox7 = new CueTextBox();
-            this.cueTextBox6 = new CueTextBox();
-            this.cueTextBox5 = new CueTextBox();
-            this.cueTextBox4 = new CueTextBox();
-            this.cueTextBox3 = new CueTextBox();
-            this.cueTextBox2 = new CueTextBox();
-            this.cueTextBox1 = new CueTextBox();
+            this.cueTextBox8 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox7 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox6 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox5 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox4 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox3 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox2 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox1 = new SalaryRegistersUralsib.CueTextBox();
             this.SuspendLayout();
             // 
             // label18
@@ -156,7 +156,6 @@
             // 
             this.cueTextBox8.CueText = "450000";
             this.cueTextBox8.Location = new System.Drawing.Point(170, 155);
-            this.cueTextBox8.Mask = "5555555";
             this.cueTextBox8.Name = "cueTextBox8";
             this.cueTextBox8.RegEx = "^[\\d]+$";
             this.cueTextBox8.Required = false;
@@ -168,7 +167,6 @@
             // 
             this.cueTextBox7.CueText = "55";
             this.cueTextBox7.Location = new System.Drawing.Point(12, 155);
-            this.cueTextBox7.Mask = "55";
             this.cueTextBox7.Name = "cueTextBox7";
             this.cueTextBox7.RegEx = "^[\\d]+$";
             this.cueTextBox7.Required = false;
@@ -180,7 +178,6 @@
             // 
             this.cueTextBox6.CueText = "1А";
             this.cueTextBox6.Location = new System.Drawing.Point(170, 112);
-            this.cueTextBox6.Mask = "1А";
             this.cueTextBox6.Name = "cueTextBox6";
             this.cueTextBox6.RegEx = "^[\\d\\w]+$";
             this.cueTextBox6.Required = false;
@@ -192,7 +189,6 @@
             // 
             this.cueTextBox5.CueText = "42";
             this.cueTextBox5.Location = new System.Drawing.Point(12, 112);
-            this.cueTextBox5.Mask = "42";
             this.cueTextBox5.Name = "cueTextBox5";
             this.cueTextBox5.RegEx = "^[\\d]+$";
             this.cueTextBox5.Required = false;
@@ -204,7 +200,6 @@
             // 
             this.cueTextBox4.CueText = "Бирская";
             this.cueTextBox4.Location = new System.Drawing.Point(170, 73);
-            this.cueTextBox4.Mask = "Бирская";
             this.cueTextBox4.Name = "cueTextBox4";
             this.cueTextBox4.RegEx = "^[а-яА-Я \\-]+$";
             this.cueTextBox4.Required = false;
@@ -216,7 +211,6 @@
             // 
             this.cueTextBox3.CueText = "Бирский";
             this.cueTextBox3.Location = new System.Drawing.Point(12, 73);
-            this.cueTextBox3.Mask = "Бирский";
             this.cueTextBox3.Name = "cueTextBox3";
             this.cueTextBox3.RegEx = "^[а-яА-Я ]+$";
             this.cueTextBox3.Required = false;
@@ -234,7 +228,6 @@
             this.cueTextBox2.Size = new System.Drawing.Size(150, 20);
             this.cueTextBox2.TabIndex = 2;
             this.cueTextBox2.Tag = "Регион код";
-            this.cueTextBox2.Text = "02";
             // 
             // cueTextBox1
             // 

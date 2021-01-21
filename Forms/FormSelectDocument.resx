@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="radioButton8.Text" xml:space="preserve">
+  <data name="radioButton15.Text" xml:space="preserve">
     <value>свидетельство о рассмотрении ходатайства о признании лица беженцем, выданное дипломатическим или консульским учреждением РФ либо постом иммиграционного контроля или территориальным органом федеральной исполнительной власти по миграционной службе</value>
   </data>
-  <data name="radioButton5.Text" xml:space="preserve">
+  <data name="radioButton25.Text" xml:space="preserve">
     <value>военный билет (для солдат, матросов, сержантов и старшин (только в период прохождения ими военной службы по призыву или контракту), а также курсантов военных образовательных учреждений профессионального образования)</value>
   </data>
 </root>

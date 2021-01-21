@@ -45,9 +45,9 @@ namespace SalaryRegistersUralsib
 
         private void debugToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Forms.FormDOS form1 = new Forms.FormDOS();
+            //Forms.FormDOS form1 = new Forms.FormDOS();
 
-            form1.Show();
+            //form1.Show();
         }
     }
 }

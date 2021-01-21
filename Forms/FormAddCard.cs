@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace SalaryRegistersUralsib
@@ -10,6 +11,10 @@ namespace SalaryRegistersUralsib
     {
         public List<string> Mass { get; set; }
         public List<string> Mass2 { get; set; }
+        public List<string> Doc { get; set; }
+        public List<string> Doc2 { get; set; }
+
+
 
         public FormAddCard()
         {
@@ -23,7 +28,7 @@ namespace SalaryRegistersUralsib
                 if ( control is CueTextBox textBox )
                 {
                     textBox.Validating += new System.ComponentModel.CancelEventHandler(textBox.CheckString);
-
+                    textBox.Enter += new System.EventHandler(Cue_Enter);
                 }
             }
             
@@ -36,8 +41,6 @@ namespace SalaryRegistersUralsib
             FormSelectPlace f = new FormSelectPlace();
             if ( f.ShowDialog() == DialogResult.OK && sender is Button b ) // отобразить форму
             {
-
-
                 if ( Boolean.Parse(b.Tag.ToString()) )
                 {
                     Mass = f.GetData();
@@ -50,8 +53,6 @@ namespace SalaryRegistersUralsib
                     Mass2.Reverse();
                     MessageBox.Show(String.Join(", ", Mass2.ToArray()));
                 }
-
-
 
             }
         }
@@ -172,79 +173,67 @@ namespace SalaryRegistersUralsib
             {
                 return;
             }
-
+            
             //Проверка всех TextBox на соответствие требованиям(валидация)
-            List<string> reasons = new List<string> { };
-            ValidateChildren();
+            
+
+            //TODO проверить можно ли удалить старую валидацию формы добавления карт
+            if ( DialogResult != DialogResult.OK )
+            {
+                return;
+            }
+            Tag = " ";
             foreach ( Control control in Controls )
             {
                 if ( control is CueTextBox textBox )
                 {
-
-                    if ( ( new Regex(@textBox.Tag.ToString()).IsMatch(textBox.Parent.FindForm().Tag.ToString()) ) )
+                    string ch = textBox.Check(textBox, false);
+                    if ( !( Tag.ToString().IndexOf(ch) > -1 ) )
                     {
-                        //e.Cancel = true;
-                        reasons.Add(textBox.Tag.ToString());
+                        Debug.WriteLine(textBox.Text);
+                        if ( String.IsNullOrWhiteSpace(textBox.Text) || textBox.Text == " " ) textBox.Text = "!!!";
+                        Tag += ch + ",";
                     }
-
                 }
             }
-            if ( e.Cancel )
+            if ( !( string.IsNullOrWhiteSpace(Tag.ToString()) ) )
             {
-                MessageBox.Show("Требуется правильно заполнить: " + string.Join(", ", reasons.ToArray()));
+                e.Cancel = true;
+                MessageBox.Show("Не верно заполненные значения \n" + Tag.ToString());
             }
-            //TODO проверить можно ли удалить старую валидацию формы добавления карт
-            //if (DialogResult != DialogResult.OK)
-            //{
-            //    return;
-            //}
-            //foreach (Control control in Controls)
-            //{
-            //    if (control is CueTextBox textBox)
-            //    {
-            //        string ch = textBox._check(textBox, true);
-            //        if (!(Tag.ToString().IndexOf(ch) > -1))
-            //        {
-            //            Tag += ch + ",";
-            //        }
-            //    }
-            //}
-            //if (!(string.IsNullOrWhiteSpace(Tag.ToString())))
-            //{
-            //    //e.Cancel = true;
-            //    MessageBox.Show("Не верно заполненные значения \n" + Tag.ToString());
-            //}
 
+            ValidateChildren();
         }
-
-
-
-        private void Card_Type_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("ведется доработка, значения не будут добавлены в БД");
-        }
-
-
-
-        private void Sex_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void button6_Click(object sender, EventArgs e)
         {
-            FormDocumPick f = new FormDocumPick();
+            Button b = (Button)sender;
+            bool docummode = Boolean.Parse(b.Tag.ToString());
+            FormDocumPick f = new FormDocumPick(docummode);
+
+
+
             if ( f.ShowDialog() == DialogResult.OK )
             {
-                MessageBox.Show("ведется доработка.");
+                if ( docummode )
+                {
+                    Doc = f.GetData();
+
+                    MessageBox.Show(String.Join(", ", Doc.ToArray()));
+                } else
+                {
+                    Doc2 = f.GetData();
+
+                    MessageBox.Show(String.Join(", ", Doc2.ToArray()));
+                }
             }
+        }
+
+        private void Cue_Enter(object sender, EventArgs e)
+        {
+            CueTextBox c = (CueTextBox)sender;
+            if (c.Text == "!!!") c.Text = String.Empty;
+            c.ForeColor = System.Drawing.Color.Black;
         }
     }
 

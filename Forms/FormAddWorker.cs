@@ -184,7 +184,7 @@ namespace SalaryRegistersUralsib
             {
                 if ( control as CueTextBox != null )
                 {
-                    string ch = (control as CueTextBox)._check(control as CueTextBox, true);
+                    string ch = (control as CueTextBox).Check(control as CueTextBox, true);
                     if ( !( Tag.ToString().IndexOf(ch) > -1 ) )
                         Tag += ch + ",";
                 }

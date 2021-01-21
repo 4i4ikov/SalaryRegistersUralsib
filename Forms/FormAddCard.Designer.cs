@@ -51,33 +51,33 @@
             this.label24 = new System.Windows.Forms.Label();
             this.Card_NLAbel = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.Fired = new CueTextBox();
-            this.Org_key = new CueTextBox();
-            this.WCode = new CueTextBox();
-            this.EmpDate = new CueTextBox();
-            this.Home_Phone = new CueTextBox();
-            this.SNILS = new CueTextBox();
-            this.Email = new CueTextBox();
-            this.Card_N = new CueTextBox();
-            this.Bank_Code = new CueTextBox();
-            this.Code_Word = new CueTextBox();
-            this.PlaceOfBirth = new CueTextBox();
-            this.Salary = new CueTextBox();
-            this.Table_num = new CueTextBox();
-            this.INN_worker = new CueTextBox();
-            this.WBill_Num = new CueTextBox();
-            this.WMiddlename = new CueTextBox();
-            this.WName = new CueTextBox();
-            this.WBirth = new CueTextBox();
-            this.Full_Name_Card = new CueTextBox();
-            this.WSurname = new CueTextBox();
-            this.Card_Type = new CueTextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.Action_param = new CueTextBox();
+            this.Fired = new SalaryRegistersUralsib.CueTextBox();
+            this.Org_key = new SalaryRegistersUralsib.CueTextBox();
+            this.WCode = new SalaryRegistersUralsib.CueTextBox();
+            this.Employment_Date = new SalaryRegistersUralsib.CueTextBox();
+            this.Phone = new SalaryRegistersUralsib.CueTextBox();
+            this.SNILS = new SalaryRegistersUralsib.CueTextBox();
+            this.Email = new SalaryRegistersUralsib.CueTextBox();
+            this.Card_N = new SalaryRegistersUralsib.CueTextBox();
+            this.Bank_Code = new SalaryRegistersUralsib.CueTextBox();
+            this.Code_Word = new SalaryRegistersUralsib.CueTextBox();
+            this.Place_Of_Birth = new SalaryRegistersUralsib.CueTextBox();
+            this.Salary = new SalaryRegistersUralsib.CueTextBox();
+            this.Table_num = new SalaryRegistersUralsib.CueTextBox();
+            this.INN_worker = new SalaryRegistersUralsib.CueTextBox();
+            this.WBill_Num = new SalaryRegistersUralsib.CueTextBox();
+            this.WMiddlename = new SalaryRegistersUralsib.CueTextBox();
+            this.WName = new SalaryRegistersUralsib.CueTextBox();
+            this.WBirth = new SalaryRegistersUralsib.CueTextBox();
+            this.Full_Name_Card = new SalaryRegistersUralsib.CueTextBox();
+            this.WSurname = new SalaryRegistersUralsib.CueTextBox();
+            this.Action_param = new SalaryRegistersUralsib.CueTextBox();
+            this.Card_type = new SalaryRegistersUralsib.CueTextBox();
             this.SuspendLayout();
             // 
             // label6
@@ -153,7 +153,6 @@
             this.button1.TabIndex = 95;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label5
             // 
@@ -181,7 +180,6 @@
             this.Sex.Size = new System.Drawing.Size(150, 21);
             this.Sex.TabIndex = 1;
             this.Sex.Tag = "Пол";
-            this.Sex.SelectedIndexChanged += new System.EventHandler(this.Sex_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -209,9 +207,9 @@
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label16.Location = new System.Drawing.Point(164, 123);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(124, 16);
+            this.label16.Size = new System.Drawing.Size(125, 16);
             this.label16.TabIndex = 86;
-            this.label16.Text = "Домашний номер*";
+            this.label16.Text = "Номер телефона*";
             // 
             // label17
             // 
@@ -271,9 +269,9 @@
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label22.Location = new System.Drawing.Point(323, 166);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(80, 16);
+            this.label22.Size = new System.Drawing.Size(75, 16);
             this.label22.TabIndex = 86;
-            this.label22.Text = "Тип карты*";
+            this.label22.Text = "Тип карты";
             // 
             // label23
             // 
@@ -313,11 +311,65 @@
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label25.Location = new System.Drawing.Point(476, 205);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(51, 16);
+            this.label25.Size = new System.Drawing.Size(46, 16);
             this.label25.TabIndex = 89;
             this.label25.Tag = "E-Mail";
-            this.label25.Text = "E-Mail*";
+            this.label25.Text = "E-Mail";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(11, 97);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 23);
+            this.button4.TabIndex = 105;
+            this.button4.Tag = "true";
+            this.button4.Text = "Место прописки";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Place_Enter);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(167, 97);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(150, 23);
+            this.button5.TabIndex = 105;
+            this.button5.Tag = "false";
+            this.button5.Text = "Место проживания";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Place_Enter);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(323, 97);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(150, 23);
+            this.button6.TabIndex = 105;
+            this.button6.Tag = "false";
+            this.button6.Text = "Основной документ";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(479, 97);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(150, 23);
+            this.button7.TabIndex = 105;
+            this.button7.Tag = "true";
+            this.button7.Text = "Доп. документ";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(479, 166);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 16);
+            this.label7.TabIndex = 86;
+            this.label7.Text = "Доп. параметр";
             // 
             // Fired
             // 
@@ -370,36 +422,36 @@
             this.WCode.Tag = "WCode";
             this.WCode.Visible = false;
             // 
-            // EmpDate
+            // Employment_Date
             // 
-            this.EmpDate.BeepOnError = true;
-            this.EmpDate.CueText = "Дата выдачи";
-            this.EmpDate.HideSelection = false;
-            this.EmpDate.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.EmpDate.Location = new System.Drawing.Point(11, 221);
-            this.EmpDate.Mask = "00/00/0000";
-            this.EmpDate.Name = "EmpDate";
-            this.EmpDate.RegEx = "(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d";
-            this.EmpDate.Required = false;
-            this.EmpDate.ResetOnPrompt = false;
-            this.EmpDate.ResetOnSpace = false;
-            this.EmpDate.Size = new System.Drawing.Size(150, 20);
-            this.EmpDate.TabIndex = 20;
-            this.EmpDate.Tag = "Дата приема на работу";
-            this.EmpDate.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-            this.EmpDate.ValidatingType = typeof(System.DateTime);
+            this.Employment_Date.BeepOnError = true;
+            this.Employment_Date.CueText = "Дата выдачи";
+            this.Employment_Date.HideSelection = false;
+            this.Employment_Date.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.Employment_Date.Location = new System.Drawing.Point(11, 221);
+            this.Employment_Date.Mask = "00/00/0000";
+            this.Employment_Date.Name = "Employment_Date";
+            this.Employment_Date.RegEx = "(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d";
+            this.Employment_Date.Required = true;
+            this.Employment_Date.ResetOnPrompt = false;
+            this.Employment_Date.ResetOnSpace = false;
+            this.Employment_Date.Size = new System.Drawing.Size(150, 20);
+            this.Employment_Date.TabIndex = 20;
+            this.Employment_Date.Tag = "Дата приема на работу";
+            this.Employment_Date.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.Employment_Date.ValidatingType = typeof(System.DateTime);
             // 
-            // Home_Phone
+            // Phone
             // 
-            this.Home_Phone.CueText = null;
-            this.Home_Phone.Location = new System.Drawing.Point(167, 141);
-            this.Home_Phone.Mask = "+7 (999) 000-00-00";
-            this.Home_Phone.Name = "Home_Phone";
-            this.Home_Phone.RegEx = null;
-            this.Home_Phone.Required = false;
-            this.Home_Phone.Size = new System.Drawing.Size(150, 20);
-            this.Home_Phone.TabIndex = 14;
-            this.Home_Phone.Tag = "Домашний номер";
+            this.Phone.CueText = null;
+            this.Phone.Location = new System.Drawing.Point(167, 141);
+            this.Phone.Mask = "+7 (999) 000-00-00";
+            this.Phone.Name = "Phone";
+            this.Phone.RegEx = null;
+            this.Phone.Required = true;
+            this.Phone.Size = new System.Drawing.Size(150, 20);
+            this.Phone.TabIndex = 14;
+            this.Phone.Tag = "Домашний номер";
             // 
             // SNILS
             // 
@@ -416,7 +468,7 @@
             // Email
             // 
             this.Email.BeepOnError = true;
-            this.Email.CueText = "Номер карты";
+            this.Email.CueText = "me@example.com";
             this.Email.HidePromptOnLeave = true;
             this.Email.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.Email.Location = new System.Drawing.Point(479, 221);
@@ -426,8 +478,7 @@
             this.Email.Required = false;
             this.Email.Size = new System.Drawing.Size(150, 20);
             this.Email.TabIndex = 23;
-            this.Email.Tag = "Номер карты";
-            this.Email.Text = " ";
+            this.Email.Tag = "Электронная почта";
             // 
             // Card_N
             // 
@@ -439,11 +490,10 @@
             this.Card_N.Name = "Card_N";
             this.Card_N.PromptChar = ' ';
             this.Card_N.RegEx = "^[\\d\\. ]+$";
-            this.Card_N.Required = false;
+            this.Card_N.Required = true;
             this.Card_N.Size = new System.Drawing.Size(150, 20);
             this.Card_N.TabIndex = 22;
             this.Card_N.Tag = "Номер карты";
-            this.Card_N.Text = " ";
             // 
             // Bank_Code
             // 
@@ -454,12 +504,12 @@
             this.Bank_Code.Location = new System.Drawing.Point(167, 182);
             this.Bank_Code.Name = "Bank_Code";
             this.Bank_Code.PromptChar = ' ';
-            this.Bank_Code.RegEx = "^[а-яА-Я\\. ]+$";
-            this.Bank_Code.Required = false;
+            this.Bank_Code.RegEx = "^[\\d\\. ]+$";
+            this.Bank_Code.Required = true;
             this.Bank_Code.Size = new System.Drawing.Size(150, 20);
             this.Bank_Code.TabIndex = 18;
             this.Bank_Code.Tag = "Код подразделения банка";
-            this.Bank_Code.Text = " ";
+            this.Bank_Code.ValidatingType = typeof(int);
             // 
             // Code_Word
             // 
@@ -471,29 +521,27 @@
             this.Code_Word.Name = "Code_Word";
             this.Code_Word.PromptChar = ' ';
             this.Code_Word.RegEx = "^[а-яА-Я\\. ]+$";
-            this.Code_Word.Required = false;
+            this.Code_Word.Required = true;
             this.Code_Word.Size = new System.Drawing.Size(150, 20);
             this.Code_Word.TabIndex = 17;
             this.Code_Word.Tag = "Кодовое слово";
-            this.Code_Word.Text = " ";
             // 
-            // PlaceOfBirth
+            // Place_Of_Birth
             // 
-            this.PlaceOfBirth.BackColor = System.Drawing.SystemColors.Window;
-            this.PlaceOfBirth.BeepOnError = true;
-            this.PlaceOfBirth.CueText = "г.Бирск";
-            this.PlaceOfBirth.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.PlaceOfBirth.HidePromptOnLeave = true;
-            this.PlaceOfBirth.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.PlaceOfBirth.Location = new System.Drawing.Point(167, 71);
-            this.PlaceOfBirth.Name = "PlaceOfBirth";
-            this.PlaceOfBirth.PromptChar = ' ';
-            this.PlaceOfBirth.RegEx = "^[а-яА-Я\\. ]+$";
-            this.PlaceOfBirth.Required = false;
-            this.PlaceOfBirth.Size = new System.Drawing.Size(150, 20);
-            this.PlaceOfBirth.TabIndex = 3;
-            this.PlaceOfBirth.Tag = "Место рождения";
-            this.PlaceOfBirth.Text = " ";
+            this.Place_Of_Birth.BackColor = System.Drawing.SystemColors.Window;
+            this.Place_Of_Birth.BeepOnError = true;
+            this.Place_Of_Birth.CueText = "г.Бирск";
+            this.Place_Of_Birth.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Place_Of_Birth.HidePromptOnLeave = true;
+            this.Place_Of_Birth.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.Place_Of_Birth.Location = new System.Drawing.Point(167, 71);
+            this.Place_Of_Birth.Name = "Place_Of_Birth";
+            this.Place_Of_Birth.PromptChar = ' ';
+            this.Place_Of_Birth.RegEx = "^[а-яА-Я\\. ]+$";
+            this.Place_Of_Birth.Required = false;
+            this.Place_Of_Birth.Size = new System.Drawing.Size(150, 20);
+            this.Place_Of_Birth.TabIndex = 3;
+            this.Place_Of_Birth.Tag = "Место рождения";
             // 
             // Salary
             // 
@@ -505,11 +553,10 @@
             this.Salary.Name = "Salary";
             this.Salary.PromptChar = ' ';
             this.Salary.RegEx = "^[\\d\\,\\.]+$";
-            this.Salary.Required = false;
+            this.Salary.Required = true;
             this.Salary.Size = new System.Drawing.Size(150, 20);
             this.Salary.TabIndex = 21;
-            this.Salary.Tag = "Номер документа";
-            this.Salary.Text = " ";
+            this.Salary.Tag = "Заработная плата";
             // 
             // Table_num
             // 
@@ -537,7 +584,7 @@
             this.INN_worker.Name = "INN_worker";
             this.INN_worker.PromptChar = ' ';
             this.INN_worker.RegEx = "";
-            this.INN_worker.Required = false;
+            this.INN_worker.Required = true;
             this.INN_worker.ResetOnSpace = false;
             this.INN_worker.Size = new System.Drawing.Size(150, 20);
             this.INN_worker.TabIndex = 15;
@@ -616,20 +663,19 @@
             // Full_Name_Card
             // 
             this.Full_Name_Card.BeepOnError = true;
-            this.Full_Name_Card.CueText = "Имя и Фамилия";
+            this.Full_Name_Card.CueText = "На английской раскладке";
             this.Full_Name_Card.HidePromptOnLeave = true;
             this.Full_Name_Card.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.Full_Name_Card.Location = new System.Drawing.Point(479, 141);
             this.Full_Name_Card.Name = "Full_Name_Card";
             this.Full_Name_Card.PromptChar = ' ';
             this.Full_Name_Card.RegEx = "^[a-zA-Z ]+$";
-            this.Full_Name_Card.Required = false;
+            this.Full_Name_Card.Required = true;
             this.Full_Name_Card.ResetOnPrompt = false;
             this.Full_Name_Card.ResetOnSpace = false;
             this.Full_Name_Card.Size = new System.Drawing.Size(150, 20);
             this.Full_Name_Card.TabIndex = 16;
             this.Full_Name_Card.Tag = "Имя и фамилия на карте";
-            this.Full_Name_Card.Text = " ";
             // 
             // WSurname
             // 
@@ -649,77 +695,7 @@
             this.WSurname.Size = new System.Drawing.Size(150, 20);
             this.WSurname.TabIndex = 100;
             this.WSurname.Tag = "Фамилия";
-            // 
-            // Card_Type
-            // 
-            this.Card_Type.BackColor = System.Drawing.SystemColors.Window;
-            this.Card_Type.BeepOnError = true;
-            this.Card_Type.CueText = "Тип..";
-            this.Card_Type.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.Card_Type.HidePromptOnLeave = true;
-            this.Card_Type.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.Card_Type.Location = new System.Drawing.Point(323, 182);
-            this.Card_Type.Name = "Card_Type";
-            this.Card_Type.PromptChar = ' ';
-            this.Card_Type.RegEx = null;
-            this.Card_Type.Required = false;
-            this.Card_Type.Size = new System.Drawing.Size(150, 20);
-            this.Card_Type.TabIndex = 19;
-            this.Card_Type.Tag = "Тип карты";
-            this.Card_Type.Text = " ";
-            this.Card_Type.Enter += new System.EventHandler(this.Card_Type_Enter);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(11, 97);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 23);
-            this.button4.TabIndex = 105;
-            this.button4.Tag = "true";
-            this.button4.Text = "Место прописки";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Place_Enter);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(167, 97);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 23);
-            this.button5.TabIndex = 105;
-            this.button5.Tag = "false";
-            this.button5.Text = "Место проживания";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Place_Enter);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(323, 97);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 23);
-            this.button6.TabIndex = 105;
-            this.button6.Text = "Основной документ";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(479, 97);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 23);
-            this.button7.TabIndex = 105;
-            this.button7.Text = "Доп. документ";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(479, 166);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 16);
-            this.label7.TabIndex = 86;
-            this.label7.Text = "Доп. параметр*";
+            this.WSurname.Enter += new System.EventHandler(this.Cue_Enter);
             // 
             // Action_param
             // 
@@ -737,7 +713,23 @@
             this.Action_param.Size = new System.Drawing.Size(150, 20);
             this.Action_param.TabIndex = 19;
             this.Action_param.Tag = "Доп. параметр";
-            this.Action_param.Enter += new System.EventHandler(this.Card_Type_Enter);
+            // 
+            // Card_type
+            // 
+            this.Card_type.BackColor = System.Drawing.SystemColors.Window;
+            this.Card_type.BeepOnError = true;
+            this.Card_type.CueText = "Тип карты";
+            this.Card_type.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Card_type.HidePromptOnLeave = true;
+            this.Card_type.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.Card_type.Location = new System.Drawing.Point(323, 182);
+            this.Card_type.Name = "Card_type";
+            this.Card_type.PromptChar = ' ';
+            this.Card_type.RegEx = null;
+            this.Card_type.Required = false;
+            this.Card_type.Size = new System.Drawing.Size(150, 20);
+            this.Card_type.TabIndex = 19;
+            this.Card_type.Tag = "Тип карты";
             // 
             // FormAddCard
             // 
@@ -755,14 +747,14 @@
             this.Controls.Add(this.Fired);
             this.Controls.Add(this.Org_key);
             this.Controls.Add(this.WCode);
-            this.Controls.Add(this.EmpDate);
-            this.Controls.Add(this.Home_Phone);
+            this.Controls.Add(this.Employment_Date);
+            this.Controls.Add(this.Phone);
             this.Controls.Add(this.SNILS);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.Card_N);
             this.Controls.Add(this.Bank_Code);
             this.Controls.Add(this.Code_Word);
-            this.Controls.Add(this.PlaceOfBirth);
+            this.Controls.Add(this.Place_Of_Birth);
             this.Controls.Add(this.Salary);
             this.Controls.Add(this.Table_num);
             this.Controls.Add(this.INN_worker);
@@ -775,7 +767,7 @@
             this.Controls.Add(this.Sex);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Action_param);
-            this.Controls.Add(this.Card_Type);
+            this.Controls.Add(this.Card_type);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label25);
@@ -800,7 +792,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormAddCard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Tag = ":";
+            this.Tag = " ";
             this.Text = "Открытие карты сотрудника";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAddWorker_FormClosing);
             this.Load += new System.EventHandler(this.FormAddWorker_Load);
@@ -828,10 +820,10 @@
         public CueTextBox WName;
         public CueTextBox WSurname;
         private System.Windows.Forms.Label label16;
-        public CueTextBox Home_Phone;
+        public CueTextBox Phone;
         public CueTextBox WBirth;
         private System.Windows.Forms.Label label17;
-        public CueTextBox PlaceOfBirth;
+        public CueTextBox Place_Of_Birth;
         private System.Windows.Forms.Label label18;
         public CueTextBox INN_worker;
         private System.Windows.Forms.Label label19;
@@ -841,9 +833,9 @@
         private System.Windows.Forms.Label label21;
         public CueTextBox Bank_Code;
         private System.Windows.Forms.Label label22;
-        public CueTextBox Card_Type;
+        public CueTextBox Card_type;
         private System.Windows.Forms.Label label23;
-        public CueTextBox EmpDate;
+        public CueTextBox Employment_Date;
         private System.Windows.Forms.Label label24;
         public CueTextBox Salary;
         public CueTextBox WCode;

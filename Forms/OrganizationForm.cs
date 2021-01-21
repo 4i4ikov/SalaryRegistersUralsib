@@ -40,7 +40,7 @@ namespace SalaryRegistersUralsib
             enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
             cardTableAdapter.Fill(dbDataSet.Card);
             workersTableAdapter.Fill(dbDataSet.Workers);
-            
+            organizationsTableAdapter1.Fill(dbDataSet.Organizations);
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -60,7 +60,9 @@ namespace SalaryRegistersUralsib
             //Кнопка увольнения сотрудника, просто меняет "переключатель" в бд на противоположное значение
             Dictionary<string, string> c = workersDataGridView.GetCellsPls();
             workersTableAdapter.UpdateFiredStatus(!Convert.ToBoolean(c [ "Fired" ]), Convert.ToInt32(c [ "WCode" ]));
+            workersTableAdapter.ClearBeforeFill = false;
             workersTableAdapter.Fill(dbDataSet.Workers);
+            workersTableAdapter.ClearBeforeFill = true;
         }
 
         private void FillTheWorkSheet(DataGridView dg, Excel.Worksheet wsh)
@@ -153,11 +155,14 @@ namespace SalaryRegistersUralsib
             }
             if ( f.ShowDialog() == DialogResult.OK )
             {
-                //cardTableAdapter.Insert(f.WSurname, f.WName, f.WMiddlename, f.Table_num.Text, Docum, Docum_serial, Docum_num, Docum_date, Docum_place, Docum_cod, City, Region_cod, District, Street, House, Block, Apartment, [ Index ], Birth, Place_Of_Birth, Sex, SNILS,
-                 //        Home_phone, Mobile_phone, INN_worker, Full_Name_Card, Code_Word, Bank_Code, Card_type, Docum2, Docum2_serial, Docum2_num, Docum2_date, Docum2_place, City2, Region_cod2, District2, Street2, House2, Block2,
-                 //        Apartment2, Index2, Action_param, Employment_Date, Salary, Email, Org_key, Code);
-                //cardTableAdapter.Insert( f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Docum.Text, int.Parse(f.Docum_Serial.Text), int.Parse(f.Docum_Num.Text), Convert.ToDateTime(f.DateTime2.Text), f.Docum_Place.Text, f.Docum_Cod.Text, f.Mass[0], int.Parse(f.Mass[1]), f.Mass[2], f.Mass[3], f.Mass[4], f.Mass[5], f.Mass[6], int.Parse(f.Mass[7]), Convert.ToDateTime(f.WBirth.Text), f.PlaceOfBirth.Text, f.Sex.Text, f.SNILS.Text, f.Home_Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_Type.Text, Convert.ToDateTime(f.EmpDate.Text), f.Salary.Text, f.Email.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
-                //cardTableAdapter.Fill(dbDataSet.Card);
+                //Debug.WriteLine(f.Doc);
+                //Debug.WriteLine(" ");
+                //Debug.WriteLine(f.Doc2);
+
+
+                cardTableAdapter.Insert(f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Doc [ 0 ], f.Doc [ 1 ], f.Doc [ 2 ], Convert.ToDateTime(f.Doc [ 3 ]), f.Doc [ 4 ], f.Doc [ 5 ], f.Mass [ 0 ], f.Mass [ 1 ], f.Mass [ 2 ], f.Mass [ 3 ], f.Mass [ 4 ], f.Mass [ 5 ], f.Mass [ 6 ], f.Mass [ 7 ], Convert.ToDateTime(f.WBirth.Text), f.Place_Of_Birth.Text, f.Sex.Text, f.SNILS.Text, f.Phone.Text, f.Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_type.Text, f.Doc2 [ 0 ], f.Doc2 [ 1 ], f.Doc2 [ 2 ], Convert.ToDateTime(f.Doc2 [ 3 ]), f.Doc2 [ 4 ], f.Mass2 [ 0 ], f.Mass2 [ 1 ], f.Mass2 [ 2 ], f.Mass2 [ 3 ], f.Mass2 [ 4 ], f.Mass2 [ 5 ], f.Mass2 [ 6 ], f.Mass2 [ 7 ], f.Action_param.Text, Convert.ToDateTime(f.Employment_Date.Text), f.Salary.Text, int.Parse(f.Card_N.Text), f.Email.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
+               
+                cardTableAdapter.Fill(dbDataSet.Card);
             }
         }
 
@@ -167,8 +172,8 @@ namespace SalaryRegistersUralsib
             //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
 
 
-            FormDOS f = new FormDOS(this);
-            f.Show();
+            //FormDOS f = new FormDOS(this);
+            //f.Show();
 
 
         }
@@ -199,7 +204,7 @@ namespace SalaryRegistersUralsib
         private void enrollmentsDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             // при ошибке ввода помечаем ячейку и сбрасываем изменения
-            return;
+            
             DataGridView view = (DataGridView)sender;
             view.Rows [ e.RowIndex ].Cells [ e.ColumnIndex ].ErrorText = "ошибка ввода";
             e.Cancel = false;
@@ -217,8 +222,11 @@ namespace SalaryRegistersUralsib
         private void Organizations_FormClosed(object sender, FormClosedEventArgs e)
         {
             // сохранение таблицы с зачислениями при закрытии
-            
+            OrgBindingSource.EndEdit();
+            enrollmentsBindingSource.EndEdit();
+
             enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
+            organizationsTableAdapter1.Update(dbDataSet.Organizations);
             tableAdapterManager.UpdateAll(dbDataSet);
             dbDataSet.AcceptChanges();
         }
@@ -245,6 +253,10 @@ namespace SalaryRegistersUralsib
             MainProgram.Context.MainForm = new SalaryProjectForm();
             Close();
             MainProgram.Context.MainForm.Show();
+        }
+
+        private void button21_Click_1(object sender, EventArgs e)
+        {
         }
     }
 }
