@@ -445,7 +445,7 @@
             // 
             this.Phone.CueText = null;
             this.Phone.Location = new System.Drawing.Point(167, 141);
-            this.Phone.Mask = "+7 (999) 000-00-00";
+            this.Phone.Mask = "9990000000";
             this.Phone.Name = "Phone";
             this.Phone.RegEx = null;
             this.Phone.Required = true;

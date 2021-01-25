@@ -49,27 +49,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cueTextBox8 = new SalaryRegistersUralsib.CueTextBox();
             this.OrgBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbDataSet = new SalaryRegistersUralsib.DbDataSet();
-            this.cueTextBox7 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox14 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox11 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox4 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox12 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox3 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox10 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox5 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox9 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox2 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox1 = new SalaryRegistersUralsib.CueTextBox();
             this.tabReestr = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enrollment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,7 +76,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.GridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Org_key = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +93,7 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.cardsGridView = new System.Windows.Forms.DataGridView();
+            this.GridView1 = new System.Windows.Forms.DataGridView();
             this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Button_DOS = new System.Windows.Forms.Button();
             this.tabWorkers = new System.Windows.Forms.TabPage();
@@ -123,10 +111,9 @@
             this.firedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.wCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEnrollments = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.GridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -145,7 +132,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabFire = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.GridView5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -186,6 +173,7 @@
             this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNILSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.homephoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mobile_phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNNworkerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullNameCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeWordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -204,33 +192,45 @@
             this.Block2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apartment2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Index2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action_param = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orgkeyDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action_param = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cueTextBox8 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox7 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox14 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox11 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox4 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox12 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox3 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox10 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox5 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox9 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox2 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox1 = new SalaryRegistersUralsib.CueTextBox();
             this.tabRequisites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             this.tabReestr.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReestrBindingSource)).BeginInit();
             this.tabCardEnrollments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardEnrollmentsBindingSource)).BeginInit();
             this.tabCardOpen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cardsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).BeginInit();
             this.tabWorkers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.workersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabEnrollments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentsBindingSource)).BeginInit();
             this.tabFire.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UvalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -464,18 +464,6 @@
             this.label3.Text = "Организация";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cueTextBox8
-            // 
-            this.cueTextBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox8.CueText = null;
-            this.cueTextBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "OGRN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox8.Location = new System.Drawing.Point(332, 236);
-            this.cueTextBox8.Name = "cueTextBox8";
-            this.cueTextBox8.RegEx = null;
-            this.cueTextBox8.Required = false;
-            this.cueTextBox8.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox8.TabIndex = 4;
-            // 
             // OrgBindingSource
             // 
             this.OrgBindingSource.DataMember = "Organizations";
@@ -487,138 +475,6 @@
             this.dbDataSet.DataSetName = "DbDataSet";
             this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cueTextBox7
-            // 
-            this.cueTextBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox7.CueText = null;
-            this.cueTextBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_INN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox7.Location = new System.Drawing.Point(332, 210);
-            this.cueTextBox7.Name = "cueTextBox7";
-            this.cueTextBox7.RegEx = null;
-            this.cueTextBox7.Required = false;
-            this.cueTextBox7.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox7.TabIndex = 4;
-            // 
-            // cueTextBox14
-            // 
-            this.cueTextBox14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox14.CueText = null;
-            this.cueTextBox14.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BIK", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox14.Location = new System.Drawing.Point(332, 340);
-            this.cueTextBox14.Name = "cueTextBox14";
-            this.cueTextBox14.RegEx = null;
-            this.cueTextBox14.Required = false;
-            this.cueTextBox14.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox14.TabIndex = 4;
-            // 
-            // cueTextBox11
-            // 
-            this.cueTextBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox11.CueText = null;
-            this.cueTextBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager_d", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox11.Location = new System.Drawing.Point(332, 135);
-            this.cueTextBox11.Name = "cueTextBox11";
-            this.cueTextBox11.RegEx = null;
-            this.cueTextBox11.Required = false;
-            this.cueTextBox11.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox11.TabIndex = 4;
-            // 
-            // cueTextBox4
-            // 
-            this.cueTextBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox4.CueText = null;
-            this.cueTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox4.Location = new System.Drawing.Point(332, 109);
-            this.cueTextBox4.Name = "cueTextBox4";
-            this.cueTextBox4.RegEx = null;
-            this.cueTextBox4.Required = false;
-            this.cueTextBox4.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox4.TabIndex = 4;
-            // 
-            // cueTextBox12
-            // 
-            this.cueTextBox12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox12.CueText = null;
-            this.cueTextBox12.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BankUnit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox12.Location = new System.Drawing.Point(332, 314);
-            this.cueTextBox12.Name = "cueTextBox12";
-            this.cueTextBox12.RegEx = null;
-            this.cueTextBox12.Required = false;
-            this.cueTextBox12.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox12.TabIndex = 4;
-            // 
-            // cueTextBox3
-            // 
-            this.cueTextBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox3.CueText = null;
-            this.cueTextBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Descriptor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox3.Location = new System.Drawing.Point(332, 83);
-            this.cueTextBox3.Name = "cueTextBox3";
-            this.cueTextBox3.RegEx = null;
-            this.cueTextBox3.Required = false;
-            this.cueTextBox3.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox3.TabIndex = 4;
-            // 
-            // cueTextBox10
-            // 
-            this.cueTextBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox10.CueText = null;
-            this.cueTextBox10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Bank", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox10.Location = new System.Drawing.Point(332, 288);
-            this.cueTextBox10.Name = "cueTextBox10";
-            this.cueTextBox10.RegEx = null;
-            this.cueTextBox10.Required = false;
-            this.cueTextBox10.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox10.TabIndex = 4;
-            // 
-            // cueTextBox5
-            // 
-            this.cueTextBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox5.CueText = null;
-            this.cueTextBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Booker", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox5.Location = new System.Drawing.Point(332, 161);
-            this.cueTextBox5.Name = "cueTextBox5";
-            this.cueTextBox5.RegEx = null;
-            this.cueTextBox5.Required = false;
-            this.cueTextBox5.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox5.TabIndex = 4;
-            // 
-            // cueTextBox9
-            // 
-            this.cueTextBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox9.CueText = null;
-            this.cueTextBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "DisporsalBill", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox9.Location = new System.Drawing.Point(332, 262);
-            this.cueTextBox9.Name = "cueTextBox9";
-            this.cueTextBox9.RegEx = null;
-            this.cueTextBox9.Required = false;
-            this.cueTextBox9.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox9.TabIndex = 4;
-            // 
-            // cueTextBox2
-            // 
-            this.cueTextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox2.CueText = null;
-            this.cueTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_key", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox2.Location = new System.Drawing.Point(332, 57);
-            this.cueTextBox2.Name = "cueTextBox2";
-            this.cueTextBox2.RegEx = null;
-            this.cueTextBox2.Required = false;
-            this.cueTextBox2.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox2.TabIndex = 4;
-            // 
-            // cueTextBox1
-            // 
-            this.cueTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox1.CueText = null;
-            this.cueTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Organization", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox1.Location = new System.Drawing.Point(332, 31);
-            this.cueTextBox1.Name = "cueTextBox1";
-            this.cueTextBox1.RegEx = null;
-            this.cueTextBox1.Required = false;
-            this.cueTextBox1.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox1.TabIndex = 4;
-            // 
             // tabReestr
             // 
             this.tabReestr.Controls.Add(this.button3);
@@ -626,7 +482,7 @@
             this.tabReestr.Controls.Add(this.button17);
             this.tabReestr.Controls.Add(this.button18);
             this.tabReestr.Controls.Add(this.button19);
-            this.tabReestr.Controls.Add(this.dataGridView1);
+            this.tabReestr.Controls.Add(this.GridView4);
             this.tabReestr.Location = new System.Drawing.Point(4, 22);
             this.tabReestr.Name = "tabReestr";
             this.tabReestr.Padding = new System.Windows.Forms.Padding(3);
@@ -687,17 +543,17 @@
             this.button19.Text = "Сбросить изменения";
             this.button19.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // GridView4
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridView4.AutoGenerateColumns = false;
+            this.GridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridView4.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.GridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn18,
             this.Enrollment_type,
@@ -709,17 +565,17 @@
             this.dataGridViewTextBoxColumn26,
             this.dataGridViewTextBoxColumn27,
             this.del2});
-            this.dataGridView1.DataSource = this.ReestrBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(803, 357);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.Tag = "reestr";
-            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellContentClick);
-            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
-            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
+            this.GridView4.DataSource = this.ReestrBindingSource;
+            this.GridView4.Location = new System.Drawing.Point(0, 37);
+            this.GridView4.Name = "GridView4";
+            this.GridView4.RowHeadersVisible = false;
+            this.GridView4.Size = new System.Drawing.Size(803, 357);
+            this.GridView4.TabIndex = 8;
+            this.GridView4.Tag = "reestr";
+            this.GridView4.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
+            this.GridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellContentClick);
+            this.GridView4.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
+            this.GridView4.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn20
             // 
@@ -808,7 +664,7 @@
             this.tabCardEnrollments.Controls.Add(this.button10);
             this.tabCardEnrollments.Controls.Add(this.button11);
             this.tabCardEnrollments.Controls.Add(this.button12);
-            this.tabCardEnrollments.Controls.Add(this.dataGridView2);
+            this.tabCardEnrollments.Controls.Add(this.GridView3);
             this.tabCardEnrollments.Location = new System.Drawing.Point(4, 22);
             this.tabCardEnrollments.Name = "tabCardEnrollments";
             this.tabCardEnrollments.Padding = new System.Windows.Forms.Padding(3);
@@ -869,17 +725,17 @@
             this.button12.Text = "Сбросить изменения";
             this.button12.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // GridView3
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridView3.AutoGenerateColumns = false;
+            this.GridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridView3.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.GridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn11,
             this.Org_key,
             this.dataGridViewTextBoxColumn5,
@@ -891,17 +747,17 @@
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn28,
             this.del1});
-            this.dataGridView2.DataSource = this.CardEnrollmentsBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 37);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(803, 357);
-            this.dataGridView2.TabIndex = 2;
-            this.dataGridView2.Tag = "cardzach";
-            this.dataGridView2.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellContentClick);
-            this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
-            this.dataGridView2.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
+            this.GridView3.DataSource = this.CardEnrollmentsBindingSource;
+            this.GridView3.Location = new System.Drawing.Point(0, 37);
+            this.GridView3.Name = "GridView3";
+            this.GridView3.RowHeadersVisible = false;
+            this.GridView3.Size = new System.Drawing.Size(803, 357);
+            this.GridView3.TabIndex = 2;
+            this.GridView3.Tag = "cardzach";
+            this.GridView3.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
+            this.GridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellContentClick);
+            this.GridView3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
+            this.GridView3.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -988,7 +844,7 @@
             this.tabCardOpen.Controls.Add(this.button15);
             this.tabCardOpen.Controls.Add(this.button14);
             this.tabCardOpen.Controls.Add(this.button13);
-            this.tabCardOpen.Controls.Add(this.cardsGridView);
+            this.tabCardOpen.Controls.Add(this.GridView1);
             this.tabCardOpen.Controls.Add(this.Button_DOS);
             this.tabCardOpen.Location = new System.Drawing.Point(4, 22);
             this.tabCardOpen.Name = "tabCardOpen";
@@ -1001,7 +857,7 @@
             // button15
             // 
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button15.Location = new System.Drawing.Point(319, 6);
+            this.button15.Location = new System.Drawing.Point(348, 6);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(154, 28);
             this.button15.TabIndex = 10;
@@ -1013,11 +869,11 @@
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button14.Location = new System.Drawing.Point(159, 6);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(154, 28);
+            this.button14.Size = new System.Drawing.Size(183, 28);
             this.button14.TabIndex = 10;
-            this.button14.Text = "Загрузить из файла";
+            this.button14.Text = "Загрузить из файла DOS";
             this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.Button_DOS_Click);
+            this.button14.Click += new System.EventHandler(this.Button_LoadFromDOS_Click);
             // 
             // button13
             // 
@@ -1030,20 +886,20 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.Button_DOS_Click);
             // 
-            // cardsGridView
+            // GridView1
             // 
-            this.cardsGridView.AllowUserToAddRows = false;
-            this.cardsGridView.AllowUserToDeleteRows = false;
-            this.cardsGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GridView1.AllowUserToAddRows = false;
+            this.GridView1.AllowUserToDeleteRows = false;
+            this.GridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cardsGridView.AutoGenerateColumns = false;
-            this.cardsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.cardsGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.cardsGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.cardsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cardsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cardsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridView1.AutoGenerateColumns = false;
+            this.GridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.GridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.GridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.GridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.surnameDataGridViewTextBoxColumn,
             this.CName,
             this.middlenameDataGridViewTextBoxColumn,
@@ -1067,6 +923,7 @@
             this.sexDataGridViewTextBoxColumn,
             this.sNILSDataGridViewTextBoxColumn,
             this.homephoneDataGridViewTextBoxColumn,
+            this.Mobile_phone,
             this.iNNworkerDataGridViewTextBoxColumn,
             this.fullNameCardDataGridViewTextBoxColumn,
             this.codeWordDataGridViewTextBoxColumn,
@@ -1085,26 +942,26 @@
             this.Block2,
             this.Apartment2,
             this.Index2,
+            this.Action_param,
             this.employmentDateDataGridViewTextBoxColumn,
             this.salaryDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.orgkeyDataGridViewTextBoxColumn1,
-            this.codeDataGridViewTextBoxColumn,
-            this.Action_param});
-            this.cardsGridView.DataSource = this.cardBindingSource;
-            this.cardsGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.cardsGridView.Location = new System.Drawing.Point(3, 36);
-            this.cardsGridView.MultiSelect = false;
-            this.cardsGridView.Name = "cardsGridView";
-            this.cardsGridView.ReadOnly = true;
-            this.cardsGridView.RowHeadersVisible = false;
-            this.cardsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.cardsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cardsGridView.ShowEditingIcon = false;
-            this.cardsGridView.Size = new System.Drawing.Size(800, 362);
-            this.cardsGridView.StandardTab = true;
-            this.cardsGridView.TabIndex = 9;
-            this.cardsGridView.TabStop = false;
+            this.codeDataGridViewTextBoxColumn});
+            this.GridView1.DataSource = this.cardBindingSource;
+            this.GridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.GridView1.Location = new System.Drawing.Point(3, 36);
+            this.GridView1.MultiSelect = false;
+            this.GridView1.Name = "GridView1";
+            this.GridView1.ReadOnly = true;
+            this.GridView1.RowHeadersVisible = false;
+            this.GridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.GridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridView1.ShowEditingIcon = false;
+            this.GridView1.Size = new System.Drawing.Size(800, 362);
+            this.GridView1.StandardTab = true;
+            this.GridView1.TabIndex = 9;
+            this.GridView1.TabStop = false;
             // 
             // cardBindingSource
             // 
@@ -1130,7 +987,6 @@
             this.tabWorkers.Controls.Add(this.FireButton);
             this.tabWorkers.Controls.Add(this.AddButton);
             this.tabWorkers.Controls.Add(this.workersDataGridView);
-            this.tabWorkers.Controls.Add(this.button2);
             this.tabWorkers.Location = new System.Drawing.Point(4, 22);
             this.tabWorkers.Name = "tabWorkers";
             this.tabWorkers.Padding = new System.Windows.Forms.Padding(3);
@@ -1143,7 +999,7 @@
             // 
             this.AddCardButton.AutoSize = true;
             this.AddCardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddCardButton.Location = new System.Drawing.Point(343, 6);
+            this.AddCardButton.Location = new System.Drawing.Point(229, 6);
             this.AddCardButton.Name = "AddCardButton";
             this.AddCardButton.Size = new System.Drawing.Size(206, 28);
             this.AddCardButton.TabIndex = 13;
@@ -1154,7 +1010,7 @@
             // FireButton
             // 
             this.FireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FireButton.Location = new System.Drawing.Point(232, 6);
+            this.FireButton.Location = new System.Drawing.Point(118, 6);
             this.FireButton.Name = "FireButton";
             this.FireButton.Size = new System.Drawing.Size(105, 28);
             this.FireButton.TabIndex = 6;
@@ -1282,16 +1138,6 @@
             this.workersBindingSource.DataMember = "Workers";
             this.workersBindingSource.DataSource = this.dbDataSet;
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(118, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 28);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Импорт";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1313,7 +1159,7 @@
             // tabEnrollments
             // 
             this.tabEnrollments.AutoScroll = true;
-            this.tabEnrollments.Controls.Add(this.dataGridView3);
+            this.tabEnrollments.Controls.Add(this.GridView2);
             this.tabEnrollments.Controls.Add(this.button8);
             this.tabEnrollments.Controls.Add(this.button7);
             this.tabEnrollments.Controls.Add(this.button6);
@@ -1327,17 +1173,17 @@
             this.tabEnrollments.Text = "Зачисления";
             this.tabEnrollments.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // GridView2
             // 
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridView2.AutoGenerateColumns = false;
+            this.GridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridView2.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.GridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -1349,17 +1195,17 @@
             this.dataGridViewTextBoxColumn30,
             this.dataGridViewTextBoxColumn31,
             this.del});
-            this.dataGridView3.DataSource = this.enrollmentsBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 37);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(803, 357);
-            this.dataGridView3.TabIndex = 3;
-            this.dataGridView3.Tag = "zach";
-            this.dataGridView3.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellContentClick);
-            this.dataGridView3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
-            this.dataGridView3.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
+            this.GridView2.DataSource = this.enrollmentsBindingSource;
+            this.GridView2.Location = new System.Drawing.Point(0, 37);
+            this.GridView2.Name = "GridView2";
+            this.GridView2.RowHeadersVisible = false;
+            this.GridView2.Size = new System.Drawing.Size(803, 357);
+            this.GridView2.TabIndex = 3;
+            this.GridView2.Tag = "zach";
+            this.GridView2.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
+            this.GridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellContentClick);
+            this.GridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
+            this.GridView2.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -1499,7 +1345,7 @@
             // tabFire
             // 
             this.tabFire.AutoScroll = true;
-            this.tabFire.Controls.Add(this.dataGridView4);
+            this.tabFire.Controls.Add(this.GridView5);
             this.tabFire.Controls.Add(this.textBox1);
             this.tabFire.Controls.Add(this.button20);
             this.tabFire.Controls.Add(this.button22);
@@ -1511,17 +1357,17 @@
             this.tabFire.Text = "Увольнение";
             this.tabFire.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // GridView5
             // 
-            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GridView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView4.AutoGenerateColumns = false;
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridView5.AutoGenerateColumns = false;
+            this.GridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridView5.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.GridView5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn35,
             this.dataGridViewTextBoxColumn33,
             this.dataGridViewTextBoxColumn34,
@@ -1529,17 +1375,17 @@
             this.dataGridViewTextBoxColumn37,
             this.dataGridViewTextBoxColumn38,
             this.dataGridViewButtonColumn1});
-            this.dataGridView4.DataSource = this.UvalBindingSource;
-            this.dataGridView4.Location = new System.Drawing.Point(0, 37);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.Size = new System.Drawing.Size(802, 357);
-            this.dataGridView4.TabIndex = 13;
-            this.dataGridView4.Tag = "uval";
-            this.dataGridView4.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellContentClick);
-            this.dataGridView4.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
-            this.dataGridView4.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
+            this.GridView5.DataSource = this.UvalBindingSource;
+            this.GridView5.Location = new System.Drawing.Point(0, 37);
+            this.GridView5.Name = "GridView5";
+            this.GridView5.RowHeadersVisible = false;
+            this.GridView5.Size = new System.Drawing.Size(802, 357);
+            this.GridView5.TabIndex = 13;
+            this.GridView5.Tag = "uval";
+            this.GridView5.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
+            this.GridView5.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellContentClick);
+            this.GridView5.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
+            this.GridView5.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn35
             // 
@@ -1843,10 +1689,18 @@
             // homephoneDataGridViewTextBoxColumn
             // 
             this.homephoneDataGridViewTextBoxColumn.DataPropertyName = "Home_phone";
-            this.homephoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.homephoneDataGridViewTextBoxColumn.HeaderText = "Домашний телефон";
             this.homephoneDataGridViewTextBoxColumn.Name = "homephoneDataGridViewTextBoxColumn";
             this.homephoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.homephoneDataGridViewTextBoxColumn.Width = 77;
+            this.homephoneDataGridViewTextBoxColumn.Width = 122;
+            // 
+            // Mobile_phone
+            // 
+            this.Mobile_phone.DataPropertyName = "Mobile_phone";
+            this.Mobile_phone.HeaderText = "Мобильный телефон";
+            this.Mobile_phone.Name = "Mobile_phone";
+            this.Mobile_phone.ReadOnly = true;
+            this.Mobile_phone.Width = 125;
             // 
             // iNNworkerDataGridViewTextBoxColumn
             // 
@@ -1992,6 +1846,14 @@
             this.Index2.ReadOnly = true;
             this.Index2.Width = 76;
             // 
+            // Action_param
+            // 
+            this.Action_param.DataPropertyName = "Action_param";
+            this.Action_param.HeaderText = "Доп";
+            this.Action_param.Name = "Action_param";
+            this.Action_param.ReadOnly = true;
+            this.Action_param.Width = 53;
+            // 
             // employmentDateDataGridViewTextBoxColumn
             // 
             this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "Employment_Date";
@@ -2034,13 +1896,149 @@
             this.codeDataGridViewTextBoxColumn.Visible = false;
             this.codeDataGridViewTextBoxColumn.Width = 57;
             // 
-            // Action_param
+            // cueTextBox8
             // 
-            this.Action_param.DataPropertyName = "Action_param";
-            this.Action_param.HeaderText = "Доп.параметр";
-            this.Action_param.Name = "Action_param";
-            this.Action_param.ReadOnly = true;
-            this.Action_param.Width = 105;
+            this.cueTextBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox8.CueText = null;
+            this.cueTextBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "OGRN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox8.Location = new System.Drawing.Point(332, 236);
+            this.cueTextBox8.Name = "cueTextBox8";
+            this.cueTextBox8.RegEx = null;
+            this.cueTextBox8.Required = false;
+            this.cueTextBox8.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox8.TabIndex = 4;
+            // 
+            // cueTextBox7
+            // 
+            this.cueTextBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox7.CueText = null;
+            this.cueTextBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_INN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox7.Location = new System.Drawing.Point(332, 210);
+            this.cueTextBox7.Name = "cueTextBox7";
+            this.cueTextBox7.RegEx = null;
+            this.cueTextBox7.Required = false;
+            this.cueTextBox7.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox7.TabIndex = 4;
+            // 
+            // cueTextBox14
+            // 
+            this.cueTextBox14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox14.CueText = null;
+            this.cueTextBox14.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BIK", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox14.Location = new System.Drawing.Point(332, 340);
+            this.cueTextBox14.Name = "cueTextBox14";
+            this.cueTextBox14.RegEx = null;
+            this.cueTextBox14.Required = false;
+            this.cueTextBox14.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox14.TabIndex = 4;
+            // 
+            // cueTextBox11
+            // 
+            this.cueTextBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox11.CueText = null;
+            this.cueTextBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager_d", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox11.Location = new System.Drawing.Point(332, 135);
+            this.cueTextBox11.Name = "cueTextBox11";
+            this.cueTextBox11.RegEx = null;
+            this.cueTextBox11.Required = false;
+            this.cueTextBox11.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox11.TabIndex = 4;
+            // 
+            // cueTextBox4
+            // 
+            this.cueTextBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox4.CueText = null;
+            this.cueTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox4.Location = new System.Drawing.Point(332, 109);
+            this.cueTextBox4.Name = "cueTextBox4";
+            this.cueTextBox4.RegEx = null;
+            this.cueTextBox4.Required = false;
+            this.cueTextBox4.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox4.TabIndex = 4;
+            // 
+            // cueTextBox12
+            // 
+            this.cueTextBox12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox12.CueText = null;
+            this.cueTextBox12.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BankUnit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox12.Location = new System.Drawing.Point(332, 314);
+            this.cueTextBox12.Name = "cueTextBox12";
+            this.cueTextBox12.RegEx = null;
+            this.cueTextBox12.Required = false;
+            this.cueTextBox12.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox12.TabIndex = 4;
+            // 
+            // cueTextBox3
+            // 
+            this.cueTextBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox3.CueText = null;
+            this.cueTextBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Descriptor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox3.Location = new System.Drawing.Point(332, 83);
+            this.cueTextBox3.Name = "cueTextBox3";
+            this.cueTextBox3.RegEx = null;
+            this.cueTextBox3.Required = false;
+            this.cueTextBox3.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox3.TabIndex = 4;
+            // 
+            // cueTextBox10
+            // 
+            this.cueTextBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox10.CueText = null;
+            this.cueTextBox10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Bank", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox10.Location = new System.Drawing.Point(332, 288);
+            this.cueTextBox10.Name = "cueTextBox10";
+            this.cueTextBox10.RegEx = null;
+            this.cueTextBox10.Required = false;
+            this.cueTextBox10.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox10.TabIndex = 4;
+            // 
+            // cueTextBox5
+            // 
+            this.cueTextBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox5.CueText = null;
+            this.cueTextBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Booker", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox5.Location = new System.Drawing.Point(332, 161);
+            this.cueTextBox5.Name = "cueTextBox5";
+            this.cueTextBox5.RegEx = null;
+            this.cueTextBox5.Required = false;
+            this.cueTextBox5.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox5.TabIndex = 4;
+            // 
+            // cueTextBox9
+            // 
+            this.cueTextBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox9.CueText = null;
+            this.cueTextBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "DisporsalBill", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox9.Location = new System.Drawing.Point(332, 262);
+            this.cueTextBox9.Name = "cueTextBox9";
+            this.cueTextBox9.RegEx = null;
+            this.cueTextBox9.Required = false;
+            this.cueTextBox9.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox9.TabIndex = 4;
+            // 
+            // cueTextBox2
+            // 
+            this.cueTextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox2.CueText = null;
+            this.cueTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_key", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox2.Location = new System.Drawing.Point(332, 57);
+            this.cueTextBox2.Name = "cueTextBox2";
+            this.cueTextBox2.RegEx = null;
+            this.cueTextBox2.Required = false;
+            this.cueTextBox2.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox2.TabIndex = 4;
+            // 
+            // cueTextBox1
+            // 
+            this.cueTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox1.CueText = null;
+            this.cueTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Organization", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox1.Location = new System.Drawing.Point(332, 31);
+            this.cueTextBox1.Name = "cueTextBox1";
+            this.cueTextBox1.RegEx = null;
+            this.cueTextBox1.Required = false;
+            this.cueTextBox1.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox1.TabIndex = 4;
             // 
             // Organizations
             // 
@@ -2063,13 +2061,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.OrgBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             this.tabReestr.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReestrBindingSource)).EndInit();
             this.tabCardEnrollments.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardEnrollmentsBindingSource)).EndInit();
             this.tabCardOpen.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cardsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).EndInit();
             this.tabWorkers.ResumeLayout(false);
             this.tabWorkers.PerformLayout();
@@ -2077,11 +2075,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabEnrollments.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentsBindingSource)).EndInit();
             this.tabFire.ResumeLayout(false);
             this.tabFire.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UvalBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2105,7 +2103,7 @@
         private System.Windows.Forms.TabPage tabCardEnrollments;
         private System.Windows.Forms.TabPage tabCardOpen;
         private System.Windows.Forms.Button Button_DOS;
-        public System.Windows.Forms.DataGridView cardsGridView;
+        public System.Windows.Forms.DataGridView GridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tabWorkers;
         private System.Windows.Forms.Button AddCardButton;
@@ -2121,7 +2119,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orgkeyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn firedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button2;
         internal System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabEnrollments;
         private DbDataSetTableAdapters.EnrollmentsTableAdapter enrollmentsTableAdapter;
@@ -2136,7 +2133,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
-        public System.Windows.Forms.DataGridView dataGridView2;
+        public System.Windows.Forms.DataGridView GridView3;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
@@ -2145,15 +2142,15 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView GridView4;
         private System.Windows.Forms.TabPage tabFire;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.BindingSource CardEnrollmentsBindingSource;
         public System.Windows.Forms.BindingSource ReestrBindingSource;
-        public System.Windows.Forms.DataGridView dataGridView3;
-        public System.Windows.Forms.DataGridView dataGridView4;
+        public System.Windows.Forms.DataGridView GridView2;
+        public System.Windows.Forms.DataGridView GridView5;
         public System.Windows.Forms.BindingSource UvalBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -2247,6 +2244,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNILSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn homephoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile_phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNNworkerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameCardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeWordDataGridViewTextBoxColumn;
@@ -2265,11 +2263,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Block2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apartment2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Index2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action_param;
         private System.Windows.Forms.DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orgkeyDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Action_param;
     }
 }

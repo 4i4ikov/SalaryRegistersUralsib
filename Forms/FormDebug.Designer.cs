@@ -35,53 +35,53 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.DTB = new System.Windows.Forms.TextBox();
-            this.cueTextBox41 = new CueTextBox();
-            this.cueTextBox46 = new CueTextBox();
-            this.cueTextBox45 = new CueTextBox();
-            this.cueTextBox44 = new CueTextBox();
-            this.cueTextBox43 = new CueTextBox();
-            this.cueTextBox42 = new CueTextBox();
-            this.cueTextBox36 = new CueTextBox();
-            this.cueTextBox35 = new CueTextBox();
-            this.cueTextBox30 = new CueTextBox();
-            this.cueTextBox29 = new CueTextBox();
-            this.cueTextBox24 = new CueTextBox();
-            this.cueTextBox23 = new CueTextBox();
-            this.cueTextBox40 = new CueTextBox();
-            this.cueTextBox18 = new CueTextBox();
-            this.cueTextBox34 = new CueTextBox();
-            this.cueTextBox17 = new CueTextBox();
-            this.cueTextBox28 = new CueTextBox();
-            this.cueTextBox12 = new CueTextBox();
-            this.cueTextBox22 = new CueTextBox();
-            this.cueTextBox39 = new CueTextBox();
-            this.cueTextBox11 = new CueTextBox();
-            this.cueTextBox33 = new CueTextBox();
-            this.cueTextBox16 = new CueTextBox();
-            this.cueTextBox27 = new CueTextBox();
-            this.cueTextBox6 = new CueTextBox();
-            this.cueTextBox21 = new CueTextBox();
-            this.cueTextBox38 = new CueTextBox();
-            this.cueTextBox10 = new CueTextBox();
-            this.cueTextBox32 = new CueTextBox();
-            this.cueTextBox15 = new CueTextBox();
-            this.cueTextBox26 = new CueTextBox();
-            this.cueTextBox5 = new CueTextBox();
-            this.cueTextBox20 = new CueTextBox();
-            this.cueTextBox37 = new CueTextBox();
-            this.cueTextBox9 = new CueTextBox();
-            this.cueTextBox31 = new CueTextBox();
-            this.cueTextBox14 = new CueTextBox();
-            this.cueTextBox25 = new CueTextBox();
-            this.cueTextBox4 = new CueTextBox();
-            this.cueTextBox19 = new CueTextBox();
-            this.cueTextBox8 = new CueTextBox();
-            this.cueTextBox13 = new CueTextBox();
-            this.cueTextBox3 = new CueTextBox();
-            this.cueTextBox7 = new CueTextBox();
-            this.cueTextBox2 = new CueTextBox();
-            this.cueTextBox1 = new CueTextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.cueTextBox41 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox46 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox45 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox44 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox43 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox42 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox36 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox35 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox30 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox29 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox24 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox23 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox40 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox18 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox34 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox17 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox28 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox12 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox22 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox39 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox11 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox33 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox16 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox27 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox6 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox21 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox38 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox10 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox32 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox15 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox26 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox5 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox20 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox37 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox9 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox31 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox14 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox25 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox4 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox19 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox8 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox13 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox3 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox7 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox2 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox1 = new SalaryRegistersUralsib.CueTextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -135,7 +135,20 @@
             this.DTB.Name = "DTB";
             this.DTB.Size = new System.Drawing.Size(320, 394);
             this.DTB.TabIndex = 0;
+            this.DTB.Text = "20, 20, 20, 20, 3, 14, 13, 10, 80, 7, 30, 2, 30, 45, 5, 3, 5, 6, 10, 100, 1, 11, " +
+    "10, 10, 12, 22, 20, 4, 4, 3, 14, 13, 10, 34, 30, 2, 30, 45, 5, 3, 5, 6, 10, 10, " +
+    "10, 50 ";
             this.DTB.TextChanged += new System.EventHandler(this.DTB_TextChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(468, 362);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "clear";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // cueTextBox41
             // 
@@ -642,16 +655,6 @@
             this.cueTextBox1.Size = new System.Drawing.Size(100, 20);
             this.cueTextBox1.TabIndex = 2;
             this.cueTextBox1.Tag = "20";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(468, 362);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "clear";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FormDebug
             // 

@@ -1,8 +1,10 @@
-﻿using SalaryRegistersUralsib.Forms;
-
+﻿
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
+using System.IO;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 
 using Excel = Microsoft.Office.Interop.Excel;
@@ -10,11 +12,17 @@ namespace SalaryRegistersUralsib
 {
     public partial class Organizations : Form
     {
+        List<List<Int32>> myList = new List<List<Int32>>();
         public Organizations()
         {
-            
+
             InitializeComponent();
             this.Icon = Properties.Resources.Icon1;
+
+            myList.Add(new List<Int32> { 20, 20, 20, 20, 3, 14, 13, 10, 80, 7, 30, 2, 30, 45, 5, 3, 5, 6, 10, 100, 1, 11, 10, 10, 12, 22, 20, 4, 4, 3, 14, 13, 10, 34, 30, 2, 30, 45, 5, 3, 5, 6, 10, 10, 10, 50 });
+            myList.Add(new List<Int32> { });
+            myList.Add(new List<Int32> { });
+            myList.Add(new List<Int32> { });
         }
         /*
          * сделать:
@@ -30,10 +38,10 @@ namespace SalaryRegistersUralsib
          * 
          */
 
+        
+        
 
-
-
-        private void FormZP_Load(object sender, EventArgs e)
+private void FormZP_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.Workers". При необходимости она может быть перемещена или удалена.
             this.workersTableAdapter.Fill(this.dbDataSet.Workers);
@@ -93,7 +101,7 @@ namespace SalaryRegistersUralsib
             {
                 Debug.WriteLine("Ошибка из-за версии экселя меньше 2016");
             }
-            
+
         }
         private void ExportButton_Click(object sender, EventArgs e)
         {
@@ -126,9 +134,9 @@ namespace SalaryRegistersUralsib
                 wsh4.Name = "Зачисления по картам";
 
                 FillTheWorkSheet(workersDataGridView, wsh);
-                FillTheWorkSheet(cardsGridView, wsh2);
-                FillTheWorkSheet(dataGridView3, wsh3);
-                FillTheWorkSheet(dataGridView2, wsh4);
+                FillTheWorkSheet(GridView1, wsh2);
+                FillTheWorkSheet(GridView2, wsh3);
+                FillTheWorkSheet(GridView3, wsh4);
 
                 excelapp.AlertBeforeOverwriting = false;
                 workbook.SaveAs(sfd.FileName);
@@ -159,23 +167,90 @@ namespace SalaryRegistersUralsib
                 //Debug.WriteLine(" ");
                 //Debug.WriteLine(f.Doc2);
 
+                
+                cardTableAdapter.Insert(f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Doc [ 0 ] ?? null, f.Doc [ 1 ] ?? null, f.Doc [ 2 ] ?? null, f.Doc [ 3 ] ?? null, f.Doc [ 4 ] ?? null, f.Doc [ 5 ] ?? null, f.Mass [ 0 ] ?? null, f.Mass [ 1 ] ?? null, f.Mass [ 2 ] ?? null, f.Mass [ 3 ] ?? null, f.Mass [ 4 ] ?? null, f.Mass [ 5 ] ?? null, f.Mass [ 6 ] ?? null, f.Mass [ 7 ] ?? null, f.WBirth.Text, f.Place_Of_Birth.Text, f.Sex.SelectedIndex.ToString(), f.SNILS.Text, f.Phone.Text, f.Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_type.Text, f.Doc2 [ 0 ] ?? null, f.Doc2 [ 1 ] ?? null, f.Doc2 [ 2 ] ?? null, f.Doc2 [ 3 ] ?? null, f.Doc2 [ 4 ] ?? null, f.Mass2 [ 0 ] ?? null, f.Mass2 [ 1 ] ?? null, f.Mass2 [ 2 ] ?? null, f.Mass2 [ 3 ] ?? null, f.Mass2 [ 4 ] ?? null, f.Mass2 [ 5 ] ?? null, f.Mass2 [ 6 ] ?? null, f.Mass2 [ 7 ] ?? null, f.Action_param.Text, f.Employment_Date.Text, f.Salary.Text, f.Email.Text, int.Parse(f.Card_N.Text), f.Org_key.Text, int.Parse(f.WCode.Text));
 
-                cardTableAdapter.Insert(f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Doc [ 0 ], f.Doc [ 1 ], f.Doc [ 2 ], Convert.ToDateTime(f.Doc [ 3 ]), f.Doc [ 4 ], f.Doc [ 5 ], f.Mass [ 0 ], f.Mass [ 1 ], f.Mass [ 2 ], f.Mass [ 3 ], f.Mass [ 4 ], f.Mass [ 5 ], f.Mass [ 6 ], f.Mass [ 7 ], Convert.ToDateTime(f.WBirth.Text), f.Place_Of_Birth.Text, f.Sex.Text, f.SNILS.Text, f.Phone.Text, f.Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_type.Text, f.Doc2 [ 0 ], f.Doc2 [ 1 ], f.Doc2 [ 2 ], Convert.ToDateTime(f.Doc2 [ 3 ]), f.Doc2 [ 4 ], f.Mass2 [ 0 ], f.Mass2 [ 1 ], f.Mass2 [ 2 ], f.Mass2 [ 3 ], f.Mass2 [ 4 ], f.Mass2 [ 5 ], f.Mass2 [ 6 ], f.Mass2 [ 7 ], f.Action_param.Text, Convert.ToDateTime(f.Employment_Date.Text), f.Salary.Text, int.Parse(f.Card_N.Text), f.Email.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
-               
                 cardTableAdapter.Fill(dbDataSet.Card);
             }
         }
 
         private void Button_DOS_Click(object sender, EventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                
+                FileName = DateTime.Now.ToString("MM.dd")+".N01"
+            
+            };
+            if ( sfd.ShowDialog() == DialogResult.OK )
 
-            //ДОПОЛНИТЕЛЬНАЯ ФОРМА БУДЕТ УБРАНА, НЕ ОБРАЩАТЬ НА НЕЁ ВНИМАНИЕ
+            {
+                string s = "";
+                foreach ( int i in myList [ tabControl1.SelectedIndex - 1 ] )
+                {
+                    s += i + " ";
+                }
+                Debug.WriteLine(s);
+                //DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ] as DataGridView;
+                //s = "";
+                //foreach ( DataGridViewRow row in d.Rows )
+                //{
+                //    foreach ( DataGridViewCell cell in row.Cells )
+                //    {
+                //        Debug.WriteLine(cell.Value.ToString());
+                //    }
+                //}
+                DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ] as DataGridView;
 
+                string str = d.Rows.Count.ToString().PadLeft(5)+"\n";
+                foreach ( DataGridViewRow row in d.Rows )
+                {
+                    int n = 0;
+                    foreach ( int i in myList [ tabControl1.SelectedIndex - 1 ] )
+                    {
+                        str += row.Cells [ n ].Value.ToString().PadRight(i);
 
-            //FormDOS f = new FormDOS(this);
-            //f.Show();
-
-
+                        n++;
+                    }
+                    str += "*\n";
+                }
+                File.WriteAllText(sfd.FileName, str.Remove(str.Length - 2), System.Text.Encoding.GetEncoding(866));
+                Unix2Dos(sfd.FileName);
+            }
+        }
+        private void Unix2Dos(string fileName)
+        {
+            const byte CR = 0x0D;
+            const byte LF = 0x0A;
+            byte[] DOS_LINE_ENDING = new byte[] { CR, LF };
+            byte[] data = File.ReadAllBytes(fileName);
+            using ( FileStream fileStream = File.OpenWrite(fileName) )
+            {
+                BinaryWriter bw = new BinaryWriter(fileStream);
+                int position = 0;
+                int index = 0;
+                do
+                {
+                    index = Array.IndexOf<byte>(data, LF, position);
+                    if ( index >= 0 )
+                    {
+                        if ( ( index > 0 ) && ( data [ index - 1 ] == CR ) )
+                        {
+                            // already dos ending
+                            bw.Write(data, position, index - position + 1);
+                        }
+                        else
+                        {
+                            bw.Write(data, position, index - position);
+                            bw.Write(DOS_LINE_ENDING);
+                        }
+                        position = index + 1;
+                    }
+                }
+                while ( index >= 0 );
+                bw.Write(data, position, data.Length - position);
+                fileStream.SetLength(fileStream.Position);
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -204,7 +279,7 @@ namespace SalaryRegistersUralsib
         private void enrollmentsDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             // при ошибке ввода помечаем ячейку и сбрасываем изменения
-            
+
             DataGridView view = (DataGridView)sender;
             view.Rows [ e.RowIndex ].Cells [ e.ColumnIndex ].ErrorText = "ошибка ввода";
             e.Cancel = false;
@@ -235,7 +310,7 @@ namespace SalaryRegistersUralsib
         {
             DataGridView dg = (DataGridView)sender;
             Debug.WriteLine(dg.Columns [ e.ColumnIndex ].HeaderCell.Value);
-            if ( !dg.CurrentRow.IsNewRow && dg.Columns[e.ColumnIndex].HeaderText == "Удалить" ) //make sure button index here
+            if ( !dg.CurrentRow.IsNewRow && dg.Columns [ e.ColumnIndex ].HeaderText == "Удалить" ) //make sure button index here
             {
                 dg.Rows.Remove(dg.Rows [ e.RowIndex ]);
             }
@@ -244,7 +319,7 @@ namespace SalaryRegistersUralsib
         private void button21_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Save();
-            
+
         }
 
         private void button23_Click(object sender, EventArgs e)
@@ -257,6 +332,46 @@ namespace SalaryRegistersUralsib
 
         private void button21_Click_1(object sender, EventArgs e)
         {
+        }
+
+        private void Button_LoadFromDOS_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opn = new OpenFileDialog();
+            if ( opn.ShowDialog() == DialogResult.OK )
+            {
+                //Get the path of specified file
+                string filePath = opn.FileName;
+                string text = File.ReadAllText(filePath, System.Text.Encoding.GetEncoding(866));
+                string[] sep = {"\r\n" };
+                string[] st = text.Split(sep,StringSplitOptions.None);
+                for ( int i = 1; i < int.Parse(st[0])+1; i++ )
+                {
+                    int point = 0;
+                    List<string> m = new List<string>();
+                    foreach ( int j in myList [ tabControl1.SelectedIndex - 1 ] )
+                    {
+                        string str = "";
+                        for ( int n = 0; n < j; n++ )
+                        {
+                            str += st [ i ] [ point ];
+                            point++;
+                        }
+                        m.Add(str.Trim());
+                    }
+                    Random r = new Random();
+                    m.Add(r.Next(100000000, 999999999).ToString());
+                    m.Add(label5.Text);
+                    m.Add(r.Next(100).ToString());
+                    dbDataSet.Card.Rows.Add(m.ToArray());
+                    cardTableAdapter.Update(dbDataSet.Card);
+                    cardTableAdapter.Fill(dbDataSet.Card);
+                        //Debug.WriteLine(st [ i ]);
+                }
+                //foreach (string s in st )
+                //{
+                    
+                //}
+            }
         }
     }
 }

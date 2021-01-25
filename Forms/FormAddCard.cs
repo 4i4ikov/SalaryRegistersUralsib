@@ -169,13 +169,7 @@ namespace SalaryRegistersUralsib
         private void FormAddWorker_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            if ( DialogResult != DialogResult.OK )
-            {
-                return;
-            }
-            
-            //Проверка всех TextBox на соответствие требованиям(валидация)
-            
+
 
             //TODO проверить можно ли удалить старую валидацию формы добавления карт
             if ( DialogResult != DialogResult.OK )
@@ -196,10 +190,10 @@ namespace SalaryRegistersUralsib
                     }
                 }
             }
-            if ( !( string.IsNullOrWhiteSpace(Tag.ToString()) ) )
+            if ( !( string.IsNullOrWhiteSpace(Tag.ToString()) ) || Mass == null || Mass2 == null || Doc == null || Doc2 == null)
             {
                 e.Cancel = true;
-                MessageBox.Show("Не верно заполненные значения \n" + Tag.ToString());
+                MessageBox.Show("Имеются не правильно заполненные  значения \n" + Tag.ToString());
             }
 
             ValidateChildren();
