@@ -103,7 +103,7 @@ namespace SalaryRegistersUralsib
             f.CardEnrollmentsBindingSource.Filter += " AND (Org_key = '" + orgKey + "')";
             f.ReestrBindingSource.Filter += " AND (Org_key = '" + orgKey + "')";
             f.UvalBindingSource.Filter += " AND (Org_key = '" + orgKey + "')";
-            
+
 
 
             MainProgram.Context.MainForm = f;

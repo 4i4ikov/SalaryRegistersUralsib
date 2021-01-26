@@ -153,33 +153,9 @@ namespace SalaryRegistersUralsib
 
         private void FormAddWorker_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*if (DialogResult != DialogResult.OK) return;
-            List<string> reasons = new List<string> { };
-            foreach (Control control in this.Controls)
-            {
-                CueTextBox textBox = control as CueTextBox;
-                if (textBox != null)
-                {
-                    if (textBox.Required)
-                    {
-                        if (!(new Regex(@textBox.Tag.ToString()).IsMatch(textBox.Parent.FindForm().Tag.ToString())))
-                        {
-                            e.Cancel = true;
-                            reasons.Add(textBox.Tag.ToString());
-                        }
-                    }
-                }
-            }
-            if (e.Cancel || Tag.ToString() != ":")
-            {
-                e.Cancel = true;
-                MessageBox.Show("Требуется правильно заполнить" + Tag + string.Join(",", reasons.ToArray()));
-                MessageBox.Show(DateTime1.Text);
-            }*/
+            
 
-#pragma warning disable CS0162 // Обнаружен недостижимый код
             if ( DialogResult != DialogResult.OK ) return;
-#pragma warning restore CS0162 // Обнаружен недостижимый код
             foreach ( Control control in this.Controls )
             {
                 if ( control as CueTextBox != null )

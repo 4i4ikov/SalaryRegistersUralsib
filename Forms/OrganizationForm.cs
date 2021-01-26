@@ -1,10 +1,8 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Diagnostics;
 using System.IO;
-using System.Linq.Expressions;
 using System.Windows.Forms;
 
 using Excel = Microsoft.Office.Interop.Excel;
@@ -17,38 +15,28 @@ namespace SalaryRegistersUralsib
         {
 
             InitializeComponent();
+
             this.Icon = Properties.Resources.Icon1;
 
             myList.Add(new List<Int32> { 20, 20, 20, 20, 3, 14, 13, 10, 80, 7, 30, 2, 30, 45, 5, 3, 5, 6, 10, 100, 1, 11, 10, 10, 12, 22, 20, 4, 4, 3, 14, 13, 10, 34, 30, 2, 30, 45, 5, 3, 5, 6, 10, 10, 10, 50 });
-            myList.Add(new List<Int32> { });
-            myList.Add(new List<Int32> { });
-            myList.Add(new List<Int32> { });
+
         }
-        /*
-         * сделать:
-         * ОДИН обработчик событий для всех трех datagridview только с разными "фильтрами" для EnrollmentType
-         * 
-         * допилить:
-         * добавление карточек(вообще не работает на данный момент)
-         * проверку вводимых данных при добавлении и редактировании списка организаций(заменить все textbox на кастомный с настройками)
-         * 
-         * ВАЖНО:
-         * Не забыть про функцию генерации файлов DOS
-         * Не забыть про генерацию печатных форм
-         * 
-         */
+       
 
-        
-        
 
-private void FormZP_Load(object sender, EventArgs e)
+
+
+        private void FormZP_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.Workers". При необходимости она может быть перемещена или удалена.
+            
+
             this.workersTableAdapter.Fill(this.dbDataSet.Workers);
             enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
             cardTableAdapter.Fill(dbDataSet.Card);
             workersTableAdapter.Fill(dbDataSet.Workers);
             organizationsTableAdapter1.Fill(dbDataSet.Organizations);
+            tabControl1.SelectedIndex = 6;
+            tabControl1.SelectedIndex = 0;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -62,15 +50,34 @@ private void FormZP_Load(object sender, EventArgs e)
             }
         }
 
-
         private void FireButton_Click(object sender, EventArgs e)
         {
-            //Кнопка увольнения сотрудника, просто меняет "переключатель" в бд на противоположное значение
+            //Кнопка увольнения сотрудника
             Dictionary<string, string> c = workersDataGridView.GetCellsPls();
-            workersTableAdapter.UpdateFiredStatus(!Convert.ToBoolean(c [ "Fired" ]), Convert.ToInt32(c [ "WCode" ]));
-            workersTableAdapter.ClearBeforeFill = false;
-            workersTableAdapter.Fill(dbDataSet.Workers);
-            workersTableAdapter.ClearBeforeFill = true;
+            if ( !Convert.ToBoolean(c [ "Fired" ]) )
+            {
+                DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите уволить сотрудника с именем "+c["WName"]+"?\nЭто действие невозможно отменить.", " Подтверждение увольнения", MessageBoxButtons.YesNo);
+                if ( dialogResult == DialogResult.Yes )
+                {
+                    workersTableAdapter.UpdateFiredStatus(!Convert.ToBoolean(c [ "Fired" ]), Convert.ToInt32(c [ "WCode" ]));
+                    DialogResult dg = MessageBox.Show("Добавить в таблицу на вкладке \"Увольнение\"?", "Добавление на вкладку", MessageBoxButtons.YesNo);
+                    if ( dg == DialogResult.Yes )
+                    {
+                        enrollmentsTableAdapter.Insert(label5.Text, int.Parse(c [ "Table_num" ]), c [ "WSurname" ], c [ "WName" ], c [ "WMiddlename" ], null, null, null, null, "uval");
+                        enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
+                    }
+                    workersTableAdapter.ClearBeforeFill = false;
+                    workersTableAdapter.Fill(dbDataSet.Workers);
+                    workersTableAdapter.ClearBeforeFill = true;
+                }
+
+
+
+
+            }
+            else MessageBox.Show(c [ "WName" ] + " уже уволен(а)!");
+
+
         }
 
         private void FillTheWorkSheet(DataGridView dg, Excel.Worksheet wsh)
@@ -105,7 +112,7 @@ private void FormZP_Load(object sender, EventArgs e)
         }
         private void ExportButton_Click(object sender, EventArgs e)
         {
-
+            //Кнопка экспортировать в эксель
             SaveFileDialog sfd = new SaveFileDialog
             {
                 Filter = "Excel Documents (*.xlsx)|*.xlsx",
@@ -158,17 +165,12 @@ private void FormZP_Load(object sender, EventArgs e)
                 }
                 else
                 {
-                    f.Controls [ kvp.Key ].Text = kvp.Value.Split(' ') [ 0 ];
+                    f.Controls [ kvp.Key ].Text = kvp.Value.Split(' ') [ 0 ];//Если данные хранятся в формате дата+ВРЕМЯ(пробел между ними), а нам нужна только дата
                 }
             }
             if ( f.ShowDialog() == DialogResult.OK )
             {
-                //Debug.WriteLine(f.Doc);
-                //Debug.WriteLine(" ");
-                //Debug.WriteLine(f.Doc2);
-
-                
-                cardTableAdapter.Insert(f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Doc [ 0 ] ?? null, f.Doc [ 1 ] ?? null, f.Doc [ 2 ] ?? null, f.Doc [ 3 ] ?? null, f.Doc [ 4 ] ?? null, f.Doc [ 5 ] ?? null, f.Mass [ 0 ] ?? null, f.Mass [ 1 ] ?? null, f.Mass [ 2 ] ?? null, f.Mass [ 3 ] ?? null, f.Mass [ 4 ] ?? null, f.Mass [ 5 ] ?? null, f.Mass [ 6 ] ?? null, f.Mass [ 7 ] ?? null, f.WBirth.Text, f.Place_Of_Birth.Text, f.Sex.SelectedIndex.ToString(), f.SNILS.Text, f.Phone.Text, f.Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_type.Text, f.Doc2 [ 0 ] ?? null, f.Doc2 [ 1 ] ?? null, f.Doc2 [ 2 ] ?? null, f.Doc2 [ 3 ] ?? null, f.Doc2 [ 4 ] ?? null, f.Mass2 [ 0 ] ?? null, f.Mass2 [ 1 ] ?? null, f.Mass2 [ 2 ] ?? null, f.Mass2 [ 3 ] ?? null, f.Mass2 [ 4 ] ?? null, f.Mass2 [ 5 ] ?? null, f.Mass2 [ 6 ] ?? null, f.Mass2 [ 7 ] ?? null, f.Action_param.Text, f.Employment_Date.Text, f.Salary.Text, f.Email.Text, int.Parse(f.Card_N.Text), f.Org_key.Text, int.Parse(f.WCode.Text));
+                cardTableAdapter.Insert(f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Doc [ 0 ] ?? null, f.Doc [ 1 ] ?? null, f.Doc [ 2 ] ?? null, f.Doc [ 3 ] ?? null, f.Doc [ 4 ] ?? null, f.Doc [ 5 ] ?? null, f.Mass [ 0 ] ?? null, f.Mass [ 1 ] ?? null, f.Mass [ 2 ] ?? null, f.Mass [ 3 ] ?? null, f.Mass [ 4 ] ?? null, f.Mass [ 5 ] ?? null, f.Mass [ 6 ] ?? null, f.Mass [ 7 ] ?? null, f.WBirth.Text, f.Place_Of_Birth.Text, f.Sex.SelectedIndex.ToString(), f.SNILS.Text, f.Phone.Text, f.Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_type.Text, f.Doc2 [ 0 ] ?? null, f.Doc2 [ 1 ] ?? null, f.Doc2 [ 2 ] ?? null, f.Doc2 [ 3 ] ?? null, f.Doc2 [ 4 ] ?? null, f.Mass2 [ 0 ] ?? null, f.Mass2 [ 1 ] ?? null, f.Mass2 [ 2 ] ?? null, f.Mass2 [ 3 ] ?? null, f.Mass2 [ 4 ] ?? null, f.Mass2 [ 5 ] ?? null, f.Mass2 [ 6 ] ?? null, f.Mass2 [ 7 ] ?? null, f.Action_param.Text, f.Employment_Date.Text, f.Salary.Text, f.Email.Text, f.Card_N.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
 
                 cardTableAdapter.Fill(dbDataSet.Card);
             }
@@ -178,9 +180,9 @@ private void FormZP_Load(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog
             {
-                
+
                 FileName = DateTime.Now.ToString("MM.dd")+".N01"
-            
+
             };
             if ( sfd.ShowDialog() == DialogResult.OK )
 
@@ -190,16 +192,8 @@ private void FormZP_Load(object sender, EventArgs e)
                 {
                     s += i + " ";
                 }
-                Debug.WriteLine(s);
-                //DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ] as DataGridView;
-                //s = "";
-                //foreach ( DataGridViewRow row in d.Rows )
-                //{
-                //    foreach ( DataGridViewCell cell in row.Cells )
-                //    {
-                //        Debug.WriteLine(cell.Value.ToString());
-                //    }
-                //}
+                
+
                 DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ] as DataGridView;
 
                 string str = d.Rows.Count.ToString().PadLeft(5)+"\n";
@@ -308,30 +302,20 @@ private void FormZP_Load(object sender, EventArgs e)
 
         private void enrollmentsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // кнопка для удаления записи
             DataGridView dg = (DataGridView)sender;
-            Debug.WriteLine(dg.Columns [ e.ColumnIndex ].HeaderCell.Value);
-            if ( !dg.CurrentRow.IsNewRow && dg.Columns [ e.ColumnIndex ].HeaderText == "Удалить" ) //make sure button index here
+            if ( !dg.CurrentRow.IsNewRow && dg.Columns [ e.ColumnIndex ].HeaderText == "Удалить" ) 
             {
                 dg.Rows.Remove(dg.Rows [ e.RowIndex ]);
             }
         }
 
-        private void button21_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.Save();
-
-        }
-
         private void button23_Click(object sender, EventArgs e)
         {
-
+            //кнопка назад
             MainProgram.Context.MainForm = new SalaryProjectForm();
             Close();
             MainProgram.Context.MainForm.Show();
-        }
-
-        private void button21_Click_1(object sender, EventArgs e)
-        {
         }
 
         private void Button_LoadFromDOS_Click(object sender, EventArgs e)
@@ -344,7 +328,7 @@ private void FormZP_Load(object sender, EventArgs e)
                 string text = File.ReadAllText(filePath, System.Text.Encoding.GetEncoding(866));
                 string[] sep = {"\r\n" };
                 string[] st = text.Split(sep,StringSplitOptions.None);
-                for ( int i = 1; i < int.Parse(st[0])+1; i++ )
+                for ( int i = 1; i < int.Parse(st [ 0 ]) + 1; i++ )
                 {
                     int point = 0;
                     List<string> m = new List<string>();
@@ -365,13 +349,111 @@ private void FormZP_Load(object sender, EventArgs e)
                     dbDataSet.Card.Rows.Add(m.ToArray());
                     cardTableAdapter.Update(dbDataSet.Card);
                     cardTableAdapter.Fill(dbDataSet.Card);
-                        //Debug.WriteLine(st [ i ]);
                 }
-                //foreach (string s in st )
-                //{
-                    
-                //}
             }
+        }
+
+        private void CreateEnrollmentDos_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+
+                FileName = DateTime.Now.ToString("MMdd")+".l01"
+
+            };
+
+            if ( sfd.ShowDialog() == DialogResult.OK )
+
+            {
+
+                DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ] as DataGridView;
+                float sum = 0;
+
+                foreach ( DataGridViewRow row in d.Rows )
+                {
+                    if ( !row.IsNewRow )
+                    {
+                        try
+                        {
+                            sum += (Single)row.Cells [ 6 ].Value;
+                        }
+                        catch ( Exception ex )
+                        {
+                            Debug.WriteLine(ex.Message);
+                        }
+                    }
+                }
+
+                string z = " ";
+
+                if ( CurOrgDesc.Text == "+" ) z = "Z";
+
+                string str = (d.Rows.Count-1).ToString().PadLeft(5)+
+                    CurOrgKey.Text.PadRight(8)+
+                    String.Format("{0:0.00}", Convert.ToSingle(Math.Round(sum,2))).Replace(",", ".").PadLeft(14) +
+                    z+"\n";
+                foreach ( DataGridViewRow row in d.Rows )
+                {
+                    if ( !row.IsNewRow )
+                    {
+                        str += row.Cells [ 0 ].Value.ToString().PadRight(20);
+
+                        str += String.Format("{0:0.00}", Convert.ToSingle(row.Cells [ 6 ].Value)).Replace(",", ".").PadLeft(12);
+                        str += "0" + row.Cells [ 7 ].Value.ToString();
+
+                        str += String.Format("{0:0.00}", Convert.ToSingle(row.Cells [ 8 ].Value)).Replace(",", ".").PadLeft(12);
+                        str += row.Cells [ 9 ].Value.ToString();
+                        
+                        str += "\n";
+                    }
+
+                }
+                File.WriteAllText(sfd.FileName, str.Remove(str.Length - 1), System.Text.Encoding.GetEncoding(866));
+                Unix2Dos(sfd.FileName);
+            }
+        }
+
+        private void LoadFromDosEnrollments_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opn = new OpenFileDialog();
+            if ( opn.ShowDialog() == DialogResult.OK )
+            {
+                string filePath = opn.FileName;
+                string[] text = File.ReadAllLines(filePath, System.Text.Encoding.GetEncoding(866));
+                for ( int i = 1; i <= int.Parse(text [ 0 ].Substring(0, 5).Trim()); i++ )
+                {
+                    
+                    string tableNum = text[i].Substring(0,19).Trim();
+                    string sum = text[i].Substring(20,12).Trim();
+                    string paytypecode = text[i].Substring(33,2);
+                    Debug.WriteLine("таб н" + tableNum);
+                    Debug.WriteLine("пайтайпкод" + paytypecode);
+                    //if ( tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() == "zach" )
+                    //    dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 3 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
+                    //else
+                    //    dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 5 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
+                    //enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
+                    //enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
+                }
+            }
+        }
+
+        private void LoadWorkersList(object sender, EventArgs e)
+        {
+            foreach ( DataGridViewRow row in workersDataGridView.Rows )
+            {
+                if ( tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() == "zach" )
+                    dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 3 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
+                else
+                    dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 5 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
+                enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
+                enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

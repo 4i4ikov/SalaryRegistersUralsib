@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace SalaryRegistersUralsib
 {
-    
+
     /// <summary>
     /// Represents a Windows text box control with a cue banner.
     /// </summary>

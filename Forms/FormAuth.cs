@@ -13,7 +13,7 @@ namespace SalaryRegistersUralsib
 
         private void AuthForm_Load(object sender, EventArgs e)
         {
-            this.Icon = Properties.Resources.Icon1 ;
+            this.Icon = Properties.Resources.Icon1;
         }
 
         private void AuthButton_Click(object sender, EventArgs e)

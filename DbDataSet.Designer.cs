@@ -2229,7 +2229,7 @@ namespace SalaryRegistersUralsib {
                         string Employment_Date, 
                         string Salary, 
                         string Email, 
-                        int Card_N, 
+                        string Card_N, 
                         OrganizationsRow parentOrganizationsRowByOrganizationsCard, 
                         int Code) {
                 CardRow rowCardRow = ((CardRow)(this.NewRow()));
@@ -2293,7 +2293,7 @@ namespace SalaryRegistersUralsib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CardRow FindByCard_N(int Card_N) {
+            public CardRow FindByCard_N(string Card_N) {
                 return ((CardRow)(this.Rows.Find(new object[] {
                             Card_N})));
             }
@@ -2461,7 +2461,7 @@ namespace SalaryRegistersUralsib {
                 base.Columns.Add(this.columnSalary);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmail);
-                this.columnCard_N = new global::System.Data.DataColumn("Card_N", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnCard_N = new global::System.Data.DataColumn("Card_N", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCard_N);
                 this.columnOrg_key = new global::System.Data.DataColumn("Org_key", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrg_key);
@@ -2517,6 +2517,7 @@ namespace SalaryRegistersUralsib {
                 this.columnEmail.MaxLength = 50;
                 this.columnCard_N.AllowDBNull = false;
                 this.columnCard_N.Unique = true;
+                this.columnCard_N.MaxLength = 255;
                 this.columnOrg_key.MaxLength = 4;
             }
             
@@ -4342,9 +4343,9 @@ namespace SalaryRegistersUralsib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Card_N {
+            public string Card_N {
                 get {
-                    return ((int)(this[this.tableCard.Card_NColumn]));
+                    return ((string)(this[this.tableCard.Card_NColumn]));
                 }
                 set {
                     this[this.tableCard.Card_NColumn] = value;
@@ -5270,12 +5271,11 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BIK", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BIK", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE       Organizations\r\nSET                Organization = ?, Org_key = ?, [De" +
-                "scriptor] = ?, Manager = ?, Manager_d = ?, Booker = ?, Org_INN = ?, OGRN = ?, Di" +
-                "sporsalBill = ?, Bank = ?, BankUnit = ?, BIK = ?\r\nWHERE        (Org_key = ?)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE       Organizations\r\nSET                Organization = ?, [Descriptor] = ?" +
+                ", Manager = ?, Manager_d = ?, Booker = ?, Org_INN = ?, OGRN = ?, DisporsalBill =" +
+                " ?, Bank = ?, BankUnit = ?, BIK = ?\r\nWHERE        (Org_key = ?)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Organization", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Organization", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Org_key", global::System.Data.OleDb.OleDbType.WChar, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Descriptor", global::System.Data.OleDb.OleDbType.WChar, 1, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Descriptor", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Manager", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Manager", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Manager_d", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Manager_d", global::System.Data.DataRowVersion.Current, false, null));
@@ -5483,84 +5483,78 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Organization, string Org_key, string Descriptor, string Manager, string Manager_d, string Booker, string Org_INN, string OGRN, string DisporsalBill, string Bank, string BankUnit, string BIK, string Original_Org_key) {
+        public virtual int Update(string Organization, string Descriptor, string Manager, string Manager_d, string Booker, string Org_INN, string OGRN, string DisporsalBill, string Bank, string BankUnit, string BIK, string Original_Org_key) {
             if ((Organization == null)) {
                 throw new global::System.ArgumentNullException("Organization");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Organization));
             }
-            if ((Org_key == null)) {
-                throw new global::System.ArgumentNullException("Org_key");
+            if ((Descriptor == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Org_key));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Descriptor));
             }
-            if ((Descriptor == null)) {
+            if ((Manager == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Descriptor));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Manager));
             }
-            if ((Manager == null)) {
+            if ((Manager_d == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Manager));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Manager_d));
             }
-            if ((Manager_d == null)) {
+            if ((Booker == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Manager_d));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Booker));
             }
-            if ((Booker == null)) {
+            if ((Org_INN == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Booker));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Org_INN));
             }
-            if ((Org_INN == null)) {
+            if ((OGRN == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Org_INN));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(OGRN));
             }
-            if ((OGRN == null)) {
+            if ((DisporsalBill == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(OGRN));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(DisporsalBill));
             }
-            if ((DisporsalBill == null)) {
+            if ((Bank == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(DisporsalBill));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Bank));
             }
-            if ((Bank == null)) {
+            if ((BankUnit == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Bank));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(BankUnit));
             }
-            if ((BankUnit == null)) {
+            if ((BIK == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(BankUnit));
-            }
-            if ((BIK == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(BIK));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(BIK));
             }
             if ((Original_Org_key == null)) {
                 throw new global::System.ArgumentNullException("Original_Org_key");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Org_key));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Org_key));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5576,14 +5570,6 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Organization, string Descriptor, string Manager, string Manager_d, string Booker, string Org_INN, string OGRN, string DisporsalBill, string Bank, string BankUnit, string BIK, string Original_Org_key) {
-            return this.Update(Organization, Original_Org_key, Descriptor, Manager, Manager_d, Booker, Org_INN, OGRN, DisporsalBill, Bank, BankUnit, BIK, Original_Org_key);
         }
     }
     
@@ -7118,7 +7104,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Salary", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Salary", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Email", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Card_N", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_N", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Card_N", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_N", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Org_key", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Org_key", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code", global::System.Data.DataRowVersion.Original, true, null));
@@ -7173,7 +7159,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Employment_Date", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Employment_Date", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Salary", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Salary", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Card_N", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_N", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Card_N", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_N", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Org_key", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
@@ -7271,7 +7257,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Employment_Date", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Employment_Date", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Salary", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Salary", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Card_N", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_N", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Card_N", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_N", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Org_key", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Surname", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Surname", global::System.Data.DataRowVersion.Original, true, null));
@@ -7366,7 +7352,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Salary", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Salary", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Email", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Card_N", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_N", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Card_N", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Card_N", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Org_key", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Org_key", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Org_key", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Code", global::System.Data.DataRowVersion.Original, true, null));
@@ -7386,7 +7372,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Surname, CName, Middlename, Table_num, Docum, Docum_serial, Docum_num, Docum_date, Docum_place, Docum_cod, City, Region_cod, District, Street, House, Block, Apartment, [Index], Birth, Place_Of_Birth, Sex, SNILS, Home_phone, Mobile_phone, INN_worker, Full_Name_Card, Code_Word, Bank_Code, Card_type, Docum2, Docum2_serial, Docum2_num, Docum2_date, Docum2_place, City2, Region_cod2, District2, Street2, House2, Block2, Apartment2, Index2, Action_param, Employment_Date, Salary, Email, Card_N, Org_key, Code FROM Card";
+            this._commandCollection[0].CommandText = "SELECT        Card.*\r\nFROM            Card";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7494,7 +7480,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
                     string Original_Employment_Date, 
                     string Original_Salary, 
                     string Original_Email, 
-                    int Original_Card_N, 
+                    string Original_Card_N, 
                     string Original_Org_key, 
                     global::System.Nullable<int> Original_Code) {
             if ((Original_Surname == null)) {
@@ -7863,7 +7849,12 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[90].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[91].Value = ((string)(Original_Email));
             }
-            this.Adapter.DeleteCommand.Parameters[92].Value = ((int)(Original_Card_N));
+            if ((Original_Card_N == null)) {
+                throw new global::System.ArgumentNullException("Original_Card_N");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[92].Value = ((string)(Original_Card_N));
+            }
             if ((Original_Org_key == null)) {
                 this.Adapter.DeleteCommand.Parameters[93].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[94].Value = global::System.DBNull.Value;
@@ -7947,7 +7938,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
                     string Employment_Date, 
                     string Salary, 
                     string Email, 
-                    int Card_N, 
+                    string Card_N, 
                     string Org_key, 
                     global::System.Nullable<int> Code) {
             if ((Surname == null)) {
@@ -8226,7 +8217,12 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[45].Value = ((string)(Email));
             }
-            this.Adapter.InsertCommand.Parameters[46].Value = ((int)(Card_N));
+            if ((Card_N == null)) {
+                throw new global::System.ArgumentNullException("Card_N");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[46].Value = ((string)(Card_N));
+            }
             if ((Org_key == null)) {
                 this.Adapter.InsertCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
@@ -8306,7 +8302,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
                     string Employment_Date, 
                     string Salary, 
                     string Email, 
-                    int Card_N, 
+                    string Card_N, 
                     string Org_key, 
                     global::System.Nullable<int> Code, 
                     string Original_Surname, 
@@ -8355,7 +8351,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
                     string Original_Employment_Date, 
                     string Original_Salary, 
                     string Original_Email, 
-                    int Original_Card_N, 
+                    string Original_Card_N, 
                     string Original_Org_key, 
                     global::System.Nullable<int> Original_Code) {
             if ((Surname == null)) {
@@ -8634,7 +8630,12 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Email));
             }
-            this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(Card_N));
+            if ((Card_N == null)) {
+                throw new global::System.ArgumentNullException("Card_N");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Card_N));
+            }
             if ((Org_key == null)) {
                 this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
@@ -9013,7 +9014,12 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[139].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[140].Value = ((string)(Original_Email));
             }
-            this.Adapter.UpdateCommand.Parameters[141].Value = ((int)(Original_Card_N));
+            if ((Original_Card_N == null)) {
+                throw new global::System.ArgumentNullException("Original_Card_N");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[141].Value = ((string)(Original_Card_N));
+            }
             if ((Original_Org_key == null)) {
                 this.Adapter.UpdateCommand.Parameters[142].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[143].Value = global::System.DBNull.Value;
@@ -9145,7 +9151,7 @@ namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
                     string Original_Employment_Date, 
                     string Original_Salary, 
                     string Original_Email, 
-                    int Original_Card_N, 
+                    string Original_Card_N, 
                     string Original_Org_key, 
                     global::System.Nullable<int> Original_Code) {
             return this.Update(Surname, CName, Middlename, Table_num, Docum, Docum_serial, Docum_num, Docum_date, Docum_place, Docum_cod, City, Region_cod, District, Street, House, Block, Apartment, Index, Birth, Place_Of_Birth, Sex, SNILS, Home_phone, Mobile_phone, INN_worker, Full_Name_Card, Code_Word, Bank_Code, Card_type, Docum2, Docum2_serial, Docum2_num, Docum2_date, Docum2_place, City2, Region_cod2, District2, Street2, House2, Block2, Apartment2, Index2, Action_param, Employment_Date, Salary, Email, Original_Card_N, Org_key, Code, Original_Surname, Original_CName, Original_Middlename, Original_Table_num, Original_Docum, Original_Docum_serial, Original_Docum_num, Original_Docum_date, Original_Docum_place, Original_Docum_cod, Original_City, Original_Region_cod, Original_District, Original_Street, Original_House, Original_Block, Original_Apartment, Original_Index, Original_Birth, Original_Place_Of_Birth, Original_Sex, Original_SNILS, Original_Home_phone, Original_Mobile_phone, Original_INN_worker, Original_Full_Name_Card, Original_Code_Word, Original_Bank_Code, Original_Card_type, Original_Docum2, Original_Docum2_serial, Original_Docum2_num, Original_Docum2_date, Original_Docum2_place, Original_City2, Original_Region_cod2, Original_District2, Original_Street2, Original_House2, Original_Block2, Original_Apartment2, Original_Index2, Original_Action_param, Original_Employment_Date, Original_Salary, Original_Email, Original_Card_N, Original_Org_key, Original_Code);

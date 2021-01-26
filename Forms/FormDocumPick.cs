@@ -1,5 +1,4 @@
-﻿using Microsoft.Office.Interop.Excel;
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,7 +10,7 @@ namespace SalaryRegistersUralsib.Forms
     {
         private Control.ControlCollection c;
         private bool DocumMode;
-        
+
 
         public List<String> GetData()
         {
@@ -28,7 +27,7 @@ namespace SalaryRegistersUralsib.Forms
                     Mass.Add(tx ?? "");
                 }
             }
-            
+
             return Mass;
         }
         public FormDocumPick(bool docummode)
@@ -47,9 +46,9 @@ namespace SalaryRegistersUralsib.Forms
 
         private void Docum_DropDown(object sender, EventArgs e)
         {
-            
+
             FormSelectDocument f = new FormSelectDocument();
-            
+
             f.groupBox1.Visible = DocumMode;
             f.groupBox2.Visible = !DocumMode;
             if ( f.ShowDialog() == DialogResult.OK ) // отобразить форму
@@ -85,12 +84,13 @@ namespace SalaryRegistersUralsib.Forms
                     if ( !( Tag.ToString().IndexOf(ch) > -1 ) )
                         Tag += ch + ",";
                 }
-                if (control is ComboBox c && c.SelectedIndex == -1)
+                if ( control is ComboBox c && c.SelectedIndex == -1 )
                 {
                     Debug.WriteLine(c.SelectedIndex);
                     if ( !( Tag.ToString().IndexOf(c.Tag.ToString()) > -1 ) )
                         Tag += c.Tag.ToString() + ",";
-                } else
+                }
+                else
                 {
 
                 }

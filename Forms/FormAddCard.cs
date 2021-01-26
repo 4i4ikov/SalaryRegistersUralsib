@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace SalaryRegistersUralsib
 {
@@ -31,7 +30,7 @@ namespace SalaryRegistersUralsib
                     textBox.Enter += new System.EventHandler(Cue_Enter);
                 }
             }
-            
+
         }
 
 
@@ -45,13 +44,11 @@ namespace SalaryRegistersUralsib
                 {
                     Mass = f.GetData();
                     Mass.Reverse();
-                    MessageBox.Show(String.Join(", ", Mass.ToArray()));
                 }
                 else
                 {
                     Mass2 = f.GetData();
                     Mass2.Reverse();
-                    MessageBox.Show(String.Join(", ", Mass2.ToArray()));
                 }
 
             }
@@ -184,13 +181,12 @@ namespace SalaryRegistersUralsib
                     string ch = textBox.Check(textBox, false);
                     if ( !( Tag.ToString().IndexOf(ch) > -1 ) )
                     {
-                        Debug.WriteLine(textBox.Text);
                         if ( String.IsNullOrWhiteSpace(textBox.Text) || textBox.Text == " " ) textBox.Text = "!!!";
                         Tag += ch + ",";
                     }
                 }
             }
-            if ( !( string.IsNullOrWhiteSpace(Tag.ToString()) ) || Mass == null || Mass2 == null || Doc == null || Doc2 == null)
+            if ( !( string.IsNullOrWhiteSpace(Tag.ToString()) ) || Mass == null || Mass2 == null || Doc == null || Doc2 == null )
             {
                 e.Cancel = true;
                 MessageBox.Show("Имеются не правильно заполненные  значения \n" + Tag.ToString());
@@ -213,12 +209,11 @@ namespace SalaryRegistersUralsib
                 {
                     Doc = f.GetData();
 
-                    MessageBox.Show(String.Join(", ", Doc.ToArray()));
-                } else
+                }
+                else
                 {
                     Doc2 = f.GetData();
 
-                    MessageBox.Show(String.Join(", ", Doc2.ToArray()));
                 }
             }
         }
@@ -226,7 +221,7 @@ namespace SalaryRegistersUralsib
         private void Cue_Enter(object sender, EventArgs e)
         {
             CueTextBox c = (CueTextBox)sender;
-            if (c.Text == "!!!") c.Text = String.Empty;
+            if ( c.Text == "!!!" ) c.Text = String.Empty;
             c.ForeColor = System.Drawing.Color.Black;
         }
     }
