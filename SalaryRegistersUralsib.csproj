@@ -129,6 +129,12 @@
     <Compile Include="CueTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\ChangeLoginPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeLoginPassword.Designer.cs">
+      <DependentUpon>ChangeLoginPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAuth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,12 +155,6 @@
     </Compile>
     <Compile Include="Forms\FormAddWorker.Designer.cs">
       <DependentUpon>FormAddWorker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormDebug.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormDebug.Designer.cs">
-      <DependentUpon>FormDebug.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormDelOrg.cs">
       <SubType>Form</SubType>
@@ -204,12 +204,6 @@
     <Compile Include="Forms\OrganizationForm.Designer.cs">
       <DependentUpon>OrganizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormAddOrganization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,14 +212,14 @@
     </Compile>
     <Compile Include="MainProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ChangeLoginPassword.resx">
+      <DependentUpon>ChangeLoginPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAuth.resx">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddWorker.resx">
       <DependentUpon>FormAddWorker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormDebug.resx">
-      <DependentUpon>FormDebug.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDelOrg.resx">
       <DependentUpon>FormDelOrg.cs</DependentUpon>
@@ -250,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrganizationForm.resx">
       <DependentUpon>OrganizationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAddOrganization.resx">
       <DependentUpon>FormAddOrganization.cs</DependentUpon>

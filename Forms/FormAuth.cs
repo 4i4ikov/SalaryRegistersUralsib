@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SalaryRegistersUralsib.Forms;
+
+using System;
 using System.Windows.Forms;
 
 namespace SalaryRegistersUralsib
@@ -9,12 +11,10 @@ namespace SalaryRegistersUralsib
         public AuthForm()
         {
             InitializeComponent();
-        }
-
-        private void AuthForm_Load(object sender, EventArgs e)
-        {
             this.Icon = Properties.Resources.Icon1;
         }
+
+
 
         private void AuthButton_Click(object sender, EventArgs e)
         {
@@ -33,9 +33,32 @@ namespace SalaryRegistersUralsib
         }
         private void TestingButton_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Login = EncodeS(LoginInput.Text);
-            Properties.Settings.Default.Password = EncodeS(PasswordInput.Text);
-            Properties.Settings.Default.Save();
+            if ( EncodeS(LoginInput.Text) == Properties.Settings.Default.Login )
+            {
+                ChangeLoginPassword f = new ChangeLoginPassword();
+                bool b = false;
+                Hide();
+                while ( !b  )
+                {
+                    if ( f.ShowDialog() == DialogResult.OK )
+                    {
+                        if ( EncodeS(f.OldPasswordInput.Text) == Properties.Settings.Default.Password )
+                        {
+                            Properties.Settings.Default.Password = EncodeS(f.NewPasswordInput.Text);
+                            Properties.Settings.Default.Save();
+                            b = true;
+                            MessageBox.Show("Пароль успешно изменён!");
+                        }
+                        else MessageBox.Show("Вы ввели не верный старый пароль, повторите попытку.");
+
+                    }
+                    else b = true;
+                }
+                Show();
+                
+            }
+            else MessageBox.Show("Введите верный логин!");
+                
         }
         private string EncodeS(string PasswordInput)
         {

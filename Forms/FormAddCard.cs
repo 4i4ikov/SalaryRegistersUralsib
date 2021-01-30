@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Windows.Forms;
 namespace SalaryRegistersUralsib
 {
@@ -38,7 +37,17 @@ namespace SalaryRegistersUralsib
         private void Place_Enter(object sender, EventArgs e)
         {
             FormSelectPlace f = new FormSelectPlace();
-            if ( f.ShowDialog() == DialogResult.OK && sender is Button b ) // отобразить форму
+            Button b = sender as Button;
+            if ( !Boolean.Parse(b.Tag.ToString()) )
+            {
+                DialogResult dialogResult = MessageBox.Show("Место фактического проживания совпадает с местом регистрации?", " Подтверждение", MessageBoxButtons.YesNo);
+
+                if ( dialogResult == DialogResult.Yes )
+                {
+                    Mass2 = Mass;
+                }
+            }else
+            if ( f.ShowDialog() == DialogResult.OK ) // отобразить форму
             {
                 if ( Boolean.Parse(b.Tag.ToString()) )
                 {

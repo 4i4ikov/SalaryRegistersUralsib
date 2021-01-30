@@ -36,12 +36,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.Table_num = new CueTextBox();
-            this.Bill_Num = new CueTextBox();
-            this.Middlename = new CueTextBox();
-            this.Name_Worker = new CueTextBox();
-            this.BithDate = new CueTextBox();
-            this.Surname = new CueTextBox();
+            this.Table_num = new SalaryRegistersUralsib.CueTextBox();
+            this.Bill_Num = new SalaryRegistersUralsib.CueTextBox();
+            this.Middlename = new SalaryRegistersUralsib.CueTextBox();
+            this.Name_Worker = new SalaryRegistersUralsib.CueTextBox();
+            this.BithDate = new SalaryRegistersUralsib.CueTextBox();
+            this.Surname = new SalaryRegistersUralsib.CueTextBox();
             this.SuspendLayout();
             // 
             // label6
@@ -131,13 +131,14 @@
             // Table_num
             // 
             this.Table_num.BeepOnError = true;
-            this.Table_num.CueText = "№";
+            this.Table_num.CueText = "до 12 символов";
             this.Table_num.HidePromptOnLeave = true;
             this.Table_num.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.Table_num.Location = new System.Drawing.Point(167, 72);
+            this.Table_num.Mask = "000000000000";
             this.Table_num.Name = "Table_num";
             this.Table_num.PromptChar = ' ';
-            this.Table_num.RegEx = "^[\\w\\d\\-_]+$";
+            this.Table_num.RegEx = "^[0-9]+$";
             this.Table_num.Required = false;
             this.Table_num.Size = new System.Drawing.Size(150, 20);
             this.Table_num.TabIndex = 5;

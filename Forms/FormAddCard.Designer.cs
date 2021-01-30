@@ -138,7 +138,7 @@
             this.button2.Location = new System.Drawing.Point(154, 249);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 35);
-            this.button2.TabIndex = 96;
+            this.button2.TabIndex = 26;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -150,7 +150,7 @@
             this.button1.Location = new System.Drawing.Point(11, 249);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 35);
-            this.button1.TabIndex = 95;
+            this.button1.TabIndex = 25;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -178,7 +178,7 @@
             this.Sex.Location = new System.Drawing.Point(479, 26);
             this.Sex.Name = "Sex";
             this.Sex.Size = new System.Drawing.Size(150, 21);
-            this.Sex.TabIndex = 1;
+            this.Sex.TabIndex = 4;
             this.Sex.Tag = "Пол";
             // 
             // label9
@@ -322,7 +322,7 @@
             this.button4.Location = new System.Drawing.Point(11, 97);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 23);
-            this.button4.TabIndex = 105;
+            this.button4.TabIndex = 9;
             this.button4.Tag = "true";
             this.button4.Text = "Место прописки";
             this.button4.UseVisualStyleBackColor = true;
@@ -333,7 +333,7 @@
             this.button5.Location = new System.Drawing.Point(167, 97);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(150, 23);
-            this.button5.TabIndex = 105;
+            this.button5.TabIndex = 10;
             this.button5.Tag = "false";
             this.button5.Text = "Место проживания";
             this.button5.UseVisualStyleBackColor = true;
@@ -344,7 +344,7 @@
             this.button6.Location = new System.Drawing.Point(323, 97);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(150, 23);
-            this.button6.TabIndex = 105;
+            this.button6.TabIndex = 11;
             this.button6.Tag = "false";
             this.button6.Text = "Основной документ";
             this.button6.UseVisualStyleBackColor = true;
@@ -355,7 +355,7 @@
             this.button7.Location = new System.Drawing.Point(479, 97);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(150, 23);
-            this.button7.TabIndex = 105;
+            this.button7.TabIndex = 12;
             this.button7.Tag = "true";
             this.button7.Text = "Доп. документ";
             this.button7.UseVisualStyleBackColor = true;
@@ -433,20 +433,21 @@
             this.Employment_Date.Name = "Employment_Date";
             this.Employment_Date.RegEx = "(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d";
             this.Employment_Date.Required = true;
-            this.Employment_Date.ResetOnPrompt = false;
             this.Employment_Date.ResetOnSpace = false;
             this.Employment_Date.Size = new System.Drawing.Size(150, 20);
-            this.Employment_Date.TabIndex = 20;
+            this.Employment_Date.TabIndex = 21;
             this.Employment_Date.Tag = "Дата приема на работу";
             this.Employment_Date.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.Employment_Date.ValidatingType = typeof(System.DateTime);
             // 
             // Phone
             // 
-            this.Phone.CueText = null;
+            this.Phone.CueText = "без +7 или 8 в начале";
+            this.Phone.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.Phone.Location = new System.Drawing.Point(167, 141);
             this.Phone.Mask = "9990000000";
             this.Phone.Name = "Phone";
+            this.Phone.PromptChar = ' ';
             this.Phone.RegEx = null;
             this.Phone.Required = true;
             this.Phone.Size = new System.Drawing.Size(150, 20);
@@ -455,10 +456,12 @@
             // 
             // SNILS
             // 
-            this.SNILS.CueText = null;
+            this.SNILS.CueText = "проверяется";
+            this.SNILS.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.SNILS.Location = new System.Drawing.Point(11, 140);
             this.SNILS.Mask = "00000000000";
             this.SNILS.Name = "SNILS";
+            this.SNILS.PromptChar = ' ';
             this.SNILS.RegEx = "\\d{11}";
             this.SNILS.Required = false;
             this.SNILS.Size = new System.Drawing.Size(150, 20);
@@ -477,7 +480,7 @@
             this.Email.RegEx = resources.GetString("Email.RegEx");
             this.Email.Required = false;
             this.Email.Size = new System.Drawing.Size(150, 20);
-            this.Email.TabIndex = 23;
+            this.Email.TabIndex = 24;
             this.Email.Tag = "Электронная почта";
             // 
             // Card_N
@@ -492,7 +495,7 @@
             this.Card_N.RegEx = "^[\\d\\. ]+$";
             this.Card_N.Required = true;
             this.Card_N.Size = new System.Drawing.Size(150, 20);
-            this.Card_N.TabIndex = 22;
+            this.Card_N.TabIndex = 23;
             this.Card_N.Tag = "Номер карты";
             // 
             // Bank_Code
@@ -502,6 +505,7 @@
             this.Bank_Code.HidePromptOnLeave = true;
             this.Bank_Code.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.Bank_Code.Location = new System.Drawing.Point(167, 182);
+            this.Bank_Code.Mask = "0000";
             this.Bank_Code.Name = "Bank_Code";
             this.Bank_Code.PromptChar = ' ';
             this.Bank_Code.RegEx = "^[\\d\\. ]+$";
@@ -520,7 +524,7 @@
             this.Code_Word.Location = new System.Drawing.Point(11, 179);
             this.Code_Word.Name = "Code_Word";
             this.Code_Word.PromptChar = ' ';
-            this.Code_Word.RegEx = "^[а-яА-Я\\. ]+$";
+            this.Code_Word.RegEx = "";
             this.Code_Word.Required = true;
             this.Code_Word.Size = new System.Drawing.Size(150, 20);
             this.Code_Word.TabIndex = 17;
@@ -540,7 +544,7 @@
             this.Place_Of_Birth.RegEx = "^[а-яА-Я\\. ]+$";
             this.Place_Of_Birth.Required = false;
             this.Place_Of_Birth.Size = new System.Drawing.Size(150, 20);
-            this.Place_Of_Birth.TabIndex = 3;
+            this.Place_Of_Birth.TabIndex = 6;
             this.Place_Of_Birth.Tag = "Место рождения";
             // 
             // Salary
@@ -555,13 +559,13 @@
             this.Salary.RegEx = "^[\\d\\,\\.]+$";
             this.Salary.Required = true;
             this.Salary.Size = new System.Drawing.Size(150, 20);
-            this.Salary.TabIndex = 21;
+            this.Salary.TabIndex = 22;
             this.Salary.Tag = "Заработная плата";
             // 
             // Table_num
             // 
             this.Table_num.BeepOnError = true;
-            this.Table_num.CueText = "№";
+            this.Table_num.CueText = "до 12 символов";
             this.Table_num.HidePromptOnLeave = true;
             this.Table_num.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.Table_num.Location = new System.Drawing.Point(323, 72);
@@ -570,7 +574,7 @@
             this.Table_num.RegEx = "^[\\w\\d\\-_]+$";
             this.Table_num.Required = false;
             this.Table_num.Size = new System.Drawing.Size(150, 20);
-            this.Table_num.TabIndex = 4;
+            this.Table_num.TabIndex = 7;
             this.Table_num.Tag = "Табельный номер";
             // 
             // INN_worker
@@ -580,7 +584,7 @@
             this.INN_worker.HidePromptOnLeave = true;
             this.INN_worker.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.INN_worker.Location = new System.Drawing.Point(323, 141);
-            this.INN_worker.Mask = "00000000000000000000";
+            this.INN_worker.Mask = "000000000000";
             this.INN_worker.Name = "INN_worker";
             this.INN_worker.PromptChar = ' ';
             this.INN_worker.RegEx = "";
@@ -605,7 +609,7 @@
             this.WBill_Num.Required = false;
             this.WBill_Num.ResetOnSpace = false;
             this.WBill_Num.Size = new System.Drawing.Size(150, 20);
-            this.WBill_Num.TabIndex = 5;
+            this.WBill_Num.TabIndex = 8;
             this.WBill_Num.Tag = "Номер счёта";
             this.WBill_Num.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -621,7 +625,7 @@
             this.WMiddlename.RegEx = "^[а-яА-Я]+$";
             this.WMiddlename.Required = true;
             this.WMiddlename.Size = new System.Drawing.Size(150, 20);
-            this.WMiddlename.TabIndex = 103;
+            this.WMiddlename.TabIndex = 3;
             this.WMiddlename.Tag = "Отчество";
             // 
             // WName
@@ -638,7 +642,7 @@
             this.WName.RegEx = "^[а-яА-Я]+$";
             this.WName.Required = true;
             this.WName.Size = new System.Drawing.Size(150, 20);
-            this.WName.TabIndex = 102;
+            this.WName.TabIndex = 2;
             this.WName.Tag = "Имя";
             // 
             // WBirth
@@ -655,7 +659,7 @@
             this.WBirth.ResetOnPrompt = false;
             this.WBirth.ResetOnSpace = false;
             this.WBirth.Size = new System.Drawing.Size(150, 20);
-            this.WBirth.TabIndex = 2;
+            this.WBirth.TabIndex = 5;
             this.WBirth.Tag = "Дата рождения";
             this.WBirth.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.WBirth.ValidatingType = typeof(System.DateTime);
@@ -693,7 +697,7 @@
             this.WSurname.ResetOnPrompt = false;
             this.WSurname.ResetOnSpace = false;
             this.WSurname.Size = new System.Drawing.Size(150, 20);
-            this.WSurname.TabIndex = 100;
+            this.WSurname.TabIndex = 1;
             this.WSurname.Tag = "Фамилия";
             this.WSurname.Enter += new System.EventHandler(this.Cue_Enter);
             // 
@@ -701,7 +705,7 @@
             // 
             this.Action_param.BackColor = System.Drawing.SystemColors.Window;
             this.Action_param.BeepOnError = true;
-            this.Action_param.CueText = "Доп.параметр для акций";
+            this.Action_param.CueText = "Мили Аэрофлот";
             this.Action_param.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Action_param.HidePromptOnLeave = true;
             this.Action_param.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
@@ -711,21 +715,21 @@
             this.Action_param.RegEx = null;
             this.Action_param.Required = false;
             this.Action_param.Size = new System.Drawing.Size(150, 20);
-            this.Action_param.TabIndex = 19;
+            this.Action_param.TabIndex = 20;
             this.Action_param.Tag = "Доп. параметр";
             // 
             // Card_type
             // 
             this.Card_type.BackColor = System.Drawing.SystemColors.Window;
             this.Card_type.BeepOnError = true;
-            this.Card_type.CueText = "Тип карты";
+            this.Card_type.CueText = "visa";
             this.Card_type.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Card_type.HidePromptOnLeave = true;
             this.Card_type.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.Card_type.Location = new System.Drawing.Point(323, 182);
             this.Card_type.Name = "Card_type";
             this.Card_type.PromptChar = ' ';
-            this.Card_type.RegEx = null;
+            this.Card_type.RegEx = "";
             this.Card_type.Required = false;
             this.Card_type.Size = new System.Drawing.Size(150, 20);
             this.Card_type.TabIndex = 19;

@@ -14,27 +14,17 @@ namespace SalaryRegistersUralsib
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            organizationsTableAdapter1.Fill(dbDataSet.Organizations);
-            // if (Properties.Settings.Default.option1 == "debug")
-            //  {
+            try
+            {
+                organizationsTableAdapter1.Fill(dbDataSet.Organizations);
+            }
+            catch ( Exception )
+            {
+                MessageBox.Show("Не удалось открыть базу данных.");
+                Close();
+            }
+            
             button3.Enabled = true;
-            // }
-            /*         try
-                      {
-                        */
-
-            organizationsTableAdapter1.Fill(dbDataSet.Organizations);
-            /*
-                        }
-
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-
-                            this.BeginInvoke(new MethodInvoker(this.Close));
-
-                        }*/
-
         }
 
         private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,7 +65,7 @@ namespace SalaryRegistersUralsib
                 }
                 catch ( Exception exc )
                 {
-                    MessageBox.Show("Ошибка при обновлении базы данных" + exc);
+                    MessageBox.Show("Ошибка при изменении базы данных:\n" + exc.Message);
                 }
             }
         }
@@ -168,7 +158,9 @@ namespace SalaryRegistersUralsib
                 /*                this.organizationsTableAdapter1.Update(Org, Org_key, Desc, Mngr, Mngr_d, Booker);*/
                 //organizationsTableAdapter1.Update(Org, Desc, Mngr, Mngr_d, Booker, OrgMas [ "Organization" ], OrgMas [ "Org_key" ], OrgMas [ "Descriptor" ], OrgMas [ "Manager" ], OrgMas [ "Manager_d" ], OrgMas [ "Booker" ]);
                 organizationsTableAdapter1.Update(Org, Desc, Mngr, Mngr_d, Booker, null, null, null, null, null, null, Org_key);
+                organizationsTableAdapter1.ClearBeforeFill = false;
                 organizationsTableAdapter1.Fill(dbDataSet.Organizations); // отображение
+                organizationsTableAdapter1.ClearBeforeFill = true;
             }
             /*MessageBox.Show(Org+OrgKey+Mngr+Mngr_d+Booker+Desc);*/
             /*Org, Org_key, Mngr, Mngr_d, Booker, Desc*/

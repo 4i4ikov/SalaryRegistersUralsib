@@ -51,7 +51,7 @@
             this.checkBox1.Location = new System.Drawing.Point(335, 102);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(43, 20);
-            this.checkBox1.TabIndex = 56;
+            this.checkBox1.TabIndex = 3;
             this.checkBox1.TabStop = false;
             this.checkBox1.Text = "да";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             this.textBox6.RegEx = null;
             this.textBox6.Required = false;
             this.textBox6.Size = new System.Drawing.Size(270, 20);
-            this.textBox6.TabIndex = 53;
+            this.textBox6.TabIndex = 5;
             // 
             // textBox5
             // 
@@ -96,7 +96,7 @@
             this.textBox5.RegEx = null;
             this.textBox5.Required = false;
             this.textBox5.Size = new System.Drawing.Size(270, 20);
-            this.textBox5.TabIndex = 52;
+            this.textBox5.TabIndex = 4;
             // 
             // textBox4
             // 
@@ -106,7 +106,7 @@
             this.textBox4.RegEx = null;
             this.textBox4.Required = false;
             this.textBox4.Size = new System.Drawing.Size(270, 20);
-            this.textBox4.TabIndex = 51;
+            this.textBox4.TabIndex = 2;
             // 
             // textBox1
             // 
@@ -116,7 +116,7 @@
             this.textBox1.RegEx = null;
             this.textBox1.Required = false;
             this.textBox1.Size = new System.Drawing.Size(270, 20);
-            this.textBox1.TabIndex = 49;
+            this.textBox1.TabIndex = 1;
             // 
             // label6
             // 

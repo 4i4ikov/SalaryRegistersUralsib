@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new CueTextBox();
-            this.textBox2 = new CueTextBox();
+            this.textBox6 = new SalaryRegistersUralsib.CueTextBox();
+            this.textBox2 = new SalaryRegistersUralsib.CueTextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,9 +41,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new CueTextBox();
-            this.textBox4 = new CueTextBox();
-            this.textBox1 = new CueTextBox();
+            this.textBox5 = new SalaryRegistersUralsib.CueTextBox();
+            this.textBox4 = new SalaryRegistersUralsib.CueTextBox();
+            this.textBox1 = new SalaryRegistersUralsib.CueTextBox();
             this.SuspendLayout();
             // 
             // toolTip1
@@ -72,8 +72,8 @@
             this.textBox6.RegEx = "^[а-яА-Я ]+$";
             this.textBox6.Required = false;
             this.textBox6.Size = new System.Drawing.Size(270, 20);
-            this.textBox6.TabIndex = 53;
-            this.textBox6.Tag = "Главбух";
+            this.textBox6.TabIndex = 5;
+            this.textBox6.Tag = "Главный бухгалтер";
             this.toolTip1.SetToolTip(this.textBox6, "Главный бухгалтер");
             // 
             // textBox2
@@ -86,8 +86,8 @@
             this.textBox2.RegEx = "^[A-Z]{4}$";
             this.textBox2.Required = true;
             this.textBox2.Size = new System.Drawing.Size(270, 20);
-            this.textBox2.TabIndex = 50;
-            this.textBox2.Tag = "Код ОРГАНИЗАЦИИ";
+            this.textBox2.TabIndex = 2;
+            this.textBox2.Tag = "Код организации";
             this.toolTip1.SetToolTip(this.textBox2, "ВВЕДИТЕ 4 АНГЛИЙСКИХ БУКВЫ ПОЖАЛУЙСТА, НЕ БОЛЬШЕ НЕ МЕНЬШЕ");
             // 
             // checkBox1
@@ -109,7 +109,7 @@
             this.button2.Location = new System.Drawing.Point(163, 199);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 35);
-            this.button2.TabIndex = 55;
+            this.button2.TabIndex = 7;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -120,7 +120,7 @@
             this.button1.Location = new System.Drawing.Point(20, 199);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 35);
-            this.button1.TabIndex = 54;
+            this.button1.TabIndex = 6;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -183,8 +183,8 @@
             this.textBox5.RegEx = "^[а-яА-Я ]+$";
             this.textBox5.Required = false;
             this.textBox5.Size = new System.Drawing.Size(270, 20);
-            this.textBox5.TabIndex = 52;
-            this.textBox5.Tag = "Руководитель";
+            this.textBox5.TabIndex = 4;
+            this.textBox5.Tag = "Должность руководителя";
             // 
             // textBox4
             // 
@@ -194,7 +194,7 @@
             this.textBox4.RegEx = "^[А-Яа-я ]+$";
             this.textBox4.Required = false;
             this.textBox4.Size = new System.Drawing.Size(270, 20);
-            this.textBox4.TabIndex = 51;
+            this.textBox4.TabIndex = 3;
             this.textBox4.Tag = "Руководитель";
             // 
             // textBox1
@@ -206,8 +206,8 @@
             this.textBox1.RegEx = "^[A-Za-zА-Яа-я -.]+$";
             this.textBox1.Required = false;
             this.textBox1.Size = new System.Drawing.Size(270, 20);
-            this.textBox1.TabIndex = 49;
-            this.textBox1.Tag = "Организация";
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Tag = "Наименование организации";
             // 
             // FormAddOrganization
             // 
@@ -233,7 +233,7 @@
             this.Name = "FormAddOrganization";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Tag = "check";
+            this.Tag = " ";
             this.Text = "Добавление организации";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAddOrganization_FormClosing);
             this.Load += new System.EventHandler(this.FormAddOrganization_Load);

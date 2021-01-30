@@ -32,9 +32,9 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.AuthButton = new System.Windows.Forms.Button();
             this.MainLabel = new System.Windows.Forms.Label();
-            this.PasswordInput = new CueTextBox();
-            this.LoginInput = new CueTextBox();
             this.secret = new System.Windows.Forms.Button();
+            this.PasswordInput = new SalaryRegistersUralsib.CueTextBox();
+            this.LoginInput = new SalaryRegistersUralsib.CueTextBox();
             this.SuspendLayout();
             // 
             // LoginLabel
@@ -91,6 +91,18 @@
             this.MainLabel.Text = "Для входа введите логин и пароль";
             this.MainLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // secret
+            // 
+            this.secret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.secret.AutoSize = true;
+            this.secret.Location = new System.Drawing.Point(248, 79);
+            this.secret.Name = "secret";
+            this.secret.Size = new System.Drawing.Size(99, 23);
+            this.secret.TabIndex = 10;
+            this.secret.Text = "сменить пароль";
+            this.secret.UseVisualStyleBackColor = true;
+            this.secret.Click += new System.EventHandler(this.TestingButton_Click);
+            // 
             // PasswordInput
             // 
             this.PasswordInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -119,22 +131,10 @@
             this.LoginInput.TabIndex = 3;
             this.LoginInput.Text = "Admin";
             // 
-            // secret
-            // 
-            this.secret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.secret.AutoSize = true;
-            this.secret.Location = new System.Drawing.Point(259, 79);
-            this.secret.Name = "secret";
-            this.secret.Size = new System.Drawing.Size(88, 23);
-            this.secret.TabIndex = 10;
-            this.secret.Text = "смена пароля";
-            this.secret.UseVisualStyleBackColor = true;
-            this.secret.Click += new System.EventHandler(this.TestingButton_Click);
-            // 
             // AuthForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(359, 168);
             this.Controls.Add(this.secret);
             this.Controls.Add(this.MainLabel);
@@ -151,7 +151,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Форма входа";
-            this.Load += new System.EventHandler(this.AuthForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

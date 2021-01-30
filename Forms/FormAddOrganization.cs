@@ -36,9 +36,31 @@ namespace SalaryRegistersUralsib
 
         private void FormAddOrganization_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ( ValidateChildren() )
+            if ( DialogResult != DialogResult.OK ) return;
+            Tag = " ";
+            foreach ( Control control in this.Controls )
             {
+                if ( control is CueTextBox textBox )
+                {
+                    string ch = textBox.Check(textBox, false);
+                    if ( !( Tag.ToString().IndexOf(ch) > -1 ) )
+                        Tag += ch + ",";
+                }
+                if ( control is ComboBox c && c.SelectedIndex == -1 )
+                {
 
+                    if ( !( Tag.ToString().IndexOf(c.Tag.ToString()) > -1 ) )
+                        Tag += c.Tag.ToString() + ",";
+                }
+                else
+                {
+
+                }
+            }
+            if ( !( string.IsNullOrWhiteSpace(Tag.ToString()) ) )
+            {
+                e.Cancel = true;
+                MessageBox.Show("Не верно заполненные значения \n" + Tag.ToString());
             }
         }
     }

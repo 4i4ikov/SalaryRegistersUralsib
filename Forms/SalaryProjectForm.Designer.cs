@@ -47,7 +47,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.прочееToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.organizationsTableAdapter1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.OrganizationsTableAdapter();
             this.tableAdapterManager = new SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,7 +63,7 @@
             this.button2.Location = new System.Drawing.Point(644, 89);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 40);
-            this.button2.TabIndex = 8;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Добавить";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click_1);
@@ -77,7 +76,7 @@
             this.button1.Location = new System.Drawing.Point(644, 135);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 40);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Выбрать";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -136,7 +135,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(600, 308);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView1_KeyPress);
             // 
@@ -212,7 +211,7 @@
             this.button3.Location = new System.Drawing.Point(644, 181);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 40);
-            this.button3.TabIndex = 7;
+            this.button3.TabIndex = 3;
             this.button3.Text = "Другое";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
@@ -221,10 +220,9 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.редактироватьToolStripMenuItem,
-            this.удалитьToolStripMenuItem,
-            this.прочееToolStripMenuItem});
+            this.удалитьToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 48);
             // 
             // редактироватьToolStripMenuItem
             // 
@@ -239,13 +237,6 @@
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.УдалитьToolStripMenuItem_Click);
-            // 
-            // прочееToolStripMenuItem
-            // 
-            this.прочееToolStripMenuItem.Enabled = false;
-            this.прочееToolStripMenuItem.Name = "прочееToolStripMenuItem";
-            this.прочееToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.прочееToolStripMenuItem.Text = "Прочее";
             // 
             // organizationsTableAdapter1
             // 
@@ -292,7 +283,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem прочееToolStripMenuItem;
         private DbDataSet dbDataSet;
         private System.Windows.Forms.BindingSource organizationsBindingSource;
         private DbDataSetTableAdapters.OrganizationsTableAdapter organizationsTableAdapter1;

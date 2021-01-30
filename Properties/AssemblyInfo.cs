@@ -4,10 +4,10 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("SalaryRegistersUralsib")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyTitle("Зарплатный проект Уралсиб")]
+[assembly: AssemblyDescription("Автоматизированное рабочее место бухгалтера по созданию реестров на зачисление заработной платы в ПАО \"Банк УРАЛСИБ\"")]
+[assembly: AssemblyConfiguration("RELEASE")]
+[assembly: AssemblyCompany("БашГу Филиал г.Бирск")]
 [assembly: AssemblyProduct("SalaryRegistersUralsib")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]

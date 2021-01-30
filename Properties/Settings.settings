@@ -8,9 +8,6 @@
     <Setting Name="Password" Type="System.String" Scope="User">
       <Value Profile="(Default)">551EF627CFBB37B528A8EC686E3BC75F</Value>
     </Setting>
-    <Setting Name="Setting1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Настройка1</Value>
-    </Setting>
     <Setting Name="Database1ConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;

@@ -18,22 +18,19 @@ namespace SalaryRegistersUralsib
 
             this.Icon = Properties.Resources.Icon1;
 
-            myList.Add(new List<Int32> { 20, 20, 20, 20, 3, 14, 13, 10, 80, 7, 30, 2, 30, 45, 5, 3, 5, 6, 10, 100, 1, 11, 10, 10, 12, 22, 20, 4, 4, 3, 14, 13, 10, 34, 30, 2, 30, 45, 5, 3, 5, 6, 10, 10, 10, 50 });
+            myList.Add(new List<Int32> { 20, 20, 20, 20, 3, 14, 13, 10, 80, 7, 30, 2, 30, 45, 5, 3, 5, 6, 10, 100, 1, 11, 10, 10, 12, 22, 20, 4, 4, 3, 14, 13, 10, 34, 30, 2, 30, 45, 5, 3, 5, 6, 10, 10, 10, 50 });//Настройки для создания и загрузки из дос файла ОТКРЫТИЯ КАРТ
 
         }
-       
+
 
 
 
 
         private void FormZP_Load(object sender, EventArgs e)
         {
-            
-
-            this.workersTableAdapter.Fill(this.dbDataSet.Workers);
+            workersTableAdapter.Fill(dbDataSet.Workers);
             enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
             cardTableAdapter.Fill(dbDataSet.Card);
-            workersTableAdapter.Fill(dbDataSet.Workers);
             organizationsTableAdapter1.Fill(dbDataSet.Organizations);
             tabControl1.SelectedIndex = 6;
             tabControl1.SelectedIndex = 0;
@@ -41,6 +38,7 @@ namespace SalaryRegistersUralsib
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            //кнопка добавления сотрудника
             FormAddWorker f = new FormAddWorker();
 
             if ( f.ShowDialog() == DialogResult.OK )
@@ -63,38 +61,35 @@ namespace SalaryRegistersUralsib
                     DialogResult dg = MessageBox.Show("Добавить в таблицу на вкладке \"Увольнение\"?", "Добавление на вкладку", MessageBoxButtons.YesNo);
                     if ( dg == DialogResult.Yes )
                     {
-                        enrollmentsTableAdapter.Insert(label5.Text, int.Parse(c [ "Table_num" ]), c [ "WSurname" ], c [ "WName" ], c [ "WMiddlename" ], null, null, null, null, "uval");
+                        enrollmentsTableAdapter.Insert(label5.Text, c [ "Table_num" ], c [ "WSurname" ], c [ "WName" ], c [ "WMiddlename" ], null, null, null, null, "uval");
                         enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
                     }
                     workersTableAdapter.ClearBeforeFill = false;
                     workersTableAdapter.Fill(dbDataSet.Workers);
                     workersTableAdapter.ClearBeforeFill = true;
                 }
-
-
-
-
             }
             else MessageBox.Show(c [ "WName" ] + " уже уволен(а)!");
-
-
         }
 
         private void FillTheWorkSheet(DataGridView dg, Excel.Worksheet wsh)
         {
             //Заполняет лист экселя на базе DataGrid'а
-
+            
             //Заголовки колонок
             for ( int i = 1; i < dg.Columns.Count + 1; i++ )
             {
-                wsh.Cells [ 1, i ] = dg.Columns [ i - 1 ].HeaderText;
+                    wsh.Cells [ 1, i ] = dg.Columns [ i - 1 ].HeaderText;
             }
             //данные колонок
             for ( int i = 1; i < dg.RowCount + 1; i++ )
             {
-                for ( int j = 1; j < dg.ColumnCount + 1; j++ )
+                if ( !dg.Rows [ i - 1 ].IsNewRow )
                 {
-                    wsh.Rows [ i + 1 ].Columns [ j ] = dg.Rows [ i - 1 ].Cells [ j - 1 ].Value;
+                    for ( int j = 1; j < dg.ColumnCount + 1; j++ )
+                    {
+                        wsh.Rows [ i + 1 ].Columns [ j ] = dg.Rows [ i - 1 ].Cells [ j - 1 ].Value;
+                    }
                 }
             }
             //наводим красоту в таблице при помощи стандартных методов экселя
@@ -124,26 +119,31 @@ namespace SalaryRegistersUralsib
             {
                 Excel.Application excelapp = new Excel.Application
                 {
-                    SheetsInNewWorkbook = 4
+                    SheetsInNewWorkbook = 6
                 };
                 Excel.Workbook workbook = excelapp.Workbooks.Add();
-                //Excel.Workbook workbook2 = excelapp.Workbooks.Add(); // Новый файл для экспорта, мб понадобится при разростании проекта в нечто огромное
+                //Excel.Workbook workbook2 = excelapp.Workbooks.Add(); 
 
                 Excel.Worksheet wsh = workbook.Sheets[1];
                 Excel.Worksheet wsh2 = workbook.Sheets[2];
                 Excel.Worksheet wsh3 = workbook.Sheets[3];
                 Excel.Worksheet wsh4 = workbook.Sheets[4];
-
+                Excel.Worksheet wsh5 = workbook.Sheets[5];
+                Excel.Worksheet wsh6 = workbook.Sheets[6];
 
                 wsh.Name = "Сотрудники";
                 wsh2.Name = "Карты";
                 wsh3.Name = "Зачисления";
                 wsh4.Name = "Зачисления по картам";
+                wsh5.Name = "Реестр-распоряжение";
+                wsh6.Name = "Увольнение";
 
                 FillTheWorkSheet(workersDataGridView, wsh);
                 FillTheWorkSheet(GridView1, wsh2);
                 FillTheWorkSheet(GridView2, wsh3);
                 FillTheWorkSheet(GridView3, wsh4);
+                FillTheWorkSheet(GridView4, wsh5);
+                FillTheWorkSheet(GridView5, wsh6);
 
                 excelapp.AlertBeforeOverwriting = false;
                 workbook.SaveAs(sfd.FileName);
@@ -170,9 +170,61 @@ namespace SalaryRegistersUralsib
             }
             if ( f.ShowDialog() == DialogResult.OK )
             {
-                cardTableAdapter.Insert(f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Doc [ 0 ] ?? null, f.Doc [ 1 ] ?? null, f.Doc [ 2 ] ?? null, f.Doc [ 3 ] ?? null, f.Doc [ 4 ] ?? null, f.Doc [ 5 ] ?? null, f.Mass [ 0 ] ?? null, f.Mass [ 1 ] ?? null, f.Mass [ 2 ] ?? null, f.Mass [ 3 ] ?? null, f.Mass [ 4 ] ?? null, f.Mass [ 5 ] ?? null, f.Mass [ 6 ] ?? null, f.Mass [ 7 ] ?? null, f.WBirth.Text, f.Place_Of_Birth.Text, f.Sex.SelectedIndex.ToString(), f.SNILS.Text, f.Phone.Text, f.Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_type.Text, f.Doc2 [ 0 ] ?? null, f.Doc2 [ 1 ] ?? null, f.Doc2 [ 2 ] ?? null, f.Doc2 [ 3 ] ?? null, f.Doc2 [ 4 ] ?? null, f.Mass2 [ 0 ] ?? null, f.Mass2 [ 1 ] ?? null, f.Mass2 [ 2 ] ?? null, f.Mass2 [ 3 ] ?? null, f.Mass2 [ 4 ] ?? null, f.Mass2 [ 5 ] ?? null, f.Mass2 [ 6 ] ?? null, f.Mass2 [ 7 ] ?? null, f.Action_param.Text, f.Employment_Date.Text, f.Salary.Text, f.Email.Text, f.Card_N.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
-
-                cardTableAdapter.Fill(dbDataSet.Card);
+                Debug.WriteLine(f.WSurname.Text);
+                Debug.WriteLine(f.WName.Text);
+                Debug.WriteLine(f.WMiddlename.Text);
+                Debug.WriteLine(f.Table_num.Text);
+                Debug.WriteLine(f.Doc [ 0 ]);
+                Debug.WriteLine(f.Doc [ 1 ]);
+                Debug.WriteLine(f.Doc [ 2 ]);
+                Debug.WriteLine(f.Doc [ 3 ]);
+                Debug.WriteLine(f.Doc [ 4 ]);
+                Debug.WriteLine(f.Doc [ 5 ]);
+                Debug.WriteLine(f.Mass [ 0 ]);
+                Debug.WriteLine(f.Mass [ 1 ]);
+                Debug.WriteLine(f.Mass [ 2 ]);
+                Debug.WriteLine(f.Mass [ 3 ]);
+                Debug.WriteLine(f.Mass [ 4 ]);
+                Debug.WriteLine(f.Mass [ 5 ]);
+                Debug.WriteLine(f.Mass [ 6 ]);
+                Debug.WriteLine(f.Mass [ 7 ]);
+                Debug.WriteLine(f.WBirth.Text);
+                Debug.WriteLine(f.Place_Of_Birth.Text);
+                Debug.WriteLine(f.Sex.SelectedIndex.ToString());
+                Debug.WriteLine(f.SNILS.Text);
+                Debug.WriteLine(f.Phone.Text);
+                Debug.WriteLine(f.Phone.Text);
+                Debug.WriteLine(f.INN_worker.Text);
+                Debug.WriteLine(f.Full_Name_Card.Text);
+                Debug.WriteLine(f.Code_Word.Text);
+                Debug.WriteLine(f.Bank_Code.Text);
+                Debug.WriteLine(f.Card_type.Text);
+                Debug.WriteLine(f.Doc2 [ 0 ]);
+                Debug.WriteLine(f.Doc2 [ 1 ]);
+                Debug.WriteLine(f.Doc2 [ 2 ]);
+                Debug.WriteLine(f.Doc2 [ 3 ]);
+                Debug.WriteLine(f.Doc2 [ 4 ]);
+                Debug.WriteLine(f.Mass2 [ 0 ]);
+                Debug.WriteLine(f.Mass2 [ 1 ]);
+                Debug.WriteLine(f.Mass2 [ 2 ]);
+                Debug.WriteLine(f.Mass2 [ 3 ]);
+                Debug.WriteLine(f.Mass2 [ 4 ]);
+                Debug.WriteLine(f.Mass2 [ 5 ]);
+                Debug.WriteLine(f.Mass2 [ 6 ]);
+                Debug.WriteLine(f.Mass2 [ 7 ]);
+                Debug.WriteLine(f.Action_param.Text);
+                Debug.WriteLine(f.Employment_Date.Text);
+                Debug.WriteLine(f.Salary.Text);
+                Debug.WriteLine(f.Email.Text);
+                Debug.WriteLine(f.Card_N.Text);
+                Debug.WriteLine(f.Org_key.Text);
+                Debug.WriteLine(f.WCode.Text);
+                try
+                {
+                    cardTableAdapter.Insert(f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Doc [ 0 ] ?? null, f.Doc [ 1 ] ?? null, f.Doc [ 2 ] ?? null, f.Doc [ 3 ] ?? null, f.Doc [ 4 ] ?? null, f.Doc [ 5 ] ?? null, f.Mass [ 0 ] ?? null, f.Mass [ 1 ] ?? null, f.Mass [ 2 ] ?? null, f.Mass [ 3 ] ?? null, f.Mass [ 4 ] ?? null, f.Mass [ 5 ] ?? null, f.Mass [ 6 ] ?? null, f.Mass [ 7 ] ?? null, f.WBirth.Text, f.Place_Of_Birth.Text, f.Sex.SelectedIndex.ToString(), f.SNILS.Text, f.Phone.Text, f.Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_type.Text, f.Doc2 [ 0 ] ?? null, f.Doc2 [ 1 ] ?? null, f.Doc2 [ 2 ] ?? null, f.Doc2 [ 3 ] ?? null, f.Doc2 [ 4 ] ?? null, f.Mass2 [ 0 ] ?? null, f.Mass2 [ 1 ] ?? null, f.Mass2 [ 2 ] ?? null, f.Mass2 [ 3 ] ?? null, f.Mass2 [ 4 ] ?? null, f.Mass2 [ 5 ] ?? null, f.Mass2 [ 6 ] ?? null, f.Mass2 [ 7 ] ?? null, f.Action_param.Text, f.Employment_Date.Text, f.Salary.Text, f.Email.Text, f.Card_N.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
+                    
+                    cardTableAdapter.Fill(dbDataSet.Card);
+                }catch (Exception es) { MessageBox.Show("Ошибка при добавлении карты. Попробуйте ещё раз."); }
             }
         }
 
@@ -181,19 +233,12 @@ namespace SalaryRegistersUralsib
             SaveFileDialog sfd = new SaveFileDialog
             {
 
-                FileName = DateTime.Now.ToString("MM.dd")+".N01"
+                FileName = CurOrgKey.Text+DateTime.Now.ToString("MM.dd")+".N01"
 
             };
             if ( sfd.ShowDialog() == DialogResult.OK )
 
             {
-                string s = "";
-                foreach ( int i in myList [ tabControl1.SelectedIndex - 1 ] )
-                {
-                    s += i + " ";
-                }
-                
-
                 DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ] as DataGridView;
 
                 string str = d.Rows.Count.ToString().PadLeft(5)+"\n";
@@ -202,9 +247,12 @@ namespace SalaryRegistersUralsib
                     int n = 0;
                     foreach ( int i in myList [ tabControl1.SelectedIndex - 1 ] )
                     {
-                        str += row.Cells [ n ].Value.ToString().PadRight(i);
+                        if ( row.Cells [ n ].OwningColumn.HeaderText != "Удалить" )
+
+                            str += row.Cells [ n ].Value.ToString().PadRight(i);
 
                         n++;
+
                     }
                     str += "*\n";
                 }
@@ -220,7 +268,7 @@ namespace SalaryRegistersUralsib
             byte[] data = File.ReadAllBytes(fileName);
             using ( FileStream fileStream = File.OpenWrite(fileName) )
             {
-                BinaryWriter bw = new BinaryWriter(fileStream);
+                BinaryWriter bw = new BinaryWriter(fileStream,System.Text.Encoding.GetEncoding(866));
                 int position = 0;
                 int index = 0;
                 do
@@ -304,7 +352,7 @@ namespace SalaryRegistersUralsib
         {
             // кнопка для удаления записи
             DataGridView dg = (DataGridView)sender;
-            if ( !dg.CurrentRow.IsNewRow && dg.Columns [ e.ColumnIndex ].HeaderText == "Удалить" ) 
+            if ( !dg.CurrentRow.IsNewRow && dg.Columns [ e.ColumnIndex ].HeaderText == "Удалить" )
             {
                 dg.Rows.Remove(dg.Rows [ e.RowIndex ]);
             }
@@ -328,27 +376,37 @@ namespace SalaryRegistersUralsib
                 string text = File.ReadAllText(filePath, System.Text.Encoding.GetEncoding(866));
                 string[] sep = {"\r\n" };
                 string[] st = text.Split(sep,StringSplitOptions.None);
-                for ( int i = 1; i < int.Parse(st [ 0 ]) + 1; i++ )
+                try
                 {
-                    int point = 0;
-                    List<string> m = new List<string>();
-                    foreach ( int j in myList [ tabControl1.SelectedIndex - 1 ] )
+                    for ( int i = 1; i < int.Parse(st [ 0 ]) + 1; i++ )
                     {
-                        string str = "";
-                        for ( int n = 0; n < j; n++ )
+
+                        int point = 0;
+                        List<string> m = new List<string>();
+                        foreach ( int j in myList [ tabControl1.SelectedIndex - 1 ] )
                         {
-                            str += st [ i ] [ point ];
-                            point++;
+                            string str = "";
+                            for ( int n = 0; n < j; n++ )
+                            {
+                                str += st [ i ] [ point ];
+                                point++;
+                            }
+                            m.Add(str.Trim());
                         }
-                        m.Add(str.Trim());
+                        Random r = new Random();
+                        m.Add(r.Next(100000000, 999999999).ToString());
+                        m.Add(label5.Text);
+                        m.Add(r.Next(100).ToString());
+                        dbDataSet.Card.Rows.Add(m.ToArray());
+                        cardTableAdapter.Update(dbDataSet.Card);
+                        cardTableAdapter.Fill(dbDataSet.Card);
+
                     }
-                    Random r = new Random();
-                    m.Add(r.Next(100000000, 999999999).ToString());
-                    m.Add(label5.Text);
-                    m.Add(r.Next(100).ToString());
-                    dbDataSet.Card.Rows.Add(m.ToArray());
-                    cardTableAdapter.Update(dbDataSet.Card);
-                    cardTableAdapter.Fill(dbDataSet.Card);
+                }
+                catch ( Exception ex )
+                {
+                    MessageBox.Show("Ошибка чтения файла.");
+                    Debug.WriteLine(ex.Message);
                 }
             }
         }
@@ -358,7 +416,7 @@ namespace SalaryRegistersUralsib
             SaveFileDialog sfd = new SaveFileDialog
             {
 
-                FileName = DateTime.Now.ToString("MMdd")+".l01"
+                FileName = CurOrgKey.Text+DateTime.Now.ToString("MMdd")+".l01"
 
             };
 
@@ -392,6 +450,7 @@ namespace SalaryRegistersUralsib
                     CurOrgKey.Text.PadRight(8)+
                     String.Format("{0:0.00}", Convert.ToSingle(Math.Round(sum,2))).Replace(",", ".").PadLeft(14) +
                     z+"\n";
+
                 foreach ( DataGridViewRow row in d.Rows )
                 {
                     if ( !row.IsNewRow )
@@ -403,7 +462,7 @@ namespace SalaryRegistersUralsib
 
                         str += String.Format("{0:0.00}", Convert.ToSingle(row.Cells [ 8 ].Value)).Replace(",", ".").PadLeft(12);
                         str += row.Cells [ 9 ].Value.ToString();
-                        
+
                         str += "\n";
                     }
 
@@ -415,26 +474,31 @@ namespace SalaryRegistersUralsib
 
         private void LoadFromDosEnrollments_Click(object sender, EventArgs e)
         {
-            OpenFileDialog opn = new OpenFileDialog();
-            if ( opn.ShowDialog() == DialogResult.OK )
+            try
             {
-                string filePath = opn.FileName;
-                string[] text = File.ReadAllLines(filePath, System.Text.Encoding.GetEncoding(866));
-                for ( int i = 1; i <= int.Parse(text [ 0 ].Substring(0, 5).Trim()); i++ )
+                OpenFileDialog opn = new OpenFileDialog();
+                if ( opn.ShowDialog() == DialogResult.OK )
                 {
-                    
-                    string tableNum = text[i].Substring(0,19).Trim();
-                    string sum = text[i].Substring(20,12).Trim();
-                    string paytypecode = text[i].Substring(33,2);
-                    Debug.WriteLine("таб н" + tableNum);
-                    Debug.WriteLine("пайтайпкод" + paytypecode);
-                    //if ( tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() == "zach" )
-                    //    dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 3 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
-                    //else
-                    //    dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 5 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
-                    //enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
-                    //enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
+                    string filePath = opn.FileName;
+                    string[] text = File.ReadAllLines(filePath, System.Text.Encoding.GetEncoding(866));
+                    for ( int i = 1; i <= int.Parse(text [ 0 ].Substring(0, 5).Trim()); i++ )
+                    {
+                        string tableNum = text[i].Substring(0,20).Trim();
+                        Single sum = Single.Parse(text[i].Substring(20,12).Trim().Replace('.',','));
+                        int paytypecode = int.Parse(text[i].Substring(32,2).Trim());
+                        Single uderzh =  Single.Parse(text[i].Substring(34,12).Trim().Replace('.',','));
+                        int vid =  int.Parse(text[i].Substring(46,1));
+                        string enrollment_type = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString();
+                        dbDataSet.Enrollments.Rows.Add(new object [ ] { CurOrgKey.Text, null, tableNum, null, null, null, sum, paytypecode, uderzh, vid, enrollment_type });
+                        enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
+                        enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
+                    }
                 }
+            }
+            catch ( Exception ex )
+            {
+                MessageBox.Show("Ошибка чтения файла.");
+                Debug.WriteLine(ex.Message);
             }
         }
 
@@ -442,16 +506,188 @@ namespace SalaryRegistersUralsib
         {
             foreach ( DataGridViewRow row in workersDataGridView.Rows )
             {
-                if ( tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() == "zach" )
-                    dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 3 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
-                else
-                    dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 5 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
-                enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
-                enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
+                if ( !(bool)row.Cells [ 7 ].Value )//не уволен ли сотрудник
+                {
+                    if ( tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() == "zach" )
+                        dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 3 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
+                    else
+                        dbDataSet.Enrollments.Rows.Add(new object [ ] { label5.Text, null, row.Cells [ 5 ].Value, row.Cells [ 0 ].Value, row.Cells [ 1 ].Value, row.Cells [ 2 ].Value, null, null, null, null, tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString() });
+                    enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
+                    enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
+                }
             }
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void Zach2and3DosCreate(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+
+                FileName = CurOrgKey.Text+DateTime.Now.ToString("MMdd")+".l01"
+
+            };
+
+            if ( sfd.ShowDialog() == DialogResult.OK )
+
+            {
+
+                DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ] as DataGridView;
+                float sum = 0;
+
+                foreach ( DataGridViewRow row in d.Rows )
+                {
+                    if ( !row.IsNewRow )
+                    {
+                        try
+                        {
+                            sum += (Single)row.Cells [ 6 ].Value;
+                        }
+                        catch ( Exception ex )
+                        {
+                            Debug.WriteLine(ex.Message);
+                        }
+                    }
+                }
+
+                string z = ( CurOrgDesc.Text == "+" ) ? "Z":" ";
+
+                string enrollment_type = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ].Tag.ToString();
+                string str = "";
+                switch ( enrollment_type )//первая строка разная в двух видах реестров
+                {
+                    case "cardzach":
+                        str = ( d.Rows.Count - 1 ).ToString().PadLeft(5) +
+                    CurOrgKey.Text.PadRight(10) +
+                    String.Format("{0:0.00}", Convert.ToSingle(Math.Round(sum, 2))).Replace(",", ".").PadLeft(12) +
+                    z + "\n";
+                        break;
+
+                    case "reestr":
+                        str = ( d.Rows.Count - 1 ).ToString().PadLeft(5).Substring(0, 5) +// кол-во строк
+                    CurOrgKey.Text.PadRight(10).Substring(0, 10) +//код орг
+                    String.Format("{0:0.00}", Convert.ToSingle(Math.Round(sum, 2))).Replace(",", ".").PadLeft(12).Substring(0, 12) +//сумма
+                    z +//дескриптор
+                    DateTime.Now.ToString("dd.MM.yyyy") +//дата формирования реестра 01.01.2021
+                    DateTime.Now.ToString("MM.yyyy") +//период зачисления(месяц) 01.2021
+                    CurOrgName.Text.PadRight(150).Substring(0, 150) +//название организации 150
+                    CurINN.Text.PadRight(12).Substring(0, 12) +//ИНН Организации 12
+                    CurOGRN.Text.PadRight(12).Substring(0, 12) +//ОГРН 12
+                    CurBill.Text.PadRight(12).Substring(0, 12) +//Счет списания 12
+                    CurBank.Text.PadRight(18).Substring(0, 18) +//Банк 18
+                    CurBankPodr.Text.PadRight(100).Substring(0, 100) +//Филиал банка 100
+                    CurBIK.Text.PadRight(9).Substring(0, 9) +//БИК 9
+                    "\n";
+
+                        break;
+                    default:
+                        str = "\n";
+                        break;
+                }
+                //string str = (d.Rows.Count-1).ToString().PadLeft(5)+
+                //    CurOrgKey.Text.PadRight(8)+
+                //    String.Format("{0:0.00}", Convert.ToSingle(Math.Round(sum,2))).Replace(",", ".").PadLeft(14) +
+                //    z+"\n";
+
+                foreach ( DataGridViewRow row in d.Rows )
+                {
+                    if ( !row.IsNewRow )
+                    {
+                        str += row.Cells [ 3 ].Value.ToString().PadRight(20);//фамилия
+                        str += row.Cells [ 4 ].Value.ToString().PadRight(20);//имя
+                        str += row.Cells [ 5 ].Value.ToString().PadRight(20);//отчество
+
+                        str += row.Cells [ 0 ].Value.ToString().PadRight(20);//табельный номер
+
+                        str += String.Format("{0:0.00}", Convert.ToSingle(row.Cells [ 6 ].Value)).Replace(",", ".").PadLeft(12);//сумма
+                        str += "0" + row.Cells [ 7 ].Value.ToString();//код вида выплаты
+
+                        str += String.Format("{0:0.00}", Convert.ToSingle(row.Cells [ 8 ].Value)).Replace(",", ".").PadLeft(12);// сумма удерж
+                        str += row.Cells [ 9 ].Value.ToString();//тип зачисления
+
+                        str += "\n";
+                    }
+
+                }
+                File.WriteAllText(sfd.FileName, str.Remove(str.Length - 1), System.Text.Encoding.GetEncoding(866));
+                Unix2Dos(sfd.FileName);
+            }
+        }
+
+        private void UvalCreateDosClick(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+
+                FileName = CurOrgKey.Text+DateTime.Now.ToString("MMdd")+".Y01"
+
+            };
+
+            if ( sfd.ShowDialog() == DialogResult.OK )
+
+            {
+
+                DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ] as DataGridView;
+
+                string z = ( CurOrgDesc.Text == "+" ) ? "Z":" ";
+
+                string str = (d.Rows.Count-1).ToString().PadLeft(5)+
+                    CurOrgKey.Text.PadRight(8)+
+                    z+"\n";
+
+                foreach ( DataGridViewRow row in d.Rows )
+                {
+                    if ( !row.IsNewRow )
+                    {
+                        str += row.Cells [ 0 ].Value.ToString().PadRight(20);
+                        str += row.Cells [ 3 ].Value.ToString().PadRight(30);
+                        str += row.Cells [ 4 ].Value.ToString().PadRight(20);
+                        str += row.Cells [ 5 ].Value.ToString().PadRight(20);
+                        str += "\n";
+                    }
+                }
+                File.WriteAllText(sfd.FileName, str.Remove(str.Length - 1), System.Text.Encoding.GetEncoding(866));
+                Unix2Dos(sfd.FileName);
+            }
+        }
+
+        private void LoadFromDosEnrollments2and3(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog opn = new OpenFileDialog();
+                if ( opn.ShowDialog() == DialogResult.OK )
+                {
+                    string filePath = opn.FileName;
+                    string[] text = File.ReadAllLines(filePath, System.Text.Encoding.GetEncoding(866));
+                    for ( int i = 1; i <= int.Parse(text [ 0 ].Substring(0, 5).Trim()); i++ )
+                    {
+                        string sur = text[i].Substring(0,20).Trim();
+                        string nname = text[i].Substring(20,20).Trim();
+                        string mid = text[i].Substring(40,20).Trim();
+                        string table_num = text[i].Substring(60,20).Trim();
+
+                        Single sum = Single.Parse(text[i].Substring(80,12).Trim().Replace('.',','));
+
+                        int paytypecode = int.Parse(text[i].Substring(92,2).Trim());
+                        Single uderzh =  Single.Parse(text[i].Substring(94,12).Trim().Replace('.',','));
+                        int vid =  int.Parse(text[i].Substring(106,1));
+                        string enrollment_type = tabControl1.SelectedTab.Controls [ "GridView" +
+                        tabControl1.SelectedIndex ].Tag.ToString();
+
+                        dbDataSet.Enrollments.Rows.Add(new object [ ] { CurOrgKey.Text, null, table_num, sur, nname, mid, sum, paytypecode, uderzh, vid, enrollment_type });
+                        enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
+                        enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
+                    }
+                }
+            }
+            catch ( Exception ex )
+            {
+                MessageBox.Show("Ошибка чтения файла.");
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

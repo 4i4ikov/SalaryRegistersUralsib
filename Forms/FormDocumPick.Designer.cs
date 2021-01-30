@@ -112,7 +112,7 @@
             this.button1.Location = new System.Drawing.Point(160, 137);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 35);
-            this.button1.TabIndex = 107;
+            this.button1.TabIndex = 7;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -124,7 +124,7 @@
             this.button2.Location = new System.Drawing.Point(230, 136);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(77, 35);
-            this.button2.TabIndex = 108;
+            this.button2.TabIndex = 8;
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -144,7 +144,7 @@
             this.Docum_Cod.Required = false;
             this.Docum_Cod.ResetOnSpace = false;
             this.Docum_Cod.Size = new System.Drawing.Size(150, 20);
-            this.Docum_Cod.TabIndex = 109;
+            this.Docum_Cod.TabIndex = 6;
             this.Docum_Cod.Tag = "Код подразделения";
             this.Docum_Cod.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -162,7 +162,7 @@
             this.Docum_Place.RegEx = "^[а-яА-Я\\. ]+$";
             this.Docum_Place.Required = false;
             this.Docum_Place.Size = new System.Drawing.Size(150, 20);
-            this.Docum_Place.TabIndex = 110;
+            this.Docum_Place.TabIndex = 5;
             this.Docum_Place.Tag = "Кем выдан документ";
             this.Docum_Place.Text = " ";
             // 
@@ -181,7 +181,7 @@
             this.DateTime2.Required = true;
             this.DateTime2.ResetOnSpace = false;
             this.DateTime2.Size = new System.Drawing.Size(150, 20);
-            this.DateTime2.TabIndex = 111;
+            this.DateTime2.TabIndex = 4;
             this.DateTime2.Tag = "Дата выдачи документа";
             this.DateTime2.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.DateTime2.ValidatingType = typeof(System.DateTime);
@@ -201,7 +201,7 @@
             this.Docum_Num.RegEx = "\\d{6}";
             this.Docum_Num.Required = true;
             this.Docum_Num.Size = new System.Drawing.Size(150, 20);
-            this.Docum_Num.TabIndex = 112;
+            this.Docum_Num.TabIndex = 3;
             this.Docum_Num.Tag = "Номер документа";
             // 
             // Docum_Serial
@@ -219,7 +219,7 @@
             this.Docum_Serial.RegEx = "\\d{4}";
             this.Docum_Serial.Required = true;
             this.Docum_Serial.Size = new System.Drawing.Size(150, 20);
-            this.Docum_Serial.TabIndex = 113;
+            this.Docum_Serial.TabIndex = 2;
             this.Docum_Serial.Tag = "Серия документа";
             // 
             // Docum
@@ -253,7 +253,7 @@
             this.Docum.Name = "Docum";
             this.Docum.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Docum.Size = new System.Drawing.Size(303, 21);
-            this.Docum.TabIndex = 114;
+            this.Docum.TabIndex = 1;
             this.Docum.Tag = "Вид документа";
             this.Docum.Click += new System.EventHandler(this.Docum_DropDown);
             // 
