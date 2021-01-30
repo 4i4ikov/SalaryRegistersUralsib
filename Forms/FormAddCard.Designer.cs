@@ -797,7 +797,7 @@
             this.Name = "FormAddCard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = " ";
-            this.Text = "Открытие карты сотрудника";
+            this.Text = "Открытие карты сотрудника ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAddWorker_FormClosing);
             this.Load += new System.EventHandler(this.FormAddWorker_Load);
             this.ResumeLayout(false);
