@@ -49,8 +49,20 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.CurOGRN = new SalaryRegistersUralsib.CueTextBox();
             this.OrgBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbDataSet = new SalaryRegistersUralsib.DbDataSet();
+            this.CurINN = new SalaryRegistersUralsib.CueTextBox();
+            this.CurBIK = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox11 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox4 = new SalaryRegistersUralsib.CueTextBox();
+            this.CurBankPodr = new SalaryRegistersUralsib.CueTextBox();
+            this.CurOrgDesc = new SalaryRegistersUralsib.CueTextBox();
+            this.CurBank = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox5 = new SalaryRegistersUralsib.CueTextBox();
+            this.CurBill = new SalaryRegistersUralsib.CueTextBox();
+            this.CurOrgKey = new SalaryRegistersUralsib.CueTextBox();
+            this.CurOrgName = new SalaryRegistersUralsib.CueTextBox();
             this.tabReestr = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -193,18 +205,6 @@
             this.enrollmentsTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.EnrollmentsTableAdapter();
             this.organizationsTableAdapter1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.OrganizationsTableAdapter();
             this.button23 = new System.Windows.Forms.Button();
-            this.cueTextBox8 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox7 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox14 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox11 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox4 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox12 = new SalaryRegistersUralsib.CueTextBox();
-            this.CurOrgDesc = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox10 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox5 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox9 = new SalaryRegistersUralsib.CueTextBox();
-            this.CurOrgKey = new SalaryRegistersUralsib.CueTextBox();
-            this.CurOrgName = new SalaryRegistersUralsib.CueTextBox();
             this.tabRequisites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
@@ -296,16 +296,16 @@
             this.tabRequisites.Controls.Add(this.label7);
             this.tabRequisites.Controls.Add(this.label6);
             this.tabRequisites.Controls.Add(this.label3);
-            this.tabRequisites.Controls.Add(this.cueTextBox8);
-            this.tabRequisites.Controls.Add(this.cueTextBox7);
-            this.tabRequisites.Controls.Add(this.cueTextBox14);
+            this.tabRequisites.Controls.Add(this.CurOGRN);
+            this.tabRequisites.Controls.Add(this.CurINN);
+            this.tabRequisites.Controls.Add(this.CurBIK);
             this.tabRequisites.Controls.Add(this.cueTextBox11);
             this.tabRequisites.Controls.Add(this.cueTextBox4);
-            this.tabRequisites.Controls.Add(this.cueTextBox12);
+            this.tabRequisites.Controls.Add(this.CurBankPodr);
             this.tabRequisites.Controls.Add(this.CurOrgDesc);
-            this.tabRequisites.Controls.Add(this.cueTextBox10);
+            this.tabRequisites.Controls.Add(this.CurBank);
             this.tabRequisites.Controls.Add(this.cueTextBox5);
-            this.tabRequisites.Controls.Add(this.cueTextBox9);
+            this.tabRequisites.Controls.Add(this.CurBill);
             this.tabRequisites.Controls.Add(this.CurOrgKey);
             this.tabRequisites.Controls.Add(this.CurOrgName);
             this.tabRequisites.Location = new System.Drawing.Point(4, 22);
@@ -459,6 +459,18 @@
             this.label3.Text = "Организация";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // CurOGRN
+            // 
+            this.CurOGRN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurOGRN.CueText = null;
+            this.CurOGRN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "OGRN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurOGRN.Location = new System.Drawing.Point(332, 236);
+            this.CurOGRN.Name = "CurOGRN";
+            this.CurOGRN.RegEx = null;
+            this.CurOGRN.Required = false;
+            this.CurOGRN.Size = new System.Drawing.Size(278, 20);
+            this.CurOGRN.TabIndex = 4;
+            // 
             // OrgBindingSource
             // 
             this.OrgBindingSource.DataMember = "Organizations";
@@ -469,6 +481,139 @@
             // 
             this.dbDataSet.DataSetName = "DbDataSet";
             this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // CurINN
+            // 
+            this.CurINN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurINN.CueText = null;
+            this.CurINN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_INN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurINN.Location = new System.Drawing.Point(332, 210);
+            this.CurINN.Name = "CurINN";
+            this.CurINN.RegEx = null;
+            this.CurINN.Required = false;
+            this.CurINN.Size = new System.Drawing.Size(278, 20);
+            this.CurINN.TabIndex = 4;
+            // 
+            // CurBIK
+            // 
+            this.CurBIK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurBIK.CueText = null;
+            this.CurBIK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BIK", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurBIK.Location = new System.Drawing.Point(332, 340);
+            this.CurBIK.Name = "CurBIK";
+            this.CurBIK.RegEx = null;
+            this.CurBIK.Required = false;
+            this.CurBIK.Size = new System.Drawing.Size(278, 20);
+            this.CurBIK.TabIndex = 4;
+            // 
+            // cueTextBox11
+            // 
+            this.cueTextBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox11.CueText = null;
+            this.cueTextBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager_d", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox11.Location = new System.Drawing.Point(332, 135);
+            this.cueTextBox11.Name = "cueTextBox11";
+            this.cueTextBox11.RegEx = null;
+            this.cueTextBox11.Required = false;
+            this.cueTextBox11.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox11.TabIndex = 4;
+            // 
+            // cueTextBox4
+            // 
+            this.cueTextBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox4.CueText = null;
+            this.cueTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox4.Location = new System.Drawing.Point(332, 109);
+            this.cueTextBox4.Name = "cueTextBox4";
+            this.cueTextBox4.RegEx = null;
+            this.cueTextBox4.Required = false;
+            this.cueTextBox4.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox4.TabIndex = 4;
+            // 
+            // CurBankPodr
+            // 
+            this.CurBankPodr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurBankPodr.CueText = null;
+            this.CurBankPodr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BankUnit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurBankPodr.Location = new System.Drawing.Point(332, 314);
+            this.CurBankPodr.Name = "CurBankPodr";
+            this.CurBankPodr.RegEx = null;
+            this.CurBankPodr.Required = false;
+            this.CurBankPodr.Size = new System.Drawing.Size(278, 20);
+            this.CurBankPodr.TabIndex = 4;
+            // 
+            // CurOrgDesc
+            // 
+            this.CurOrgDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurOrgDesc.CueText = null;
+            this.CurOrgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Descriptor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurOrgDesc.Location = new System.Drawing.Point(332, 83);
+            this.CurOrgDesc.Name = "CurOrgDesc";
+            this.CurOrgDesc.RegEx = null;
+            this.CurOrgDesc.Required = false;
+            this.CurOrgDesc.Size = new System.Drawing.Size(278, 20);
+            this.CurOrgDesc.TabIndex = 4;
+            // 
+            // CurBank
+            // 
+            this.CurBank.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurBank.CueText = null;
+            this.CurBank.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Bank", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurBank.Location = new System.Drawing.Point(332, 288);
+            this.CurBank.Name = "CurBank";
+            this.CurBank.RegEx = null;
+            this.CurBank.Required = false;
+            this.CurBank.Size = new System.Drawing.Size(278, 20);
+            this.CurBank.TabIndex = 4;
+            // 
+            // cueTextBox5
+            // 
+            this.cueTextBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox5.CueText = null;
+            this.cueTextBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Booker", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox5.Location = new System.Drawing.Point(332, 161);
+            this.cueTextBox5.Name = "cueTextBox5";
+            this.cueTextBox5.RegEx = null;
+            this.cueTextBox5.Required = false;
+            this.cueTextBox5.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox5.TabIndex = 4;
+            // 
+            // CurBill
+            // 
+            this.CurBill.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurBill.CueText = null;
+            this.CurBill.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "DisporsalBill", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurBill.Location = new System.Drawing.Point(332, 262);
+            this.CurBill.Name = "CurBill";
+            this.CurBill.RegEx = null;
+            this.CurBill.Required = false;
+            this.CurBill.Size = new System.Drawing.Size(278, 20);
+            this.CurBill.TabIndex = 4;
+            // 
+            // CurOrgKey
+            // 
+            this.CurOrgKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurOrgKey.CueText = null;
+            this.CurOrgKey.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_key", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurOrgKey.Location = new System.Drawing.Point(332, 57);
+            this.CurOrgKey.Name = "CurOrgKey";
+            this.CurOrgKey.ReadOnly = true;
+            this.CurOrgKey.RegEx = null;
+            this.CurOrgKey.Required = false;
+            this.CurOrgKey.Size = new System.Drawing.Size(278, 20);
+            this.CurOrgKey.TabIndex = 4;
+            // 
+            // CurOrgName
+            // 
+            this.CurOrgName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurOrgName.CueText = null;
+            this.CurOrgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Organization", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurOrgName.Location = new System.Drawing.Point(332, 31);
+            this.CurOrgName.Name = "CurOrgName";
+            this.CurOrgName.RegEx = null;
+            this.CurOrgName.Required = false;
+            this.CurOrgName.Size = new System.Drawing.Size(278, 20);
+            this.CurOrgName.TabIndex = 4;
             // 
             // tabReestr
             // 
@@ -506,6 +651,7 @@
             this.button17.TabIndex = 11;
             this.button17.Text = "Загрузить из DOS";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.LoadFromDosEnrollments2and3);
             // 
             // button18
             // 
@@ -516,6 +662,7 @@
             this.button18.TabIndex = 12;
             this.button18.Text = "Создать DOS";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.Zach2and3DosCreate);
             // 
             // button19
             // 
@@ -529,6 +676,7 @@
             // 
             // GridView4
             // 
+            this.GridView4.AllowUserToResizeRows = false;
             this.GridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -626,6 +774,7 @@
             // 
             // del2
             // 
+            this.del2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.del2.FillWeight = 65F;
             this.del2.HeaderText = "Удалить";
             this.del2.Name = "del2";
@@ -634,6 +783,7 @@
             this.del2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.del2.Text = "X";
             this.del2.UseColumnTextForButtonValue = true;
+            this.del2.Width = 75;
             // 
             // ReestrBindingSource
             // 
@@ -677,6 +827,7 @@
             this.button10.TabIndex = 5;
             this.button10.Text = "Загрузить из DOS";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.LoadFromDosEnrollments2and3);
             // 
             // button11
             // 
@@ -687,7 +838,7 @@
             this.button11.TabIndex = 6;
             this.button11.Text = "Создать DOS";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button11.Click += new System.EventHandler(this.Zach2and3DosCreate);
             // 
             // button12
             // 
@@ -701,6 +852,7 @@
             // 
             // GridView3
             // 
+            this.GridView3.AllowUserToResizeRows = false;
             this.GridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -797,6 +949,7 @@
             // 
             // del1
             // 
+            this.del1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.del1.FillWeight = 65F;
             this.del1.HeaderText = "Удалить";
             this.del1.Name = "del1";
@@ -805,6 +958,7 @@
             this.del1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.del1.Text = "X";
             this.del1.UseColumnTextForButtonValue = true;
+            this.del1.Width = 75;
             // 
             // CardEnrollmentsBindingSource
             // 
@@ -852,7 +1006,7 @@
             // GridView1
             // 
             this.GridView1.AllowUserToAddRows = false;
-            this.GridView1.AllowUserToDeleteRows = false;
+            this.GridView1.AllowUserToResizeRows = false;
             this.GridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -912,11 +1066,8 @@
             this.orgkeyDataGridViewTextBoxColumn1,
             this.codeDataGridViewTextBoxColumn});
             this.GridView1.DataSource = this.cardBindingSource;
-            this.GridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.GridView1.Location = new System.Drawing.Point(3, 36);
-            this.GridView1.MultiSelect = false;
             this.GridView1.Name = "GridView1";
-            this.GridView1.ReadOnly = true;
             this.GridView1.RowHeadersVisible = false;
             this.GridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.GridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -931,7 +1082,6 @@
             this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
             this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.surnameDataGridViewTextBoxColumn.Width = 81;
             // 
             // CName
@@ -939,7 +1089,6 @@
             this.CName.DataPropertyName = "CName";
             this.CName.HeaderText = "Имя";
             this.CName.Name = "CName";
-            this.CName.ReadOnly = true;
             this.CName.Width = 54;
             // 
             // middlenameDataGridViewTextBoxColumn
@@ -947,7 +1096,6 @@
             this.middlenameDataGridViewTextBoxColumn.DataPropertyName = "Middlename";
             this.middlenameDataGridViewTextBoxColumn.HeaderText = "Отчество";
             this.middlenameDataGridViewTextBoxColumn.Name = "middlenameDataGridViewTextBoxColumn";
-            this.middlenameDataGridViewTextBoxColumn.ReadOnly = true;
             this.middlenameDataGridViewTextBoxColumn.Width = 79;
             // 
             // tablenumDataGridViewTextBoxColumn1
@@ -955,7 +1103,6 @@
             this.tablenumDataGridViewTextBoxColumn1.DataPropertyName = "Table_num";
             this.tablenumDataGridViewTextBoxColumn1.HeaderText = "Табельный №";
             this.tablenumDataGridViewTextBoxColumn1.Name = "tablenumDataGridViewTextBoxColumn1";
-            this.tablenumDataGridViewTextBoxColumn1.ReadOnly = true;
             this.tablenumDataGridViewTextBoxColumn1.Width = 95;
             // 
             // documDataGridViewTextBoxColumn
@@ -963,7 +1110,6 @@
             this.documDataGridViewTextBoxColumn.DataPropertyName = "Docum";
             this.documDataGridViewTextBoxColumn.HeaderText = "Документ";
             this.documDataGridViewTextBoxColumn.Name = "documDataGridViewTextBoxColumn";
-            this.documDataGridViewTextBoxColumn.ReadOnly = true;
             this.documDataGridViewTextBoxColumn.Width = 83;
             // 
             // documserialDataGridViewTextBoxColumn
@@ -971,7 +1117,6 @@
             this.documserialDataGridViewTextBoxColumn.DataPropertyName = "Docum_serial";
             this.documserialDataGridViewTextBoxColumn.HeaderText = "Серия";
             this.documserialDataGridViewTextBoxColumn.Name = "documserialDataGridViewTextBoxColumn";
-            this.documserialDataGridViewTextBoxColumn.ReadOnly = true;
             this.documserialDataGridViewTextBoxColumn.Width = 63;
             // 
             // documnumDataGridViewTextBoxColumn
@@ -979,7 +1124,6 @@
             this.documnumDataGridViewTextBoxColumn.DataPropertyName = "Docum_num";
             this.documnumDataGridViewTextBoxColumn.HeaderText = "Номер";
             this.documnumDataGridViewTextBoxColumn.Name = "documnumDataGridViewTextBoxColumn";
-            this.documnumDataGridViewTextBoxColumn.ReadOnly = true;
             this.documnumDataGridViewTextBoxColumn.Width = 66;
             // 
             // documdateDataGridViewTextBoxColumn
@@ -987,7 +1131,6 @@
             this.documdateDataGridViewTextBoxColumn.DataPropertyName = "Docum_date";
             this.documdateDataGridViewTextBoxColumn.HeaderText = "Дата выдачи";
             this.documdateDataGridViewTextBoxColumn.Name = "documdateDataGridViewTextBoxColumn";
-            this.documdateDataGridViewTextBoxColumn.ReadOnly = true;
             this.documdateDataGridViewTextBoxColumn.Width = 90;
             // 
             // documplaceDataGridViewTextBoxColumn
@@ -995,7 +1138,6 @@
             this.documplaceDataGridViewTextBoxColumn.DataPropertyName = "Docum_place";
             this.documplaceDataGridViewTextBoxColumn.HeaderText = "Место выдачи";
             this.documplaceDataGridViewTextBoxColumn.Name = "documplaceDataGridViewTextBoxColumn";
-            this.documplaceDataGridViewTextBoxColumn.ReadOnly = true;
             this.documplaceDataGridViewTextBoxColumn.Width = 96;
             // 
             // documcodDataGridViewTextBoxColumn
@@ -1003,7 +1145,6 @@
             this.documcodDataGridViewTextBoxColumn.DataPropertyName = "Docum_cod";
             this.documcodDataGridViewTextBoxColumn.HeaderText = "Код подр.";
             this.documcodDataGridViewTextBoxColumn.Name = "documcodDataGridViewTextBoxColumn";
-            this.documcodDataGridViewTextBoxColumn.ReadOnly = true;
             this.documcodDataGridViewTextBoxColumn.Width = 75;
             // 
             // cityDataGridViewTextBoxColumn
@@ -1011,7 +1152,6 @@
             this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
             this.cityDataGridViewTextBoxColumn.HeaderText = "Город";
             this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
             this.cityDataGridViewTextBoxColumn.Width = 62;
             // 
             // regioncodDataGridViewTextBoxColumn
@@ -1019,7 +1159,6 @@
             this.regioncodDataGridViewTextBoxColumn.DataPropertyName = "Region_cod";
             this.regioncodDataGridViewTextBoxColumn.HeaderText = "Код региона";
             this.regioncodDataGridViewTextBoxColumn.Name = "regioncodDataGridViewTextBoxColumn";
-            this.regioncodDataGridViewTextBoxColumn.ReadOnly = true;
             this.regioncodDataGridViewTextBoxColumn.Width = 87;
             // 
             // districtDataGridViewTextBoxColumn
@@ -1027,7 +1166,6 @@
             this.districtDataGridViewTextBoxColumn.DataPropertyName = "District";
             this.districtDataGridViewTextBoxColumn.HeaderText = "Район";
             this.districtDataGridViewTextBoxColumn.Name = "districtDataGridViewTextBoxColumn";
-            this.districtDataGridViewTextBoxColumn.ReadOnly = true;
             this.districtDataGridViewTextBoxColumn.Width = 63;
             // 
             // streetDataGridViewTextBoxColumn
@@ -1035,7 +1173,6 @@
             this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
             this.streetDataGridViewTextBoxColumn.HeaderText = "Улица";
             this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
-            this.streetDataGridViewTextBoxColumn.ReadOnly = true;
             this.streetDataGridViewTextBoxColumn.Width = 64;
             // 
             // houseDataGridViewTextBoxColumn
@@ -1043,7 +1180,6 @@
             this.houseDataGridViewTextBoxColumn.DataPropertyName = "House";
             this.houseDataGridViewTextBoxColumn.HeaderText = "Дом";
             this.houseDataGridViewTextBoxColumn.Name = "houseDataGridViewTextBoxColumn";
-            this.houseDataGridViewTextBoxColumn.ReadOnly = true;
             this.houseDataGridViewTextBoxColumn.Width = 55;
             // 
             // blockDataGridViewTextBoxColumn
@@ -1051,7 +1187,6 @@
             this.blockDataGridViewTextBoxColumn.DataPropertyName = "Block";
             this.blockDataGridViewTextBoxColumn.HeaderText = "Корпус";
             this.blockDataGridViewTextBoxColumn.Name = "blockDataGridViewTextBoxColumn";
-            this.blockDataGridViewTextBoxColumn.ReadOnly = true;
             this.blockDataGridViewTextBoxColumn.Width = 68;
             // 
             // apartmentDataGridViewTextBoxColumn
@@ -1059,7 +1194,6 @@
             this.apartmentDataGridViewTextBoxColumn.DataPropertyName = "Apartment";
             this.apartmentDataGridViewTextBoxColumn.HeaderText = "Квартира";
             this.apartmentDataGridViewTextBoxColumn.Name = "apartmentDataGridViewTextBoxColumn";
-            this.apartmentDataGridViewTextBoxColumn.ReadOnly = true;
             this.apartmentDataGridViewTextBoxColumn.Width = 80;
             // 
             // indexDataGridViewTextBoxColumn
@@ -1067,7 +1201,6 @@
             this.indexDataGridViewTextBoxColumn.DataPropertyName = "Index";
             this.indexDataGridViewTextBoxColumn.HeaderText = "Индекс";
             this.indexDataGridViewTextBoxColumn.Name = "indexDataGridViewTextBoxColumn";
-            this.indexDataGridViewTextBoxColumn.ReadOnly = true;
             this.indexDataGridViewTextBoxColumn.Width = 70;
             // 
             // birthDataGridViewTextBoxColumn
@@ -1075,7 +1208,6 @@
             this.birthDataGridViewTextBoxColumn.DataPropertyName = "Birth";
             this.birthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
             this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
-            this.birthDataGridViewTextBoxColumn.ReadOnly = true;
             this.birthDataGridViewTextBoxColumn.Width = 102;
             // 
             // placeOfBirthDataGridViewTextBoxColumn
@@ -1083,7 +1215,6 @@
             this.placeOfBirthDataGridViewTextBoxColumn.DataPropertyName = "Place_Of_Birth";
             this.placeOfBirthDataGridViewTextBoxColumn.HeaderText = "Место рождения";
             this.placeOfBirthDataGridViewTextBoxColumn.Name = "placeOfBirthDataGridViewTextBoxColumn";
-            this.placeOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
             this.placeOfBirthDataGridViewTextBoxColumn.Width = 107;
             // 
             // sexDataGridViewTextBoxColumn
@@ -1091,7 +1222,6 @@
             this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
             this.sexDataGridViewTextBoxColumn.HeaderText = "Пол";
             this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
-            this.sexDataGridViewTextBoxColumn.ReadOnly = true;
             this.sexDataGridViewTextBoxColumn.Width = 52;
             // 
             // sNILSDataGridViewTextBoxColumn
@@ -1099,7 +1229,6 @@
             this.sNILSDataGridViewTextBoxColumn.DataPropertyName = "SNILS";
             this.sNILSDataGridViewTextBoxColumn.HeaderText = "СНИЛС";
             this.sNILSDataGridViewTextBoxColumn.Name = "sNILSDataGridViewTextBoxColumn";
-            this.sNILSDataGridViewTextBoxColumn.ReadOnly = true;
             this.sNILSDataGridViewTextBoxColumn.Width = 70;
             // 
             // homephoneDataGridViewTextBoxColumn
@@ -1107,7 +1236,6 @@
             this.homephoneDataGridViewTextBoxColumn.DataPropertyName = "Home_phone";
             this.homephoneDataGridViewTextBoxColumn.HeaderText = "Домашний телефон";
             this.homephoneDataGridViewTextBoxColumn.Name = "homephoneDataGridViewTextBoxColumn";
-            this.homephoneDataGridViewTextBoxColumn.ReadOnly = true;
             this.homephoneDataGridViewTextBoxColumn.Width = 122;
             // 
             // Mobile_phone
@@ -1115,7 +1243,6 @@
             this.Mobile_phone.DataPropertyName = "Mobile_phone";
             this.Mobile_phone.HeaderText = "Мобильный телефон";
             this.Mobile_phone.Name = "Mobile_phone";
-            this.Mobile_phone.ReadOnly = true;
             this.Mobile_phone.Width = 125;
             // 
             // iNNworkerDataGridViewTextBoxColumn
@@ -1123,7 +1250,6 @@
             this.iNNworkerDataGridViewTextBoxColumn.DataPropertyName = "INN_worker";
             this.iNNworkerDataGridViewTextBoxColumn.HeaderText = "ИНН";
             this.iNNworkerDataGridViewTextBoxColumn.Name = "iNNworkerDataGridViewTextBoxColumn";
-            this.iNNworkerDataGridViewTextBoxColumn.ReadOnly = true;
             this.iNNworkerDataGridViewTextBoxColumn.Width = 56;
             // 
             // fullNameCardDataGridViewTextBoxColumn
@@ -1131,7 +1257,6 @@
             this.fullNameCardDataGridViewTextBoxColumn.DataPropertyName = "Full_Name_Card";
             this.fullNameCardDataGridViewTextBoxColumn.HeaderText = "ФамилияИмя на карте";
             this.fullNameCardDataGridViewTextBoxColumn.Name = "fullNameCardDataGridViewTextBoxColumn";
-            this.fullNameCardDataGridViewTextBoxColumn.ReadOnly = true;
             this.fullNameCardDataGridViewTextBoxColumn.Width = 111;
             // 
             // codeWordDataGridViewTextBoxColumn
@@ -1139,7 +1264,6 @@
             this.codeWordDataGridViewTextBoxColumn.DataPropertyName = "Code_Word";
             this.codeWordDataGridViewTextBoxColumn.HeaderText = "Кодовое слово";
             this.codeWordDataGridViewTextBoxColumn.Name = "codeWordDataGridViewTextBoxColumn";
-            this.codeWordDataGridViewTextBoxColumn.ReadOnly = true;
             this.codeWordDataGridViewTextBoxColumn.Width = 99;
             // 
             // bankCodeDataGridViewTextBoxColumn
@@ -1147,7 +1271,6 @@
             this.bankCodeDataGridViewTextBoxColumn.DataPropertyName = "Bank_Code";
             this.bankCodeDataGridViewTextBoxColumn.HeaderText = "Код подр. банка";
             this.bankCodeDataGridViewTextBoxColumn.Name = "bankCodeDataGridViewTextBoxColumn";
-            this.bankCodeDataGridViewTextBoxColumn.ReadOnly = true;
             this.bankCodeDataGridViewTextBoxColumn.Width = 105;
             // 
             // cardtypeDataGridViewTextBoxColumn
@@ -1155,7 +1278,6 @@
             this.cardtypeDataGridViewTextBoxColumn.DataPropertyName = "Card_type";
             this.cardtypeDataGridViewTextBoxColumn.HeaderText = "Тип карты";
             this.cardtypeDataGridViewTextBoxColumn.Name = "cardtypeDataGridViewTextBoxColumn";
-            this.cardtypeDataGridViewTextBoxColumn.ReadOnly = true;
             this.cardtypeDataGridViewTextBoxColumn.Width = 78;
             // 
             // Docum2
@@ -1163,7 +1285,6 @@
             this.Docum2.DataPropertyName = "Docum2";
             this.Docum2.HeaderText = "Документ2";
             this.Docum2.Name = "Docum2";
-            this.Docum2.ReadOnly = true;
             this.Docum2.Width = 89;
             // 
             // Docum2_serial
@@ -1171,7 +1292,6 @@
             this.Docum2_serial.DataPropertyName = "Docum2_serial";
             this.Docum2_serial.HeaderText = "Серия2";
             this.Docum2_serial.Name = "Docum2_serial";
-            this.Docum2_serial.ReadOnly = true;
             this.Docum2_serial.Width = 69;
             // 
             // Docum2_num
@@ -1179,7 +1299,6 @@
             this.Docum2_num.DataPropertyName = "Docum2_num";
             this.Docum2_num.HeaderText = "Номер2";
             this.Docum2_num.Name = "Docum2_num";
-            this.Docum2_num.ReadOnly = true;
             this.Docum2_num.Width = 72;
             // 
             // Docum2_date
@@ -1187,7 +1306,6 @@
             this.Docum2_date.DataPropertyName = "Docum2_date";
             this.Docum2_date.HeaderText = "Дата выдачи2";
             this.Docum2_date.Name = "Docum2_date";
-            this.Docum2_date.ReadOnly = true;
             this.Docum2_date.Width = 96;
             // 
             // Docum2_place
@@ -1195,7 +1313,6 @@
             this.Docum2_place.DataPropertyName = "Docum2_place";
             this.Docum2_place.HeaderText = "Место выдачи2";
             this.Docum2_place.Name = "Docum2_place";
-            this.Docum2_place.ReadOnly = true;
             this.Docum2_place.Width = 101;
             // 
             // City2
@@ -1203,7 +1320,6 @@
             this.City2.DataPropertyName = "City2";
             this.City2.HeaderText = "Город2";
             this.City2.Name = "City2";
-            this.City2.ReadOnly = true;
             this.City2.Width = 68;
             // 
             // Region_cod2
@@ -1211,7 +1327,6 @@
             this.Region_cod2.DataPropertyName = "Region_cod2";
             this.Region_cod2.HeaderText = "Код региона2";
             this.Region_cod2.Name = "Region_cod2";
-            this.Region_cod2.ReadOnly = true;
             this.Region_cod2.Width = 93;
             // 
             // District2
@@ -1219,7 +1334,6 @@
             this.District2.DataPropertyName = "District2";
             this.District2.HeaderText = "Район2";
             this.District2.Name = "District2";
-            this.District2.ReadOnly = true;
             this.District2.Width = 69;
             // 
             // Street2
@@ -1227,7 +1341,6 @@
             this.Street2.DataPropertyName = "Street2";
             this.Street2.HeaderText = "Улица2";
             this.Street2.Name = "Street2";
-            this.Street2.ReadOnly = true;
             this.Street2.Width = 70;
             // 
             // House2
@@ -1235,7 +1348,6 @@
             this.House2.DataPropertyName = "House2";
             this.House2.HeaderText = "Дом2";
             this.House2.Name = "House2";
-            this.House2.ReadOnly = true;
             this.House2.Width = 61;
             // 
             // Block2
@@ -1243,7 +1355,6 @@
             this.Block2.DataPropertyName = "Block2";
             this.Block2.HeaderText = "Корпус2";
             this.Block2.Name = "Block2";
-            this.Block2.ReadOnly = true;
             this.Block2.Width = 74;
             // 
             // Apartment2
@@ -1251,7 +1362,6 @@
             this.Apartment2.DataPropertyName = "Apartment2";
             this.Apartment2.HeaderText = "Квартира2";
             this.Apartment2.Name = "Apartment2";
-            this.Apartment2.ReadOnly = true;
             this.Apartment2.Width = 86;
             // 
             // Index2
@@ -1259,7 +1369,6 @@
             this.Index2.DataPropertyName = "Index2";
             this.Index2.HeaderText = "Индекс2";
             this.Index2.Name = "Index2";
-            this.Index2.ReadOnly = true;
             this.Index2.Width = 76;
             // 
             // Action_param
@@ -1267,7 +1376,6 @@
             this.Action_param.DataPropertyName = "Action_param";
             this.Action_param.HeaderText = "Доп";
             this.Action_param.Name = "Action_param";
-            this.Action_param.ReadOnly = true;
             this.Action_param.Width = 53;
             // 
             // employmentDateDataGridViewTextBoxColumn
@@ -1275,7 +1383,6 @@
             this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "Employment_Date";
             this.employmentDateDataGridViewTextBoxColumn.HeaderText = "Дата зачисления";
             this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
-            this.employmentDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.employmentDateDataGridViewTextBoxColumn.Width = 110;
             // 
             // salaryDataGridViewTextBoxColumn
@@ -1283,7 +1390,6 @@
             this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
             this.salaryDataGridViewTextBoxColumn.HeaderText = "ЗП";
             this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
-            this.salaryDataGridViewTextBoxColumn.ReadOnly = true;
             this.salaryDataGridViewTextBoxColumn.Width = 47;
             // 
             // emailDataGridViewTextBoxColumn
@@ -1291,7 +1397,6 @@
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.Width = 57;
             // 
             // orgkeyDataGridViewTextBoxColumn1
@@ -1299,7 +1404,6 @@
             this.orgkeyDataGridViewTextBoxColumn1.DataPropertyName = "Org_key";
             this.orgkeyDataGridViewTextBoxColumn1.HeaderText = "Org_key";
             this.orgkeyDataGridViewTextBoxColumn1.Name = "orgkeyDataGridViewTextBoxColumn1";
-            this.orgkeyDataGridViewTextBoxColumn1.ReadOnly = true;
             this.orgkeyDataGridViewTextBoxColumn1.Visible = false;
             this.orgkeyDataGridViewTextBoxColumn1.Width = 72;
             // 
@@ -1308,7 +1412,6 @@
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
             this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
             this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
             this.codeDataGridViewTextBoxColumn.Visible = false;
             this.codeDataGridViewTextBoxColumn.Width = 57;
             // 
@@ -1381,7 +1484,7 @@
             // workersDataGridView
             // 
             this.workersDataGridView.AllowUserToAddRows = false;
-            this.workersDataGridView.AllowUserToDeleteRows = false;
+            this.workersDataGridView.AllowUserToResizeRows = false;
             this.workersDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1523,6 +1626,7 @@
             // 
             // GridView2
             // 
+            this.GridView2.AllowUserToResizeRows = false;
             this.GridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1621,13 +1725,15 @@
             // 
             // del
             // 
+            this.del.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.del.FillWeight = 65F;
             this.del.HeaderText = "Удалить";
             this.del.Name = "del";
-            this.del.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.del.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.del.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.del.Text = "X";
             this.del.UseColumnTextForButtonValue = true;
+            this.del.Width = 75;
             // 
             // enrollmentsBindingSource
             // 
@@ -1696,6 +1802,7 @@
             // 
             // GridView5
             // 
+            this.GridView5.AllowUserToResizeRows = false;
             this.GridView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1764,13 +1871,15 @@
             // 
             // dataGridViewButtonColumn1
             // 
+            this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewButtonColumn1.FillWeight = 65F;
             this.dataGridViewButtonColumn1.HeaderText = "Удалить";
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewButtonColumn1.Text = "X";
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn1.Width = 75;
             // 
             // UvalBindingSource
             // 
@@ -1798,6 +1907,7 @@
             this.button22.TabIndex = 10;
             this.button22.Text = "Создать DOS-файл";
             this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.UvalCreateDosClick);
             // 
             // workersTableAdapter
             // 
@@ -1836,151 +1946,6 @@
             this.button23.Text = "Назад";
             this.button23.UseVisualStyleBackColor = true;
             this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // cueTextBox8
-            // 
-            this.cueTextBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox8.CueText = null;
-            this.cueTextBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "OGRN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox8.Location = new System.Drawing.Point(332, 236);
-            this.cueTextBox8.Name = "cueTextBox8";
-            this.cueTextBox8.RegEx = null;
-            this.cueTextBox8.Required = false;
-            this.cueTextBox8.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox8.TabIndex = 4;
-            // 
-            // cueTextBox7
-            // 
-            this.cueTextBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox7.CueText = null;
-            this.cueTextBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_INN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox7.Location = new System.Drawing.Point(332, 210);
-            this.cueTextBox7.Name = "cueTextBox7";
-            this.cueTextBox7.RegEx = null;
-            this.cueTextBox7.Required = false;
-            this.cueTextBox7.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox7.TabIndex = 4;
-            // 
-            // cueTextBox14
-            // 
-            this.cueTextBox14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox14.CueText = null;
-            this.cueTextBox14.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BIK", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox14.Location = new System.Drawing.Point(332, 340);
-            this.cueTextBox14.Name = "cueTextBox14";
-            this.cueTextBox14.RegEx = null;
-            this.cueTextBox14.Required = false;
-            this.cueTextBox14.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox14.TabIndex = 4;
-            // 
-            // cueTextBox11
-            // 
-            this.cueTextBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox11.CueText = null;
-            this.cueTextBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager_d", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox11.Location = new System.Drawing.Point(332, 135);
-            this.cueTextBox11.Name = "cueTextBox11";
-            this.cueTextBox11.RegEx = null;
-            this.cueTextBox11.Required = false;
-            this.cueTextBox11.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox11.TabIndex = 4;
-            // 
-            // cueTextBox4
-            // 
-            this.cueTextBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox4.CueText = null;
-            this.cueTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox4.Location = new System.Drawing.Point(332, 109);
-            this.cueTextBox4.Name = "cueTextBox4";
-            this.cueTextBox4.RegEx = null;
-            this.cueTextBox4.Required = false;
-            this.cueTextBox4.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox4.TabIndex = 4;
-            // 
-            // cueTextBox12
-            // 
-            this.cueTextBox12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox12.CueText = null;
-            this.cueTextBox12.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BankUnit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox12.Location = new System.Drawing.Point(332, 314);
-            this.cueTextBox12.Name = "cueTextBox12";
-            this.cueTextBox12.RegEx = null;
-            this.cueTextBox12.Required = false;
-            this.cueTextBox12.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox12.TabIndex = 4;
-            // 
-            // CurOrgDesc
-            // 
-            this.CurOrgDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurOrgDesc.CueText = null;
-            this.CurOrgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Descriptor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOrgDesc.Location = new System.Drawing.Point(332, 83);
-            this.CurOrgDesc.Name = "CurOrgDesc";
-            this.CurOrgDesc.RegEx = null;
-            this.CurOrgDesc.Required = false;
-            this.CurOrgDesc.Size = new System.Drawing.Size(278, 20);
-            this.CurOrgDesc.TabIndex = 4;
-            // 
-            // cueTextBox10
-            // 
-            this.cueTextBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox10.CueText = null;
-            this.cueTextBox10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Bank", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox10.Location = new System.Drawing.Point(332, 288);
-            this.cueTextBox10.Name = "cueTextBox10";
-            this.cueTextBox10.RegEx = null;
-            this.cueTextBox10.Required = false;
-            this.cueTextBox10.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox10.TabIndex = 4;
-            // 
-            // cueTextBox5
-            // 
-            this.cueTextBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox5.CueText = null;
-            this.cueTextBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Booker", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox5.Location = new System.Drawing.Point(332, 161);
-            this.cueTextBox5.Name = "cueTextBox5";
-            this.cueTextBox5.RegEx = null;
-            this.cueTextBox5.Required = false;
-            this.cueTextBox5.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox5.TabIndex = 4;
-            // 
-            // cueTextBox9
-            // 
-            this.cueTextBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox9.CueText = null;
-            this.cueTextBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "DisporsalBill", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox9.Location = new System.Drawing.Point(332, 262);
-            this.cueTextBox9.Name = "cueTextBox9";
-            this.cueTextBox9.RegEx = null;
-            this.cueTextBox9.Required = false;
-            this.cueTextBox9.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox9.TabIndex = 4;
-            // 
-            // CurOrgKey
-            // 
-            this.CurOrgKey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurOrgKey.CueText = null;
-            this.CurOrgKey.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_key", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOrgKey.Location = new System.Drawing.Point(332, 57);
-            this.CurOrgKey.Name = "CurOrgKey";
-            this.CurOrgKey.ReadOnly = true;
-            this.CurOrgKey.RegEx = null;
-            this.CurOrgKey.Required = false;
-            this.CurOrgKey.Size = new System.Drawing.Size(278, 20);
-            this.CurOrgKey.TabIndex = 4;
-            // 
-            // CurOrgName
-            // 
-            this.CurOrgName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurOrgName.CueText = null;
-            this.CurOrgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Organization", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOrgName.Location = new System.Drawing.Point(332, 31);
-            this.CurOrgName.Name = "CurOrgName";
-            this.CurOrgName.RegEx = null;
-            this.CurOrgName.Required = false;
-            this.CurOrgName.Size = new System.Drawing.Size(278, 20);
-            this.CurOrgName.TabIndex = 4;
             // 
             // Organizations
             // 
@@ -2052,15 +2017,6 @@
         private System.Windows.Forms.Button FireButton;
         private System.Windows.Forms.Button AddButton;
         public System.Windows.Forms.DataGridView workersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wSurnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wMiddlenameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tablenumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wBirthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wBillnumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgkeyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn firedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wCodeDataGridViewTextBoxColumn;
         internal System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabEnrollments;
         private DbDataSetTableAdapters.EnrollmentsTableAdapter enrollmentsTableAdapter;
@@ -2089,50 +2045,21 @@
         public System.Windows.Forms.DataGridView GridView2;
         public System.Windows.Forms.DataGridView GridView5;
         public System.Windows.Forms.BindingSource UvalBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Enrollment_type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewButtonColumn del2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Org_key;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewButtonColumn del1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private CueTextBox CurOrgName;
         private DbDataSetTableAdapters.OrganizationsTableAdapter organizationsTableAdapter1;
         public System.Windows.Forms.BindingSource OrgBindingSource;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Label label3;
-        private CueTextBox cueTextBox8;
-        private CueTextBox cueTextBox7;
-        private CueTextBox cueTextBox14;
+        private CueTextBox CurOGRN;
+        private CueTextBox CurINN;
+        private CueTextBox CurBIK;
         private CueTextBox cueTextBox11;
         private CueTextBox cueTextBox4;
-        private CueTextBox cueTextBox12;
+        private CueTextBox CurBankPodr;
         private CueTextBox CurOrgDesc;
-        private CueTextBox cueTextBox10;
+        private CueTextBox CurBank;
         private CueTextBox cueTextBox5;
-        private CueTextBox cueTextBox9;
+        private CueTextBox CurBill;
         private CueTextBox CurOrgKey;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -2195,6 +2122,37 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orgkeyDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wSurnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wMiddlenameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tablenumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wBirthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wBillnumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orgkeyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn firedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Enrollment_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewButtonColumn del2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Org_key;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewButtonColumn del1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -2206,5 +2164,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
         private System.Windows.Forms.DataGridViewButtonColumn del;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }

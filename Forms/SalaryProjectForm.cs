@@ -168,7 +168,9 @@ namespace SalaryRegistersUralsib
                 /*                this.organizationsTableAdapter1.Update(Org, Org_key, Desc, Mngr, Mngr_d, Booker);*/
                 //organizationsTableAdapter1.Update(Org, Desc, Mngr, Mngr_d, Booker, OrgMas [ "Organization" ], OrgMas [ "Org_key" ], OrgMas [ "Descriptor" ], OrgMas [ "Manager" ], OrgMas [ "Manager_d" ], OrgMas [ "Booker" ]);
                 organizationsTableAdapter1.Update(Org, Desc, Mngr, Mngr_d, Booker, null, null, null, null, null, null, Org_key);
+                organizationsTableAdapter1.ClearBeforeFill = false;
                 organizationsTableAdapter1.Fill(dbDataSet.Organizations); // отображение
+                organizationsTableAdapter1.ClearBeforeFill = true;
             }
             /*MessageBox.Show(Org+OrgKey+Mngr+Mngr_d+Booker+Desc);*/
             /*Org, Org_key, Mngr, Mngr_d, Booker, Desc*/
