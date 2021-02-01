@@ -170,55 +170,6 @@ namespace SalaryRegistersUralsib
             }
             if ( f.ShowDialog() == DialogResult.OK )
             {
-                Debug.WriteLine(f.WSurname.Text);
-                Debug.WriteLine(f.WName.Text);
-                Debug.WriteLine(f.WMiddlename.Text);
-                Debug.WriteLine(f.Table_num.Text);
-                Debug.WriteLine(f.Doc [ 0 ]);
-                Debug.WriteLine(f.Doc [ 1 ]);
-                Debug.WriteLine(f.Doc [ 2 ]);
-                Debug.WriteLine(f.Doc [ 3 ]);
-                Debug.WriteLine(f.Doc [ 4 ]);
-                Debug.WriteLine(f.Doc [ 5 ]);
-                Debug.WriteLine(f.Mass [ 0 ]);
-                Debug.WriteLine(f.Mass [ 1 ]);
-                Debug.WriteLine(f.Mass [ 2 ]);
-                Debug.WriteLine(f.Mass [ 3 ]);
-                Debug.WriteLine(f.Mass [ 4 ]);
-                Debug.WriteLine(f.Mass [ 5 ]);
-                Debug.WriteLine(f.Mass [ 6 ]);
-                Debug.WriteLine(f.Mass [ 7 ]);
-                Debug.WriteLine(f.WBirth.Text);
-                Debug.WriteLine(f.Place_Of_Birth.Text);
-                Debug.WriteLine(f.Sex.SelectedIndex.ToString());
-                Debug.WriteLine(f.SNILS.Text);
-                Debug.WriteLine(f.Phone.Text);
-                Debug.WriteLine(f.Phone.Text);
-                Debug.WriteLine(f.INN_worker.Text);
-                Debug.WriteLine(f.Full_Name_Card.Text);
-                Debug.WriteLine(f.Code_Word.Text);
-                Debug.WriteLine(f.Bank_Code.Text);
-                Debug.WriteLine(f.Card_type.Text);
-                Debug.WriteLine(f.Doc2 [ 0 ]);
-                Debug.WriteLine(f.Doc2 [ 1 ]);
-                Debug.WriteLine(f.Doc2 [ 2 ]);
-                Debug.WriteLine(f.Doc2 [ 3 ]);
-                Debug.WriteLine(f.Doc2 [ 4 ]);
-                Debug.WriteLine(f.Mass2 [ 0 ]);
-                Debug.WriteLine(f.Mass2 [ 1 ]);
-                Debug.WriteLine(f.Mass2 [ 2 ]);
-                Debug.WriteLine(f.Mass2 [ 3 ]);
-                Debug.WriteLine(f.Mass2 [ 4 ]);
-                Debug.WriteLine(f.Mass2 [ 5 ]);
-                Debug.WriteLine(f.Mass2 [ 6 ]);
-                Debug.WriteLine(f.Mass2 [ 7 ]);
-                Debug.WriteLine(f.Action_param.Text);
-                Debug.WriteLine(f.Employment_Date.Text);
-                Debug.WriteLine(f.Salary.Text);
-                Debug.WriteLine(f.Email.Text);
-                Debug.WriteLine(f.Card_N.Text);
-                Debug.WriteLine(f.Org_key.Text);
-                Debug.WriteLine(f.WCode.Text);
                 try
                 {
                     cardTableAdapter.Insert(f.WSurname.Text, f.WName.Text, f.WMiddlename.Text, f.Table_num.Text, f.Doc [ 0 ] ?? null, f.Doc [ 1 ] ?? null, f.Doc [ 2 ] ?? null, f.Doc [ 3 ] ?? null, f.Doc [ 4 ] ?? null, f.Doc [ 5 ] ?? null, f.Mass [ 0 ] ?? null, f.Mass [ 1 ] ?? null, f.Mass [ 2 ] ?? null, f.Mass [ 3 ] ?? null, f.Mass [ 4 ] ?? null, f.Mass [ 5 ] ?? null, f.Mass [ 6 ] ?? null, f.Mass [ 7 ] ?? null, f.WBirth.Text, f.Place_Of_Birth.Text, f.Sex.SelectedIndex.ToString(), f.SNILS.Text, f.Phone.Text, f.Phone.Text, f.INN_worker.Text, f.Full_Name_Card.Text, f.Code_Word.Text, f.Bank_Code.Text, f.Card_type.Text, f.Doc2 [ 0 ] ?? null, f.Doc2 [ 1 ] ?? null, f.Doc2 [ 2 ] ?? null, f.Doc2 [ 3 ] ?? null, f.Doc2 [ 4 ] ?? null, f.Mass2 [ 0 ] ?? null, f.Mass2 [ 1 ] ?? null, f.Mass2 [ 2 ] ?? null, f.Mass2 [ 3 ] ?? null, f.Mass2 [ 4 ] ?? null, f.Mass2 [ 5 ] ?? null, f.Mass2 [ 6 ] ?? null, f.Mass2 [ 7 ] ?? null, f.Action_param.Text, f.Employment_Date.Text, f.Salary.Text, f.Email.Text, f.Card_N.Text, f.Org_key.Text, int.Parse(f.WCode.Text));
@@ -456,11 +407,14 @@ namespace SalaryRegistersUralsib
                     if ( !row.IsNewRow )
                     {
                         str += row.Cells [ 0 ].Value.ToString().PadRight(20);
-
-                        str += String.Format("{0:0.00}", Convert.ToSingle(row.Cells [ 6 ].Value)).Replace(",", ".").PadLeft(12);
+                        string ss = String.Format("{0:0.00}", 
+                            Convert.ToSingle(Convert.IsDBNull(row.Cells [ 6 ].Value) ? "0,00" : row.Cells [ 6 ].Value))
+                            .Replace(",", ".")
+                            .PadLeft(12);
+                        str += ss;
                         str += "0" + row.Cells [ 7 ].Value.ToString();
 
-                        str += String.Format("{0:0.00}", Convert.ToSingle(row.Cells [ 8 ].Value)).Replace(",", ".").PadLeft(12);
+                        str += String.Format("{0:0.00}", Convert.ToSingle(Convert.IsDBNull(row.Cells [ 6 ].Value) ? "0,00" : row.Cells [ 8 ].Value)).Replace(",", ".").PadLeft(12);
                         str += row.Cells [ 9 ].Value.ToString();
 
                         str += "\n";
@@ -598,10 +552,10 @@ namespace SalaryRegistersUralsib
 
                         str += row.Cells [ 0 ].Value.ToString().PadRight(20);//табельный номер
 
-                        str += String.Format("{0:0.00}", Convert.ToSingle(row.Cells [ 6 ].Value)).Replace(",", ".").PadLeft(12);//сумма
+                        str += String.Format("{0:0.00}", Convert.ToSingle(Convert.IsDBNull(row.Cells [ 6 ].Value) ? "0,00" : row.Cells [ 6 ].Value)).Replace(",", ".").PadLeft(12);//сумма
                         str += "0" + row.Cells [ 7 ].Value.ToString();//код вида выплаты
 
-                        str += String.Format("{0:0.00}", Convert.ToSingle(row.Cells [ 8 ].Value)).Replace(",", ".").PadLeft(12);// сумма удерж
+                        str += String.Format("{0:0.00}", Convert.ToSingle(Convert.IsDBNull(row.Cells [ 6 ].Value) ? "0,00" : row.Cells [ 8 ].Value)).Replace(",", ".").PadLeft(12);// сумма удерж
                         str += row.Cells [ 9 ].Value.ToString();//тип зачисления
 
                         str += "\n";
