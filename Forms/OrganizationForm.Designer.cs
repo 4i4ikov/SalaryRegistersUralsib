@@ -698,10 +698,10 @@
             this.dataGridViewTextBoxColumn27,
             this.del2});
             this.GridView4.DataSource = this.ReestrBindingSource;
-            this.GridView4.Location = new System.Drawing.Point(0, 37);
+            this.GridView4.Location = new System.Drawing.Point(3, 36);
             this.GridView4.Name = "GridView4";
             this.GridView4.RowHeadersVisible = false;
-            this.GridView4.Size = new System.Drawing.Size(803, 357);
+            this.GridView4.Size = new System.Drawing.Size(800, 362);
             this.GridView4.TabIndex = 8;
             this.GridView4.Tag = "reestr";
             this.GridView4.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
@@ -874,10 +874,10 @@
             this.dataGridViewTextBoxColumn28,
             this.del1});
             this.GridView3.DataSource = this.CardEnrollmentsBindingSource;
-            this.GridView3.Location = new System.Drawing.Point(0, 37);
+            this.GridView3.Location = new System.Drawing.Point(3, 36);
             this.GridView3.Name = "GridView3";
             this.GridView3.RowHeadersVisible = false;
-            this.GridView3.Size = new System.Drawing.Size(803, 357);
+            this.GridView3.Size = new System.Drawing.Size(800, 362);
             this.GridView3.TabIndex = 2;
             this.GridView3.Tag = "cardzach";
             this.GridView3.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
@@ -984,7 +984,7 @@
             // button14
             // 
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button14.Location = new System.Drawing.Point(159, 6);
+            this.button14.Location = new System.Drawing.Point(162, 3);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(183, 28);
             this.button14.TabIndex = 10;
@@ -995,7 +995,7 @@
             // button13
             // 
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button13.Location = new System.Drawing.Point(3, 6);
+            this.button13.Location = new System.Drawing.Point(6, 3);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(150, 28);
             this.button13.TabIndex = 10;
@@ -1451,7 +1451,7 @@
             // 
             this.AddCardButton.AutoSize = true;
             this.AddCardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddCardButton.Location = new System.Drawing.Point(229, 6);
+            this.AddCardButton.Location = new System.Drawing.Point(229, 3);
             this.AddCardButton.Name = "AddCardButton";
             this.AddCardButton.Size = new System.Drawing.Size(206, 28);
             this.AddCardButton.TabIndex = 3;
@@ -1462,7 +1462,7 @@
             // FireButton
             // 
             this.FireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FireButton.Location = new System.Drawing.Point(118, 6);
+            this.FireButton.Location = new System.Drawing.Point(118, 3);
             this.FireButton.Name = "FireButton";
             this.FireButton.Size = new System.Drawing.Size(105, 28);
             this.FireButton.TabIndex = 2;
@@ -1473,7 +1473,7 @@
             // AddButton
             // 
             this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddButton.Location = new System.Drawing.Point(7, 6);
+            this.AddButton.Location = new System.Drawing.Point(7, 3);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(105, 28);
             this.AddButton.TabIndex = 1;
@@ -1506,7 +1506,7 @@
             this.wCodeDataGridViewTextBoxColumn});
             this.workersDataGridView.DataSource = this.workersBindingSource;
             this.workersDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.workersDataGridView.Location = new System.Drawing.Point(0, 40);
+            this.workersDataGridView.Location = new System.Drawing.Point(3, 36);
             this.workersDataGridView.MultiSelect = false;
             this.workersDataGridView.Name = "workersDataGridView";
             this.workersDataGridView.ReadOnly = true;
@@ -1515,7 +1515,7 @@
             this.workersDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.workersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.workersDataGridView.ShowEditingIcon = false;
-            this.workersDataGridView.Size = new System.Drawing.Size(803, 354);
+            this.workersDataGridView.Size = new System.Drawing.Size(800, 362);
             this.workersDataGridView.StandardTab = true;
             this.workersDataGridView.TabIndex = 4;
             this.workersDataGridView.TabStop = false;
@@ -1607,7 +1607,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(814, 420);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabEnrollments
             // 
@@ -1649,10 +1648,10 @@
             this.dataGridViewTextBoxColumn31,
             this.del});
             this.GridView2.DataSource = this.enrollmentsBindingSource;
-            this.GridView2.Location = new System.Drawing.Point(0, 37);
+            this.GridView2.Location = new System.Drawing.Point(3, 36);
             this.GridView2.Name = "GridView2";
             this.GridView2.RowHeadersVisible = false;
-            this.GridView2.Size = new System.Drawing.Size(803, 357);
+            this.GridView2.Size = new System.Drawing.Size(800, 362);
             this.GridView2.TabIndex = 3;
             this.GridView2.Tag = "zach";
             this.GridView2.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
@@ -1824,10 +1823,10 @@
             this.dataGridViewTextBoxColumn38,
             this.dataGridViewButtonColumn1});
             this.GridView5.DataSource = this.UvalBindingSource;
-            this.GridView5.Location = new System.Drawing.Point(0, 37);
+            this.GridView5.Location = new System.Drawing.Point(3, 36);
             this.GridView5.Name = "GridView5";
             this.GridView5.RowHeadersVisible = false;
-            this.GridView5.Size = new System.Drawing.Size(802, 357);
+            this.GridView5.Size = new System.Drawing.Size(800, 362);
             this.GridView5.TabIndex = 13;
             this.GridView5.Tag = "uval";
             this.GridView5.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
@@ -1905,10 +1904,10 @@
             // button22
             // 
             this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button22.Location = new System.Drawing.Point(3, 6);
+            this.button22.Location = new System.Drawing.Point(6, 3);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(150, 28);
-            this.button22.TabIndex = 10;
+            this.button22.TabIndex = 12;
             this.button22.Text = "Создать DOS-файл";
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.UvalCreateDosClick);
@@ -2015,7 +2014,6 @@
         private System.Windows.Forms.TabPage tabCardOpen;
         private System.Windows.Forms.Button Button_DOS;
         public System.Windows.Forms.DataGridView GridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tabWorkers;
         private System.Windows.Forms.Button AddCardButton;
         private System.Windows.Forms.Button FireButton;

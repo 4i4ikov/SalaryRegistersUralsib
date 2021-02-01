@@ -41,25 +41,17 @@ namespace SalaryRegistersUralsib
             if ( f.ShowDialog() == DialogResult.OK ) // отобразить форму
             {
                 // если OK, то добавить
-
+                
                 string Org, Org_key, Mngr, Mngr_d, Desc, Booker;
                 Org = f.textBox1.Text;
                 Org_key = f.textBox2.Text;
                 Mngr = f.textBox4.Text;
                 Mngr_d = f.textBox5.Text;
                 Booker = f.textBox6.Text;
-                if ( f.checkBox1.Checked ) // дескриптор
-                {
-                    Desc = "+";
-                }
-                else
-                {
-                    Desc = "-";
-                }
+                Desc = f.checkBox1.Checked ? "+" : "-";
 
                 try
                 {
-
                     organizationsTableAdapter1.Insert(Org, Org_key, Desc, Mngr, Mngr_d, Booker, null, null, null, null, null, null);
                     organizationsTableAdapter1.Fill(dbDataSet.Organizations); // отображение
                 }
@@ -96,9 +88,9 @@ namespace SalaryRegistersUralsib
 
 
 
-            MainProgram.Context.MainForm = f;
-            Close();
-            MainProgram.Context.MainForm.Show();
+            MainProgram.Context.MainForm = f;//смена главной формы
+            Close();//закрытие текущей формы
+            MainProgram.Context.MainForm.Show();//открытие главной формы
 
         }
 
@@ -115,7 +107,7 @@ namespace SalaryRegistersUralsib
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            button3.ContextMenuStrip.Show(Cursor.Position);
+            button3.ContextMenuStrip.Show(Cursor.Position);//отображение выпадающего меню "редактировать" и "удалить"
         }
 
         private void РедактироватьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,28 +146,18 @@ namespace SalaryRegistersUralsib
                     Desc = "-";
                 }
 
-                /*this.organizationsTableAdapter1.Update(Org, OrgMas["Org_key"], Desc, Mngr, Mngr_d, Booker); // добавление */
-                /*                this.organizationsTableAdapter1.Update(Org, Org_key, Desc, Mngr, Mngr_d, Booker);*/
-                //organizationsTableAdapter1.Update(Org, Desc, Mngr, Mngr_d, Booker, OrgMas [ "Organization" ], OrgMas [ "Org_key" ], OrgMas [ "Descriptor" ], OrgMas [ "Manager" ], OrgMas [ "Manager_d" ], OrgMas [ "Booker" ]);
                 organizationsTableAdapter1.Update(Org, Desc, Mngr, Mngr_d, Booker, null, null, null, null, null, null, Org_key);
-                organizationsTableAdapter1.ClearBeforeFill = false;
+                organizationsTableAdapter1.ClearBeforeFill = false;//что бы таблица не очищалась перед отображением
                 organizationsTableAdapter1.Fill(dbDataSet.Organizations); // отображение
                 organizationsTableAdapter1.ClearBeforeFill = true;
             }
-            /*MessageBox.Show(Org+OrgKey+Mngr+Mngr_d+Booker+Desc);*/
-            /*Org, Org_key, Mngr, Mngr_d, Booker, Desc*/
         }
 
         private void УдалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormDelOrg f = new FormDelOrg();
-            if ( dataGridView1.RowCount <= 1 )
-            {
-                return;
-            }
-
+            if ( dataGridView1.RowCount <= 1 ) return;//удаление организации, если она последняя, то не удалить
             // получить позицию выделенной строки в dataGridView1
-            int index = dataGridView1.CurrentRow.Index;
 
             Dictionary<string, string> OrgMas = dataGridView1.GetCellsPls();
             f.label2.Text = "Наименование удаляемой организации: " + "\n" +
