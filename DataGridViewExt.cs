@@ -16,7 +16,6 @@ namespace SalaryRegistersUralsib
                 {
                     ms.Add(D.SelectedCells [ i ].OwningColumn.DataPropertyName.ToString(), D.SelectedCells [ i ].Value.ToString());
                 }
-
             }
             return ms;
         }

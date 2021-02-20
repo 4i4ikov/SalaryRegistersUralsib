@@ -32,7 +32,6 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.AuthButton = new System.Windows.Forms.Button();
             this.MainLabel = new System.Windows.Forms.Label();
-            this.secret = new System.Windows.Forms.Button();
             this.PasswordInput = new SalaryRegistersUralsib.CueTextBox();
             this.LoginInput = new SalaryRegistersUralsib.CueTextBox();
             this.SuspendLayout();
@@ -91,18 +90,6 @@
             this.MainLabel.Text = "Для входа введите логин и пароль";
             this.MainLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // secret
-            // 
-            this.secret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.secret.AutoSize = true;
-            this.secret.Location = new System.Drawing.Point(248, 79);
-            this.secret.Name = "secret";
-            this.secret.Size = new System.Drawing.Size(99, 23);
-            this.secret.TabIndex = 10;
-            this.secret.Text = "сменить пароль";
-            this.secret.UseVisualStyleBackColor = true;
-            this.secret.Click += new System.EventHandler(this.TestingButton_Click);
-            // 
             // PasswordInput
             // 
             this.PasswordInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -129,14 +116,13 @@
             this.LoginInput.Required = false;
             this.LoginInput.Size = new System.Drawing.Size(335, 26);
             this.LoginInput.TabIndex = 3;
-            this.LoginInput.Text = "Admin";
+            this.LoginInput.Text = "User";
             // 
             // AuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(359, 168);
-            this.Controls.Add(this.secret);
+            this.ClientSize = new System.Drawing.Size(359, 169);
             this.Controls.Add(this.MainLabel);
             this.Controls.Add(this.AuthButton);
             this.Controls.Add(this.PasswordLabel);
@@ -164,6 +150,5 @@
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Button AuthButton;
         private System.Windows.Forms.Label MainLabel;
-        private System.Windows.Forms.Button secret;
     }
 }

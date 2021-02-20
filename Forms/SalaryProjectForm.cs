@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalaryRegistersUralsib.DbDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -24,15 +25,9 @@ namespace SalaryRegistersUralsib
                 Close();
             }
             
-            button3.Enabled = true;
         }
 
-        private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void Button2_Click_1(object sender, EventArgs e)
+        private void AddOrg_Click(object sender, EventArgs e)
         {
             //Добавление Организации
 
@@ -62,10 +57,10 @@ namespace SalaryRegistersUralsib
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void SelectOrg_Click(object sender, EventArgs e)
         {
             //Выбор организации
-            Dictionary<string, string> s = dataGridView1.GetCellsPls();
+            Dictionary<string, string> s = dataGridView2.GetCellsPls();
             string str = s["Organization"].ToString();
             string orgKey = s["Org_key"].ToString();
 
@@ -101,13 +96,8 @@ namespace SalaryRegistersUralsib
             if ( e.KeyCode == Keys.Enter )
             {
                 e.Handled = true;
-                Button1_Click(sender, e);
+                SelectOrg_Click(sender, e);
             }
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            button3.ContextMenuStrip.Show(Cursor.Position);//отображение выпадающего меню "редактировать" и "удалить"
         }
 
         private void РедактироватьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,7 +105,7 @@ namespace SalaryRegistersUralsib
             // редактирование организации
             FormEditOrg f = new FormEditOrg();
             // заполнить массив с текущими значениями
-            Dictionary<string, string> OrgMas = dataGridView1.GetCellsPls();
+            Dictionary<string, string> OrgMas = dataGridView2.GetCellsPls();
 
             // ввести текущие значения в текстбоксы
             f.textBox1.Text = OrgMas [ "Organization" ];
@@ -156,10 +146,10 @@ namespace SalaryRegistersUralsib
         private void УдалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormDelOrg f = new FormDelOrg();
-            if ( dataGridView1.RowCount <= 1 ) return;//удаление организации, если она последняя, то не удалить
+            if ( dataGridView2.RowCount <= 1 ) return;//удаление организации, если она последняя, то не удалить
             // получить позицию выделенной строки в dataGridView1
 
-            Dictionary<string, string> OrgMas = dataGridView1.GetCellsPls();
+            Dictionary<string, string> OrgMas = dataGridView2.GetCellsPls();
             f.label2.Text = "Наименование удаляемой организации: " + "\n" +
                             OrgMas [ "Organization" ] + "\n" +
                             "Вы действительно хотите удалить её?"
@@ -171,9 +161,29 @@ namespace SalaryRegistersUralsib
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void HelpClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView dd = sender as DataGridView;
+
+
+                if ( dd.SelectedRows.Count > 0 )
+                {
+                    string org_Key = dd.SelectedRows[0].Cells["orgkeyDataGridViewTextBoxColumn"].Value.ToString() ?? String.Empty;
+                    string org = dd.SelectedRows[0].Cells["organizationDataGridViewTextBoxColumn"].Value.ToString() ?? String.Empty;
+                    int? arg1 = new WorkersTableAdapter().GetWorkersCount(org_Key);
+                    int? arg2 = new CardTableAdapter().GetCardsCount(org_Key);
+                    toolStripStatusLabel1.Text = string.Format("{0}, {1} сотр., {2} карт.", org, arg1, arg2);
+                }
+            
+                
+
+            
+            
         }
     }
 }

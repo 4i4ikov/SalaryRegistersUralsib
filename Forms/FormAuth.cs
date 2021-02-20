@@ -1,6 +1,9 @@
-﻿using SalaryRegistersUralsib.Forms;
+﻿using SalaryRegistersUralsib.DbDataSetTableAdapters;
+using SalaryRegistersUralsib.Forms;
 
 using System;
+using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SalaryRegistersUralsib
@@ -14,52 +17,87 @@ namespace SalaryRegistersUralsib
             this.Icon = Properties.Resources.Icon1;
         }
 
-
+        public static string GeneratePassword(int passLength)
+        {
+            var chars = "abcdefghijklmnopqrstuvwxyz@#$&ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            var result = new string(
+            Enumerable.Repeat(chars, passLength)
+                      .Select(s => s[random.Next(s.Length)])
+                      .ToArray());
+            return result;
+        }
 
         private void AuthButton_Click(object sender, EventArgs e)
         {
-            if ( ( EncodeS(LoginInput.Text) == Properties.Settings.Default.Login ) && ( EncodeS(PasswordInput.Text) == Properties.Settings.Default.Password ) )
+            UsersTableAdapter usersTableAdapter1 = new UsersTableAdapter();
+            int UserID = usersTableAdapter1.GetPasswordReset(LoginInput.Text) ?? 0;
+            if ( UserID != 0 )
             {
-                MainProgram.Context.MainForm = new SalaryProjectForm();
-                Close();
-                MainProgram.Context.MainForm.Show();
+                string newPass =  GeneratePassword(12);
 
-            }
-            else
-            {
-                MessageBox.Show("Введенные данные не верны!\nПроверьте их, пожалуйста!");
-            }
+                MessageBox.Show("Выполнен сброс пароля, пожалуйста, сохраните его!");
 
-        }
-        private void TestingButton_Click(object sender, EventArgs e)
-        {
-            if ( EncodeS(LoginInput.Text) == Properties.Settings.Default.Login )
+                usersTableAdapter1.UpdatePasswordByID(EncodeS(newPass), UserID);
+                PasswordInput.Text = newPass;
+                PasswordInput.PasswordChar = '\0';
+                return;
+            }
+            DbDataSet.UsersDataTable dt = new  DbDataSet.UsersDataTable ();
+            usersTableAdapter1.GetUserByLoginAndPassword(dt, LoginInput.Text, EncodeS(PasswordInput.Text));
+
+            if ( dt.Rows.Count > 0 )
             {
-                ChangeLoginPassword f = new ChangeLoginPassword();
-                bool b = false;
-                Hide();
-                while ( !b  )
+                DataRow dr = dt.Rows [ 0 ];
+                if ( dr.Field<String>("Permissions").Contains("admin") )
                 {
-                    if ( f.ShowDialog() == DialogResult.OK )
-                    {
-                        if ( EncodeS(f.OldPasswordInput.Text) == Properties.Settings.Default.Password )
-                        {
-                            Properties.Settings.Default.Password = EncodeS(f.NewPasswordInput.Text);
-                            Properties.Settings.Default.Save();
-                            b = true;
-                            MessageBox.Show("Пароль успешно изменён!");
-                        }
-                        else MessageBox.Show("Вы ввели не верный старый пароль, повторите попытку.");
+                    MessageBox.Show("У вас есть доступ к админке, переходим на неё");
 
-                    }
-                    else b = true;
+                    //Program.Context.MainForm = new AdminForm();
+
+                    //Program.Context.MainForm.Show();
+                    //Close();
                 }
-                Show();
-                
+                else
+                {
+                    MainProgram.Context.MainForm = new SalaryProjectForm();
+                    Close();
+                    MainProgram.Context.MainForm.Show();
+                }
             }
-            else MessageBox.Show("Введите верный логин!");
-                
+            else MessageBox.Show("Проверьте правильность вводимых данных");
+
         }
+        // СТАРАЯ КНОПКА СМЕНЫ ПАРОЛЯ
+        //private void TestingButton_Click(object sender, EventArgs e)
+        //{
+        //    if ( EncodeS(LoginInput.Text) == Properties.Settings.Default.Login )
+        //    {
+        //        ChangeLoginPassword f = new ChangeLoginPassword();
+        //        bool b = false;
+        //        Hide();
+        //        while ( !b  )
+        //        {
+        //            if ( f.ShowDialog() == DialogResult.OK )
+        //            {
+        //                if ( EncodeS(f.OldPasswordInput.Text) == Properties.Settings.Default.Password )
+        //                {
+        //                    Properties.Settings.Default.Password = EncodeS(f.NewPasswordInput.Text);
+        //                    Properties.Settings.Default.Save();
+        //                    b = true;
+        //                    MessageBox.Show("Пароль успешно изменён!");
+        //                }
+        //                else MessageBox.Show("Вы ввели не верный старый пароль, повторите попытку.");
+
+        //            }
+        //            else b = true;
+        //        }
+        //        Show();
+                
+        //    }
+        //    else MessageBox.Show("Введите верный логин!");
+                
+        //}
         private string EncodeS(string PasswordInput)
         {
             byte[] Bytes = System.Text.Encoding.UTF8.GetBytes(PasswordInput); //Из строки в массив байтов
