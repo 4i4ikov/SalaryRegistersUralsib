@@ -1,4 +1,6 @@
-﻿namespace SalaryRegistersUralsib
+﻿using SalaryRegistersUralsib.bd;
+
+namespace SalaryRegistersUralsib
 {
     partial class Organizations
     {
@@ -51,7 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CurOGRN = new SalaryRegistersUralsib.CueTextBox();
             this.OrgBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbDataSet = new SalaryRegistersUralsib.DbDataSet();
+            this.dbDataSet = new SalaryRegistersUralsib.bd.DbDataSet();
             this.CurINN = new SalaryRegistersUralsib.CueTextBox();
             this.CurBIK = new SalaryRegistersUralsib.CueTextBox();
             this.cueTextBox11 = new SalaryRegistersUralsib.CueTextBox();
@@ -200,11 +202,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
-            this.workersTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.WorkersTableAdapter();
-            this.tableAdapterManager = new SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager();
-            this.cardTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.CardTableAdapter();
-            this.enrollmentsTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.EnrollmentsTableAdapter();
-            this.organizationsTableAdapter1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.OrganizationsTableAdapter();
+            this.workersTableAdapter = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.WorkersTableAdapter();
+            this.tableAdapterManager = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.TableAdapterManager();
+            this.cardTableAdapter = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.CardTableAdapter();
+            this.enrollmentsTableAdapter = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.EnrollmentsTableAdapter();
+            this.organizationsTableAdapter1 = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.OrganizationsTableAdapter();
             this.tabRequisites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
@@ -1800,6 +1802,7 @@
             this.tabFire.Padding = new System.Windows.Forms.Padding(3);
             this.tabFire.Size = new System.Drawing.Size(806, 394);
             this.tabFire.TabIndex = 9;
+            this.tabFire.Tag = "5";
             this.tabFire.Text = "Увольнение";
             this.tabFire.UseVisualStyleBackColor = true;
             // 
@@ -1935,7 +1938,8 @@
             this.tableAdapterManager.CardTableAdapter = null;
             this.tableAdapterManager.EnrollmentsTableAdapter = null;
             this.tableAdapterManager.OrganizationsTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = SalaryRegistersUralsib.bd.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsersTableAdapter = null;
             this.tableAdapterManager.WorkersTableAdapter = this.workersTableAdapter;
             // 
             // cardTableAdapter
@@ -2002,10 +2006,10 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label5;
         private DbDataSet dbDataSet;
-        private DbDataSetTableAdapters.WorkersTableAdapter workersTableAdapter;
-        private DbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private bd.DbDataSetTableAdapters.WorkersTableAdapter workersTableAdapter;
+        private bd.DbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         internal System.Windows.Forms.BindingSource workersBindingSource;
-        private DbDataSetTableAdapters.CardTableAdapter cardTableAdapter;
+        private bd.DbDataSetTableAdapters.CardTableAdapter cardTableAdapter;
         private System.Windows.Forms.Button ExportButton;
         internal System.Windows.Forms.BindingSource cardBindingSource;
         private System.Windows.Forms.TabPage tabRequisites;
@@ -2021,7 +2025,7 @@
         public System.Windows.Forms.DataGridView workersDataGridView;
         internal System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabEnrollments;
-        private DbDataSetTableAdapters.EnrollmentsTableAdapter enrollmentsTableAdapter;
+        private bd.DbDataSetTableAdapters.EnrollmentsTableAdapter enrollmentsTableAdapter;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.BindingSource enrollmentsBindingSource;
         private System.Windows.Forms.Button button8;
@@ -2048,7 +2052,7 @@
         public System.Windows.Forms.DataGridView GridView5;
         public System.Windows.Forms.BindingSource UvalBindingSource;
         private CueTextBox CurOrgName;
-        private DbDataSetTableAdapters.OrganizationsTableAdapter organizationsTableAdapter1;
+        private bd.DbDataSetTableAdapters.OrganizationsTableAdapter organizationsTableAdapter1;
         public System.Windows.Forms.BindingSource OrgBindingSource;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Label label3;

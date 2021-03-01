@@ -1,4 +1,4 @@
-﻿using SalaryRegistersUralsib.DbDataSetTableAdapters;
+﻿using SalaryRegistersUralsib.bd.DbDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -71,7 +71,7 @@ namespace SalaryRegistersUralsib
             f.label5.Text = orgKey;
             f.Text = str + " - " + orgKey; //Название окна = Текущая организация + Код организации
 
-            //Фильтр таблицы сотрудников по текущей организации
+            //Фильтр таблиц по текущей организации
             f.workersBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.cardBindingSource.Filter = "Org_key = '" + orgKey + "'";
             f.OrgBindingSource.Filter = "org_key = '" + orgKey + "'";
@@ -84,9 +84,9 @@ namespace SalaryRegistersUralsib
 
 
             MainProgram.Context.MainForm = f;//смена главной формы
-            Close();//закрытие текущей формы
+            
             MainProgram.Context.MainForm.Show();//открытие главной формы
-
+            Close();//закрытие текущей формы
         }
 
 

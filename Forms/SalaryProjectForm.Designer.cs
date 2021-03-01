@@ -1,4 +1,6 @@
-﻿namespace SalaryRegistersUralsib
+﻿using SalaryRegistersUralsib.bd;
+
+namespace SalaryRegistersUralsib
 {
     partial class SalaryProjectForm
     {
@@ -31,9 +33,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.organizationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbDataSet = new SalaryRegistersUralsib.DbDataSet();
-            this.organizationsTableAdapter1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.OrganizationsTableAdapter();
-            this.tableAdapterManager = new SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager();
+            this.dbDataSet = new SalaryRegistersUralsib.bd.DbDataSet();
+            this.organizationsTableAdapter1 = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.OrganizationsTableAdapter();
+            this.tableAdapterManager = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.TableAdapterManager();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.выбратьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,7 +83,7 @@
             this.tableAdapterManager.CardTableAdapter = null;
             this.tableAdapterManager.EnrollmentsTableAdapter = null;
             this.tableAdapterManager.OrganizationsTableAdapter = this.organizationsTableAdapter1;
-            this.tableAdapterManager.UpdateOrder = SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = SalaryRegistersUralsib.bd.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableAdapter = null;
             this.tableAdapterManager.WorkersTableAdapter = null;
             // 
@@ -312,8 +314,8 @@
         #endregion
         private DbDataSet dbDataSet;
         private System.Windows.Forms.BindingSource organizationsBindingSource;
-        private DbDataSetTableAdapters.OrganizationsTableAdapter organizationsTableAdapter1;
-        private DbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private bd.DbDataSetTableAdapters.OrganizationsTableAdapter organizationsTableAdapter1;
+        private bd.DbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem выбратьToolStripMenuItem;

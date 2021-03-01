@@ -1,4 +1,5 @@
-﻿using SalaryRegistersUralsib.DbDataSetTableAdapters;
+﻿using SalaryRegistersUralsib.bd;
+using SalaryRegistersUralsib.bd.DbDataSetTableAdapters;
 using SalaryRegistersUralsib.Forms;
 
 using System;
@@ -52,11 +53,9 @@ namespace SalaryRegistersUralsib
                 if ( dr.Field<String>("Permissions").Contains("admin") )
                 {
                     MessageBox.Show("У вас есть доступ к админке, переходим на неё");
-
-                    //Program.Context.MainForm = new AdminForm();
-
-                    //Program.Context.MainForm.Show();
-                    //Close();
+                    MainProgram.Context.MainForm = new FormAdmin();
+                    Close();
+                    MainProgram.Context.MainForm.Show();
                 }
                 else
                 {

@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SalaryRegistersUralsib {
+namespace SalaryRegistersUralsib.bd {
     
     
     /// <summary>
@@ -5637,7 +5637,7 @@ namespace SalaryRegistersUralsib {
         }
     }
 }
-namespace SalaryRegistersUralsib.DbDataSetTableAdapters {
+namespace SalaryRegistersUralsib.bd.DbDataSetTableAdapters {
     
     
     /// <summary>

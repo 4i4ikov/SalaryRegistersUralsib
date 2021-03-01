@@ -139,6 +139,12 @@
     <Compile Include="Forms\ChangeLoginPassword.Designer.cs">
       <DependentUpon>ChangeLoginPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAuth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,10 +152,10 @@
       <DependentUpon>FormAuth.cs</DependentUpon>
     </Compile>
     <Compile Include="DataGridViewExt.cs" />
-    <Compile Include="DbDataSet.cs">
+    <Compile Include="bd\DbDataSet.cs">
       <DependentUpon>DbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DbDataSet.Designer.cs">
+    <Compile Include="bd\DbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DbDataSet.xsd</DependentUpon>
@@ -219,6 +225,9 @@
     <EmbeddedResource Include="Forms\ChangeLoginPassword.resx">
       <DependentUpon>ChangeLoginPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAuth.resx">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,15 +266,15 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DbDataSet.xsc">
+    <None Include="bd\DbDataSet.xsc">
       <DependentUpon>DbDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DbDataSet.xsd">
+    <None Include="bd\DbDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DbDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DbDataSet.xss">
+    <None Include="bd\DbDataSet.xss">
       <DependentUpon>DbDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\app.manifest" />
@@ -288,7 +297,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdb">
+    <Content Include="bd\Database1.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Icon1.ico" />

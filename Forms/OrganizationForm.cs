@@ -34,6 +34,9 @@ namespace SalaryRegistersUralsib
             organizationsTableAdapter1.Fill(dbDataSet.Organizations);
             tabControl1.SelectedIndex = 6;
             tabControl1.SelectedIndex = 0;
+            tabControl1.TabPages.Remove(tabEnrollments);
+            tabControl1.TabPages.Remove(tabCardEnrollments);
+            tabControl1.TabPages.Remove(tabReestr);
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -281,18 +284,24 @@ namespace SalaryRegistersUralsib
 
         private void Organizations_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // сохранение таблицы с зачислениями при закрытии
+            // сохранение таблиц ПОСЛЕ закрытия формы
+            workersBindingSource.EndEdit();
+            cardBindingSource.EndEdit();
             OrgBindingSource.EndEdit();
             enrollmentsBindingSource.EndEdit();
+
+            workersTableAdapter.Update(dbDataSet.Workers);
+            cardTableAdapter.Update(dbDataSet.Card);
             enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
             organizationsTableAdapter1.Update(dbDataSet.Organizations);
+
             tableAdapterManager.UpdateAll(dbDataSet);
             dbDataSet.AcceptChanges();
         }
 
         private void enrollmentsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // кнопка для удаления записи
+            // кнопка для удаления записи, ибо в данных таблицах режим выбора "Только ячейка", а не "Вся строка"
             DataGridView dg = (DataGridView)sender;
             if ( !dg.CurrentRow.IsNewRow && dg.Columns [ e.ColumnIndex ].HeaderText == "Удалить" )
             {
@@ -304,8 +313,9 @@ namespace SalaryRegistersUralsib
         {
             //кнопка назад
             MainProgram.Context.MainForm = new SalaryProjectForm();
+            MainProgram.Context.MainForm.Show(); 
             Close();
-            MainProgram.Context.MainForm.Show();
+            
         }
 
         private void Button_LoadFromDOS_Click(object sender, EventArgs e)
@@ -556,7 +566,7 @@ namespace SalaryRegistersUralsib
 
             {
 
-                DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedIndex ] as DataGridView;//текущая таблица
+                DataGridView d = tabControl1.SelectedTab.Controls [ "GridView" + tabControl1.SelectedTab.Tag.ToString() ] as DataGridView;//текущая таблица
 
                 string z = ( CurOrgDesc.Text == "+" ) ? "Z":" ";//дескриптор
 

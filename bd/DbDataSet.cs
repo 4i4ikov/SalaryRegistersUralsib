@@ -1,4 +1,4 @@
-﻿namespace SalaryRegistersUralsib
+﻿namespace SalaryRegistersUralsib.bd
 {
 
 
@@ -14,7 +14,7 @@
     }
 }
 
-namespace SalaryRegistersUralsib.DbDataSetTableAdapters
+namespace SalaryRegistersUralsib.bd.DbDataSetTableAdapters
 {
     partial class EnrollmentsTableAdapter
     {
