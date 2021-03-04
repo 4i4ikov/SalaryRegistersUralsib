@@ -185,5 +185,12 @@ namespace SalaryRegistersUralsib
             
             
         }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainProgram.Context.MainForm = new AuthForm();
+            Close();
+            MainProgram.Context.MainForm.Show();
+        }
     }
 }

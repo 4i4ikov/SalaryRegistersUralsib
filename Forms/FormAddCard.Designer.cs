@@ -304,12 +304,13 @@
             this.Card_NLAbel.Tag = "Номер карты";
             this.Card_NLAbel.Text = "Номер карты*";
             this.Card_NLAbel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Card_NLAbel.Visible = false;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.Location = new System.Drawing.Point(476, 205);
+            this.label25.Location = new System.Drawing.Point(323, 205);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(46, 16);
             this.label25.TabIndex = 89;
@@ -474,12 +475,12 @@
             this.Email.CueText = "me@example.com";
             this.Email.HidePromptOnLeave = true;
             this.Email.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.Email.Location = new System.Drawing.Point(479, 221);
+            this.Email.Location = new System.Drawing.Point(323, 221);
             this.Email.Name = "Email";
             this.Email.PromptChar = ' ';
             this.Email.RegEx = resources.GetString("Email.RegEx");
             this.Email.Required = false;
-            this.Email.Size = new System.Drawing.Size(150, 20);
+            this.Email.Size = new System.Drawing.Size(306, 20);
             this.Email.TabIndex = 24;
             this.Email.Tag = "Электронная почта";
             // 
@@ -493,10 +494,11 @@
             this.Card_N.Name = "Card_N";
             this.Card_N.PromptChar = ' ';
             this.Card_N.RegEx = "^[\\d\\. ]+$";
-            this.Card_N.Required = true;
+            this.Card_N.Required = false;
             this.Card_N.Size = new System.Drawing.Size(150, 20);
             this.Card_N.TabIndex = 23;
             this.Card_N.Tag = "Номер карты";
+            this.Card_N.Visible = false;
             // 
             // Bank_Code
             // 

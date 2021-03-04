@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -34,9 +35,10 @@ namespace SalaryRegistersUralsib
             organizationsTableAdapter1.Fill(dbDataSet.Organizations);
             tabControl1.SelectedIndex = 6;
             tabControl1.SelectedIndex = 0;
-            tabControl1.TabPages.Remove(tabEnrollments);
-            tabControl1.TabPages.Remove(tabCardEnrollments);
-            tabControl1.TabPages.Remove(tabReestr);
+            //tabControl1.TabPages.Remove(tabEnrollments);
+            //tabControl1.TabPages.Remove(tabCardEnrollments);
+            //tabControl1.TabPages.Remove(tabReestr);
+
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -157,9 +159,20 @@ namespace SalaryRegistersUralsib
         private void AddCardButton_Click(object sender, EventArgs e)
         {
 
+
+            Dictionary<string, string> c = workersDataGridView.GetCellsPls();
+            if ( c.Count == 0 )
+            {
+                MessageBox.Show("Сначала добавьте сотрудника.");
+                return;
+            }
+            if ( c [ "Fired" ] == "True" )
+            {
+                DialogResult dialogResult = MessageBox.Show("Вы пытаетесь добавить карту уволенному сотруднику\nПродолжить?", " Подтверждение добавления карты уволенному сотруднику", MessageBoxButtons.YesNo);
+                if ( dialogResult == DialogResult.No ) return;
+            }
+
             FormAddCard f = new FormAddCard();
-            Dictionary<string, string> c = workersDataGridView.GetCellsPls()
-            ;
             foreach ( KeyValuePair<string, string> kvp in c )
             {
                 if ( kvp.Key != "WBirth" )
@@ -171,6 +184,10 @@ namespace SalaryRegistersUralsib
                     f.Controls [ kvp.Key ].Text = kvp.Value.Split(' ') [ 0 ];//Если данные хранятся в формате дата+ВРЕМЯ(пробел между ними), а нам нужна только дата
                 }
             }
+
+            //TODO: ИСПРАВИТЬ КОСТЫЛЬ
+            f.Card_N.Text = new Random().Next(100000000, 999999999).ToString();//закидываем рандомный номер карты, ибо он используется только в бд
+
             if ( f.ShowDialog() == DialogResult.OK )
             {
                 try
@@ -242,13 +259,6 @@ namespace SalaryRegistersUralsib
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            // Сохранение данных в бд простым способом
-            enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
-            enrollmentsTableAdapter.Fill(dbDataSet.Enrollments);
-        }
-
         private void button1_Click_2(object sender, EventArgs e)
         {
             //сброс изменений простой перезагрузкой значений из бд
@@ -282,23 +292,6 @@ namespace SalaryRegistersUralsib
             view.Rows [ e.RowIndex ].Cells [ e.ColumnIndex ].ErrorText = String.Empty;
         }
 
-        private void Organizations_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            // сохранение таблиц ПОСЛЕ закрытия формы
-            workersBindingSource.EndEdit();
-            cardBindingSource.EndEdit();
-            OrgBindingSource.EndEdit();
-            enrollmentsBindingSource.EndEdit();
-
-            workersTableAdapter.Update(dbDataSet.Workers);
-            cardTableAdapter.Update(dbDataSet.Card);
-            enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
-            organizationsTableAdapter1.Update(dbDataSet.Organizations);
-
-            tableAdapterManager.UpdateAll(dbDataSet);
-            dbDataSet.AcceptChanges();
-        }
-
         private void enrollmentsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // кнопка для удаления записи, ибо в данных таблицах режим выбора "Только ячейка", а не "Вся строка"
@@ -313,9 +306,9 @@ namespace SalaryRegistersUralsib
         {
             //кнопка назад
             MainProgram.Context.MainForm = new SalaryProjectForm();
-            MainProgram.Context.MainForm.Show(); 
-            Close();
             
+            Close();
+            MainProgram.Context.MainForm.Show();
         }
 
         private void Button_LoadFromDOS_Click(object sender, EventArgs e)
@@ -343,7 +336,7 @@ namespace SalaryRegistersUralsib
                             m.Add(str.Trim());//добавление полученной строки в массив
                         }
                         Random r = new Random();
-                        m.Add(r.Next(100000000, 999999999).ToString());//рандомный номер карты
+                        m.Add(r.Next(100000000, 999999999).ToString());//рандомный номер карты, ибо он кроме как в бд нигде не используется .-.
                         m.Add(label5.Text);//код организации
                         m.Add(r.Next(100).ToString());//рандомный код работника
                         dbDataSet.Card.Rows.Add(m.ToArray());//добавление строки в бд
@@ -400,12 +393,12 @@ namespace SalaryRegistersUralsib
                 {
                     if ( !row.IsNewRow )//если не новая строка
                     {
-                        str += !Convert.IsDBNull(row.Cells [ 0 ].Value) ? row.Cells [ 0 ].Value.ToString().PadRight(20) : new string(' ', 20) ;//таб номер
+                        str += !Convert.IsDBNull(row.Cells [ 0 ].Value) ? row.Cells [ 0 ].Value.ToString().PadRight(20) : new string(' ', 20);//таб номер
 
                         str += String.Format("{0:0.00}",
                             Convert.ToSingle(Convert.IsDBNull(row.Cells [ 6 ].Value) ? "0,00" : row.Cells [ 6 ].Value)).Replace(",", ".").PadLeft(12);//сумма зачисл
 
-                        str += (!Convert.IsDBNull(row.Cells [ 7 ].Value)) ? "0" + row.Cells [ 7 ].Value.ToString().PadLeft(1) : "  ";//вид вида выплаты
+                        str += ( !Convert.IsDBNull(row.Cells [ 7 ].Value) ) ? "0" + row.Cells [ 7 ].Value.ToString().PadLeft(1) : "  ";//вид вида выплаты
 
                         str += String.Format("{0:0.00}", Convert.ToSingle(Convert.IsDBNull(row.Cells [ 8 ].Value) ? "0,00" : row.Cells [ 8 ].Value)).Replace(",", ".").PadLeft(12);//сумма удерж
                         str += row.Cells [ 9 ].Value.ToString().PadLeft(1);//код вида дохода
@@ -430,7 +423,7 @@ namespace SalaryRegistersUralsib
                 for ( int i = 1; i <= int.Parse(text [ 0 ].Substring(0, 5).Trim()); i++ )//перебор строк файла по количеству из него
                 {
                     string tableNum = text[i].Substring(0,20).Trim();//табельный номер
-                    
+
                     Single.TryParse(text [ i ].Substring(20, 12).Replace('.', ','), out float sum);
                     Single.TryParse(text [ i ].Substring(34, 12).Replace('.', ','), out float uderzh);//сумма удерж
                     string paytypecode = text [ i ].Substring(32, 2).Trim();//вид выплаты
@@ -625,6 +618,66 @@ namespace SalaryRegistersUralsib
             //    MessageBox.Show("Ошибка чтения файла.");
             //    Debug.WriteLine(ex.Message);
             //}
+        }
+
+        private void AddCardButton_Click_1(object sender, EventArgs e)
+        {
+            label11.Visible = button2.Visible = true;
+            label11.ForeColor = button2.ForeColor = Color.Red;
+            tabControl1.SelectedIndex = 0;
+        }
+
+        private void workersDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+
+            DataGridView dd = sender as DataGridView;
+
+
+            if ( dd.SelectedRows.Count > 0 && !dd.SelectedRows [ 0 ].IsNewRow )
+            {
+                AddNewButton.Visible = false;
+                tabControl1.Enabled = true;
+
+                string FIO, Tab_n, uval = String.Empty;
+                DataGridViewCellCollection cells = dd.SelectedRows [ 0 ].Cells;
+                FIO = cells [ 0 ].Value.ToString() + " " + cells [ 1 ].Value.ToString() + " " + cells [ 2 ].Value.ToString();
+                Tab_n = cells [ "wBillnumDataGridViewTextBoxColumn" ].Value.ToString();
+                Tab_n = String.IsNullOrWhiteSpace(Tab_n) ? "пуст" : Tab_n;
+                uval = ( (bool)cells [ "firedDataGridViewCheckBoxColumn" ].Value ) ? "уволен" : "не уволен";
+                toolStripStatusLabel1.Text = string.Format("Сотрудник: {0}, табельный номер: {1}, {2}", FIO, Tab_n, uval);
+                //string org_Key = dd.SelectedRows[0].Cells["orgkeyDataGridViewTextBoxColumn"].Value.ToString() ?? String.Empty;
+                //string org = dd.SelectedRows[0].Cells["organizationDataGridViewTextBoxColumn"].Value.ToString() ?? String.Empty;
+                //int? arg1 = new WorkersTableAdapter().GetWorkersCount(org_Key);
+                //int? arg2 = new CardTableAdapter().GetCardsCount(org_Key);
+                //toolStripStatusLabel1.Text = string.Format("{0}, {1} сотр., {2} карт.", org, arg1, arg2);
+            }
+            else
+            {
+                AddNewButton.Visible = true;
+                tabControl1.Enabled = false;
+            }
+
+        }
+
+        private void Organizations_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Сохранить изменения?", "Сохранение изменений", MessageBoxButtons.YesNo);
+            if ( dialogResult == DialogResult.Yes )
+            {
+                // сохранение таблиц ВО ВРЕМЯ закрытия формы
+                workersBindingSource.EndEdit();
+                cardBindingSource.EndEdit();
+                OrgBindingSource.EndEdit();
+                enrollmentsBindingSource.EndEdit();
+
+                workersTableAdapter.Update(dbDataSet.Workers);
+                cardTableAdapter.Update(dbDataSet.Card);
+                enrollmentsTableAdapter.Update(dbDataSet.Enrollments);
+                organizationsTableAdapter1.Update(dbDataSet.Organizations);
+
+                tableAdapterManager.UpdateAll(dbDataSet);
+                dbDataSet.AcceptChanges();
+            }
         }
     }
 }

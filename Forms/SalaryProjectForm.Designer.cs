@@ -56,6 +56,7 @@ namespace SalaryRegistersUralsib
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.organizationsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -218,7 +219,8 @@ namespace SalaryRegistersUralsib
             this.toolStripMenuItem4,
             this.редактироватьToolStripMenuItem,
             this.удалитьToolStripMenuItem,
-            this.toolStripMenuItem5});
+            this.toolStripMenuItem5,
+            this.выйтиToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(801, 24);
@@ -287,6 +289,15 @@ namespace SalaryRegistersUralsib
             this.toolStripStatusLabel1.Spring = true;
             this.toolStripStatusLabel1.Text = "Строка состояния";
             // 
+            // выйтиToolStripMenuItem
+            // 
+            this.выйтиToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
+            this.выйтиToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.выйтиToolStripMenuItem.Text = "Выйти";
+            this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
+            // 
             // SalaryProjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,6 +347,7 @@ namespace SalaryRegistersUralsib
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
     }
 }
 
