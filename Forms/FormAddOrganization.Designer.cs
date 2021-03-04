@@ -78,17 +78,15 @@
             // 
             // textBox2
             // 
-            this.textBox2.CueText = "4 английских буквы";
+            this.textBox2.CueText = "";
             this.textBox2.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
             this.textBox2.Location = new System.Drawing.Point(335, 43);
-            this.textBox2.Mask = "????";
             this.textBox2.Name = "textBox2";
-            this.textBox2.RegEx = "^[A-Z]{4}$";
+            this.textBox2.RegEx = "^[a-zA-Z\\dа-яА-Я]+$";
             this.textBox2.Required = true;
             this.textBox2.Size = new System.Drawing.Size(270, 20);
             this.textBox2.TabIndex = 2;
             this.textBox2.Tag = "Код организации";
-            this.toolTip1.SetToolTip(this.textBox2, "ВВЕДИТЕ 4 АНГЛИЙСКИХ БУКВЫ ПОЖАЛУЙСТА, НЕ БОЛЬШЕ НЕ МЕНЬШЕ");
             // 
             // checkBox1
             // 

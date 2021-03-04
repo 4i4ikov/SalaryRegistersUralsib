@@ -12,7 +12,7 @@ namespace SalaryRegistersUralsib
         public List<string> Doc { get; set; }
         public List<string> Doc2 { get; set; }
 
-
+        //TODO СДЕЛАТЬ ТИП КАРТЫ КАК В ЭКСЕле
 
         public FormAddCard()
         {

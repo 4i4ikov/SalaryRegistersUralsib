@@ -1,5 +1,5 @@
-﻿using SalaryRegistersUralsib.bd;
-using SalaryRegistersUralsib.bd.DbDataSetTableAdapters;
+﻿
+using SalaryRegistersUralsib.DbDataSetTableAdapters;
 using SalaryRegistersUralsib.Forms;
 
 using System;
@@ -31,21 +31,21 @@ namespace SalaryRegistersUralsib
 
         private void AuthButton_Click(object sender, EventArgs e)
         {
-            UsersTableAdapter usersTableAdapter1 = new UsersTableAdapter();
-            int UserID = usersTableAdapter1.GetPasswordReset(LoginInput.Text) ?? 0;
+            
+            int UserID = new UsersTableAdapter().GetPasswordReset(LoginInput.Text) ?? 0;
             if ( UserID != 0 )
             {
                 string newPass =  GeneratePassword(12);
 
                 MessageBox.Show("Выполнен сброс пароля, пожалуйста, сохраните его!");
 
-                usersTableAdapter1.UpdatePasswordByID(EncodeS(newPass), UserID);
+                new UsersTableAdapter().UpdatePasswordByID(EncodeS(newPass), UserID);
                 PasswordInput.Text = newPass;
                 PasswordInput.PasswordChar = '\0';
                 return;
             }
             DbDataSet.UsersDataTable dt = new  DbDataSet.UsersDataTable ();
-            usersTableAdapter1.GetUserByLoginAndPassword(dt, LoginInput.Text, EncodeS(PasswordInput.Text));
+            new UsersTableAdapter().GetUserByLoginAndPassword(dt, LoginInput.Text, EncodeS(PasswordInput.Text));
 
             if ( dt.Rows.Count > 0 )
             {

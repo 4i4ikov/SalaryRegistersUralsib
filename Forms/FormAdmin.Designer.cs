@@ -47,10 +47,10 @@ namespace SalaryRegistersUralsib.Forms
             this.usersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.dbDataSet1 = new SalaryRegistersUralsib.bd.DbDataSet();
-            this.usersTableAdapter1 = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.UsersTableAdapter();
-            this.tableAdapterManager1 = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.TableAdapterManager();
-            this.enrollmentsTableAdapter = new SalaryRegistersUralsib.bd.DbDataSetTableAdapters.EnrollmentsTableAdapter();
+            this.dbDataSet1 = new SalaryRegistersUralsib.DbDataSet();
+            this.usersTableAdapter1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.UsersTableAdapter();
+            this.tableAdapterManager1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager();
+            this.enrollmentsTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.EnrollmentsTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -236,7 +236,7 @@ namespace SalaryRegistersUralsib.Forms
             this.tableAdapterManager1.CardTableAdapter = null;
             this.tableAdapterManager1.EnrollmentsTableAdapter = this.enrollmentsTableAdapter;
             this.tableAdapterManager1.OrganizationsTableAdapter = null;
-            this.tableAdapterManager1.UpdateOrder = SalaryRegistersUralsib.bd.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.UpdateOrder = SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.UsersTableAdapter = this.usersTableAdapter1;
             this.tableAdapterManager1.WorkersTableAdapter = null;
             // 
@@ -314,10 +314,10 @@ namespace SalaryRegistersUralsib.Forms
         private System.Windows.Forms.BindingNavigator usersBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.Label label1;
-        private bd.DbDataSet dbDataSet1;
-        private bd.DbDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
-        private bd.DbDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
-        private bd.DbDataSetTableAdapters.EnrollmentsTableAdapter enrollmentsTableAdapter;
+        private DbDataSet dbDataSet1;
+        private DbDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
+        private DbDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private DbDataSetTableAdapters.EnrollmentsTableAdapter enrollmentsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;

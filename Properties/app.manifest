@@ -3,7 +3,7 @@
   <assemblyIdentity version="1.0.0.0" name="MyApplication.app" />
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
     <security>
-      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+      <!--<requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">-->
         <!-- Параметры манифеста UAC
              Если вы хотите изменить уровень контроля учетных записей Windows, замените узел 
              requestedExecutionLevel на один из следующих.
@@ -16,8 +16,8 @@
             Удалите этот элемент, если виртуализация требуется приложению для обратной
             совместимости.
         -->
-        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
-      </requestedPrivileges>
+        <!--<requestedExecutionLevel level="asInvoker" uiAccess="false" />-->
+      <!--</requestedPrivileges>-->
       <applicationRequestMinimum>
         <PermissionSet class="System.Security.PermissionSet" version="1" Unrestricted="true" ID="Custom" SameSite="site" />
         <defaultAssemblyRequest permissionSetReference="Custom" />

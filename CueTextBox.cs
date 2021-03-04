@@ -155,5 +155,12 @@ namespace SalaryRegistersUralsib
             }
 
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            this.ResumeLayout(false);
+
+        }
     }
 }
