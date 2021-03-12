@@ -51,8 +51,20 @@ namespace SalaryRegistersUralsib
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.CurOGRN = new SalaryRegistersUralsib.CueTextBox();
             this.OrgBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbDataSet = new SalaryRegistersUralsib.DbDataSet();
+            this.CurINN = new SalaryRegistersUralsib.CueTextBox();
+            this.CurBIK = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox11 = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox4 = new SalaryRegistersUralsib.CueTextBox();
+            this.CurBankPodr = new SalaryRegistersUralsib.CueTextBox();
+            this.CurOrgDesc = new SalaryRegistersUralsib.CueTextBox();
+            this.CurBank = new SalaryRegistersUralsib.CueTextBox();
+            this.cueTextBox5 = new SalaryRegistersUralsib.CueTextBox();
+            this.CurBill = new SalaryRegistersUralsib.CueTextBox();
+            this.CurOrgKey = new SalaryRegistersUralsib.CueTextBox();
+            this.CurOrgName = new SalaryRegistersUralsib.CueTextBox();
             this.tabReestr = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -90,6 +102,7 @@ namespace SalaryRegistersUralsib
             this.del1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CardEnrollmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabCardOpen = new System.Windows.Forms.TabPage();
+            this.AddCardButton = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.GridView1 = new System.Windows.Forms.DataGridView();
@@ -144,8 +157,10 @@ namespace SalaryRegistersUralsib
             this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Button_DOS = new System.Windows.Forms.Button();
             this.tabWorkers = new System.Windows.Forms.TabPage();
-            this.FireButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.FireButton = new System.Windows.Forms.Button();
             this.workersDataGridView = new System.Windows.Forms.DataGridView();
             this.wSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -194,23 +209,8 @@ namespace SalaryRegistersUralsib
             this.cardTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.CardTableAdapter();
             this.enrollmentsTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.EnrollmentsTableAdapter();
             this.organizationsTableAdapter1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.OrganizationsTableAdapter();
-            this.AddCardButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.CurOGRN = new SalaryRegistersUralsib.CueTextBox();
-            this.CurINN = new SalaryRegistersUralsib.CueTextBox();
-            this.CurBIK = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox11 = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox4 = new SalaryRegistersUralsib.CueTextBox();
-            this.CurBankPodr = new SalaryRegistersUralsib.CueTextBox();
-            this.CurOrgDesc = new SalaryRegistersUralsib.CueTextBox();
-            this.CurBank = new SalaryRegistersUralsib.CueTextBox();
-            this.cueTextBox5 = new SalaryRegistersUralsib.CueTextBox();
-            this.CurBill = new SalaryRegistersUralsib.CueTextBox();
-            this.CurOrgKey = new SalaryRegistersUralsib.CueTextBox();
-            this.CurOrgName = new SalaryRegistersUralsib.CueTextBox();
             this.AddNewButton = new System.Windows.Forms.Button();
             this.tabRequisites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrgBindingSource)).BeginInit();
@@ -468,6 +468,18 @@ namespace SalaryRegistersUralsib
             this.label3.Text = "Организация";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // CurOGRN
+            // 
+            this.CurOGRN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurOGRN.CueText = null;
+            this.CurOGRN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "OGRN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurOGRN.Location = new System.Drawing.Point(332, 236);
+            this.CurOGRN.Name = "CurOGRN";
+            this.CurOGRN.RegEx = null;
+            this.CurOGRN.Required = false;
+            this.CurOGRN.Size = new System.Drawing.Size(278, 20);
+            this.CurOGRN.TabIndex = 4;
+            // 
             // OrgBindingSource
             // 
             this.OrgBindingSource.DataMember = "Organizations";
@@ -478,6 +490,139 @@ namespace SalaryRegistersUralsib
             // 
             this.dbDataSet.DataSetName = "DbDataSet";
             this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // CurINN
+            // 
+            this.CurINN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurINN.CueText = null;
+            this.CurINN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_INN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurINN.Location = new System.Drawing.Point(332, 210);
+            this.CurINN.Name = "CurINN";
+            this.CurINN.RegEx = null;
+            this.CurINN.Required = false;
+            this.CurINN.Size = new System.Drawing.Size(278, 20);
+            this.CurINN.TabIndex = 4;
+            // 
+            // CurBIK
+            // 
+            this.CurBIK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurBIK.CueText = null;
+            this.CurBIK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BIK", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurBIK.Location = new System.Drawing.Point(332, 340);
+            this.CurBIK.Name = "CurBIK";
+            this.CurBIK.RegEx = null;
+            this.CurBIK.Required = false;
+            this.CurBIK.Size = new System.Drawing.Size(278, 20);
+            this.CurBIK.TabIndex = 4;
+            // 
+            // cueTextBox11
+            // 
+            this.cueTextBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox11.CueText = null;
+            this.cueTextBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager_d", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox11.Location = new System.Drawing.Point(332, 135);
+            this.cueTextBox11.Name = "cueTextBox11";
+            this.cueTextBox11.RegEx = null;
+            this.cueTextBox11.Required = false;
+            this.cueTextBox11.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox11.TabIndex = 4;
+            // 
+            // cueTextBox4
+            // 
+            this.cueTextBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox4.CueText = null;
+            this.cueTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox4.Location = new System.Drawing.Point(332, 109);
+            this.cueTextBox4.Name = "cueTextBox4";
+            this.cueTextBox4.RegEx = null;
+            this.cueTextBox4.Required = false;
+            this.cueTextBox4.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox4.TabIndex = 4;
+            // 
+            // CurBankPodr
+            // 
+            this.CurBankPodr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurBankPodr.CueText = null;
+            this.CurBankPodr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BankUnit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurBankPodr.Location = new System.Drawing.Point(332, 314);
+            this.CurBankPodr.Name = "CurBankPodr";
+            this.CurBankPodr.RegEx = null;
+            this.CurBankPodr.Required = false;
+            this.CurBankPodr.Size = new System.Drawing.Size(278, 20);
+            this.CurBankPodr.TabIndex = 4;
+            // 
+            // CurOrgDesc
+            // 
+            this.CurOrgDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurOrgDesc.CueText = null;
+            this.CurOrgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Descriptor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurOrgDesc.Location = new System.Drawing.Point(332, 83);
+            this.CurOrgDesc.Name = "CurOrgDesc";
+            this.CurOrgDesc.RegEx = null;
+            this.CurOrgDesc.Required = false;
+            this.CurOrgDesc.Size = new System.Drawing.Size(278, 20);
+            this.CurOrgDesc.TabIndex = 4;
+            // 
+            // CurBank
+            // 
+            this.CurBank.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurBank.CueText = null;
+            this.CurBank.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Bank", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurBank.Location = new System.Drawing.Point(332, 288);
+            this.CurBank.Name = "CurBank";
+            this.CurBank.RegEx = null;
+            this.CurBank.Required = false;
+            this.CurBank.Size = new System.Drawing.Size(278, 20);
+            this.CurBank.TabIndex = 4;
+            // 
+            // cueTextBox5
+            // 
+            this.cueTextBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cueTextBox5.CueText = null;
+            this.cueTextBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Booker", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cueTextBox5.Location = new System.Drawing.Point(332, 161);
+            this.cueTextBox5.Name = "cueTextBox5";
+            this.cueTextBox5.RegEx = null;
+            this.cueTextBox5.Required = false;
+            this.cueTextBox5.Size = new System.Drawing.Size(278, 20);
+            this.cueTextBox5.TabIndex = 4;
+            // 
+            // CurBill
+            // 
+            this.CurBill.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurBill.CueText = null;
+            this.CurBill.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "DisporsalBill", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurBill.Location = new System.Drawing.Point(332, 262);
+            this.CurBill.Name = "CurBill";
+            this.CurBill.RegEx = null;
+            this.CurBill.Required = false;
+            this.CurBill.Size = new System.Drawing.Size(278, 20);
+            this.CurBill.TabIndex = 4;
+            // 
+            // CurOrgKey
+            // 
+            this.CurOrgKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurOrgKey.CueText = null;
+            this.CurOrgKey.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_key", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurOrgKey.Location = new System.Drawing.Point(332, 57);
+            this.CurOrgKey.Name = "CurOrgKey";
+            this.CurOrgKey.ReadOnly = true;
+            this.CurOrgKey.RegEx = null;
+            this.CurOrgKey.Required = false;
+            this.CurOrgKey.Size = new System.Drawing.Size(278, 20);
+            this.CurOrgKey.TabIndex = 4;
+            // 
+            // CurOrgName
+            // 
+            this.CurOrgName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurOrgName.CueText = null;
+            this.CurOrgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Organization", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CurOrgName.Location = new System.Drawing.Point(332, 31);
+            this.CurOrgName.Name = "CurOrgName";
+            this.CurOrgName.RegEx = null;
+            this.CurOrgName.Required = false;
+            this.CurOrgName.Size = new System.Drawing.Size(278, 20);
+            this.CurOrgName.TabIndex = 4;
             // 
             // tabReestr
             // 
@@ -845,6 +990,18 @@ namespace SalaryRegistersUralsib
             this.tabCardOpen.TabIndex = 2;
             this.tabCardOpen.Text = "Откр.карт";
             this.tabCardOpen.UseVisualStyleBackColor = true;
+            // 
+            // AddCardButton
+            // 
+            this.AddCardButton.AutoSize = true;
+            this.AddCardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddCardButton.Location = new System.Drawing.Point(351, 3);
+            this.AddCardButton.Name = "AddCardButton";
+            this.AddCardButton.Size = new System.Drawing.Size(206, 28);
+            this.AddCardButton.TabIndex = 11;
+            this.AddCardButton.Text = "Открытие зарплатной карты";
+            this.AddCardButton.UseVisualStyleBackColor = true;
+            this.AddCardButton.Click += new System.EventHandler(this.AddCardButton_Click_1);
             // 
             // button14
             // 
@@ -1313,17 +1470,6 @@ namespace SalaryRegistersUralsib
             this.tabWorkers.Text = "Сотрудники";
             this.tabWorkers.UseVisualStyleBackColor = true;
             // 
-            // FireButton
-            // 
-            this.FireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FireButton.Location = new System.Drawing.Point(118, 3);
-            this.FireButton.Name = "FireButton";
-            this.FireButton.Size = new System.Drawing.Size(105, 28);
-            this.FireButton.TabIndex = 2;
-            this.FireButton.Text = "Уволить!";
-            this.FireButton.UseVisualStyleBackColor = true;
-            this.FireButton.Click += new System.EventHandler(this.FireButton_Click);
-            // 
             // AddButton
             // 
             this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1334,6 +1480,39 @@ namespace SalaryRegistersUralsib
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label11.Location = new System.Drawing.Point(340, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(224, 16);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Выберите сотрудника и нажмите";
+            // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(570, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(228, 28);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Добавить карту для сотрудника";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.AddCardButton_Click);
+            // 
+            // FireButton
+            // 
+            this.FireButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FireButton.Location = new System.Drawing.Point(118, 3);
+            this.FireButton.Name = "FireButton";
+            this.FireButton.Size = new System.Drawing.Size(105, 28);
+            this.FireButton.TabIndex = 2;
+            this.FireButton.Text = "Уволить!";
+            this.FireButton.UseVisualStyleBackColor = true;
+            this.FireButton.Click += new System.EventHandler(this.FireButton_Click);
             // 
             // workersDataGridView
             // 
@@ -1808,40 +1987,6 @@ namespace SalaryRegistersUralsib
             // 
             this.organizationsTableAdapter1.ClearBeforeFill = true;
             // 
-            // AddCardButton
-            // 
-            this.AddCardButton.AutoSize = true;
-            this.AddCardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddCardButton.Location = new System.Drawing.Point(351, 3);
-            this.AddCardButton.Name = "AddCardButton";
-            this.AddCardButton.Size = new System.Drawing.Size(206, 28);
-            this.AddCardButton.TabIndex = 11;
-            this.AddCardButton.Text = "Открытие зарплатной карты";
-            this.AddCardButton.UseVisualStyleBackColor = true;
-            this.AddCardButton.Click += new System.EventHandler(this.AddCardButton_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(498, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(228, 28);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Добавить карту для сотрудника";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.AddCardButton_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label11.Location = new System.Drawing.Point(268, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(224, 16);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Выберите сотрудника и нажмите";
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1860,151 +2005,6 @@ namespace SalaryRegistersUralsib
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(803, 19);
             this.toolStripStatusLabel1.Spring = true;
             this.toolStripStatusLabel1.Text = "Добавьте своего первого сотрудника";
-            // 
-            // CurOGRN
-            // 
-            this.CurOGRN.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurOGRN.CueText = null;
-            this.CurOGRN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "OGRN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOGRN.Location = new System.Drawing.Point(332, 236);
-            this.CurOGRN.Name = "CurOGRN";
-            this.CurOGRN.RegEx = null;
-            this.CurOGRN.Required = false;
-            this.CurOGRN.Size = new System.Drawing.Size(278, 20);
-            this.CurOGRN.TabIndex = 4;
-            // 
-            // CurINN
-            // 
-            this.CurINN.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurINN.CueText = null;
-            this.CurINN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_INN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurINN.Location = new System.Drawing.Point(332, 210);
-            this.CurINN.Name = "CurINN";
-            this.CurINN.RegEx = null;
-            this.CurINN.Required = false;
-            this.CurINN.Size = new System.Drawing.Size(278, 20);
-            this.CurINN.TabIndex = 4;
-            // 
-            // CurBIK
-            // 
-            this.CurBIK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurBIK.CueText = null;
-            this.CurBIK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BIK", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurBIK.Location = new System.Drawing.Point(332, 340);
-            this.CurBIK.Name = "CurBIK";
-            this.CurBIK.RegEx = null;
-            this.CurBIK.Required = false;
-            this.CurBIK.Size = new System.Drawing.Size(278, 20);
-            this.CurBIK.TabIndex = 4;
-            // 
-            // cueTextBox11
-            // 
-            this.cueTextBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox11.CueText = null;
-            this.cueTextBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager_d", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox11.Location = new System.Drawing.Point(332, 135);
-            this.cueTextBox11.Name = "cueTextBox11";
-            this.cueTextBox11.RegEx = null;
-            this.cueTextBox11.Required = false;
-            this.cueTextBox11.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox11.TabIndex = 4;
-            // 
-            // cueTextBox4
-            // 
-            this.cueTextBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox4.CueText = null;
-            this.cueTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox4.Location = new System.Drawing.Point(332, 109);
-            this.cueTextBox4.Name = "cueTextBox4";
-            this.cueTextBox4.RegEx = null;
-            this.cueTextBox4.Required = false;
-            this.cueTextBox4.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox4.TabIndex = 4;
-            // 
-            // CurBankPodr
-            // 
-            this.CurBankPodr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurBankPodr.CueText = null;
-            this.CurBankPodr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BankUnit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurBankPodr.Location = new System.Drawing.Point(332, 314);
-            this.CurBankPodr.Name = "CurBankPodr";
-            this.CurBankPodr.RegEx = null;
-            this.CurBankPodr.Required = false;
-            this.CurBankPodr.Size = new System.Drawing.Size(278, 20);
-            this.CurBankPodr.TabIndex = 4;
-            // 
-            // CurOrgDesc
-            // 
-            this.CurOrgDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurOrgDesc.CueText = null;
-            this.CurOrgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Descriptor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOrgDesc.Location = new System.Drawing.Point(332, 83);
-            this.CurOrgDesc.Name = "CurOrgDesc";
-            this.CurOrgDesc.RegEx = null;
-            this.CurOrgDesc.Required = false;
-            this.CurOrgDesc.Size = new System.Drawing.Size(278, 20);
-            this.CurOrgDesc.TabIndex = 4;
-            // 
-            // CurBank
-            // 
-            this.CurBank.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurBank.CueText = null;
-            this.CurBank.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Bank", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurBank.Location = new System.Drawing.Point(332, 288);
-            this.CurBank.Name = "CurBank";
-            this.CurBank.RegEx = null;
-            this.CurBank.Required = false;
-            this.CurBank.Size = new System.Drawing.Size(278, 20);
-            this.CurBank.TabIndex = 4;
-            // 
-            // cueTextBox5
-            // 
-            this.cueTextBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cueTextBox5.CueText = null;
-            this.cueTextBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Booker", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox5.Location = new System.Drawing.Point(332, 161);
-            this.cueTextBox5.Name = "cueTextBox5";
-            this.cueTextBox5.RegEx = null;
-            this.cueTextBox5.Required = false;
-            this.cueTextBox5.Size = new System.Drawing.Size(278, 20);
-            this.cueTextBox5.TabIndex = 4;
-            // 
-            // CurBill
-            // 
-            this.CurBill.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurBill.CueText = null;
-            this.CurBill.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "DisporsalBill", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurBill.Location = new System.Drawing.Point(332, 262);
-            this.CurBill.Name = "CurBill";
-            this.CurBill.RegEx = null;
-            this.CurBill.Required = false;
-            this.CurBill.Size = new System.Drawing.Size(278, 20);
-            this.CurBill.TabIndex = 4;
-            // 
-            // CurOrgKey
-            // 
-            this.CurOrgKey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurOrgKey.CueText = null;
-            this.CurOrgKey.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_key", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOrgKey.Location = new System.Drawing.Point(332, 57);
-            this.CurOrgKey.Name = "CurOrgKey";
-            this.CurOrgKey.ReadOnly = true;
-            this.CurOrgKey.RegEx = null;
-            this.CurOrgKey.Required = false;
-            this.CurOrgKey.Size = new System.Drawing.Size(278, 20);
-            this.CurOrgKey.TabIndex = 4;
-            // 
-            // CurOrgName
-            // 
-            this.CurOrgName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurOrgName.CueText = null;
-            this.CurOrgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Organization", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOrgName.Location = new System.Drawing.Point(332, 31);
-            this.CurOrgName.Name = "CurOrgName";
-            this.CurOrgName.RegEx = null;
-            this.CurOrgName.Required = false;
-            this.CurOrgName.Size = new System.Drawing.Size(278, 20);
-            this.CurOrgName.TabIndex = 4;
             // 
             // AddNewButton
             // 

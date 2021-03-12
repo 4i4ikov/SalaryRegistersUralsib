@@ -59,6 +59,10 @@ namespace SalaryRegistersUralsib
 
         private void SelectOrg_Click(object sender, EventArgs e)
         {
+            SelectOrg();
+        }
+        private void SelectOrg()
+        {
             //Выбор организации
             Dictionary<string, string> s = dataGridView2.GetCellsPls();
             string str = s["Organization"].ToString();
@@ -84,21 +88,11 @@ namespace SalaryRegistersUralsib
 
 
             MainProgram.Context.MainForm = f;//смена главной формы
-            
+
             MainProgram.Context.MainForm.Show();//открытие главной формы
             Close();//закрытие текущей формы
         }
 
-
-
-        private void DataGridView1_KeyPress(object sender, KeyEventArgs e)
-        {
-            if ( e.KeyCode == Keys.Enter )
-            {
-                e.Handled = true;
-                SelectOrg_Click(sender, e);
-            }
-        }
 
         private void РедактироватьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -163,7 +157,7 @@ namespace SalaryRegistersUralsib
 
         private void HelpClick(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start("winhlp32.exe", "ПОМОЩЬ.HLP");
         }
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
@@ -191,6 +185,20 @@ namespace SalaryRegistersUralsib
             MainProgram.Context.MainForm = new AuthForm();
             Close();
             MainProgram.Context.MainForm.Show();
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SelectOrg();
+        }
+
+        private void dataGridView2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ( e.KeyChar == (char)13 )
+            {
+                e.Handled = true;
+                SelectOrg();
+            }
         }
     }
 }
