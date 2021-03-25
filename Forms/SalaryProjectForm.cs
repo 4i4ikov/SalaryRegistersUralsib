@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
+using Excel = Microsoft.Office.Interop.Excel;
 namespace SalaryRegistersUralsib
 {
     public partial class SalaryProjectForm : Form
@@ -192,13 +193,61 @@ namespace SalaryRegistersUralsib
             SelectOrg();
         }
 
-        private void dataGridView2_KeyPress(object sender, KeyPressEventArgs e)
+        private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
         {
-            if ( e.KeyChar == (char)13 )
+            if ( e.KeyCode == Keys.Enter )
             {
-                e.Handled = true;
+                e.Handled = false;
+
                 SelectOrg();
             }
+        }
+
+        private void экспортExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                Filter = "Excel Documents (*.xlsx)|*.xlsx",
+                FileName = "Организации" + DateTime.Now.ToString(" MM.dd")
+            + ".xlsx"
+            };
+            
+            if ( sfd.ShowDialog() == DialogResult.OK )
+            {
+                Excel.Application excelapp = new Excel.Application
+                {
+                    SheetsInNewWorkbook = 1
+                };
+                Excel.Workbook workbook = excelapp.Workbooks.Add();
+                Excel.Worksheet wsh = workbook.Sheets[1];
+                
+                wsh.Name = "Организации";
+
+                new Organizations().FillTheWorkSheet(dataGridView2, wsh);
+                
+                excelapp.AlertBeforeOverwriting = false;
+                workbook.SaveAs(sfd.FileName);
+                excelapp.Visible = true;
+            }
+        }
+
+        private void cueTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            string s = String.Empty;
+            if ( !String.IsNullOrWhiteSpace(( (CueTextBox)sender ).Text.Trim()) )
+            {
+                foreach ( DataGridViewColumn a in dataGridView2.Columns )
+                {
+                    if ( a.ValueType == typeof(String) )
+                    {
+                        s += String.Format("[{0}] LIKE '%{1}%' OR ", a.DataPropertyName, ( (CueTextBox)sender ).Text);
+                    }
+                }
+                s = s.Remove(s.Length - 3);
+            }
+
+            organizationsBindingSource.Filter = s;
         }
     }
 }

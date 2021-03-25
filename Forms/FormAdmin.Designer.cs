@@ -33,6 +33,7 @@ namespace SalaryRegistersUralsib.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.usersDataGridView = new System.Windows.Forms.DataGridView();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet1 = new SalaryRegistersUralsib.DbDataSet();
             this.usersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -47,20 +48,19 @@ namespace SalaryRegistersUralsib.Forms
             this.usersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.dbDataSet1 = new SalaryRegistersUralsib.DbDataSet();
             this.usersTableAdapter1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.UsersTableAdapter();
             this.tableAdapterManager1 = new SalaryRegistersUralsib.DbDataSetTableAdapters.TableAdapterManager();
             this.enrollmentsTableAdapter = new SalaryRegistersUralsib.DbDataSetTableAdapters.EnrollmentsTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordResetDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.permissionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).BeginInit();
             this.usersBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // usersDataGridView
@@ -70,11 +70,11 @@ namespace SalaryRegistersUralsib.Forms
             this.usersDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
             this.loginDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.passwordResetDataGridViewCheckBoxColumn,
-            this.permissionsDataGridViewTextBoxColumn});
+            this.permissionsDataGridViewTextBoxColumn,
+            this.iDDataGridViewTextBoxColumn});
             this.usersDataGridView.DataSource = this.usersBindingSource;
             this.usersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.usersDataGridView.Location = new System.Drawing.Point(0, 48);
@@ -86,6 +86,11 @@ namespace SalaryRegistersUralsib.Forms
             // 
             this.usersBindingSource.DataMember = "Users";
             this.usersBindingSource.DataSource = this.dbDataSet1;
+            // 
+            // dbDataSet1
+            // 
+            this.dbDataSet1.DataSetName = "DbDataSet";
+            this.dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usersBindingNavigatorSaveItem
             // 
@@ -127,6 +132,7 @@ namespace SalaryRegistersUralsib.Forms
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -221,11 +227,6 @@ namespace SalaryRegistersUralsib.Forms
             this.label1.Text = "ФОРМА АДМИНИСТРАТОРА ДЛЯ УПРАВЛЕНИЯ ПОЛЬЗОВАТЕЛЯМИ\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dbDataSet1
-            // 
-            this.dbDataSet1.DataSetName = "DbDataSet";
-            this.dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // usersTableAdapter1
             // 
             this.usersTableAdapter1.ClearBeforeFill = true;
@@ -244,12 +245,6 @@ namespace SalaryRegistersUralsib.Forms
             // 
             this.enrollmentsTableAdapter.ClearBeforeFill = true;
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
             // loginDataGridViewTextBoxColumn
             // 
             this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
@@ -261,6 +256,7 @@ namespace SalaryRegistersUralsib.Forms
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
             this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.Visible = false;
             // 
             // passwordResetDataGridViewCheckBoxColumn
             // 
@@ -273,6 +269,14 @@ namespace SalaryRegistersUralsib.Forms
             this.permissionsDataGridViewTextBoxColumn.DataPropertyName = "Permissions";
             this.permissionsDataGridViewTextBoxColumn.HeaderText = "Permissions";
             this.permissionsDataGridViewTextBoxColumn.Name = "permissionsDataGridViewTextBoxColumn";
+            this.permissionsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Visible = false;
             // 
             // FormAdmin
             // 
@@ -288,10 +292,10 @@ namespace SalaryRegistersUralsib.Forms
             this.Load += new System.EventHandler(this.FormAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).EndInit();
             this.usersBindingNavigator.ResumeLayout(false);
             this.usersBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,10 +322,10 @@ namespace SalaryRegistersUralsib.Forms
         private DbDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
         private DbDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private DbDataSetTableAdapters.EnrollmentsTableAdapter enrollmentsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn passwordResetDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn permissionsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
     }
 }

@@ -55,8 +55,10 @@ namespace SalaryRegistersUralsib
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.экспортExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cueTextBox1 = new SalaryRegistersUralsib.CueTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.organizationsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -175,7 +177,7 @@ namespace SalaryRegistersUralsib
             this.dataGridView2.TabIndex = 6;
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
-            this.dataGridView2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView2_KeyPress);
+            this.dataGridView2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView2_KeyDown);
             // 
             // organizationDataGridViewTextBoxColumn
             // 
@@ -222,7 +224,8 @@ namespace SalaryRegistersUralsib
             this.редактироватьToolStripMenuItem,
             this.удалитьToolStripMenuItem,
             this.toolStripMenuItem5,
-            this.выйтиToolStripMenuItem});
+            this.выйтиToolStripMenuItem,
+            this.экспортExcelToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(801, 24);
@@ -281,6 +284,13 @@ namespace SalaryRegistersUralsib
             this.выйтиToolStripMenuItem.Text = "Выйти";
             this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
+            // экспортExcelToolStripMenuItem
+            // 
+            this.экспортExcelToolStripMenuItem.Name = "экспортExcelToolStripMenuItem";
+            this.экспортExcelToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.экспортExcelToolStripMenuItem.Text = "Экспорт Excel";
+            this.экспортExcelToolStripMenuItem.Click += new System.EventHandler(this.экспортExcelToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -300,11 +310,23 @@ namespace SalaryRegistersUralsib
             this.toolStripStatusLabel1.Spring = true;
             this.toolStripStatusLabel1.Text = "Строка состояния";
             // 
+            // cueTextBox1
+            // 
+            this.cueTextBox1.CueText = "Поиск";
+            this.cueTextBox1.Location = new System.Drawing.Point(534, 3);
+            this.cueTextBox1.Name = "cueTextBox1";
+            this.cueTextBox1.RegEx = null;
+            this.cueTextBox1.Required = false;
+            this.cueTextBox1.Size = new System.Drawing.Size(186, 20);
+            this.cueTextBox1.TabIndex = 9;
+            this.cueTextBox1.TextChanged += new System.EventHandler(this.cueTextBox1_TextChanged);
+            // 
             // SalaryProjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 313);
+            this.Controls.Add(this.cueTextBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView2);
@@ -350,6 +372,8 @@ namespace SalaryRegistersUralsib
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem экспортExcelToolStripMenuItem;
+        private CueTextBox cueTextBox1;
     }
 }
 

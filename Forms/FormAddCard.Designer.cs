@@ -51,10 +51,10 @@
             this.label24 = new System.Windows.Forms.Label();
             this.Card_NLAbel = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Propiska = new System.Windows.Forms.Button();
+            this.Registratsiya = new System.Windows.Forms.Button();
+            this.Document = new System.Windows.Forms.Button();
+            this.DopDocument = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.Fired = new SalaryRegistersUralsib.CueTextBox();
             this.Org_key = new SalaryRegistersUralsib.CueTextBox();
@@ -318,49 +318,49 @@
             this.label25.Text = "E-Mail";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button4
+            // Propiska
             // 
-            this.button4.Location = new System.Drawing.Point(11, 97);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Tag = "true";
-            this.button4.Text = "Место прописки";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Place_Enter);
+            this.Propiska.Location = new System.Drawing.Point(11, 97);
+            this.Propiska.Name = "Propiska";
+            this.Propiska.Size = new System.Drawing.Size(150, 23);
+            this.Propiska.TabIndex = 9;
+            this.Propiska.Tag = "true";
+            this.Propiska.Text = "Место прописки";
+            this.Propiska.UseVisualStyleBackColor = true;
+            this.Propiska.Click += new System.EventHandler(this.Place_Enter);
             // 
-            // button5
+            // Registratsiya
             // 
-            this.button5.Location = new System.Drawing.Point(167, 97);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 23);
-            this.button5.TabIndex = 10;
-            this.button5.Tag = "false";
-            this.button5.Text = "Место проживания";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Place_Enter);
+            this.Registratsiya.Location = new System.Drawing.Point(167, 97);
+            this.Registratsiya.Name = "Registratsiya";
+            this.Registratsiya.Size = new System.Drawing.Size(150, 23);
+            this.Registratsiya.TabIndex = 10;
+            this.Registratsiya.Tag = "false";
+            this.Registratsiya.Text = "Место проживания";
+            this.Registratsiya.UseVisualStyleBackColor = true;
+            this.Registratsiya.Click += new System.EventHandler(this.Place_Enter);
             // 
-            // button6
+            // Document
             // 
-            this.button6.Location = new System.Drawing.Point(323, 97);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 23);
-            this.button6.TabIndex = 11;
-            this.button6.Tag = "false";
-            this.button6.Text = "Основной документ";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.Document.Location = new System.Drawing.Point(323, 97);
+            this.Document.Name = "Document";
+            this.Document.Size = new System.Drawing.Size(150, 23);
+            this.Document.TabIndex = 11;
+            this.Document.Tag = "false";
+            this.Document.Text = "Основной документ";
+            this.Document.UseVisualStyleBackColor = true;
+            this.Document.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // DopDocument
             // 
-            this.button7.Location = new System.Drawing.Point(479, 97);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 23);
-            this.button7.TabIndex = 12;
-            this.button7.Tag = "true";
-            this.button7.Text = "Доп. документ";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button6_Click);
+            this.DopDocument.Location = new System.Drawing.Point(479, 97);
+            this.DopDocument.Name = "DopDocument";
+            this.DopDocument.Size = new System.Drawing.Size(150, 23);
+            this.DopDocument.TabIndex = 12;
+            this.DopDocument.Tag = "true";
+            this.DopDocument.Text = "Доп. документ";
+            this.DopDocument.UseVisualStyleBackColor = true;
+            this.DopDocument.Click += new System.EventHandler(this.button6_Click);
             // 
             // label7
             // 
@@ -387,7 +387,6 @@
             this.Fired.Size = new System.Drawing.Size(150, 20);
             this.Fired.TabIndex = 104;
             this.Fired.Tag = "Fired";
-            this.Fired.Visible = false;
             // 
             // Org_key
             // 
@@ -404,7 +403,6 @@
             this.Org_key.Size = new System.Drawing.Size(150, 20);
             this.Org_key.TabIndex = 103;
             this.Org_key.Tag = "Org_key";
-            this.Org_key.Visible = false;
             // 
             // WCode
             // 
@@ -421,7 +419,6 @@
             this.WCode.Size = new System.Drawing.Size(150, 20);
             this.WCode.TabIndex = 102;
             this.WCode.Tag = "WCode";
-            this.WCode.Visible = false;
             // 
             // Employment_Date
             // 
@@ -438,6 +435,7 @@
             this.Employment_Date.Size = new System.Drawing.Size(150, 20);
             this.Employment_Date.TabIndex = 21;
             this.Employment_Date.Tag = "Дата приема на работу";
+            this.Employment_Date.Text = "01012020";
             this.Employment_Date.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.Employment_Date.ValidatingType = typeof(System.DateTime);
             // 
@@ -454,6 +452,7 @@
             this.Phone.Size = new System.Drawing.Size(150, 20);
             this.Phone.TabIndex = 14;
             this.Phone.Tag = "Домашний номер";
+            this.Phone.Text = "9872463816";
             // 
             // SNILS
             // 
@@ -468,6 +467,7 @@
             this.SNILS.Size = new System.Drawing.Size(150, 20);
             this.SNILS.TabIndex = 13;
             this.SNILS.Tag = "СНИЛС";
+            this.SNILS.Text = "11697338589";
             // 
             // Email
             // 
@@ -515,6 +515,7 @@
             this.Bank_Code.Size = new System.Drawing.Size(150, 20);
             this.Bank_Code.TabIndex = 18;
             this.Bank_Code.Tag = "Код подразделения банка";
+            this.Bank_Code.Text = "123";
             this.Bank_Code.ValidatingType = typeof(int);
             // 
             // Code_Word
@@ -531,6 +532,7 @@
             this.Code_Word.Size = new System.Drawing.Size(150, 20);
             this.Code_Word.TabIndex = 17;
             this.Code_Word.Tag = "Кодовое слово";
+            this.Code_Word.Text = "слово";
             // 
             // Place_Of_Birth
             // 
@@ -548,6 +550,7 @@
             this.Place_Of_Birth.Size = new System.Drawing.Size(150, 20);
             this.Place_Of_Birth.TabIndex = 6;
             this.Place_Of_Birth.Tag = "Место рождения";
+            this.Place_Of_Birth.Text = "Бирск";
             // 
             // Salary
             // 
@@ -595,6 +598,7 @@
             this.INN_worker.Size = new System.Drawing.Size(150, 20);
             this.INN_worker.TabIndex = 15;
             this.INN_worker.Tag = "ИНН";
+            this.INN_worker.Text = "222222";
             this.INN_worker.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // WBill_Num
@@ -682,6 +686,7 @@
             this.Full_Name_Card.Size = new System.Drawing.Size(150, 20);
             this.Full_Name_Card.TabIndex = 16;
             this.Full_Name_Card.Tag = "Имя и фамилия на карте";
+            this.Full_Name_Card.Text = "blabla";
             // 
             // WSurname
             // 
@@ -736,6 +741,7 @@
             this.Card_type.Size = new System.Drawing.Size(150, 20);
             this.Card_type.TabIndex = 19;
             this.Card_type.Tag = "Тип карты";
+            this.Card_type.Text = "visa";
             // 
             // FormAddCard
             // 
@@ -746,10 +752,10 @@
             this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(637, 292);
             this.ControlBox = false;
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.DopDocument);
+            this.Controls.Add(this.Document);
+            this.Controls.Add(this.Registratsiya);
+            this.Controls.Add(this.Propiska);
             this.Controls.Add(this.Fired);
             this.Controls.Add(this.Org_key);
             this.Controls.Add(this.WCode);
@@ -851,10 +857,10 @@
         public CueTextBox Card_N;
         private System.Windows.Forms.Label label25;
         public CueTextBox Email;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Propiska;
+        private System.Windows.Forms.Button Registratsiya;
+        private System.Windows.Forms.Button Document;
+        private System.Windows.Forms.Button DopDocument;
         private System.Windows.Forms.Label label7;
         public CueTextBox Action_param;
     }

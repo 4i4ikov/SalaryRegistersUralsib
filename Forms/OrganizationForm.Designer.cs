@@ -66,14 +66,16 @@ namespace SalaryRegistersUralsib
             this.CurOrgKey = new SalaryRegistersUralsib.CueTextBox();
             this.CurOrgName = new SalaryRegistersUralsib.CueTextBox();
             this.tabReestr = new System.Windows.Forms.TabPage();
+            this.button12 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
             this.GridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enrollment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,14 +86,15 @@ namespace SalaryRegistersUralsib
             this.del2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ReestrBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabCardEnrollments = new System.Windows.Forms.TabPage();
+            this.button9 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.GridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Org_key = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -153,13 +156,12 @@ namespace SalaryRegistersUralsib
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orgkeyDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Button_DOS = new System.Windows.Forms.Button();
             this.tabWorkers = new System.Windows.Forms.TabPage();
             this.AddButton = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.SelectWorkerButton = new System.Windows.Forms.Button();
             this.FireButton = new System.Windows.Forms.Button();
             this.workersDataGridView = new System.Windows.Forms.DataGridView();
             this.wSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -171,13 +173,13 @@ namespace SalaryRegistersUralsib
             this.orgkeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.wCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEnrollments = new System.Windows.Forms.TabPage();
             this.GridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -190,8 +192,9 @@ namespace SalaryRegistersUralsib
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabFire = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.GridView5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -199,6 +202,7 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.UvalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -212,11 +216,15 @@ namespace SalaryRegistersUralsib
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.AddNewButton = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.curworker = new System.Windows.Forms.Label();
+            this.cueTextBox1 = new SalaryRegistersUralsib.CueTextBox();
             this.tabRequisites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             this.tabReestr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReestrBindingSource)).BeginInit();
             this.tabCardEnrollments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView3)).BeginInit();
@@ -226,7 +234,6 @@ namespace SalaryRegistersUralsib
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).BeginInit();
             this.tabWorkers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.workersDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabEnrollments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView2)).BeginInit();
@@ -260,13 +267,12 @@ namespace SalaryRegistersUralsib
             this.ExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ExportButton.AutoSize = true;
             this.ExportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ExportButton.Location = new System.Drawing.Point(597, 11);
+            this.ExportButton.Location = new System.Drawing.Point(474, 11);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.Size = new System.Drawing.Size(129, 26);
             this.ExportButton.TabIndex = 11;
             this.ExportButton.Text = "Экспорт в Excel...";
             this.ExportButton.UseVisualStyleBackColor = true;
-            this.ExportButton.Visible = false;
             this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
             // label4
@@ -320,7 +326,7 @@ namespace SalaryRegistersUralsib
             this.tabRequisites.Location = new System.Drawing.Point(4, 22);
             this.tabRequisites.Name = "tabRequisites";
             this.tabRequisites.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRequisites.Size = new System.Drawing.Size(806, 394);
+            this.tabRequisites.Size = new System.Drawing.Size(806, 380);
             this.tabRequisites.TabIndex = 7;
             this.tabRequisites.Text = "Реквизиты";
             this.tabRequisites.UseVisualStyleBackColor = true;
@@ -329,7 +335,7 @@ namespace SalaryRegistersUralsib
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.BackColor = System.Drawing.Color.Gainsboro;
-            this.label19.Location = new System.Drawing.Point(188, 8);
+            this.label19.Location = new System.Drawing.Point(188, 1);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(422, 20);
             this.label19.TabIndex = 5;
@@ -341,7 +347,7 @@ namespace SalaryRegistersUralsib
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label18.BackColor = System.Drawing.Color.Gainsboro;
             this.label18.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label18.Location = new System.Drawing.Point(188, 187);
+            this.label18.Location = new System.Drawing.Point(188, 180);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(422, 20);
             this.label18.TabIndex = 5;
@@ -351,7 +357,7 @@ namespace SalaryRegistersUralsib
             // label17
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.Location = new System.Drawing.Point(188, 340);
+            this.label17.Location = new System.Drawing.Point(188, 333);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(138, 20);
             this.label17.TabIndex = 5;
@@ -361,7 +367,7 @@ namespace SalaryRegistersUralsib
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label16.Location = new System.Drawing.Point(188, 314);
+            this.label16.Location = new System.Drawing.Point(188, 307);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(138, 20);
             this.label16.TabIndex = 5;
@@ -371,7 +377,7 @@ namespace SalaryRegistersUralsib
             // label15
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.Location = new System.Drawing.Point(188, 288);
+            this.label15.Location = new System.Drawing.Point(188, 281);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(138, 20);
             this.label15.TabIndex = 5;
@@ -381,7 +387,7 @@ namespace SalaryRegistersUralsib
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.Location = new System.Drawing.Point(188, 262);
+            this.label14.Location = new System.Drawing.Point(188, 255);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(138, 20);
             this.label14.TabIndex = 5;
@@ -391,7 +397,7 @@ namespace SalaryRegistersUralsib
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.Location = new System.Drawing.Point(188, 236);
+            this.label13.Location = new System.Drawing.Point(188, 229);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(138, 20);
             this.label13.TabIndex = 5;
@@ -401,7 +407,7 @@ namespace SalaryRegistersUralsib
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.Location = new System.Drawing.Point(188, 210);
+            this.label12.Location = new System.Drawing.Point(188, 203);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(138, 20);
             this.label12.TabIndex = 5;
@@ -411,7 +417,7 @@ namespace SalaryRegistersUralsib
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.Location = new System.Drawing.Point(188, 161);
+            this.label10.Location = new System.Drawing.Point(188, 154);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(138, 20);
             this.label10.TabIndex = 5;
@@ -421,7 +427,7 @@ namespace SalaryRegistersUralsib
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.Location = new System.Drawing.Point(188, 135);
+            this.label9.Location = new System.Drawing.Point(188, 128);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(138, 20);
             this.label9.TabIndex = 5;
@@ -431,7 +437,7 @@ namespace SalaryRegistersUralsib
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.Location = new System.Drawing.Point(188, 109);
+            this.label8.Location = new System.Drawing.Point(188, 102);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(138, 20);
             this.label8.TabIndex = 5;
@@ -441,7 +447,7 @@ namespace SalaryRegistersUralsib
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.Location = new System.Drawing.Point(188, 83);
+            this.label7.Location = new System.Drawing.Point(188, 76);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 20);
             this.label7.TabIndex = 5;
@@ -451,7 +457,7 @@ namespace SalaryRegistersUralsib
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.Location = new System.Drawing.Point(188, 57);
+            this.label6.Location = new System.Drawing.Point(188, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 20);
             this.label6.TabIndex = 5;
@@ -461,7 +467,7 @@ namespace SalaryRegistersUralsib
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Location = new System.Drawing.Point(188, 31);
+            this.label3.Location = new System.Drawing.Point(188, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 20);
             this.label3.TabIndex = 5;
@@ -473,7 +479,7 @@ namespace SalaryRegistersUralsib
             this.CurOGRN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CurOGRN.CueText = null;
             this.CurOGRN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "OGRN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOGRN.Location = new System.Drawing.Point(332, 236);
+            this.CurOGRN.Location = new System.Drawing.Point(332, 229);
             this.CurOGRN.Name = "CurOGRN";
             this.CurOGRN.RegEx = null;
             this.CurOGRN.Required = false;
@@ -496,7 +502,7 @@ namespace SalaryRegistersUralsib
             this.CurINN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CurINN.CueText = null;
             this.CurINN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_INN", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurINN.Location = new System.Drawing.Point(332, 210);
+            this.CurINN.Location = new System.Drawing.Point(332, 203);
             this.CurINN.Name = "CurINN";
             this.CurINN.RegEx = null;
             this.CurINN.Required = false;
@@ -508,7 +514,7 @@ namespace SalaryRegistersUralsib
             this.CurBIK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CurBIK.CueText = null;
             this.CurBIK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BIK", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurBIK.Location = new System.Drawing.Point(332, 340);
+            this.CurBIK.Location = new System.Drawing.Point(332, 333);
             this.CurBIK.Name = "CurBIK";
             this.CurBIK.RegEx = null;
             this.CurBIK.Required = false;
@@ -520,7 +526,7 @@ namespace SalaryRegistersUralsib
             this.cueTextBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cueTextBox11.CueText = null;
             this.cueTextBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager_d", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox11.Location = new System.Drawing.Point(332, 135);
+            this.cueTextBox11.Location = new System.Drawing.Point(332, 128);
             this.cueTextBox11.Name = "cueTextBox11";
             this.cueTextBox11.RegEx = null;
             this.cueTextBox11.Required = false;
@@ -532,7 +538,7 @@ namespace SalaryRegistersUralsib
             this.cueTextBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cueTextBox4.CueText = null;
             this.cueTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Manager", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox4.Location = new System.Drawing.Point(332, 109);
+            this.cueTextBox4.Location = new System.Drawing.Point(332, 102);
             this.cueTextBox4.Name = "cueTextBox4";
             this.cueTextBox4.RegEx = null;
             this.cueTextBox4.Required = false;
@@ -544,7 +550,7 @@ namespace SalaryRegistersUralsib
             this.CurBankPodr.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CurBankPodr.CueText = null;
             this.CurBankPodr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "BankUnit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurBankPodr.Location = new System.Drawing.Point(332, 314);
+            this.CurBankPodr.Location = new System.Drawing.Point(332, 307);
             this.CurBankPodr.Name = "CurBankPodr";
             this.CurBankPodr.RegEx = null;
             this.CurBankPodr.Required = false;
@@ -556,7 +562,7 @@ namespace SalaryRegistersUralsib
             this.CurOrgDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CurOrgDesc.CueText = null;
             this.CurOrgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Descriptor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOrgDesc.Location = new System.Drawing.Point(332, 83);
+            this.CurOrgDesc.Location = new System.Drawing.Point(332, 76);
             this.CurOrgDesc.Name = "CurOrgDesc";
             this.CurOrgDesc.RegEx = null;
             this.CurOrgDesc.Required = false;
@@ -568,7 +574,7 @@ namespace SalaryRegistersUralsib
             this.CurBank.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CurBank.CueText = null;
             this.CurBank.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Bank", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurBank.Location = new System.Drawing.Point(332, 288);
+            this.CurBank.Location = new System.Drawing.Point(332, 281);
             this.CurBank.Name = "CurBank";
             this.CurBank.RegEx = null;
             this.CurBank.Required = false;
@@ -580,7 +586,7 @@ namespace SalaryRegistersUralsib
             this.cueTextBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cueTextBox5.CueText = null;
             this.cueTextBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Booker", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cueTextBox5.Location = new System.Drawing.Point(332, 161);
+            this.cueTextBox5.Location = new System.Drawing.Point(332, 154);
             this.cueTextBox5.Name = "cueTextBox5";
             this.cueTextBox5.RegEx = null;
             this.cueTextBox5.Required = false;
@@ -592,7 +598,7 @@ namespace SalaryRegistersUralsib
             this.CurBill.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CurBill.CueText = null;
             this.CurBill.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "DisporsalBill", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurBill.Location = new System.Drawing.Point(332, 262);
+            this.CurBill.Location = new System.Drawing.Point(332, 255);
             this.CurBill.Name = "CurBill";
             this.CurBill.RegEx = null;
             this.CurBill.Required = false;
@@ -604,7 +610,7 @@ namespace SalaryRegistersUralsib
             this.CurOrgKey.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CurOrgKey.CueText = null;
             this.CurOrgKey.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Org_key", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOrgKey.Location = new System.Drawing.Point(332, 57);
+            this.CurOrgKey.Location = new System.Drawing.Point(332, 50);
             this.CurOrgKey.Name = "CurOrgKey";
             this.CurOrgKey.ReadOnly = true;
             this.CurOrgKey.RegEx = null;
@@ -617,7 +623,7 @@ namespace SalaryRegistersUralsib
             this.CurOrgName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CurOrgName.CueText = null;
             this.CurOrgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OrgBindingSource, "Organization", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CurOrgName.Location = new System.Drawing.Point(332, 31);
+            this.CurOrgName.Location = new System.Drawing.Point(332, 24);
             this.CurOrgName.Name = "CurOrgName";
             this.CurOrgName.RegEx = null;
             this.CurOrgName.Required = false;
@@ -626,18 +632,29 @@ namespace SalaryRegistersUralsib
             // 
             // tabReestr
             // 
+            this.tabReestr.Controls.Add(this.button12);
             this.tabReestr.Controls.Add(this.button3);
             this.tabReestr.Controls.Add(this.button17);
             this.tabReestr.Controls.Add(this.button18);
-            this.tabReestr.Controls.Add(this.button19);
             this.tabReestr.Controls.Add(this.GridView4);
             this.tabReestr.Location = new System.Drawing.Point(4, 22);
             this.tabReestr.Name = "tabReestr";
             this.tabReestr.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReestr.Size = new System.Drawing.Size(806, 394);
+            this.tabReestr.Size = new System.Drawing.Size(806, 380);
             this.tabReestr.TabIndex = 5;
             this.tabReestr.Text = "Реестр-распоряжение";
             this.tabReestr.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button12.Location = new System.Drawing.Point(4, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(201, 28);
+            this.button12.TabIndex = 13;
+            this.button12.Text = "Добавить выбранного";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.AddCurrentEnrollmens);
             // 
             // button3
             // 
@@ -654,7 +671,7 @@ namespace SalaryRegistersUralsib
             // button17
             // 
             this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button17.Location = new System.Drawing.Point(277, 3);
+            this.button17.Location = new System.Drawing.Point(320, 3);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(140, 28);
             this.button17.TabIndex = 11;
@@ -665,23 +682,13 @@ namespace SalaryRegistersUralsib
             // button18
             // 
             this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button18.Location = new System.Drawing.Point(168, 3);
+            this.button18.Location = new System.Drawing.Point(211, 3);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(103, 28);
             this.button18.TabIndex = 12;
             this.button18.Text = "Создать DOS";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.Zach2and3DosCreate);
-            // 
-            // button19
-            // 
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button19.Location = new System.Drawing.Point(6, 3);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(156, 28);
-            this.button19.TabIndex = 13;
-            this.button19.Text = "Сбросить изменения";
-            this.button19.UseVisualStyleBackColor = true;
             // 
             // GridView4
             // 
@@ -698,6 +705,7 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn18,
             this.Enrollment_type,
+            this.dataGridViewComboBoxColumn2,
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22,
             this.dataGridViewTextBoxColumn23,
@@ -710,7 +718,7 @@ namespace SalaryRegistersUralsib
             this.GridView4.Location = new System.Drawing.Point(3, 36);
             this.GridView4.Name = "GridView4";
             this.GridView4.RowHeadersVisible = false;
-            this.GridView4.Size = new System.Drawing.Size(800, 335);
+            this.GridView4.Size = new System.Drawing.Size(800, 311);
             this.GridView4.TabIndex = 8;
             this.GridView4.Tag = "reestr";
             this.GridView4.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
@@ -738,6 +746,22 @@ namespace SalaryRegistersUralsib
             this.Enrollment_type.HeaderText = "Enrollment_type";
             this.Enrollment_type.Name = "Enrollment_type";
             this.Enrollment_type.Visible = false;
+            // 
+            // dataGridViewComboBoxColumn2
+            // 
+            this.dataGridViewComboBoxColumn2.DataPropertyName = "WCode";
+            this.dataGridViewComboBoxColumn2.DataSource = this.workersBindingSource;
+            this.dataGridViewComboBoxColumn2.DisplayMember = "WSurname";
+            this.dataGridViewComboBoxColumn2.HeaderText = "Сотрудник";
+            this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
+            this.dataGridViewComboBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn2.ValueMember = "WCode";
+            // 
+            // workersBindingSource
+            // 
+            this.workersBindingSource.DataMember = "Workers";
+            this.workersBindingSource.DataSource = this.dbDataSet;
             // 
             // dataGridViewTextBoxColumn21
             // 
@@ -802,18 +826,29 @@ namespace SalaryRegistersUralsib
             // 
             // tabCardEnrollments
             // 
+            this.tabCardEnrollments.Controls.Add(this.button9);
             this.tabCardEnrollments.Controls.Add(this.button4);
             this.tabCardEnrollments.Controls.Add(this.button10);
             this.tabCardEnrollments.Controls.Add(this.button11);
-            this.tabCardEnrollments.Controls.Add(this.button12);
             this.tabCardEnrollments.Controls.Add(this.GridView3);
             this.tabCardEnrollments.Location = new System.Drawing.Point(4, 22);
             this.tabCardEnrollments.Name = "tabCardEnrollments";
             this.tabCardEnrollments.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCardEnrollments.Size = new System.Drawing.Size(806, 394);
+            this.tabCardEnrollments.Size = new System.Drawing.Size(806, 380);
             this.tabCardEnrollments.TabIndex = 4;
             this.tabCardEnrollments.Text = "Зачисл. по карт.";
             this.tabCardEnrollments.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.Location = new System.Drawing.Point(4, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(201, 28);
+            this.button9.TabIndex = 8;
+            this.button9.Text = "Добавить выбранного";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.AddCurrentEnrollmens);
             // 
             // button4
             // 
@@ -830,7 +865,7 @@ namespace SalaryRegistersUralsib
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button10.Location = new System.Drawing.Point(277, 3);
+            this.button10.Location = new System.Drawing.Point(320, 3);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(140, 28);
             this.button10.TabIndex = 5;
@@ -841,23 +876,13 @@ namespace SalaryRegistersUralsib
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button11.Location = new System.Drawing.Point(168, 3);
+            this.button11.Location = new System.Drawing.Point(211, 3);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(103, 28);
             this.button11.TabIndex = 6;
             this.button11.Text = "Создать DOS";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.Zach2and3DosCreate);
-            // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button12.Location = new System.Drawing.Point(6, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(156, 28);
-            this.button12.TabIndex = 7;
-            this.button12.Text = "Сбросить изменения";
-            this.button12.UseVisualStyleBackColor = true;
             // 
             // GridView3
             // 
@@ -874,6 +899,7 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn11,
             this.Org_key,
             this.dataGridViewTextBoxColumn5,
+            this.dataGridViewComboBoxColumn1,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
@@ -886,7 +912,7 @@ namespace SalaryRegistersUralsib
             this.GridView3.Location = new System.Drawing.Point(3, 36);
             this.GridView3.Name = "GridView3";
             this.GridView3.RowHeadersVisible = false;
-            this.GridView3.Size = new System.Drawing.Size(800, 335);
+            this.GridView3.Size = new System.Drawing.Size(800, 321);
             this.GridView3.TabIndex = 2;
             this.GridView3.Tag = "cardzach";
             this.GridView3.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
@@ -913,6 +939,17 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn5.HeaderText = "Enrollment_type";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.DataPropertyName = "WCode";
+            this.dataGridViewComboBoxColumn1.DataSource = this.workersBindingSource;
+            this.dataGridViewComboBoxColumn1.DisplayMember = "WSurname";
+            this.dataGridViewComboBoxColumn1.HeaderText = "Сотрудник";
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn1.ValueMember = "WCode";
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -986,7 +1023,7 @@ namespace SalaryRegistersUralsib
             this.tabCardOpen.Location = new System.Drawing.Point(4, 22);
             this.tabCardOpen.Name = "tabCardOpen";
             this.tabCardOpen.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCardOpen.Size = new System.Drawing.Size(806, 394);
+            this.tabCardOpen.Size = new System.Drawing.Size(806, 380);
             this.tabCardOpen.TabIndex = 2;
             this.tabCardOpen.Text = "Откр.карт";
             this.tabCardOpen.UseVisualStyleBackColor = true;
@@ -1085,8 +1122,7 @@ namespace SalaryRegistersUralsib
             this.employmentDateDataGridViewTextBoxColumn,
             this.salaryDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
-            this.orgkeyDataGridViewTextBoxColumn1,
-            this.codeDataGridViewTextBoxColumn});
+            this.orgkeyDataGridViewTextBoxColumn1});
             this.GridView1.DataSource = this.cardBindingSource;
             this.GridView1.Location = new System.Drawing.Point(3, 36);
             this.GridView1.Name = "GridView1";
@@ -1094,7 +1130,7 @@ namespace SalaryRegistersUralsib
             this.GridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.GridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridView1.ShowEditingIcon = false;
-            this.GridView1.Size = new System.Drawing.Size(800, 335);
+            this.GridView1.Size = new System.Drawing.Size(800, 321);
             this.GridView1.StandardTab = true;
             this.GridView1.TabIndex = 9;
             this.GridView1.TabStop = false;
@@ -1429,14 +1465,6 @@ namespace SalaryRegistersUralsib
             this.orgkeyDataGridViewTextBoxColumn1.Visible = false;
             this.orgkeyDataGridViewTextBoxColumn1.Width = 72;
             // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.Visible = false;
-            this.codeDataGridViewTextBoxColumn.Width = 57;
-            // 
             // cardBindingSource
             // 
             this.cardBindingSource.DataMember = "Card";
@@ -1457,15 +1485,16 @@ namespace SalaryRegistersUralsib
             // tabWorkers
             // 
             this.tabWorkers.AutoScroll = true;
+            this.tabWorkers.Controls.Add(this.cueTextBox1);
             this.tabWorkers.Controls.Add(this.AddButton);
-            this.tabWorkers.Controls.Add(this.label11);
             this.tabWorkers.Controls.Add(this.button2);
+            this.tabWorkers.Controls.Add(this.SelectWorkerButton);
             this.tabWorkers.Controls.Add(this.FireButton);
             this.tabWorkers.Controls.Add(this.workersDataGridView);
             this.tabWorkers.Location = new System.Drawing.Point(4, 22);
             this.tabWorkers.Name = "tabWorkers";
             this.tabWorkers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWorkers.Size = new System.Drawing.Size(806, 394);
+            this.tabWorkers.Size = new System.Drawing.Size(806, 380);
             this.tabWorkers.TabIndex = 1;
             this.tabWorkers.Text = "Сотрудники";
             this.tabWorkers.UseVisualStyleBackColor = true;
@@ -1481,16 +1510,6 @@ namespace SalaryRegistersUralsib
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label11.Location = new System.Drawing.Point(340, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(224, 16);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Выберите сотрудника и нажмите";
-            // 
             // button2
             // 
             this.button2.AutoSize = true;
@@ -1502,6 +1521,17 @@ namespace SalaryRegistersUralsib
             this.button2.Text = "Добавить карту для сотрудника";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.AddCardButton_Click);
+            // 
+            // SelectWorkerButton
+            // 
+            this.SelectWorkerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SelectWorkerButton.Location = new System.Drawing.Point(226, 3);
+            this.SelectWorkerButton.Name = "SelectWorkerButton";
+            this.SelectWorkerButton.Size = new System.Drawing.Size(125, 28);
+            this.SelectWorkerButton.TabIndex = 2;
+            this.SelectWorkerButton.Text = "Выбрать";
+            this.SelectWorkerButton.UseVisualStyleBackColor = true;
+            this.SelectWorkerButton.Click += new System.EventHandler(this.SelectWorkerButton_Click);
             // 
             // FireButton
             // 
@@ -1548,7 +1578,7 @@ namespace SalaryRegistersUralsib
             this.workersDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.workersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.workersDataGridView.ShowEditingIcon = false;
-            this.workersDataGridView.Size = new System.Drawing.Size(800, 335);
+            this.workersDataGridView.Size = new System.Drawing.Size(800, 321);
             this.workersDataGridView.StandardTab = true;
             this.workersDataGridView.TabIndex = 4;
             this.workersDataGridView.TabStop = false;
@@ -1619,11 +1649,6 @@ namespace SalaryRegistersUralsib
             this.wCodeDataGridViewTextBoxColumn.ReadOnly = true;
             this.wCodeDataGridViewTextBoxColumn.Visible = false;
             // 
-            // workersBindingSource
-            // 
-            this.workersBindingSource.DataMember = "Workers";
-            this.workersBindingSource.DataSource = this.dbDataSet;
-            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1640,7 +1665,7 @@ namespace SalaryRegistersUralsib
             this.tabControl1.Location = new System.Drawing.Point(4, 15);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(814, 420);
+            this.tabControl1.Size = new System.Drawing.Size(814, 406);
             this.tabControl1.TabIndex = 0;
             // 
             // tabEnrollments
@@ -1650,11 +1675,11 @@ namespace SalaryRegistersUralsib
             this.tabEnrollments.Controls.Add(this.button8);
             this.tabEnrollments.Controls.Add(this.button6);
             this.tabEnrollments.Controls.Add(this.button5);
-            this.tabEnrollments.Controls.Add(this.button1);
+            this.tabEnrollments.Controls.Add(this.button7);
             this.tabEnrollments.Location = new System.Drawing.Point(4, 22);
             this.tabEnrollments.Name = "tabEnrollments";
             this.tabEnrollments.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEnrollments.Size = new System.Drawing.Size(806, 394);
+            this.tabEnrollments.Size = new System.Drawing.Size(806, 380);
             this.tabEnrollments.TabIndex = 3;
             this.tabEnrollments.Text = "Зачисления";
             this.tabEnrollments.UseVisualStyleBackColor = true;
@@ -1674,6 +1699,7 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
+            this.WCode,
             this.Surname,
             this.NName,
             this.Middlename,
@@ -1686,10 +1712,9 @@ namespace SalaryRegistersUralsib
             this.GridView2.Location = new System.Drawing.Point(3, 36);
             this.GridView2.Name = "GridView2";
             this.GridView2.RowHeadersVisible = false;
-            this.GridView2.Size = new System.Drawing.Size(800, 335);
+            this.GridView2.Size = new System.Drawing.Size(800, 321);
             this.GridView2.TabIndex = 3;
             this.GridView2.Tag = "zach";
-            this.GridView2.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.enrollmentsDataGridView_CellBeginEdit);
             this.GridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellContentClick);
             this.GridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentsDataGridView_CellEndEdit);
             this.GridView2.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.enrollmentsDataGridView_DataError);
@@ -1699,6 +1724,7 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Table_num";
             this.dataGridViewTextBoxColumn4.HeaderText = "Табельный номер";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -1713,6 +1739,15 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn3.HeaderText = "Enrollment_type";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // WCode
+            // 
+            this.WCode.DataPropertyName = "WCode";
+            this.WCode.DataSource = this.workersBindingSource;
+            this.WCode.DisplayMember = "WSurname";
+            this.WCode.HeaderText = "Сотрудник";
+            this.WCode.Name = "WCode";
+            this.WCode.ValueMember = "WCode";
             // 
             // Surname
             // 
@@ -1794,7 +1829,7 @@ namespace SalaryRegistersUralsib
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button6.Location = new System.Drawing.Point(277, 3);
+            this.button6.Location = new System.Drawing.Point(320, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(140, 28);
             this.button6.TabIndex = 1;
@@ -1805,7 +1840,7 @@ namespace SalaryRegistersUralsib
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button5.Location = new System.Drawing.Point(168, 3);
+            this.button5.Location = new System.Drawing.Point(211, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(103, 28);
             this.button5.TabIndex = 1;
@@ -1813,34 +1848,48 @@ namespace SalaryRegistersUralsib
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.CreateEnrollmentDos_Click);
             // 
-            // button1
+            // button7
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button1.Location = new System.Drawing.Point(6, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Сбросить изменения";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Location = new System.Drawing.Point(4, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(201, 28);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Добавить выбранного";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.AddCurrentEnrollmens);
             // 
             // tabFire
             // 
             this.tabFire.AutoScroll = true;
+            this.tabFire.Controls.Add(this.button1);
             this.tabFire.Controls.Add(this.GridView5);
             this.tabFire.Controls.Add(this.textBox1);
             this.tabFire.Controls.Add(this.button22);
             this.tabFire.Location = new System.Drawing.Point(4, 22);
             this.tabFire.Name = "tabFire";
             this.tabFire.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFire.Size = new System.Drawing.Size(806, 394);
+            this.tabFire.Size = new System.Drawing.Size(806, 380);
             this.tabFire.TabIndex = 9;
             this.tabFire.Tag = "5";
             this.tabFire.Text = "Увольнение";
             this.tabFire.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(6, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(221, 28);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Уволить текущего сотрудника";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.FireButton_Click);
+            // 
             // GridView5
             // 
+            this.GridView5.AllowUserToAddRows = false;
+            this.GridView5.AllowUserToDeleteRows = false;
             this.GridView5.AllowUserToResizeRows = false;
             this.GridView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -1857,10 +1906,12 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn36,
             this.dataGridViewTextBoxColumn37,
             this.dataGridViewTextBoxColumn38,
+            this.dataGridViewTextBoxColumn1,
             this.dataGridViewButtonColumn1});
             this.GridView5.DataSource = this.UvalBindingSource;
             this.GridView5.Location = new System.Drawing.Point(3, 36);
             this.GridView5.Name = "GridView5";
+            this.GridView5.ReadOnly = true;
             this.GridView5.RowHeadersVisible = false;
             this.GridView5.Size = new System.Drawing.Size(800, 335);
             this.GridView5.TabIndex = 13;
@@ -1875,12 +1926,14 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn35.DataPropertyName = "Table_num";
             this.dataGridViewTextBoxColumn35.HeaderText = "Табельный номер";
             this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn33
             // 
             this.dataGridViewTextBoxColumn33.DataPropertyName = "Org_key";
             this.dataGridViewTextBoxColumn33.HeaderText = "Org_key";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.ReadOnly = true;
             this.dataGridViewTextBoxColumn33.Visible = false;
             // 
             // dataGridViewTextBoxColumn34
@@ -1888,6 +1941,7 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn34.DataPropertyName = "Enrollment_type";
             this.dataGridViewTextBoxColumn34.HeaderText = "Enrollment_type";
             this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.ReadOnly = true;
             this.dataGridViewTextBoxColumn34.Visible = false;
             // 
             // dataGridViewTextBoxColumn36
@@ -1895,18 +1949,34 @@ namespace SalaryRegistersUralsib
             this.dataGridViewTextBoxColumn36.DataPropertyName = "Surname";
             this.dataGridViewTextBoxColumn36.HeaderText = "Фамилия";
             this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn37
             // 
             this.dataGridViewTextBoxColumn37.DataPropertyName = "NName";
             this.dataGridViewTextBoxColumn37.HeaderText = "Имя";
             this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn38
             // 
             this.dataGridViewTextBoxColumn38.DataPropertyName = "Middlename";
             this.dataGridViewTextBoxColumn38.HeaderText = "Отчество";
             this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "WCode";
+            this.dataGridViewTextBoxColumn1.DataSource = this.workersBindingSource;
+            this.dataGridViewTextBoxColumn1.DisplayMember = "WCode";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Сотрудник";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn1.ValueMember = "WCode";
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // dataGridViewButtonColumn1
             // 
@@ -1914,11 +1984,12 @@ namespace SalaryRegistersUralsib
             this.dataGridViewButtonColumn1.FillWeight = 65F;
             this.dataGridViewButtonColumn1.HeaderText = "Удалить";
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
             this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewButtonColumn1.Text = "X";
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn1.Width = 75;
+            this.dataGridViewButtonColumn1.Visible = false;
             // 
             // UvalBindingSource
             // 
@@ -1940,7 +2011,7 @@ namespace SalaryRegistersUralsib
             // button22
             // 
             this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button22.Location = new System.Drawing.Point(6, 3);
+            this.button22.Location = new System.Drawing.Point(320, 3);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(150, 28);
             this.button22.TabIndex = 12;
@@ -1991,7 +2062,7 @@ namespace SalaryRegistersUralsib
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 411);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 398);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(818, 24);
             this.statusStrip1.TabIndex = 13;
@@ -2009,7 +2080,7 @@ namespace SalaryRegistersUralsib
             // AddNewButton
             // 
             this.AddNewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddNewButton.Location = new System.Drawing.Point(16, 40);
+            this.AddNewButton.Location = new System.Drawing.Point(15, 39);
             this.AddNewButton.Name = "AddNewButton";
             this.AddNewButton.Size = new System.Drawing.Size(105, 28);
             this.AddNewButton.TabIndex = 7;
@@ -2017,21 +2088,55 @@ namespace SalaryRegistersUralsib
             this.AddNewButton.UseVisualStyleBackColor = true;
             this.AddNewButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(341, -1);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(90, 13);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Код сотрудника:";
+            this.label20.Visible = false;
+            // 
+            // curworker
+            // 
+            this.curworker.AutoSize = true;
+            this.curworker.Location = new System.Drawing.Point(457, -1);
+            this.curworker.Name = "curworker";
+            this.curworker.Size = new System.Drawing.Size(24, 13);
+            this.curworker.TabIndex = 0;
+            this.curworker.Text = "sotr";
+            this.curworker.Visible = false;
+            // 
+            // cueTextBox1
+            // 
+            this.cueTextBox1.CueText = "Поиск сотрудника";
+            this.cueTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cueTextBox1.Location = new System.Drawing.Point(357, 5);
+            this.cueTextBox1.Name = "cueTextBox1";
+            this.cueTextBox1.RegEx = null;
+            this.cueTextBox1.Required = false;
+            this.cueTextBox1.Size = new System.Drawing.Size(195, 23);
+            this.cueTextBox1.TabIndex = 6;
+            this.cueTextBox1.TextChanged += new System.EventHandler(this.cueTextBox1_TextChanged);
+            // 
             // Organizations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 435);
+            this.ClientSize = new System.Drawing.Size(818, 422);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ButtonBack);
             this.Controls.Add(this.ExportButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.curworker);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.tabControl1);
-            this.MinimumSize = new System.Drawing.Size(800, 474);
+            this.MinimumSize = new System.Drawing.Size(800, 460);
             this.Name = "Organizations";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Organizations_FormClosing);
             this.Load += new System.EventHandler(this.FormZP_Load);
@@ -2041,6 +2146,7 @@ namespace SalaryRegistersUralsib
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             this.tabReestr.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReestrBindingSource)).EndInit();
             this.tabCardEnrollments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridView3)).EndInit();
@@ -2052,7 +2158,6 @@ namespace SalaryRegistersUralsib
             this.tabWorkers.ResumeLayout(false);
             this.tabWorkers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.workersDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabEnrollments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridView2)).EndInit();
@@ -2093,7 +2198,6 @@ namespace SalaryRegistersUralsib
         internal System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabEnrollments;
         private DbDataSetTableAdapters.EnrollmentsTableAdapter enrollmentsTableAdapter;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.BindingSource enrollmentsBindingSource;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button6;
@@ -2101,14 +2205,12 @@ namespace SalaryRegistersUralsib
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
         public System.Windows.Forms.DataGridView GridView3;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
         public System.Windows.Forms.DataGridView GridView4;
         private System.Windows.Forms.TabPage tabFire;
         private System.Windows.Forms.Button button22;
@@ -2204,9 +2306,30 @@ namespace SalaryRegistersUralsib
         private System.Windows.Forms.DataGridViewTextBoxColumn orgkeyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn firedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button AddCardButton;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button AddNewButton;
+        private System.Windows.Forms.Button SelectWorkerButton;
+        private System.Windows.Forms.Label label20;
+        public System.Windows.Forms.Label curworker;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn WCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Middlename;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewButtonColumn del;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn Enrollment_type;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
@@ -2218,6 +2341,7 @@ namespace SalaryRegistersUralsib
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Org_key;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
@@ -2226,29 +2350,18 @@ namespace SalaryRegistersUralsib
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.DataGridViewButtonColumn del1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Middlename;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        private System.Windows.Forms.DataGridViewButtonColumn del;
-        private System.Windows.Forms.Button AddCardButton;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.Button AddNewButton;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button9;
+        private CueTextBox cueTextBox1;
     }
 }

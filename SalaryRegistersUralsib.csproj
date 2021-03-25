@@ -134,12 +134,6 @@
     <Compile Include="CueTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\ChangeLoginPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ChangeLoginPassword.Designer.cs">
-      <DependentUpon>ChangeLoginPassword.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,9 +221,6 @@
     <EmbeddedResource Include="CueTextBox.resx">
       <DependentUpon>CueTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChangeLoginPassword.resx">
-      <DependentUpon>ChangeLoginPassword.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,7 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database1.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Icon1.ico" />
   </ItemGroup>

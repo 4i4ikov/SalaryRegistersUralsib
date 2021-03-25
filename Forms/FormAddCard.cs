@@ -7,10 +7,10 @@ namespace SalaryRegistersUralsib
 {
     public partial class FormAddCard : Form
     {
-        public List<string> Mass { get; set; }
-        public List<string> Mass2 { get; set; }
-        public List<string> Doc { get; set; }
-        public List<string> Doc2 { get; set; }
+        public List<string> Mass = new List<string> { null, null, null, null, null, null, null, null };
+        public List<string> Mass2 = new List<string> { null, null, null, null, null, null, null, null };
+        public List<string> Doc = new List<string> { null, null, null, null, null, null, null, null };
+        public List<string> Doc2 = new List<string> { null, null, null, null, null, null, null, null };
 
         //TODO СДЕЛАТЬ ТИП КАРТЫ КАК В ЭКСЕле
 
@@ -18,6 +18,8 @@ namespace SalaryRegistersUralsib
         {
 
             InitializeComponent();
+            Sex.SelectedIndex = 0;
+            Sex.SelectedItem = 0;
         }
         public void FormAddWorker_Load(object sender, EventArgs e)
         {
@@ -194,6 +196,12 @@ namespace SalaryRegistersUralsib
                         Tag += ch + ",";
                     }
                 }
+            }
+            if (Doc[0] == null || Doc2[0] == null || Mass[0] == null || Mass2 == null)
+            {
+               
+                DialogResult dialogResult = MessageBox.Show("Вы не нажали на одну/несколько из кнопок\nПродолжить?", " Подтверждение ", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No) Tag += "кнопки с документами/адресами";
             }
             if ( !( string.IsNullOrWhiteSpace(Tag.ToString()) ) || Mass == null || Mass2 == null || Doc == null || Doc2 == null )
             {
